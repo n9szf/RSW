@@ -1,0 +1,246 @@
+{
+ "title": "Milwaukee Road Little Joe electric (EF-4 E70-E79, EP-4 E20-E21)",
+ "slug": "MILW_LittleJoe",
+ "review": {
+  "verified": false,
+  "code": "TDQ-351",
+  "note": "v9 24 Oct 2026: the nose is its own print, built in FreeCAD (scad/library/nose/lj_nose_freecad.py; Processed / Make Little Joe nose (FreeCAD).bat) and placed by OpenSCAD; shaped after Tom's reference model and the GE drawings. Not printed yet."
+ },
+ "picture": "notes/LJ_preview_G.png",
+ "docs": [
+  "notes/MILW_LittleJoe_Notes.pdf"
+ ],
+ "scales": {
+  "G": {
+   "scad": "scad/MILW_LittleJoe_G.scad",
+   "mode": "parts",
+   "var": "part",
+   "printers": [
+    [
+     "P1S",
+     "25 prints, each fits the P1S bed"
+    ]
+   ],
+   "parts": [
+    [
+     "body_1",
+     1
+    ],
+    [
+     "body_2",
+     1
+    ],
+    [
+     "body_3",
+     1
+    ],
+    [
+     "body_4",
+     1
+    ],
+    [
+     "roof_1",
+     1
+    ],
+    [
+     "roof_2",
+     1
+    ],
+    [
+     "roof_3",
+     1
+    ],
+    [
+     "roof_4",
+     1
+    ],
+    [
+     "frame_1",
+     1
+    ],
+    [
+     "frame_2",
+     1
+    ],
+    [
+     "frame_3",
+     1
+    ],
+    [
+     "frame_4",
+     1
+    ],
+    [
+     "frame_5",
+     1
+    ],
+    [
+     "nose",
+     2
+    ],
+    [
+     "pilot",
+     2
+    ],
+    [
+     "truck_drive",
+     2
+    ],
+    [
+     "truck_guide",
+     2
+    ],
+    [
+     "wheels_drive",
+     2
+    ],
+    [
+     "wheels_guide",
+     1
+    ],
+    [
+     "bearing_coupon",
+     1
+    ]
+   ]
+  },
+  "O": {
+   "scad": "scad/MILW_LittleJoe_O.scad",
+   "mode": "parts",
+   "var": "part",
+   "printers": [
+    [
+     "P1S",
+     "22 prints, each fits the P1S bed"
+    ]
+   ],
+   "parts": [
+    [
+     "body_1",
+     1
+    ],
+    [
+     "body_2",
+     1
+    ],
+    [
+     "body_3",
+     1
+    ],
+    [
+     "roof_1",
+     1
+    ],
+    [
+     "roof_2",
+     1
+    ],
+    [
+     "roof_3",
+     1
+    ],
+    [
+     "frame_1",
+     1
+    ],
+    [
+     "frame_2",
+     1
+    ],
+    [
+     "frame_3",
+     1
+    ],
+    [
+     "frame_4",
+     1
+    ],
+    [
+     "nose",
+     2
+    ],
+    [
+     "pilot",
+     2
+    ],
+    [
+     "truck_drive",
+     2
+    ],
+    [
+     "truck_guide",
+     2
+    ],
+    [
+     "wheels_drive",
+     2
+    ],
+    [
+     "wheels_guide",
+     1
+    ],
+    [
+     "bearing_coupon",
+     1
+    ]
+   ]
+  },
+  "HO": {
+   "scad": "scad/MILW_LittleJoe_HO.scad",
+   "mode": "parts",
+   "var": "part",
+   "printers": [
+    [
+     "P1S",
+     "15 prints, each fits the P1S bed"
+    ]
+   ],
+   "parts": [
+    [
+     "body_1",
+     1
+    ],
+    [
+     "body_2",
+     1
+    ],
+    [
+     "roof_1",
+     1
+    ],
+    [
+     "roof_2",
+     1
+    ],
+    [
+     "frame_1",
+     1
+    ],
+    [
+     "frame_2",
+     1
+    ],
+    [
+     "frame_3",
+     1
+    ],
+    [
+     "nose",
+     2
+    ],
+    [
+     "pilot",
+     2
+    ],
+    [
+     "truck_drive",
+     2
+    ],
+    [
+     "truck_guide",
+     2
+    ]
+   ]
+  }
+ }
+}

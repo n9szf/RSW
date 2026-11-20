@@ -1,0 +1,30 @@
+MR Print Files - sign-in, levels, two-step, password reset (TDQ-327 / 328)
+
+Levels
+  admin    everything, plus Manage users and TDQs
+  comment  the print panel, plus TDQs (read the open items and add a comment)
+  user     the print panel only
+The computer that runs the program is always admin and needs no sign-in, so nobody can lock themselves out.
+
+First time after this update
+  Start the program as usual. users.json is updated by itself: tom becomes admin, hannah a user. Everyone can still sign
+  in with their name. Open the page, click "Manage users" (next to Sign out) and click "(none - click to set)" to give each
+  person an email address. From then on they sign in with the email address.
+
+Add a person: Manage users > Add a person. The page shows a temporary password once; send it to them. They must choose their
+  own password at the first sign-in. "Temp password" does the same for someone who is locked out.
+
+Two-step sign-in (optional): each person clicks "Two-step sign-in", adds the shown key to an authenticator app (Google or
+  Microsoft Authenticator, Authy) and types a code. After that sign-in asks for a code. An admin can reset it.
+
+Forgot password by email: needs mail.json (copy mail.json.example to mail.json in this folder).
+  1. On the ribsideworks@gmail.com Google account turn on 2-step verification, then make an App password
+     (Google Account > Security > App passwords). It is 16 letters.
+  2. Put it in mail.json as app_password. Keep mail.json private (it is not for GitHub; make_github_package.py leaves it out).
+  3. base_url is the address people type to reach this program, for example http://192.168.1.20:8765.
+  Without mail.json the sign-in page says to ask an admin for a temporary password.
+
+TDQs: the pull-down lists the open items from RSW / notes / Active_TDQ.md. A comment is saved as a note file in RSW / upload
+  ("MR Print Files comment TDQ-NNN <name> <date>.md"); Claude reads it the next time the upload folder is processed.
+
+Command line (still works): python3 "MR Print Files.py" --add-user NAME --email ADDRESS --level admin|comment|user

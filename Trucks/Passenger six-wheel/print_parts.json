@@ -1,0 +1,42 @@
+{
+  "title": "Milwaukee Road six-wheel passenger truck",
+  "slug": "MR_Truck6W",
+  "review": {
+    "verified": false,
+    "code": "TDQ-79",
+    "note": "Best-guess frame. Not printed yet."
+  },
+  "picture": "../../Passenger cars/Fleet export/Trucks/Six-wheel truck/G scale 1-29/Pictures/MR_Truck6W_G_assembly.png",
+  "docs": [],
+  "scales": {
+    "G": {
+      "scad": "../../Passenger cars/Fleet export/Trucks/Six-wheel truck/G scale 1-29/OpenSCAD/MR_Truck6W_G.scad",
+      "mode": "parts",
+      "var": "PART",
+      "printers": [
+        [
+          "P1S",
+          "As drawn - Pair of trucks for one car. Same printed wheels, 3 mm brass axles and F683ZZ bearings on every truck."
+        ]
+      ],
+      "parts": [
+        [
+          "sideframe",
+          4
+        ],
+        [
+          "bolster",
+          2
+        ],
+        [
+          "wheel",
+          12
+        ],
+        [
+          "bearing_coupon",
+          1
+        ]
+      ]
+    }
+  }
+}

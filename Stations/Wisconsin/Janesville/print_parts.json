@@ -1,0 +1,18 @@
+{
+  "title": "Milwaukee Road depot, Janesville, Wisconsin",
+  "slug": "Janesville_Station",
+  "review": {"verified": false, "code": "TDQ-185", "note": "Frozen 7 Oct 2026 - test prints were never done, so parts are untested."},
+  "docs": ["Notes/Build Guide - Janesville Milwaukee Road Depot.pdf"],
+  "scales": {
+    "G": {
+      "scad": "OpenSCAD/Janesville_Station.scad",
+      "mode": "list",
+      "printers": [["P1S", "Bambu P1S (256 mm bed) - large parts in sections"], ["GIGA", "Large format (OrangeStorm Giga) - fewer, bigger sections"]]
+    },
+    "HO": {
+      "scad": "HO Scale (1-87)/OpenSCAD/Janesville_Station.scad",
+      "mode": "list",
+      "printers": [["P1S", "Bambu P1S (256 mm bed)"]]
+    }
+  }
+}

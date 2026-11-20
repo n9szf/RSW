@@ -1,0 +1,71 @@
+{
+  "title": "Bettendorf-style freight truck, 5 ft 6 in wheelbase, 33 in wheels",
+  "slug": "RSW_Truck_Bettendorf",
+  "review": {
+    "verified": false,
+    "code": "TDQ-193",
+    "note": "Drawn by eye for the 1939 rib side caboose. Not printed yet. 13 Oct: now made from the shared truck library (Trucks/library); G parts unchanged. O scale added - not printed, see TDQ-267."
+  },
+  "picture": "../../Freight/Caboose/1939 Rib Side/notes/Caboose_truck.png",
+  "docs": [],
+  "scales": {
+    "G": {
+      "scad": "OpenSCAD/RSW_Truck_Bettendorf_G.scad",
+      "mode": "parts",
+      "var": "part",
+      "printers": [
+        [
+          "P1S",
+          "As drawn - Pair of trucks for one car. Printed wheels on 3 mm brass axles in F683ZZ bearings."
+        ]
+      ],
+      "parts": [
+        [
+          "truck_sideframe",
+          4
+        ],
+        [
+          "truck_bolster",
+          2
+        ],
+        [
+          "truck_wheel",
+          8
+        ],
+        [
+          "bearing_coupon",
+          1
+        ]
+      ]
+    },
+    "O": {
+      "scad": "OpenSCAD/RSW_Truck_Bettendorf_O.scad",
+      "mode": "parts",
+      "var": "part",
+      "printers": [
+        [
+          "P1S",
+          "As drawn - Pair of trucks for one car. Printed wheels on 2 mm brass axles in MR52ZZ bearings (not printed yet)."
+        ]
+      ],
+      "parts": [
+        [
+          "truck_sideframe",
+          4
+        ],
+        [
+          "truck_bolster",
+          2
+        ],
+        [
+          "truck_wheel",
+          8
+        ],
+        [
+          "bearing_coupon",
+          1
+        ]
+      ]
+    }
+  }
+}

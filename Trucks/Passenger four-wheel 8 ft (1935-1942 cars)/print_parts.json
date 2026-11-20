@@ -1,0 +1,32 @@
+{
+  "title": "Milwaukee Road four-wheel passenger truck, 8 ft wheelbase (1938 Hiawatha style), sprung bolster",
+  "slug": "RSW_Truck_Passenger4W_8ft",
+  "review": {
+    "verified": false,
+    "code": "TDQ-268",
+    "note": "Drawn from one photo (RME March 1939). 13 Oct: sprung bolster on 4 steel springs (4 mm OD x 12 mm), from the shared truck library. Not printed yet. The trucks made with each car still have the glued bolster until the car kits are rebuilt (TDQ-276)."
+  },
+  "picture": "Pictures/RSW_Truck_Passenger4W_8ft_G.png",
+  "docs": [],
+  "scales": {
+    "G": {
+      "scad": "OpenSCAD/RSW_Truck_Passenger4W_8ft_G.scad",
+      "mode": "parts",
+      "var": "part",
+      "printers": [
+        [
+          "P1S",
+          "Sprung bolster - Pair of trucks for one car. Printed wheels on 3 mm brass axles in F683ZZ bearings; 8 springs 4 mm OD x 12 mm."
+        ]
+      ],
+      "parts": [
+        ["sideframe", 4],
+        ["bolster", 2],
+        ["end_beam", 4],
+        ["spring_plank", 2],
+        ["wheel", 8],
+        ["bearing_coupon", 1]
+      ]
+    }
+  }
+}

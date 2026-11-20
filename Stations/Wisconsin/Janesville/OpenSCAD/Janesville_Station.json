@@ -1,0 +1,15 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "New set 1": {
+            "CANOPY": "true",
+            "FITOUT": "true",
+            "LIST": "false",
+            "PLATFORM": "true",
+            "ROOF": "false",
+            "SHOW": "all",
+            "TILE": "-1",
+            "TRACK": "true"
+        }
+    }
+}

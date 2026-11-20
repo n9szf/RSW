@@ -1,0 +1,1137 @@
+printer,group,file,part,section,body,slot,key,colour,bambu_petg_hf,volume_cm3,qty
+Bambu P1S,Canopy,Canopy_beams_baggage_P1S_part01.3mf,Canopy_beams_baggage,1,Canopy_beams_baggage,1,GREEN,Pullman green,Forest Green,25.89,1
+Bambu P1S,Canopy,Canopy_beams_east_n_P1S_part01.3mf,Canopy_beams_east_n,1,Canopy_beams_east_n,1,GREEN,Pullman green,Forest Green,12.77,1
+Bambu P1S,Canopy,Canopy_beams_east_s_P1S_part01.3mf,Canopy_beams_east_s,1,Canopy_beams_east_s,1,GREEN,Pullman green,Forest Green,12.77,1
+Bambu P1S,Canopy,Canopy_beams_shed_n_P1S_part01.3mf,Canopy_beams_shed_n,1,Canopy_beams_shed_n,1,GREEN,Pullman green,Forest Green,33.13,1
+Bambu P1S,Canopy,Canopy_beams_south_P1S_part01.3mf,Canopy_beams_south,1,Canopy_beams_south,1,GREEN,Pullman green,Forest Green,161.32,1
+Bambu P1S,Canopy,Canopy_beams_west_n_P1S_part01.3mf,Canopy_beams_west_n,1,Canopy_beams_west_n,1,GREEN,Pullman green,Forest Green,12.58,1
+Bambu P1S,Canopy,Canopy_braces_P1S_part01.3mf,Canopy_braces,1,Canopy_braces,1,GREEN,Pullman green,Forest Green,12.3,1
+Bambu P1S,Canopy,Canopy_fascia_west_corner_P1S_part01.3mf,Canopy_fascia_west_corner,1,Canopy_fascia_west_corner,1,GREEN,Pullman green,Forest Green,0.66,1
+Bambu P1S,Canopy,Canopy_footings_baggage_P1S_part01.3mf,Canopy_footings_baggage,1,Canopy_footings_baggage,1,GRAY,Light gray,Gray,5.58,1
+Bambu P1S,Canopy,Canopy_footings_east_n_P1S_part01.3mf,Canopy_footings_east_n,1,Canopy_footings_east_n,1,GRAY,Light gray,Gray,3.72,1
+Bambu P1S,Canopy,Canopy_footings_east_s_P1S_part01.3mf,Canopy_footings_east_s,1,Canopy_footings_east_s,1,GRAY,Light gray,Gray,3.72,1
+Bambu P1S,Canopy,Canopy_footings_shed_n_P1S_part01.3mf,Canopy_footings_shed_n,1,Canopy_footings_shed_n,1,GRAY,Light gray,Gray,3.72,1
+Bambu P1S,Canopy,Canopy_footings_south_P1S_part01.3mf,Canopy_footings_south,1,Canopy_footings_south,1,GRAY,Light gray,Gray,18.61,1
+Bambu P1S,Canopy,Canopy_footings_west_n_P1S_part01.3mf,Canopy_footings_west_n,1,Canopy_footings_west_n,1,GRAY,Light gray,Gray,3.72,1
+Bambu P1S,Canopy,Canopy_post_caps_P1S_part01.3mf,Canopy_post_caps,1,Canopy_post_caps,1,GREEN,Pullman green,Forest Green,9.05,1
+Bambu P1S,Canopy,Canopy_rafters_baggage_P1S_part01.3mf,Canopy_rafters_baggage,1,Canopy_rafters_baggage,1,GREEN,Pullman green,Forest Green,17.97,1
+Bambu P1S,Canopy,Canopy_rafters_lunch_P1S_part01.3mf,Canopy_rafters_lunch,1,Canopy_rafters_lunch,1,GREEN,Pullman green,Forest Green,6.53,1
+Bambu P1S,Canopy,Canopy_rafters_main_P1S_part01.3mf,Canopy_rafters_main,1,Canopy_rafters_main,1,GREEN,Pullman green,Forest Green,14.79,1
+Bambu P1S,Canopy,Canopy_roof_baggage_P1S_part01.3mf,Canopy_roof_baggage,1,Canopy_roof_baggage,1,SLATE,Slate gray,Dark Gray,78.49,1
+Bambu P1S,Canopy,Canopy_roof_baggage_P1S_part02.3mf,Canopy_roof_baggage,2,Canopy_roof_baggage,1,SLATE,Slate gray,Dark Gray,78.49,1
+Bambu P1S,Canopy,Canopy_roof_baggage_P1S_part03.3mf,Canopy_roof_baggage,3,Canopy_roof_baggage,1,SLATE,Slate gray,Dark Gray,78.49,1
+Bambu P1S,Canopy,Canopy_roof_baggage_P1S_part04.3mf,Canopy_roof_baggage,4,Canopy_roof_baggage,1,SLATE,Slate gray,Dark Gray,78.49,1
+Bambu P1S,Canopy,Canopy_roof_east_hip_P1S_part01.3mf,Canopy_roof_east_hip,1,Canopy_roof_east_hip,1,SLATE,Slate gray,Dark Gray,53.43,1
+Bambu P1S,Canopy,Canopy_roof_east_hip_P1S_part02.3mf,Canopy_roof_east_hip,2,Canopy_roof_east_hip,1,SLATE,Slate gray,Dark Gray,53.43,1
+Bambu P1S,Canopy,Canopy_roof_east_north_P1S_part01.3mf,Canopy_roof_east_north,1,Canopy_roof_east_north,1,SLATE,Slate gray,Dark Gray,53.43,1
+Bambu P1S,Canopy,Canopy_roof_east_north_P1S_part02.3mf,Canopy_roof_east_north,2,Canopy_roof_east_north,1,SLATE,Slate gray,Dark Gray,106.86,1
+Bambu P1S,Canopy,Canopy_roof_east_south_P1S_part01.3mf,Canopy_roof_east_south,1,Canopy_roof_east_south,1,SLATE,Slate gray,Dark Gray,106.85,1
+Bambu P1S,Canopy,Canopy_roof_east_south_P1S_part02.3mf,Canopy_roof_east_south,2,Canopy_roof_east_south,1,SLATE,Slate gray,Dark Gray,53.43,1
+Bambu P1S,Canopy,Canopy_roof_shed_north_P1S_part01.3mf,Canopy_roof_shed_north,1,Canopy_roof_shed_north,1,SLATE,Slate gray,Dark Gray,112.17,1
+Bambu P1S,Canopy,Canopy_roof_shed_north_P1S_part02.3mf,Canopy_roof_shed_north,2,Canopy_roof_shed_north,1,SLATE,Slate gray,Dark Gray,112.22,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part01.3mf,Canopy_roof_south,1,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,54.31,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part02.3mf,Canopy_roof_south,2,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,79.01,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part03.3mf,Canopy_roof_south,3,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,102.41,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part04.3mf,Canopy_roof_south,4,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,99.58,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part05.3mf,Canopy_roof_south,5,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,99.6,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part06.3mf,Canopy_roof_south,6,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,99.59,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part07.3mf,Canopy_roof_south,7,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,103.0,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part08.3mf,Canopy_roof_south,8,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,107.72,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part09.3mf,Canopy_roof_south,9,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,112.21,1
+Bambu P1S,Canopy,Canopy_roof_south_P1S_part10.3mf,Canopy_roof_south,10,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,112.17,1
+Bambu P1S,Canopy,Canopy_roof_west_hip_P1S_part01.3mf,Canopy_roof_west_hip,1,Canopy_roof_west_hip,1,SLATE,Slate gray,Dark Gray,24.71,1
+Bambu P1S,Canopy,Canopy_roof_west_hip_P1S_part02.3mf,Canopy_roof_west_hip,2,Canopy_roof_west_hip,1,SLATE,Slate gray,Dark Gray,24.7,1
+Bambu P1S,Canopy,Canopy_roof_west_north_P1S_part01.3mf,Canopy_roof_west_north,1,Canopy_roof_west_north,1,SLATE,Slate gray,Dark Gray,79.0,1
+Bambu P1S,Canopy,Canopy_roof_west_north_P1S_part02.3mf,Canopy_roof_west_north,2,Canopy_roof_west_north,1,SLATE,Slate gray,Dark Gray,54.31,1
+Bambu P1S,Canopy,Canopy_truss_east_P1S_part01.3mf,Canopy_truss_east,1,Canopy_truss_east,1,GREEN,Pullman green,Forest Green,11.65,1
+Bambu P1S,Canopy,Canopy_truss_east_P1S_part02.3mf,Canopy_truss_east,2,Canopy_truss_east,1,GREEN,Pullman green,Forest Green,11.65,1
+Bambu P1S,Canopy,Canopy_truss_shed_P1S_part01.3mf,Canopy_truss_shed,1,Canopy_truss_shed,1,GREEN,Pullman green,Forest Green,17.47,1
+Bambu P1S,Canopy,Canopy_truss_shed_P1S_part02.3mf,Canopy_truss_shed,2,Canopy_truss_shed,1,GREEN,Pullman green,Forest Green,17.47,1
+Bambu P1S,Canopy,Canopy_truss_west_P1S_part01.3mf,Canopy_truss_west,1,Canopy_truss_west,1,GREEN,Pullman green,Forest Green,3.7,1
+Bambu P1S,Canopy,Canopy_truss_west_P1S_part02.3mf,Canopy_truss_west,2,Canopy_truss_west,1,GREEN,Pullman green,Forest Green,3.7,1
+Bambu P1S,Ceiling,Ceiling_east_P1S_part01.3mf,Ceiling_east,1,Ceiling_east,1,CREAM,Cream / buff,Cream,17.34,1
+Bambu P1S,Ceiling,Ceiling_east_P1S_part02.3mf,Ceiling_east,2,Ceiling_east,1,CREAM,Cream / buff,Cream,17.34,1
+Bambu P1S,Ceiling,Ceiling_pavilion_P1S_part01.3mf,Ceiling_pavilion,1,Ceiling_pavilion,1,CREAM,Cream / buff,Cream,39.23,1
+Bambu P1S,Ceiling,Ceiling_pavilion_P1S_part02.3mf,Ceiling_pavilion,2,Ceiling_pavilion,1,CREAM,Cream / buff,Cream,39.19,1
+Bambu P1S,Chimney,Chimney_base_P1S_part01.3mf,Chimney_base,1,Chimney_base,1,BRICK,Brick red,Red,139.88,1
+Bambu P1S,Chimney,Chimney_body_P1S_part01.3mf,Chimney_body,1,Chimney_body,1,BRICK,Brick red,Red,118.31,1
+Bambu P1S,Chimney,Chimney_cap_P1S_part01.3mf,Chimney_cap,1,Chimney_cap,1,BRICK,Brick red,Red,9.85,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part01.3mf,Cornice_baggage,1,Cornice_baggage,1,GREEN,Pullman green,Forest Green,56.97,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part02.3mf,Cornice_baggage,2,Cornice_baggage,1,GREEN,Pullman green,Forest Green,43.95,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part03.3mf,Cornice_baggage,3,Cornice_baggage,1,GREEN,Pullman green,Forest Green,56.97,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part04.3mf,Cornice_baggage,4,Cornice_baggage,1,GREEN,Pullman green,Forest Green,56.97,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part05.3mf,Cornice_baggage,5,Cornice_baggage,1,GREEN,Pullman green,Forest Green,43.95,1
+Bambu P1S,Cornice,Cornice_baggage_P1S_part06.3mf,Cornice_baggage,6,Cornice_baggage,1,GREEN,Pullman green,Forest Green,56.97,1
+Bambu P1S,Cornice,Cornice_lunch_P1S_part01.3mf,Cornice_lunch,1,Cornice_lunch,1,GREEN,Pullman green,Forest Green,39.44,1
+Bambu P1S,Cornice,Cornice_lunch_P1S_part02.3mf,Cornice_lunch,2,Cornice_lunch,1,GREEN,Pullman green,Forest Green,41.63,1
+Bambu P1S,Cornice,Cornice_main_P1S_part01.3mf,Cornice_main,1,Cornice_main,1,GREEN,Pullman green,Forest Green,106.41,1
+Bambu P1S,Cornice,Cornice_main_P1S_part02.3mf,Cornice_main,2,Cornice_main,1,GREEN,Pullman green,Forest Green,56.27,1
+Bambu P1S,Cornice,Cornice_main_P1S_part03.3mf,Cornice_main,3,Cornice_main,1,GREEN,Pullman green,Forest Green,1.99,1
+Bambu P1S,Cornice,Cornice_main_P1S_part04.3mf,Cornice_main,4,Cornice_main,1,GREEN,Pullman green,Forest Green,54.79,1
+Bambu P1S,Cornice,Cornice_main_P1S_part05.3mf,Cornice_main,5,Cornice_main,1,GREEN,Pullman green,Forest Green,75.53,1
+Bambu P1S,Cornice,Cornice_main_P1S_part06.3mf,Cornice_main,6,Cornice_main,1,GREEN,Pullman green,Forest Green,106.41,1
+Bambu P1S,Cornice,Cornice_main_P1S_part07.3mf,Cornice_main,7,Cornice_main,1,GREEN,Pullman green,Forest Green,56.27,1
+Bambu P1S,Cornice,Cornice_main_P1S_part08.3mf,Cornice_main,8,Cornice_main,1,GREEN,Pullman green,Forest Green,1.99,1
+Bambu P1S,Cornice,Cornice_main_P1S_part09.3mf,Cornice_main,9,Cornice_main,1,GREEN,Pullman green,Forest Green,54.79,1
+Bambu P1S,Cornice,Cornice_main_P1S_part10.3mf,Cornice_main,10,Cornice_main,1,GREEN,Pullman green,Forest Green,81.98,1
+Bambu P1S,Dormer,Dormer_bargeboards_P1S_part01.3mf,Dormer_bargeboards,1,Dormer_bargeboards,1,GREEN,Pullman green,Forest Green,7.04,1
+Bambu P1S,Dormer,Dormer_cheek_town_E_P1S_part01.3mf,Dormer_cheek_town_E,1,Dormer_cheek_town_E,1,BRICK,Brick red,Red,2.5,1
+Bambu P1S,Dormer,Dormer_cheek_town_E_P1S_part01.3mf,Dormer_cheek_town_E,1,Dormer_cheek_town_E_mortar,2,WHITE,White,White,0.05,1
+Bambu P1S,Dormer,Dormer_cheek_town_W_P1S_part01.3mf,Dormer_cheek_town_W,1,Dormer_cheek_town_W,1,BRICK,Brick red,Red,2.5,1
+Bambu P1S,Dormer,Dormer_cheek_town_W_P1S_part01.3mf,Dormer_cheek_town_W,1,Dormer_cheek_town_W_mortar,2,WHITE,White,White,0.05,1
+Bambu P1S,Dormer,Dormer_cheek_track_E_P1S_part01.3mf,Dormer_cheek_track_E,1,Dormer_cheek_track_E,1,BRICK,Brick red,Red,2.5,1
+Bambu P1S,Dormer,Dormer_cheek_track_E_P1S_part01.3mf,Dormer_cheek_track_E,1,Dormer_cheek_track_E_mortar,2,WHITE,White,White,0.05,1
+Bambu P1S,Dormer,Dormer_cheek_track_W_P1S_part01.3mf,Dormer_cheek_track_W,1,Dormer_cheek_track_W,1,BRICK,Brick red,Red,2.5,1
+Bambu P1S,Dormer,Dormer_cheek_track_W_P1S_part01.3mf,Dormer_cheek_track_W,1,Dormer_cheek_track_W_mortar,2,WHITE,White,White,0.05,1
+Bambu P1S,Dormer,Dormer_face_town_P1S_part01.3mf,Dormer_face_town,1,Dormer_face_town,1,BRICK,Brick red,Red,99.04,1
+Bambu P1S,Dormer,Dormer_face_town_P1S_part01.3mf,Dormer_face_town,1,Dormer_face_town_mortar,2,WHITE,White,White,1.07,1
+Bambu P1S,Dormer,Dormer_face_track_P1S_part01.3mf,Dormer_face_track,1,Dormer_face_track,1,BRICK,Brick red,Red,99.04,1
+Bambu P1S,Dormer,Dormer_face_track_P1S_part01.3mf,Dormer_face_track,1,Dormer_face_track_mortar,2,WHITE,White,White,1.07,1
+Bambu P1S,Dormer,Dormer_windows_P1S_part01.3mf,Dormer_windows,1,Dormer_windows,1,GREEN,Pullman green,Forest Green,11.82,1
+Bambu P1S,Electronics,Electronics_cover_P1S_part01.3mf,Electronics_cover,1,Electronics_cover,1,BLACK,Black,Black,45.22,1
+Bambu P1S,Electronics,Electronics_tray_P1S_part01.3mf,Electronics_tray,1,Electronics_tray,1,BLACK,Black,Black,12.82,1
+Bambu P1S,Floor,Floor_annex_P1S_part01.3mf,Floor_annex,1,Floor_annex,1,WHITE,White,White,13.47,1
+Bambu P1S,Floor,Floor_annex_P1S_part01.3mf,Floor_annex,1,Floor_annex_dark,2,BLACK,Black,Black,3.21,1
+Bambu P1S,Floor,Floor_baggage_P1S_part01.3mf,Floor_baggage,1,Floor_baggage,1,BROWN,Wood brown,Peanut Brown,19.05,1
+Bambu P1S,Floor,Floor_baggage_P1S_part02.3mf,Floor_baggage,2,Floor_baggage,1,BROWN,Wood brown,Peanut Brown,19.07,1
+Bambu P1S,Floor,Floor_baggage_P1S_part03.3mf,Floor_baggage,3,Floor_baggage,1,BROWN,Wood brown,Peanut Brown,19.05,1
+Bambu P1S,Floor,Floor_baggage_P1S_part04.3mf,Floor_baggage,4,Floor_baggage,1,BROWN,Wood brown,Peanut Brown,19.07,1
+Bambu P1S,Floor,Floor_express_P1S_part01.3mf,Floor_express,1,Floor_express,1,BROWN,Wood brown,Peanut Brown,20.23,1
+Bambu P1S,Floor,Floor_express_P1S_part02.3mf,Floor_express,2,Floor_express,1,BROWN,Wood brown,Peanut Brown,20.23,1
+Bambu P1S,Floor,Floor_kitchen_P1S_part01.3mf,Floor_kitchen,1,Floor_kitchen,1,WHITE,White,White,13.2,1
+Bambu P1S,Floor,Floor_kitchen_P1S_part01.3mf,Floor_kitchen,1,Floor_kitchen_dark,2,BLACK,Black,Black,3.29,1
+Bambu P1S,Floor,Floor_lunch_P1S_part01.3mf,Floor_lunch,1,Floor_lunch,1,WHITE,White,White,15.96,1
+Bambu P1S,Floor,Floor_lunch_P1S_part01.3mf,Floor_lunch,1,Floor_lunch_dark,2,BLACK,Black,Black,4.01,1
+Bambu P1S,Floor,Floor_lunch_P1S_part02.3mf,Floor_lunch,2,Floor_lunch,1,WHITE,White,White,15.37,1
+Bambu P1S,Floor,Floor_lunch_P1S_part02.3mf,Floor_lunch,2,Floor_lunch_dark,2,BLACK,Black,Black,3.83,1
+Bambu P1S,Floor,Floor_lunch_P1S_part03.3mf,Floor_lunch,3,Floor_lunch,1,WHITE,White,White,15.96,1
+Bambu P1S,Floor,Floor_lunch_P1S_part03.3mf,Floor_lunch,3,Floor_lunch_dark,2,BLACK,Black,Black,4.0,1
+Bambu P1S,Floor,Floor_lunch_P1S_part04.3mf,Floor_lunch,4,Floor_lunch,1,WHITE,White,White,3.06,1
+Bambu P1S,Floor,Floor_lunch_P1S_part04.3mf,Floor_lunch,4,Floor_lunch_dark,2,BLACK,Black,Black,0.73,1
+Bambu P1S,Floor,Floor_mens_P1S_part01.3mf,Floor_mens,1,Floor_mens,1,WHITE,White,White,13.3,1
+Bambu P1S,Floor,Floor_mens_P1S_part01.3mf,Floor_mens,1,Floor_mens_dark,2,BLACK,Black,Black,3.33,1
+Bambu P1S,Floor,Floor_passage_P1S_part01.3mf,Floor_passage,1,Floor_passage,1,BRICK,Brick red,Red,18.55,1
+Bambu P1S,Floor,Floor_passage_P1S_part01.3mf,Floor_passage,1,Floor_passage_dark,2,SLATE,Slate gray,Dark Gray,1.19,1
+Bambu P1S,Floor,Floor_smoking_P1S_part01.3mf,Floor_smoking,1,Floor_smoking,1,BRICK,Brick red,Red,21.4,1
+Bambu P1S,Floor,Floor_smoking_P1S_part01.3mf,Floor_smoking,1,Floor_smoking_dark,2,SLATE,Slate gray,Dark Gray,1.28,1
+Bambu P1S,Floor,Floor_smoking_P1S_part02.3mf,Floor_smoking,2,Floor_smoking,1,BRICK,Brick red,Red,21.35,1
+Bambu P1S,Floor,Floor_smoking_P1S_part02.3mf,Floor_smoking,2,Floor_smoking_dark,2,SLATE,Slate gray,Dark Gray,1.3,1
+Bambu P1S,Floor,Floor_smoking_P1S_part03.3mf,Floor_smoking,3,Floor_smoking,1,BRICK,Brick red,Red,21.38,1
+Bambu P1S,Floor,Floor_smoking_P1S_part03.3mf,Floor_smoking,3,Floor_smoking_dark,2,SLATE,Slate gray,Dark Gray,1.3,1
+Bambu P1S,Floor,Floor_smoking_P1S_part04.3mf,Floor_smoking,4,Floor_smoking,1,BRICK,Brick red,Red,21.33,1
+Bambu P1S,Floor,Floor_smoking_P1S_part04.3mf,Floor_smoking,4,Floor_smoking_dark,2,SLATE,Slate gray,Dark Gray,1.32,1
+Bambu P1S,Floor,Floor_ticket_P1S_part01.3mf,Floor_ticket,1,Floor_ticket,1,BROWN,Wood brown,Peanut Brown,19.7,1
+Bambu P1S,Floor,Floor_trainorder_P1S_part01.3mf,Floor_trainorder,1,Floor_trainorder,1,BROWN,Wood brown,Peanut Brown,5.6,1
+Bambu P1S,Floor,Floor_vestibule_P1S_part01.3mf,Floor_vestibule,1,Floor_vestibule,1,BRICK,Brick red,Red,10.76,1
+Bambu P1S,Floor,Floor_vestibule_P1S_part01.3mf,Floor_vestibule,1,Floor_vestibule_dark,2,SLATE,Slate gray,Dark Gray,0.66,1
+Bambu P1S,Floor,Floor_waiting_P1S_part01.3mf,Floor_waiting,1,Floor_waiting,1,BRICK,Brick red,Red,31.62,1
+Bambu P1S,Floor,Floor_waiting_P1S_part01.3mf,Floor_waiting,1,Floor_waiting_dark,2,SLATE,Slate gray,Dark Gray,1.89,1
+Bambu P1S,Floor,Floor_waiting_P1S_part02.3mf,Floor_waiting,2,Floor_waiting,1,BRICK,Brick red,Red,31.65,1
+Bambu P1S,Floor,Floor_waiting_P1S_part02.3mf,Floor_waiting,2,Floor_waiting_dark,2,SLATE,Slate gray,Dark Gray,1.89,1
+Bambu P1S,Floor,Floor_waiting_P1S_part03.3mf,Floor_waiting,3,Floor_waiting,1,BRICK,Brick red,Red,31.6,1
+Bambu P1S,Floor,Floor_waiting_P1S_part03.3mf,Floor_waiting,3,Floor_waiting_dark,2,SLATE,Slate gray,Dark Gray,1.92,1
+Bambu P1S,Floor,Floor_waiting_P1S_part04.3mf,Floor_waiting,4,Floor_waiting,1,BRICK,Brick red,Red,31.63,1
+Bambu P1S,Floor,Floor_waiting_P1S_part04.3mf,Floor_waiting,4,Floor_waiting_dark,2,SLATE,Slate gray,Dark Gray,1.92,1
+Bambu P1S,Floor,Floor_womens_P1S_part01.3mf,Floor_womens,1,Floor_womens,1,WHITE,White,White,7.76,1
+Bambu P1S,Floor,Floor_womens_P1S_part01.3mf,Floor_womens,1,Floor_womens_dark,2,BLACK,Black,Black,1.95,1
+Bambu P1S,Foundation,Foundation_baggage_P1S_part01.3mf,Foundation_baggage,1,Foundation_baggage,1,GRAY,Light gray,Gray,165.5,1
+Bambu P1S,Foundation,Foundation_baggage_P1S_part02.3mf,Foundation_baggage,2,Foundation_baggage,1,GRAY,Light gray,Gray,165.53,1
+Bambu P1S,Foundation,Foundation_baggage_P1S_part03.3mf,Foundation_baggage,3,Foundation_baggage,1,GRAY,Light gray,Gray,165.2,1
+Bambu P1S,Foundation,Foundation_baggage_P1S_part04.3mf,Foundation_baggage,4,Foundation_baggage,1,GRAY,Light gray,Gray,165.23,1
+Bambu P1S,Foundation,Foundation_main_P1S_part01.3mf,Foundation_main,1,Foundation_main,1,GRAY,Light gray,Gray,184.42,1
+Bambu P1S,Foundation,Foundation_main_P1S_part02.3mf,Foundation_main,2,Foundation_main,1,GRAY,Light gray,Gray,201.22,1
+Bambu P1S,Foundation,Foundation_main_P1S_part03.3mf,Foundation_main,3,Foundation_main,1,GRAY,Light gray,Gray,209.21,1
+Bambu P1S,Foundation,Foundation_main_P1S_part04.3mf,Foundation_main,4,Foundation_main,1,GRAY,Light gray,Gray,189.4,1
+Bambu P1S,Foundation,Foundation_main_P1S_part05.3mf,Foundation_main,5,Foundation_main,1,GRAY,Light gray,Gray,185.74,1
+Bambu P1S,Foundation,Foundation_main_P1S_part06.3mf,Foundation_main,6,Foundation_main,1,GRAY,Light gray,Gray,178.63,1
+Bambu P1S,Foundation,Foundation_main_P1S_part07.3mf,Foundation_main,7,Foundation_main,1,GRAY,Light gray,Gray,180.77,1
+Bambu P1S,Foundation,Foundation_main_P1S_part08.3mf,Foundation_main,8,Foundation_main,1,GRAY,Light gray,Gray,201.51,1
+Bambu P1S,Foundation,Foundation_main_P1S_part09.3mf,Foundation_main,9,Foundation_main,1,GRAY,Light gray,Gray,211.87,1
+Bambu P1S,Foundation,Foundation_main_P1S_part10.3mf,Foundation_main,10,Foundation_main,1,GRAY,Light gray,Gray,185.62,1
+Bambu P1S,Foundation,Foundation_main_P1S_part11.3mf,Foundation_main,11,Foundation_main,1,GRAY,Light gray,Gray,166.38,1
+Bambu P1S,Foundation,Foundation_main_P1S_part12.3mf,Foundation_main,12,Foundation_main,1,GRAY,Light gray,Gray,133.81,1
+Bambu P1S,Furniture,Furniture_backbar_P1S_part01.3mf,Furniture_backbar,1,Furniture_backbar,1,BROWN,Wood brown,Peanut Brown,20.85,1
+Bambu P1S,Furniture,Furniture_baggage_truck_P1S_part01.3mf,Furniture_baggage_truck,1,Furniture_baggage_truck,1,BROWN,Wood brown,Peanut Brown,14.42,2
+Bambu P1S,Furniture,Furniture_bench_double_P1S_part01.3mf,Furniture_bench_double,1,Furniture_bench_double,1,BROWN,Wood brown,Peanut Brown,33.14,6
+Bambu P1S,Furniture,Furniture_bench_single_P1S_part01.3mf,Furniture_bench_single,1,Furniture_bench_single,1,BROWN,Wood brown,Peanut Brown,13.46,2
+Bambu P1S,Furniture,Furniture_bulletin_P1S_part01.3mf,Furniture_bulletin,1,Furniture_bulletin,1,BLACK,Black,Black,7.3,1
+Bambu P1S,Furniture,Furniture_bulletin_P1S_part01.3mf,Furniture_bulletin,1,Furniture_bulletin_white,2,WHITE,White,White,0.65,1
+Bambu P1S,Furniture,Furniture_chair_P1S_part01.3mf,Furniture_chair,1,Furniture_chair,1,BROWN,Wood brown,Peanut Brown,1.91,8
+Bambu P1S,Furniture,Furniture_desk_P1S_part01.3mf,Furniture_desk,1,Furniture_desk,1,BROWN,Wood brown,Peanut Brown,8.24,1
+Bambu P1S,Furniture,Furniture_kitchen_sink_P1S_part01.3mf,Furniture_kitchen_sink,1,Furniture_kitchen_sink,1,WHITE,White,White,3.5,1
+Bambu P1S,Furniture,Furniture_lunch_counter_P1S_part01.3mf,Furniture_lunch_counter,1,Furniture_lunch_counter,1,BROWN,Wood brown,Peanut Brown,23.2,1
+Bambu P1S,Furniture,Furniture_mirror_P1S_part01.3mf,Furniture_mirror,1,Furniture_mirror,1,GRAY,Light gray,Gray,0.24,2
+Bambu P1S,Furniture,Furniture_radiator_P1S_part01.3mf,Furniture_radiator,1,Furniture_radiator,1,SLATE,Slate gray,Dark Gray,5.42,6
+Bambu P1S,Furniture,Furniture_range_P1S_part01.3mf,Furniture_range,1,Furniture_range,1,BLACK,Black,Black,33.75,1
+Bambu P1S,Furniture,Furniture_safe_P1S_part01.3mf,Furniture_safe,1,Furniture_safe,1,BLACK,Black,Black,29.5,1
+Bambu P1S,Furniture,Furniture_scale_P1S_part01.3mf,Furniture_scale,1,Furniture_scale,1,BLACK,Black,Black,4.63,1
+Bambu P1S,Furniture,Furniture_sink_P1S_part01.3mf,Furniture_sink,1,Furniture_sink,1,WHITE,White,White,1.91,2
+Bambu P1S,Furniture,Furniture_stools_P1S_part01.3mf,Furniture_stools,1,Furniture_stools,1,BROWN,Wood brown,Peanut Brown,2.13,1
+Bambu P1S,Furniture,Furniture_table_P1S_part01.3mf,Furniture_table,1,Furniture_table,1,BROWN,Wood brown,Peanut Brown,1.7,2
+Bambu P1S,Furniture,Furniture_ticket_case_P1S_part01.3mf,Furniture_ticket_case,1,Furniture_ticket_case,1,BROWN,Wood brown,Peanut Brown,13.23,1
+Bambu P1S,Furniture,Furniture_ticket_clock_P1S_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock,1,BROWN,Wood brown,Peanut Brown,0.87,2
+Bambu P1S,Furniture,Furniture_ticket_clock_P1S_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_black,2,BLACK,Black,Black,0.04,2
+Bambu P1S,Furniture,Furniture_ticket_clock_P1S_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_brass,3,BRASS,Brass,Yellow,0.01,2
+Bambu P1S,Furniture,Furniture_ticket_clock_P1S_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_face,4,CREAM,Cream / buff,Cream,0.06,2
+Bambu P1S,Furniture,Furniture_ticket_grilles_P1S_part01.3mf,Furniture_ticket_grilles,1,Furniture_ticket_grilles,1,BRASS,Brass,Yellow,2.1,1
+Bambu P1S,Furniture,Furniture_toilet_P1S_part01.3mf,Furniture_toilet,1,Furniture_toilet,1,WHITE,White,White,4.3,2
+Bambu P1S,Gable,Gable_baggage_east_P1S_part01.3mf,Gable_baggage_east,1,Gable_baggage_east,1,BRICK,Brick red,Red,39.3,1
+Bambu P1S,Gable,Gable_baggage_east_P1S_part01.3mf,Gable_baggage_east,1,Gable_baggage_east_mortar,2,WHITE,White,White,0.45,1
+Bambu P1S,Gable,Gable_baggage_east_P1S_part02.3mf,Gable_baggage_east,2,Gable_baggage_east,1,BRICK,Brick red,Red,39.3,1
+Bambu P1S,Gable,Gable_baggage_east_P1S_part02.3mf,Gable_baggage_east,2,Gable_baggage_east_mortar,2,WHITE,White,White,0.45,1
+Bambu P1S,Gable,Gable_baggage_west_P1S_part01.3mf,Gable_baggage_west,1,Gable_baggage_west,1,BRICK,Brick red,Red,39.3,1
+Bambu P1S,Gable,Gable_baggage_west_P1S_part01.3mf,Gable_baggage_west,1,Gable_baggage_west_mortar,2,WHITE,White,White,0.45,1
+Bambu P1S,Gable,Gable_baggage_west_P1S_part02.3mf,Gable_baggage_west,2,Gable_baggage_west,1,BRICK,Brick red,Red,39.3,1
+Bambu P1S,Gable,Gable_baggage_west_P1S_part02.3mf,Gable_baggage_west,2,Gable_baggage_west_mortar,2,WHITE,White,White,0.45,1
+Bambu P1S,Gable,Gable_lunch_east_P1S_part01.3mf,Gable_lunch_east,1,Gable_lunch_east,1,BRICK,Brick red,Red,60.95,1
+Bambu P1S,Gable,Gable_lunch_east_P1S_part01.3mf,Gable_lunch_east,1,Gable_lunch_east_mortar,2,WHITE,White,White,0.7,1
+Bambu P1S,Gable,Gable_lunch_east_P1S_part02.3mf,Gable_lunch_east,2,Gable_lunch_east,1,BRICK,Brick red,Red,38.19,1
+Bambu P1S,Gable,Gable_lunch_east_P1S_part02.3mf,Gable_lunch_east,2,Gable_lunch_east_mortar,2,WHITE,White,White,0.44,1
+Bambu P1S,Interior,Interior_B1_baggage_express_P1S_part01.3mf,Interior_B1_baggage_express,1,Interior_B1_baggage_express,1,CREAM,Cream / buff,Cream,56.05,1
+Bambu P1S,Interior,Interior_B1_baggage_express_P1S_part02.3mf,Interior_B1_baggage_express,2,Interior_B1_baggage_express,1,CREAM,Cream / buff,Cream,46.14,1
+Bambu P1S,Interior,Interior_K1_kitchen_P1S_part01.3mf,Interior_K1_kitchen,1,Interior_K1_kitchen,1,CREAM,Cream / buff,Cream,33.45,1
+Bambu P1S,Interior,Interior_P1_ticket_passage_P1S_part01.3mf,Interior_P1_ticket_passage,1,Interior_P1_ticket_passage,1,CREAM,Cream / buff,Cream,53.98,1
+Bambu P1S,Interior,Interior_P2_ticket_trainorder_P1S_part01.3mf,Interior_P2_ticket_trainorder,1,Interior_P2_ticket_trainorder,1,CREAM,Cream / buff,Cream,30.25,1
+Bambu P1S,Interior,Interior_P3_passage_town_P1S_part01.3mf,Interior_P3_passage_town,1,Interior_P3_passage_town,1,CREAM,Cream / buff,Cream,36.16,1
+Bambu P1S,Interior,Interior_P4_toilet_vestibule_P1S_part01.3mf,Interior_P4_toilet_vestibule,1,Interior_P4_toilet_vestibule,1,CREAM,Cream / buff,Cream,33.14,1
+Bambu P1S,Interior,Interior_S1_smoking_east_P1S_part01.3mf,Interior_S1_smoking_east,1,Interior_S1_smoking_east,1,CREAM,Cream / buff,Cream,106.84,1
+Bambu P1S,Interior,Interior_S1_smoking_east_P1S_part02.3mf,Interior_S1_smoking_east,2,Interior_S1_smoking_east,1,CREAM,Cream / buff,Cream,116.75,1
+Bambu P1S,Interior,Interior_S2_menstoilet_P1S_part01.3mf,Interior_S2_menstoilet,1,Interior_S2_menstoilet,1,CREAM,Cream / buff,Cream,3.92,1
+Bambu P1S,Interior,Interior_W1_waiting_pavilion_P1S_part01.3mf,Interior_W1_waiting_pavilion,1,Interior_W1_waiting_pavilion,1,CREAM,Cream / buff,Cream,105.9,1
+Bambu P1S,Interior,Interior_W1_waiting_pavilion_P1S_part02.3mf,Interior_W1_waiting_pavilion,2,Interior_W1_waiting_pavilion,1,CREAM,Cream / buff,Cream,106.09,1
+Bambu P1S,Interior,Interior_W2_pavilion_smoking_P1S_part01.3mf,Interior_W2_pavilion_smoking,1,Interior_W2_pavilion_smoking,1,CREAM,Cream / buff,Cream,110.52,1
+Bambu P1S,Interior,Interior_W2_pavilion_smoking_P1S_part02.3mf,Interior_W2_pavilion_smoking,2,Interior_W2_pavilion_smoking,1,CREAM,Cream / buff,Cream,106.09,1
+Bambu P1S,Light,Light_bar_main_P1S_part01.3mf,Light_bar_main,1,Light_bar_main,1,WHITE,White,White,2.61,1
+Bambu P1S,Light,Light_bar_main_P1S_part02.3mf,Light_bar_main,2,Light_bar_main,1,WHITE,White,White,2.61,1
+Bambu P1S,Light,Light_bar_short_P1S_part01.3mf,Light_bar_short,1,Light_bar_short,1,WHITE,White,White,2.05,1
+Bambu P1S,Light,Light_bar_short_P1S_part02.3mf,Light_bar_short,2,Light_bar_short,1,WHITE,White,White,2.05,1
+Bambu P1S,Light,Light_clips_P1S_part01.3mf,Light_clips,1,Light_clips,1,WHITE,White,White,3.03,1
+Bambu P1S,Light,Light_splices_P1S_part01.3mf,Light_splices,1,Light_splices,1,WHITE,White,White,1.22,1
+Bambu P1S,Liner,Liner_B1_baggage_P1S_part01.3mf,Liner_B1_baggage,1,Liner_B1_baggage,1,CREAM,Cream / buff,Cream,4.3,1
+Bambu P1S,Liner,Liner_B1_baggage_P1S_part01.3mf,Liner_B1_baggage,1,Liner_B1_baggage_pine,2,BROWN,Wood brown,Peanut Brown,5.22,1
+Bambu P1S,Liner,Liner_B1_baggage_P1S_part02.3mf,Liner_B1_baggage,2,Liner_B1_baggage,1,CREAM,Cream / buff,Cream,5.12,1
+Bambu P1S,Liner,Liner_B1_baggage_P1S_part02.3mf,Liner_B1_baggage,2,Liner_B1_baggage_pine,2,BROWN,Wood brown,Peanut Brown,6.13,1
+Bambu P1S,Liner,Liner_B1_express_P1S_part01.3mf,Liner_B1_express,1,Liner_B1_express,1,CREAM,Cream / buff,Cream,5.12,1
+Bambu P1S,Liner,Liner_B1_express_P1S_part01.3mf,Liner_B1_express,1,Liner_B1_express_pine,2,BROWN,Wood brown,Peanut Brown,6.13,1
+Bambu P1S,Liner,Liner_B1_express_P1S_part02.3mf,Liner_B1_express,2,Liner_B1_express,1,CREAM,Cream / buff,Cream,4.3,1
+Bambu P1S,Liner,Liner_B1_express_P1S_part02.3mf,Liner_B1_express,2,Liner_B1_express_pine,2,BROWN,Wood brown,Peanut Brown,5.22,1
+Bambu P1S,Liner,Liner_BE_express_P1S_part01.3mf,Liner_BE_express,1,Liner_BE_express,1,CREAM,Cream / buff,Cream,4.56,1
+Bambu P1S,Liner,Liner_BE_express_P1S_part01.3mf,Liner_BE_express,1,Liner_BE_express_pine,2,BROWN,Wood brown,Peanut Brown,6.06,1
+Bambu P1S,Liner,Liner_BE_express_P1S_part02.3mf,Liner_BE_express,2,Liner_BE_express,1,CREAM,Cream / buff,Cream,4.56,1
+Bambu P1S,Liner,Liner_BE_express_P1S_part02.3mf,Liner_BE_express,2,Liner_BE_express_pine,2,BROWN,Wood brown,Peanut Brown,6.06,1
+Bambu P1S,Liner,Liner_BN_baggage_P1S_part01.3mf,Liner_BN_baggage,1,Liner_BN_baggage,1,CREAM,Cream / buff,Cream,3.89,1
+Bambu P1S,Liner,Liner_BN_baggage_P1S_part01.3mf,Liner_BN_baggage,1,Liner_BN_baggage_pine,2,BROWN,Wood brown,Peanut Brown,5.44,1
+Bambu P1S,Liner,Liner_BN_baggage_P1S_part02.3mf,Liner_BN_baggage,2,Liner_BN_baggage,1,CREAM,Cream / buff,Cream,5.03,1
+Bambu P1S,Liner,Liner_BN_baggage_P1S_part02.3mf,Liner_BN_baggage,2,Liner_BN_baggage_pine,2,BROWN,Wood brown,Peanut Brown,7.33,1
+Bambu P1S,Liner,Liner_BN_express_P1S_part01.3mf,Liner_BN_express,1,Liner_BN_express,1,CREAM,Cream / buff,Cream,4.3,1
+Bambu P1S,Liner,Liner_BN_express_P1S_part01.3mf,Liner_BN_express,1,Liner_BN_express_pine,2,BROWN,Wood brown,Peanut Brown,5.92,1
+Bambu P1S,Liner,Liner_BT_baggage_P1S_part01.3mf,Liner_BT_baggage,1,Liner_BT_baggage,1,CREAM,Cream / buff,Cream,5.03,1
+Bambu P1S,Liner,Liner_BT_baggage_P1S_part01.3mf,Liner_BT_baggage,1,Liner_BT_baggage_pine,2,BROWN,Wood brown,Peanut Brown,7.32,1
+Bambu P1S,Liner,Liner_BT_baggage_P1S_part02.3mf,Liner_BT_baggage,2,Liner_BT_baggage,1,CREAM,Cream / buff,Cream,3.89,1
+Bambu P1S,Liner,Liner_BT_baggage_P1S_part02.3mf,Liner_BT_baggage,2,Liner_BT_baggage_pine,2,BROWN,Wood brown,Peanut Brown,5.45,1
+Bambu P1S,Liner,Liner_BT_express_P1S_part01.3mf,Liner_BT_express,1,Liner_BT_express,1,CREAM,Cream / buff,Cream,4.3,1
+Bambu P1S,Liner,Liner_BT_express_P1S_part01.3mf,Liner_BT_express,1,Liner_BT_express_pine,2,BROWN,Wood brown,Peanut Brown,5.93,1
+Bambu P1S,Liner,Liner_BW_baggage_P1S_part01.3mf,Liner_BW_baggage,1,Liner_BW_baggage,1,CREAM,Cream / buff,Cream,4.56,1
+Bambu P1S,Liner,Liner_BW_baggage_P1S_part01.3mf,Liner_BW_baggage,1,Liner_BW_baggage_pine,2,BROWN,Wood brown,Peanut Brown,6.06,1
+Bambu P1S,Liner,Liner_BW_baggage_P1S_part02.3mf,Liner_BW_baggage,2,Liner_BW_baggage,1,CREAM,Cream / buff,Cream,4.56,1
+Bambu P1S,Liner,Liner_BW_baggage_P1S_part02.3mf,Liner_BW_baggage,2,Liner_BW_baggage_pine,2,BROWN,Wood brown,Peanut Brown,6.06,1
+Bambu P1S,Liner,Liner_K1_kitchen_P1S_part01.3mf,Liner_K1_kitchen,1,Liner_K1_kitchen,1,CREAM,Cream / buff,Cream,3.49,1
+Bambu P1S,Liner,Liner_K1_kitchen_P1S_part01.3mf,Liner_K1_kitchen,1,Liner_K1_kitchen_pine,2,BROWN,Wood brown,Peanut Brown,5.65,1
+Bambu P1S,Liner,Liner_K1_lunch_P1S_part01.3mf,Liner_K1_lunch,1,Liner_K1_lunch,1,CREAM,Cream / buff,Cream,3.49,1
+Bambu P1S,Liner,Liner_K1_lunch_P1S_part01.3mf,Liner_K1_lunch,1,Liner_K1_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.65,1
+Bambu P1S,Liner,Liner_LE_lunch_P1S_part01.3mf,Liner_LE_lunch,1,Liner_LE_lunch,1,CREAM,Cream / buff,Cream,2.48,1
+Bambu P1S,Liner,Liner_LE_lunch_P1S_part01.3mf,Liner_LE_lunch,1,Liner_LE_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.48,1
+Bambu P1S,Liner,Liner_LE_lunch_P1S_part02.3mf,Liner_LE_lunch,2,Liner_LE_lunch,1,CREAM,Cream / buff,Cream,2.48,1
+Bambu P1S,Liner,Liner_LE_lunch_P1S_part02.3mf,Liner_LE_lunch,2,Liner_LE_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.49,1
+Bambu P1S,Liner,Liner_LN_kitchen_P1S_part01.3mf,Liner_LN_kitchen,1,Liner_LN_kitchen,1,CREAM,Cream / buff,Cream,2.23,1
+Bambu P1S,Liner,Liner_LN_kitchen_P1S_part01.3mf,Liner_LN_kitchen,1,Liner_LN_kitchen_pine,2,BROWN,Wood brown,Peanut Brown,5.46,1
+Bambu P1S,Liner,Liner_LN_lunch_P1S_part01.3mf,Liner_LN_lunch,1,Liner_LN_lunch,1,CREAM,Cream / buff,Cream,2.86,1
+Bambu P1S,Liner,Liner_LN_lunch_P1S_part01.3mf,Liner_LN_lunch,1,Liner_LN_lunch_pine,2,BROWN,Wood brown,Peanut Brown,7.38,1
+Bambu P1S,Liner,Liner_LT_lunch_P1S_part01.3mf,Liner_LT_lunch,1,Liner_LT_lunch,1,CREAM,Cream / buff,Cream,3.38,1
+Bambu P1S,Liner,Liner_LT_lunch_P1S_part01.3mf,Liner_LT_lunch,1,Liner_LT_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.74,1
+Bambu P1S,Liner,Liner_LT_lunch_P1S_part02.3mf,Liner_LT_lunch,2,Liner_LT_lunch,1,CREAM,Cream / buff,Cream,3.48,1
+Bambu P1S,Liner,Liner_LT_lunch_P1S_part02.3mf,Liner_LT_lunch,2,Liner_LT_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.92,1
+Bambu P1S,Liner,Liner_ME_annex_P1S_part01.3mf,Liner_ME_annex,1,Liner_ME_annex,1,CREAM,Cream / buff,Cream,1.22,1
+Bambu P1S,Liner,Liner_ME_annex_P1S_part01.3mf,Liner_ME_annex,1,Liner_ME_annex_pine,2,BROWN,Wood brown,Peanut Brown,2.12,1
+Bambu P1S,Liner,Liner_ME_lunch_P1S_part01.3mf,Liner_ME_lunch,1,Liner_ME_lunch,1,CREAM,Cream / buff,Cream,0.04,1
+Bambu P1S,Liner,Liner_ME_lunch_P1S_part01.3mf,Liner_ME_lunch,1,Liner_ME_lunch_pine,2,BROWN,Wood brown,Peanut Brown,0.21,1
+Bambu P1S,Liner,Liner_ME_lunch_P1S_part02.3mf,Liner_ME_lunch,2,Liner_ME_lunch,1,CREAM,Cream / buff,Cream,5.05,1
+Bambu P1S,Liner,Liner_ME_lunch_P1S_part02.3mf,Liner_ME_lunch,2,Liner_ME_lunch_pine,2,BROWN,Wood brown,Peanut Brown,6.31,1
+Bambu P1S,Liner,Liner_ME_mens_P1S_part01.3mf,Liner_ME_mens,1,Liner_ME_mens,1,CREAM,Cream / buff,Cream,6.41,1
+Bambu P1S,Liner,Liner_ME_mens_P1S_part01.3mf,Liner_ME_mens,1,Liner_ME_mens_pine,2,BROWN,Wood brown,Peanut Brown,7.68,1
+Bambu P1S,Liner,Liner_MN_mens_P1S_part01.3mf,Liner_MN_mens,1,Liner_MN_mens,1,CREAM,Cream / buff,Cream,2.54,1
+Bambu P1S,Liner,Liner_MN_mens_P1S_part01.3mf,Liner_MN_mens,1,Liner_MN_mens_pine,2,BROWN,Wood brown,Peanut Brown,5.34,1
+Bambu P1S,Liner,Liner_MN_smoking_P1S_part01.3mf,Liner_MN_smoking,1,Liner_MN_smoking,1,CREAM,Cream / buff,Cream,10.72,1
+Bambu P1S,Liner,Liner_MN_smoking_P1S_part01.3mf,Liner_MN_smoking,1,Liner_MN_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.64,1
+Bambu P1S,Liner,Liner_MN_smoking_P1S_part02.3mf,Liner_MN_smoking,2,Liner_MN_smoking,1,CREAM,Cream / buff,Cream,10.8,1
+Bambu P1S,Liner,Liner_MN_smoking_P1S_part02.3mf,Liner_MN_smoking,2,Liner_MN_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.44,1
+Bambu P1S,Liner,Liner_MN_vestibule_P1S_part01.3mf,Liner_MN_vestibule,1,Liner_MN_vestibule,1,CREAM,Cream / buff,Cream,1.68,1
+Bambu P1S,Liner,Liner_MN_vestibule_P1S_part01.3mf,Liner_MN_vestibule,1,Liner_MN_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,2.15,1
+Bambu P1S,Liner,Liner_MN_waiting_P1S_part01.3mf,Liner_MN_waiting,1,Liner_MN_waiting,1,CREAM,Cream / buff,Cream,13.45,1
+Bambu P1S,Liner,Liner_MN_waiting_P1S_part01.3mf,Liner_MN_waiting,1,Liner_MN_waiting_pine,2,BROWN,Wood brown,Peanut Brown,9.19,1
+Bambu P1S,Liner,Liner_MN_waiting_P1S_part02.3mf,Liner_MN_waiting,2,Liner_MN_waiting,1,CREAM,Cream / buff,Cream,13.3,1
+Bambu P1S,Liner,Liner_MN_waiting_P1S_part02.3mf,Liner_MN_waiting,2,Liner_MN_waiting_pine,2,BROWN,Wood brown,Peanut Brown,9.19,1
+Bambu P1S,Liner,Liner_MN_womens_P1S_part01.3mf,Liner_MN_womens,1,Liner_MN_womens,1,CREAM,Cream / buff,Cream,1.5,1
+Bambu P1S,Liner,Liner_MN_womens_P1S_part01.3mf,Liner_MN_womens,1,Liner_MN_womens_pine,2,BROWN,Wood brown,Peanut Brown,2.04,1
+Bambu P1S,Liner,Liner_MT_annex_P1S_part01.3mf,Liner_MT_annex,1,Liner_MT_annex,1,CREAM,Cream / buff,Cream,2.54,1
+Bambu P1S,Liner,Liner_MT_annex_P1S_part01.3mf,Liner_MT_annex,1,Liner_MT_annex_pine,2,BROWN,Wood brown,Peanut Brown,5.34,1
+Bambu P1S,Liner,Liner_MT_smoking_P1S_part01.3mf,Liner_MT_smoking,1,Liner_MT_smoking,1,CREAM,Cream / buff,Cream,10.8,1
+Bambu P1S,Liner,Liner_MT_smoking_P1S_part01.3mf,Liner_MT_smoking,1,Liner_MT_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.44,1
+Bambu P1S,Liner,Liner_MT_smoking_P1S_part02.3mf,Liner_MT_smoking,2,Liner_MT_smoking,1,CREAM,Cream / buff,Cream,11.24,1
+Bambu P1S,Liner,Liner_MT_smoking_P1S_part02.3mf,Liner_MT_smoking,2,Liner_MT_smoking_pine,2,BROWN,Wood brown,Peanut Brown,5.11,1
+Bambu P1S,Liner,Liner_MT_trainorder_P1S_part01.3mf,Liner_MT_trainorder,1,Liner_MT_trainorder,1,CREAM,Cream / buff,Cream,0.64,1
+Bambu P1S,Liner,Liner_MT_trainorder_P1S_part01.3mf,Liner_MT_trainorder,1,Liner_MT_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,1.43,1
+Bambu P1S,Liner,Liner_MT_waiting_P1S_part01.3mf,Liner_MT_waiting,1,Liner_MT_waiting,1,CREAM,Cream / buff,Cream,14.26,1
+Bambu P1S,Liner,Liner_MT_waiting_P1S_part01.3mf,Liner_MT_waiting,1,Liner_MT_waiting_pine,2,BROWN,Wood brown,Peanut Brown,8.53,1
+Bambu P1S,Liner,Liner_MT_waiting_P1S_part02.3mf,Liner_MT_waiting,2,Liner_MT_waiting,1,CREAM,Cream / buff,Cream,14.17,1
+Bambu P1S,Liner,Liner_MT_waiting_P1S_part02.3mf,Liner_MT_waiting,2,Liner_MT_waiting_pine,2,BROWN,Wood brown,Peanut Brown,8.48,1
+Bambu P1S,Liner,Liner_MW_waiting_P1S_part01.3mf,Liner_MW_waiting,1,Liner_MW_waiting,1,CREAM,Cream / buff,Cream,14.47,1
+Bambu P1S,Liner,Liner_MW_waiting_P1S_part01.3mf,Liner_MW_waiting,1,Liner_MW_waiting_pine,2,BROWN,Wood brown,Peanut Brown,7.51,1
+Bambu P1S,Liner,Liner_MW_waiting_P1S_part02.3mf,Liner_MW_waiting,2,Liner_MW_waiting,1,CREAM,Cream / buff,Cream,14.47,1
+Bambu P1S,Liner,Liner_MW_waiting_P1S_part02.3mf,Liner_MW_waiting,2,Liner_MW_waiting_pine,2,BROWN,Wood brown,Peanut Brown,7.52,1
+Bambu P1S,Liner,Liner_P1_passage_P1S_part01.3mf,Liner_P1_passage,1,Liner_P1_passage,1,CREAM,Cream / buff,Cream,5.99,1
+Bambu P1S,Liner,Liner_P1_passage_P1S_part01.3mf,Liner_P1_passage,1,Liner_P1_passage_pine,2,BROWN,Wood brown,Peanut Brown,8.86,1
+Bambu P1S,Liner,Liner_P1_ticket_P1S_part01.3mf,Liner_P1_ticket,1,Liner_P1_ticket,1,CREAM,Cream / buff,Cream,4.73,1
+Bambu P1S,Liner,Liner_P1_ticket_P1S_part01.3mf,Liner_P1_ticket,1,Liner_P1_ticket_pine,2,BROWN,Wood brown,Peanut Brown,6.97,1
+Bambu P1S,Liner,Liner_P1_trainorder_P1S_part01.3mf,Liner_P1_trainorder,1,Liner_P1_trainorder,1,CREAM,Cream / buff,Cream,1.19,1
+Bambu P1S,Liner,Liner_P1_trainorder_P1S_part01.3mf,Liner_P1_trainorder,1,Liner_P1_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,1.6,1
+Bambu P1S,Liner,Liner_P2_ticket_P1S_part01.3mf,Liner_P2_ticket,1,Liner_P2_ticket,1,CREAM,Cream / buff,Cream,3.44,1
+Bambu P1S,Liner,Liner_P2_ticket_P1S_part01.3mf,Liner_P2_ticket,1,Liner_P2_ticket_pine,2,BROWN,Wood brown,Peanut Brown,4.84,1
+Bambu P1S,Liner,Liner_P2_trainorder_P1S_part01.3mf,Liner_P2_trainorder,1,Liner_P2_trainorder,1,CREAM,Cream / buff,Cream,3.44,1
+Bambu P1S,Liner,Liner_P2_trainorder_P1S_part01.3mf,Liner_P2_trainorder,1,Liner_P2_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,4.84,1
+Bambu P1S,Liner,Liner_P3_passage_P1S_part01.3mf,Liner_P3_passage,1,Liner_P3_passage,1,CREAM,Cream / buff,Cream,3.91,1
+Bambu P1S,Liner,Liner_P3_passage_P1S_part01.3mf,Liner_P3_passage,1,Liner_P3_passage_pine,2,BROWN,Wood brown,Peanut Brown,6.2,1
+Bambu P1S,Liner,Liner_P3_vestibule_P1S_part01.3mf,Liner_P3_vestibule,1,Liner_P3_vestibule,1,CREAM,Cream / buff,Cream,1.17,1
+Bambu P1S,Liner,Liner_P3_vestibule_P1S_part01.3mf,Liner_P3_vestibule,1,Liner_P3_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,2.21,1
+Bambu P1S,Liner,Liner_P3_womens_P1S_part01.3mf,Liner_P3_womens,1,Liner_P3_womens,1,CREAM,Cream / buff,Cream,2.64,1
+Bambu P1S,Liner,Liner_P3_womens_P1S_part01.3mf,Liner_P3_womens,1,Liner_P3_womens_pine,2,BROWN,Wood brown,Peanut Brown,3.78,1
+Bambu P1S,Liner,Liner_P4_vestibule_P1S_part01.3mf,Liner_P4_vestibule,1,Liner_P4_vestibule,1,CREAM,Cream / buff,Cream,3.77,1
+Bambu P1S,Liner,Liner_P4_vestibule_P1S_part01.3mf,Liner_P4_vestibule,1,Liner_P4_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Bambu P1S,Liner,Liner_P4_womens_P1S_part01.3mf,Liner_P4_womens,1,Liner_P4_womens,1,CREAM,Cream / buff,Cream,3.77,1
+Bambu P1S,Liner,Liner_P4_womens_P1S_part01.3mf,Liner_P4_womens,1,Liner_P4_womens_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Bambu P1S,Liner,Liner_S1_annex_P1S_part01.3mf,Liner_S1_annex,1,Liner_S1_annex,1,CREAM,Cream / buff,Cream,4.96,1
+Bambu P1S,Liner,Liner_S1_annex_P1S_part01.3mf,Liner_S1_annex,1,Liner_S1_annex_pine,2,BROWN,Wood brown,Peanut Brown,5.64,1
+Bambu P1S,Liner,Liner_S1_mens_P1S_part01.3mf,Liner_S1_mens,1,Liner_S1_mens,1,CREAM,Cream / buff,Cream,5.67,1
+Bambu P1S,Liner,Liner_S1_mens_P1S_part01.3mf,Liner_S1_mens,1,Liner_S1_mens_pine,2,BROWN,Wood brown,Peanut Brown,6.91,1
+Bambu P1S,Liner,Liner_S1_smoking_P1S_part01.3mf,Liner_S1_smoking,1,Liner_S1_smoking,1,CREAM,Cream / buff,Cream,16.65,1
+Bambu P1S,Liner,Liner_S1_smoking_P1S_part01.3mf,Liner_S1_smoking,1,Liner_S1_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.98,1
+Bambu P1S,Liner,Liner_S1_smoking_P1S_part02.3mf,Liner_S1_smoking,2,Liner_S1_smoking,1,CREAM,Cream / buff,Cream,15.93,1
+Bambu P1S,Liner,Liner_S1_smoking_P1S_part02.3mf,Liner_S1_smoking,2,Liner_S1_smoking_pine,2,BROWN,Wood brown,Peanut Brown,5.71,1
+Bambu P1S,Liner,Liner_S2_annex_P1S_part01.3mf,Liner_S2_annex,1,Liner_S2_annex,1,CREAM,Cream / buff,Cream,0.44,1
+Bambu P1S,Liner,Liner_S2_annex_P1S_part01.3mf,Liner_S2_annex,1,Liner_S2_annex_pine,2,BROWN,Wood brown,Peanut Brown,0.59,1
+Bambu P1S,Liner,Liner_S2_mens_P1S_part01.3mf,Liner_S2_mens,1,Liner_S2_mens,1,CREAM,Cream / buff,Cream,0.44,1
+Bambu P1S,Liner,Liner_S2_mens_P1S_part01.3mf,Liner_S2_mens,1,Liner_S2_mens_pine,2,BROWN,Wood brown,Peanut Brown,0.59,1
+Bambu P1S,Liner,Liner_W1_passage_P1S_part01.3mf,Liner_W1_passage,1,Liner_W1_passage,1,CREAM,Cream / buff,Cream,0.34,1
+Bambu P1S,Liner,Liner_W1_passage_P1S_part01.3mf,Liner_W1_passage,1,Liner_W1_passage_pine,2,BROWN,Wood brown,Peanut Brown,1.08,1
+Bambu P1S,Liner,Liner_W1_ticket_P1S_part01.3mf,Liner_W1_ticket,1,Liner_W1_ticket,1,CREAM,Cream / buff,Cream,4.11,1
+Bambu P1S,Liner,Liner_W1_ticket_P1S_part01.3mf,Liner_W1_ticket,1,Liner_W1_ticket_pine,2,BROWN,Wood brown,Peanut Brown,5.37,1
+Bambu P1S,Liner,Liner_W1_waiting_P1S_part01.3mf,Liner_W1_waiting,1,Liner_W1_waiting,1,CREAM,Cream / buff,Cream,15.22,1
+Bambu P1S,Liner,Liner_W1_waiting_P1S_part01.3mf,Liner_W1_waiting,1,Liner_W1_waiting_pine,2,BROWN,Wood brown,Peanut Brown,6.12,1
+Bambu P1S,Liner,Liner_W1_waiting_P1S_part02.3mf,Liner_W1_waiting,2,Liner_W1_waiting,1,CREAM,Cream / buff,Cream,15.16,1
+Bambu P1S,Liner,Liner_W1_waiting_P1S_part02.3mf,Liner_W1_waiting,2,Liner_W1_waiting_pine,2,BROWN,Wood brown,Peanut Brown,6.38,1
+Bambu P1S,Liner,Liner_W1_womens_P1S_part01.3mf,Liner_W1_womens,1,Liner_W1_womens,1,CREAM,Cream / buff,Cream,4.21,1
+Bambu P1S,Liner,Liner_W1_womens_P1S_part01.3mf,Liner_W1_womens,1,Liner_W1_womens_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Bambu P1S,Liner,Liner_W2_passage_P1S_part01.3mf,Liner_W2_passage,1,Liner_W2_passage,1,CREAM,Cream / buff,Cream,0.34,1
+Bambu P1S,Liner,Liner_W2_passage_P1S_part01.3mf,Liner_W2_passage,1,Liner_W2_passage_pine,2,BROWN,Wood brown,Peanut Brown,1.08,1
+Bambu P1S,Liner,Liner_W2_smoking_P1S_part01.3mf,Liner_W2_smoking,1,Liner_W2_smoking,1,CREAM,Cream / buff,Cream,15.68,1
+Bambu P1S,Liner,Liner_W2_smoking_P1S_part01.3mf,Liner_W2_smoking,1,Liner_W2_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.54,1
+Bambu P1S,Liner,Liner_W2_smoking_P1S_part02.3mf,Liner_W2_smoking,2,Liner_W2_smoking,1,CREAM,Cream / buff,Cream,15.22,1
+Bambu P1S,Liner,Liner_W2_smoking_P1S_part02.3mf,Liner_W2_smoking,2,Liner_W2_smoking_pine,2,BROWN,Wood brown,Peanut Brown,6.12,1
+Bambu P1S,Liner,Liner_W2_trainorder_P1S_part01.3mf,Liner_W2_trainorder,1,Liner_W2_trainorder,1,CREAM,Cream / buff,Cream,4.63,1
+Bambu P1S,Liner,Liner_W2_trainorder_P1S_part01.3mf,Liner_W2_trainorder,1,Liner_W2_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,5.54,1
+Bambu P1S,Liner,Liner_W2_vestibule_P1S_part01.3mf,Liner_W2_vestibule,1,Liner_W2_vestibule,1,CREAM,Cream / buff,Cream,4.21,1
+Bambu P1S,Liner,Liner_W2_vestibule_P1S_part01.3mf,Liner_W2_vestibule,1,Liner_W2_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Bambu P1S,People,People_children_P1S_part01.3mf,People_children,1,People_children,1,GRAY,Light gray,Gray,0.91,1
+Bambu P1S,People,People_children001_P1S_part01.3mf,People_children001,1,People_children001,1,GRAY,Light gray,Gray,0.65,1
+Bambu P1S,People,People_female_in_coat_P1S_part01.3mf,People_female_in_coat,1,People_female_in_coat,1,GRAY,Light gray,Gray,2.12,1
+Bambu P1S,People,People_female_in_coat_standing_P1S_part01.3mf,People_female_in_coat_standing,1,People_female_in_coat_standing,1,GRAY,Light gray,Gray,5.02,1
+Bambu P1S,People,People_female_sitting001_P1S_part01.3mf,People_female_sitting001,1,People_female_sitting001,1,GRAY,Light gray,Gray,3.09,1
+Bambu P1S,People,People_female_sitting002_P1S_part01.3mf,People_female_sitting002,1,People_female_sitting002,1,GRAY,Light gray,Gray,3.2,1
+Bambu P1S,People,People_female_sitting003_P1S_part01.3mf,People_female_sitting003,1,People_female_sitting003,1,GRAY,Light gray,Gray,3.25,1
+Bambu P1S,People,People_female_sitting004_P1S_part01.3mf,People_female_sitting004,1,People_female_sitting004,1,GRAY,Light gray,Gray,3.81,1
+Bambu P1S,People,People_female_sitting005_P1S_part01.3mf,People_female_sitting005,1,People_female_sitting005,1,GRAY,Light gray,Gray,3.33,1
+Bambu P1S,People,People_female_sitting006_P1S_part01.3mf,People_female_sitting006,1,People_female_sitting006,1,GRAY,Light gray,Gray,3.31,1
+Bambu P1S,People,People_female_sitting007_P1S_part01.3mf,People_female_sitting007,1,People_female_sitting007,1,GRAY,Light gray,Gray,2.56,1
+Bambu P1S,People,People_female_sitting008_P1S_part01.3mf,People_female_sitting008,1,People_female_sitting008,1,GRAY,Light gray,Gray,2.67,1
+Bambu P1S,People,People_female_sitting009_P1S_part01.3mf,People_female_sitting009,1,People_female_sitting009,1,GRAY,Light gray,Gray,3.23,1
+Bambu P1S,People,People_female_sitting010_P1S_part01.3mf,People_female_sitting010,1,People_female_sitting010,1,GRAY,Light gray,Gray,2.68,1
+Bambu P1S,People,People_female_sitting011_P1S_part01.3mf,People_female_sitting011,1,People_female_sitting011,1,GRAY,Light gray,Gray,3.01,1
+Bambu P1S,People,People_female_standing001_P1S_part01.3mf,People_female_standing001,1,People_female_standing001,1,GRAY,Light gray,Gray,3.47,1
+Bambu P1S,People,People_female_standing002_P1S_part01.3mf,People_female_standing002,1,People_female_standing002,1,GRAY,Light gray,Gray,2.83,1
+Bambu P1S,People,People_female_standing003_P1S_part01.3mf,People_female_standing003,1,People_female_standing003,1,GRAY,Light gray,Gray,2.29,1
+Bambu P1S,People,People_female_standing004_P1S_part01.3mf,People_female_standing004,1,People_female_standing004,1,GRAY,Light gray,Gray,5.29,1
+Bambu P1S,People,People_female_standing005_P1S_part01.3mf,People_female_standing005,1,People_female_standing005,1,GRAY,Light gray,Gray,4.94,1
+Bambu P1S,People,People_female_standing006_P1S_part01.3mf,People_female_standing006,1,People_female_standing006,1,GRAY,Light gray,Gray,3.03,1
+Bambu P1S,People,People_female_standing007_P1S_part01.3mf,People_female_standing007,1,People_female_standing007,1,GRAY,Light gray,Gray,3.52,1
+Bambu P1S,People,People_female_standing008_P1S_part01.3mf,People_female_standing008,1,People_female_standing008,1,GRAY,Light gray,Gray,2.66,1
+Bambu P1S,People,People_female_walking001_P1S_part01.3mf,People_female_walking001,1,People_female_walking001,1,GRAY,Light gray,Gray,1.77,1
+Bambu P1S,People,People_female_walking002_P1S_part01.3mf,People_female_walking002,1,People_female_walking002,1,GRAY,Light gray,Gray,3.08,1
+Bambu P1S,People,People_female_walking003_P1S_part01.3mf,People_female_walking003,1,People_female_walking003,1,GRAY,Light gray,Gray,3.83,1
+Bambu P1S,People,People_female_walking004_P1S_part01.3mf,People_female_walking004,1,People_female_walking004,1,GRAY,Light gray,Gray,2.38,1
+Bambu P1S,People,People_female_walking005_P1S_part01.3mf,People_female_walking005,1,People_female_walking005,1,GRAY,Light gray,Gray,2.5,1
+Bambu P1S,People,People_male_greets_P1S_part01.3mf,People_male_greets,1,People_male_greets,1,GRAY,Light gray,Gray,4.37,1
+Bambu P1S,People,People_male_sitting001_P1S_part01.3mf,People_male_sitting001,1,People_male_sitting001,1,GRAY,Light gray,Gray,3.78,1
+Bambu P1S,People,People_male_sitting002_P1S_part01.3mf,People_male_sitting002,1,People_male_sitting002,1,GRAY,Light gray,Gray,3.76,1
+Bambu P1S,People,People_male_sitting003_P1S_part01.3mf,People_male_sitting003,1,People_male_sitting003,1,GRAY,Light gray,Gray,5.96,1
+Bambu P1S,People,People_male_sitting004_P1S_part01.3mf,People_male_sitting004,1,People_male_sitting004,1,GRAY,Light gray,Gray,6.05,1
+Bambu P1S,People,People_male_sitting005_P1S_part01.3mf,People_male_sitting005,1,People_male_sitting005,1,GRAY,Light gray,Gray,5.08,1
+Bambu P1S,People,People_male_sitting006_P1S_part01.3mf,People_male_sitting006,1,People_male_sitting006,1,GRAY,Light gray,Gray,5.2,1
+Bambu P1S,People,People_male_sitting007_P1S_part01.3mf,People_male_sitting007,1,People_male_sitting007,1,GRAY,Light gray,Gray,6.96,1
+Bambu P1S,People,People_male_sitting008_P1S_part01.3mf,People_male_sitting008,1,People_male_sitting008,1,GRAY,Light gray,Gray,5.15,1
+Bambu P1S,People,People_male_sitting009_P1S_part01.3mf,People_male_sitting009,1,People_male_sitting009,1,GRAY,Light gray,Gray,8.08,1
+Bambu P1S,People,People_male_sitting010_P1S_part01.3mf,People_male_sitting010,1,People_male_sitting010,1,GRAY,Light gray,Gray,6.71,1
+Bambu P1S,People,People_male_sitting011_P1S_part01.3mf,People_male_sitting011,1,People_male_sitting011,1,GRAY,Light gray,Gray,5.21,1
+Bambu P1S,People,People_male_sitting012_P1S_part01.3mf,People_male_sitting012,1,People_male_sitting012,1,GRAY,Light gray,Gray,4.35,1
+Bambu P1S,People,People_male_standing001_P1S_part01.3mf,People_male_standing001,1,People_male_standing001,1,GRAY,Light gray,Gray,3.56,1
+Bambu P1S,People,People_male_standing002_P1S_part01.3mf,People_male_standing002,1,People_male_standing002,1,GRAY,Light gray,Gray,4.37,1
+Bambu P1S,People,People_male_standing003_P1S_part01.3mf,People_male_standing003,1,People_male_standing003,1,GRAY,Light gray,Gray,4.42,1
+Bambu P1S,People,People_male_standing004_P1S_part01.3mf,People_male_standing004,1,People_male_standing004,1,GRAY,Light gray,Gray,3.47,1
+Bambu P1S,People,People_male_standing005_P1S_part01.3mf,People_male_standing005,1,People_male_standing005,1,GRAY,Light gray,Gray,3.51,1
+Bambu P1S,People,People_male_standing006_P1S_part01.3mf,People_male_standing006,1,People_male_standing006,1,GRAY,Light gray,Gray,4.37,1
+Bambu P1S,People,People_male_standing007_P1S_part01.3mf,People_male_standing007,1,People_male_standing007,1,GRAY,Light gray,Gray,4.24,1
+Bambu P1S,People,People_male_standing008_P1S_part01.3mf,People_male_standing008,1,People_male_standing008,1,GRAY,Light gray,Gray,4.5,1
+Bambu P1S,People,People_male_standing009_P1S_part01.3mf,People_male_standing009,1,People_male_standing009,1,GRAY,Light gray,Gray,3.91,1
+Bambu P1S,People,People_male_standing010_P1S_part01.3mf,People_male_standing010,1,People_male_standing010,1,GRAY,Light gray,Gray,4.67,1
+Bambu P1S,People,People_male_standing011_P1S_part01.3mf,People_male_standing011,1,People_male_standing011,1,GRAY,Light gray,Gray,3.95,1
+Bambu P1S,People,People_male_standing012_P1S_part01.3mf,People_male_standing012,1,People_male_standing012,1,GRAY,Light gray,Gray,4.3,1
+Bambu P1S,People,People_male_walking001_P1S_part01.3mf,People_male_walking001,1,People_male_walking001,1,GRAY,Light gray,Gray,4.79,1
+Bambu P1S,People,People_male_walking002_P1S_part01.3mf,People_male_walking002,1,People_male_walking002,1,GRAY,Light gray,Gray,5.28,1
+Bambu P1S,People,People_male_walking003_P1S_part01.3mf,People_male_walking003,1,People_male_walking003,1,GRAY,Light gray,Gray,3.61,1
+Bambu P1S,People,People_male_walking004_P1S_part01.3mf,People_male_walking004,1,People_male_walking004,1,GRAY,Light gray,Gray,4.97,1
+Bambu P1S,People,People_male_walking005_P1S_part01.3mf,People_male_walking005,1,People_male_walking005,1,GRAY,Light gray,Gray,5.02,1
+Bambu P1S,People,People_man_adjusting_hat_P1S_part01.3mf,People_man_adjusting_hat,1,People_man_adjusting_hat,1,GRAY,Light gray,Gray,4.09,1
+Bambu P1S,People,People_smoking_man_P1S_part01.3mf,People_smoking_man,1,People_smoking_man,1,GRAY,Light gray,Gray,4.12,1
+Bambu P1S,People,People_woman_holding_a_child_P1S_part01.3mf,People_woman_holding_a_child,1,People_woman_holding_a_child,1,GRAY,Light gray,Gray,3.51,1
+Bambu P1S,Platform,Platform_P1S_part01.3mf,Platform,1,Platform,1,BRICK,Brick red,Red,627.7,1
+Bambu P1S,Platform,Platform_P1S_part01.3mf,Platform,1,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part02.3mf,Platform,2,Platform,1,BRICK,Brick red,Red,625.22,1
+Bambu P1S,Platform,Platform_P1S_part02.3mf,Platform,2,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part03.3mf,Platform,3,Platform,1,BRICK,Brick red,Red,625.22,1
+Bambu P1S,Platform,Platform_P1S_part03.3mf,Platform,3,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part04.3mf,Platform,4,Platform,1,BRICK,Brick red,Red,616.81,1
+Bambu P1S,Platform,Platform_P1S_part04.3mf,Platform,4,Platform_mortar,2,WHITE,White,White,4.21,1
+Bambu P1S,Platform,Platform_P1S_part05.3mf,Platform,5,Platform,1,BRICK,Brick red,Red,612.99,1
+Bambu P1S,Platform,Platform_P1S_part05.3mf,Platform,5,Platform_mortar,2,WHITE,White,White,4.16,1
+Bambu P1S,Platform,Platform_P1S_part06.3mf,Platform,6,Platform,1,BRICK,Brick red,Red,557.58,1
+Bambu P1S,Platform,Platform_P1S_part06.3mf,Platform,6,Platform_mortar,2,WHITE,White,White,3.8,1
+Bambu P1S,Platform,Platform_P1S_part07.3mf,Platform,7,Platform,1,BRICK,Brick red,Red,612.97,1
+Bambu P1S,Platform,Platform_P1S_part07.3mf,Platform,7,Platform_mortar,2,WHITE,White,White,4.18,1
+Bambu P1S,Platform,Platform_P1S_part08.3mf,Platform,8,Platform,1,BRICK,Brick red,Red,616.44,1
+Bambu P1S,Platform,Platform_P1S_part08.3mf,Platform,8,Platform_mortar,2,WHITE,White,White,4.21,1
+Bambu P1S,Platform,Platform_P1S_part09.3mf,Platform,9,Platform,1,BRICK,Brick red,Red,623.9,1
+Bambu P1S,Platform,Platform_P1S_part09.3mf,Platform,9,Platform_mortar,2,WHITE,White,White,4.26,1
+Bambu P1S,Platform,Platform_P1S_part10.3mf,Platform,10,Platform,1,BRICK,Brick red,Red,627.68,1
+Bambu P1S,Platform,Platform_P1S_part10.3mf,Platform,10,Platform_mortar,2,WHITE,White,White,4.3,1
+Bambu P1S,Platform,Platform_P1S_part11.3mf,Platform,11,Platform,1,BRICK,Brick red,Red,625.22,1
+Bambu P1S,Platform,Platform_P1S_part11.3mf,Platform,11,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part12.3mf,Platform,12,Platform,1,BRICK,Brick red,Red,625.22,1
+Bambu P1S,Platform,Platform_P1S_part12.3mf,Platform,12,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part13.3mf,Platform,13,Platform,1,BRICK,Brick red,Red,622.78,1
+Bambu P1S,Platform,Platform_P1S_part13.3mf,Platform,13,Platform_mortar,2,WHITE,White,White,4.25,1
+Bambu P1S,Platform,Platform_P1S_part14.3mf,Platform,14,Platform,1,BRICK,Brick red,Red,624.4,1
+Bambu P1S,Platform,Platform_P1S_part14.3mf,Platform,14,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part15.3mf,Platform,15,Platform,1,BRICK,Brick red,Red,625.22,1
+Bambu P1S,Platform,Platform_P1S_part15.3mf,Platform,15,Platform_mortar,2,WHITE,White,White,4.28,1
+Bambu P1S,Platform,Platform_P1S_part16.3mf,Platform,16,Platform,1,BRICK,Brick red,Red,627.68,1
+Bambu P1S,Platform,Platform_P1S_part16.3mf,Platform,16,Platform_mortar,2,WHITE,White,White,4.3,1
+Bambu P1S,Platform,Platform_P1S_part17.3mf,Platform,17,Platform,1,BRICK,Brick red,Red,325.5,1
+Bambu P1S,Platform,Platform_P1S_part17.3mf,Platform,17,Platform_mortar,2,WHITE,White,White,2.22,1
+Bambu P1S,Platform,Platform_P1S_part18.3mf,Platform,18,Platform,1,BRICK,Brick red,Red,322.34,1
+Bambu P1S,Platform,Platform_P1S_part18.3mf,Platform,18,Platform_mortar,2,WHITE,White,White,2.2,1
+Bambu P1S,Platform,Platform_P1S_part19.3mf,Platform,19,Platform,1,BRICK,Brick red,Red,682.8,1
+Bambu P1S,Platform,Platform_P1S_part19.3mf,Platform,19,Platform_mortar,2,WHITE,White,White,4.67,1
+Bambu P1S,Platform,Platform_P1S_part20.3mf,Platform,20,Platform,1,BRICK,Brick red,Red,682.8,1
+Bambu P1S,Platform,Platform_P1S_part20.3mf,Platform,20,Platform_mortar,2,WHITE,White,White,4.67,1
+Bambu P1S,Platform,Platform_P1S_part21.3mf,Platform,21,Platform,1,BRICK,Brick red,Red,650.08,1
+Bambu P1S,Platform,Platform_P1S_part21.3mf,Platform,21,Platform_mortar,2,WHITE,White,White,4.45,1
+Bambu P1S,Platform,Platform_P1S_part22.3mf,Platform,22,Platform,1,BRICK,Brick red,Red,659.37,1
+Bambu P1S,Platform,Platform_P1S_part22.3mf,Platform,22,Platform_mortar,2,WHITE,White,White,4.51,1
+Bambu P1S,Porch,Porch_cheek_E_P1S_part01.3mf,Porch_cheek_E,1,Porch_cheek_E,1,BRICK,Brick red,Red,10.69,1
+Bambu P1S,Porch,Porch_cheek_E_P1S_part01.3mf,Porch_cheek_E,1,Porch_cheek_E_mortar,2,WHITE,White,White,0.12,1
+Bambu P1S,Porch,Porch_cheek_W_P1S_part01.3mf,Porch_cheek_W,1,Porch_cheek_W,1,BRICK,Brick red,Red,10.69,1
+Bambu P1S,Porch,Porch_cheek_W_P1S_part01.3mf,Porch_cheek_W,1,Porch_cheek_W_mortar,2,WHITE,White,White,0.12,1
+Bambu P1S,Roof,Roof_baggage_town_P1S_part01.3mf,Roof_baggage_town,1,Roof_baggage_town,1,SLATE,Slate gray,Dark Gray,72.91,1
+Bambu P1S,Roof,Roof_baggage_town_P1S_part02.3mf,Roof_baggage_town,2,Roof_baggage_town,1,SLATE,Slate gray,Dark Gray,72.9,1
+Bambu P1S,Roof,Roof_baggage_town_P1S_part03.3mf,Roof_baggage_town,3,Roof_baggage_town,1,SLATE,Slate gray,Dark Gray,72.9,1
+Bambu P1S,Roof,Roof_baggage_track_P1S_part01.3mf,Roof_baggage_track,1,Roof_baggage_track,1,SLATE,Slate gray,Dark Gray,72.91,1
+Bambu P1S,Roof,Roof_baggage_track_P1S_part02.3mf,Roof_baggage_track,2,Roof_baggage_track,1,SLATE,Slate gray,Dark Gray,72.9,1
+Bambu P1S,Roof,Roof_baggage_track_P1S_part03.3mf,Roof_baggage_track,3,Roof_baggage_track,1,SLATE,Slate gray,Dark Gray,72.9,1
+Bambu P1S,Roof,Roof_dormer_town_E_P1S_part01.3mf,Roof_dormer_town_E,1,Roof_dormer_town_E,1,SLATE,Slate gray,Dark Gray,37.06,1
+Bambu P1S,Roof,Roof_dormer_town_W_P1S_part01.3mf,Roof_dormer_town_W,1,Roof_dormer_town_W,1,SLATE,Slate gray,Dark Gray,37.07,1
+Bambu P1S,Roof,Roof_dormer_track_E_P1S_part01.3mf,Roof_dormer_track_E,1,Roof_dormer_track_E,1,SLATE,Slate gray,Dark Gray,37.07,1
+Bambu P1S,Roof,Roof_dormer_track_W_P1S_part01.3mf,Roof_dormer_track_W,1,Roof_dormer_track_W,1,SLATE,Slate gray,Dark Gray,37.06,1
+Bambu P1S,Roof,Roof_lunch_town_P1S_part01.3mf,Roof_lunch_town,1,Roof_lunch_town,1,SLATE,Slate gray,Dark Gray,73.11,1
+Bambu P1S,Roof,Roof_lunch_town_P1S_part02.3mf,Roof_lunch_town,2,Roof_lunch_town,1,SLATE,Slate gray,Dark Gray,73.1,1
+Bambu P1S,Roof,Roof_lunch_track_P1S_part01.3mf,Roof_lunch_track,1,Roof_lunch_track,1,SLATE,Slate gray,Dark Gray,45.57,1
+Bambu P1S,Roof,Roof_lunch_track_P1S_part02.3mf,Roof_lunch_track,2,Roof_lunch_track,1,SLATE,Slate gray,Dark Gray,45.56,1
+Bambu P1S,Roof,Roof_main_east_P1S_part01.3mf,Roof_main_east,1,Roof_main_east,1,SLATE,Slate gray,Dark Gray,46.92,1
+Bambu P1S,Roof,Roof_main_east_P1S_part02.3mf,Roof_main_east,2,Roof_main_east,1,SLATE,Slate gray,Dark Gray,46.92,1
+Bambu P1S,Roof,Roof_main_town_P1S_part01.3mf,Roof_main_town,1,Roof_main_town,1,SLATE,Slate gray,Dark Gray,66.12,1
+Bambu P1S,Roof,Roof_main_town_P1S_part02.3mf,Roof_main_town,2,Roof_main_town,1,SLATE,Slate gray,Dark Gray,112.61,1
+Bambu P1S,Roof,Roof_main_town_P1S_part03.3mf,Roof_main_town,3,Roof_main_town,1,SLATE,Slate gray,Dark Gray,61.09,1
+Bambu P1S,Roof,Roof_main_town_P1S_part04.3mf,Roof_main_town,4,Roof_main_town,1,SLATE,Slate gray,Dark Gray,115.65,1
+Bambu P1S,Roof,Roof_main_town_P1S_part05.3mf,Roof_main_town,5,Roof_main_town,1,SLATE,Slate gray,Dark Gray,74.78,1
+Bambu P1S,Roof,Roof_main_track_P1S_part01.3mf,Roof_main_track,1,Roof_main_track,1,SLATE,Slate gray,Dark Gray,74.77,1
+Bambu P1S,Roof,Roof_main_track_P1S_part02.3mf,Roof_main_track,2,Roof_main_track,1,SLATE,Slate gray,Dark Gray,115.67,1
+Bambu P1S,Roof,Roof_main_track_P1S_part03.3mf,Roof_main_track,3,Roof_main_track,1,SLATE,Slate gray,Dark Gray,61.06,1
+Bambu P1S,Roof,Roof_main_track_P1S_part04.3mf,Roof_main_track,4,Roof_main_track,1,SLATE,Slate gray,Dark Gray,112.62,1
+Bambu P1S,Roof,Roof_main_track_P1S_part05.3mf,Roof_main_track,5,Roof_main_track,1,SLATE,Slate gray,Dark Gray,66.12,1
+Bambu P1S,Roof,Roof_main_west_P1S_part01.3mf,Roof_main_west,1,Roof_main_west,1,SLATE,Slate gray,Dark Gray,53.41,1
+Bambu P1S,Roof,Roof_main_west_P1S_part02.3mf,Roof_main_west,2,Roof_main_west,1,SLATE,Slate gray,Dark Gray,53.41,1
+Bambu P1S,Roof,Roof_porch_pent_P1S_part01.3mf,Roof_porch_pent,1,Roof_porch_pent,1,SLATE,Slate gray,Dark Gray,62.82,1
+Bambu P1S,RoofFrame,RoofFrame_baggage_1_P1S_part01.3mf,RoofFrame_baggage_1,1,RoofFrame_baggage_1,1,GRAY,Light gray,Gray,7.27,1
+Bambu P1S,RoofFrame,RoofFrame_baggage_1_P1S_part02.3mf,RoofFrame_baggage_1,2,RoofFrame_baggage_1,1,GRAY,Light gray,Gray,7.27,1
+Bambu P1S,RoofFrame,RoofFrame_baggage_2_P1S_part01.3mf,RoofFrame_baggage_2,1,RoofFrame_baggage_2,1,GRAY,Light gray,Gray,7.27,1
+Bambu P1S,RoofFrame,RoofFrame_baggage_2_P1S_part02.3mf,RoofFrame_baggage_2,2,RoofFrame_baggage_2,1,GRAY,Light gray,Gray,7.27,1
+Bambu P1S,RoofFrame,RoofFrame_lunch_1_P1S_part01.3mf,RoofFrame_lunch_1,1,RoofFrame_lunch_1,1,GRAY,Light gray,Gray,3.74,1
+Bambu P1S,RoofFrame,RoofFrame_lunch_1_P1S_part02.3mf,RoofFrame_lunch_1,2,RoofFrame_lunch_1,1,GRAY,Light gray,Gray,5.72,1
+Bambu P1S,RoofFrame,RoofFrame_main_20_P1S_part01.3mf,RoofFrame_main_20,1,RoofFrame_main_20,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_20_P1S_part02.3mf,RoofFrame_main_20,2,RoofFrame_main_20,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_38_P1S_part01.3mf,RoofFrame_main_38,1,RoofFrame_main_38,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_38_P1S_part02.3mf,RoofFrame_main_38,2,RoofFrame_main_38,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_62_P1S_part01.3mf,RoofFrame_main_62,1,RoofFrame_main_62,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_62_P1S_part02.3mf,RoofFrame_main_62,2,RoofFrame_main_62,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_80_P1S_part01.3mf,RoofFrame_main_80,1,RoofFrame_main_80,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofFrame,RoofFrame_main_80_P1S_part02.3mf,RoofFrame_main_80,2,RoofFrame_main_80,1,GRAY,Light gray,Gray,10.02,1
+Bambu P1S,RoofTrim,RoofTrim_cap_baggage_ridge_P1S_part01.3mf,RoofTrim_cap_baggage_ridge,1,RoofTrim_cap_baggage_ridge,1,SLATE,Slate gray,Dark Gray,1.1,1
+Bambu P1S,RoofTrim,RoofTrim_cap_baggage_ridge_P1S_part02.3mf,RoofTrim_cap_baggage_ridge,2,RoofTrim_cap_baggage_ridge,1,SLATE,Slate gray,Dark Gray,1.1,1
+Bambu P1S,RoofTrim,RoofTrim_cap_baggage_ridge_P1S_part03.3mf,RoofTrim_cap_baggage_ridge,3,RoofTrim_cap_baggage_ridge,1,SLATE,Slate gray,Dark Gray,1.1,1
+Bambu P1S,RoofTrim,RoofTrim_cap_dormer_town_ridge_P1S_part01.3mf,RoofTrim_cap_dormer_town_ridge,1,RoofTrim_cap_dormer_town_ridge,1,SLATE,Slate gray,Dark Gray,0.99,1
+Bambu P1S,RoofTrim,RoofTrim_cap_dormer_track_ridge_P1S_part01.3mf,RoofTrim_cap_dormer_track_ridge,1,RoofTrim_cap_dormer_track_ridge,1,SLATE,Slate gray,Dark Gray,0.99,1
+Bambu P1S,RoofTrim,RoofTrim_cap_lunch_ridge_P1S_part01.3mf,RoofTrim_cap_lunch_ridge,1,RoofTrim_cap_lunch_ridge,1,SLATE,Slate gray,Dark Gray,1.07,1
+Bambu P1S,RoofTrim,RoofTrim_cap_lunch_ridge_P1S_part02.3mf,RoofTrim_cap_lunch_ridge,2,RoofTrim_cap_lunch_ridge,1,SLATE,Slate gray,Dark Gray,1.07,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_NE_P1S_part01.3mf,RoofTrim_cap_main_hip_NE,1,RoofTrim_cap_main_hip_NE,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_NE_P1S_part02.3mf,RoofTrim_cap_main_hip_NE,2,RoofTrim_cap_main_hip_NE,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_NW_P1S_part01.3mf,RoofTrim_cap_main_hip_NW,1,RoofTrim_cap_main_hip_NW,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_NW_P1S_part02.3mf,RoofTrim_cap_main_hip_NW,2,RoofTrim_cap_main_hip_NW,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_SE_P1S_part01.3mf,RoofTrim_cap_main_hip_SE,1,RoofTrim_cap_main_hip_SE,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_SE_P1S_part02.3mf,RoofTrim_cap_main_hip_SE,2,RoofTrim_cap_main_hip_SE,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_SW_P1S_part01.3mf,RoofTrim_cap_main_hip_SW,1,RoofTrim_cap_main_hip_SW,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_hip_SW_P1S_part02.3mf,RoofTrim_cap_main_hip_SW,2,RoofTrim_cap_main_hip_SW,1,SLATE,Slate gray,Dark Gray,1.01,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_ridge_P1S_part01.3mf,RoofTrim_cap_main_ridge,1,RoofTrim_cap_main_ridge,1,SLATE,Slate gray,Dark Gray,1.5,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_ridge_P1S_part02.3mf,RoofTrim_cap_main_ridge,2,RoofTrim_cap_main_ridge,1,SLATE,Slate gray,Dark Gray,1.5,1
+Bambu P1S,RoofTrim,RoofTrim_cap_main_ridge_P1S_part03.3mf,RoofTrim_cap_main_ridge,3,RoofTrim_cap_main_ridge,1,SLATE,Slate gray,Dark Gray,1.5,1
+Bambu P1S,RoofTrim,RoofTrim_cresting_P1S_part01.3mf,RoofTrim_cresting,1,RoofTrim_cresting,1,SLATE,Slate gray,Dark Gray,0.79,1
+Bambu P1S,RoofTrim,RoofTrim_cresting_P1S_part02.3mf,RoofTrim_cresting,2,RoofTrim_cresting,1,SLATE,Slate gray,Dark Gray,0.73,1
+Bambu P1S,RoofTrim,RoofTrim_cresting_P1S_part03.3mf,RoofTrim_cresting,3,RoofTrim_cresting,1,SLATE,Slate gray,Dark Gray,0.78,1
+Bambu P1S,Sign,Sign_janesville_P1S_part01.3mf,Sign_janesville,1,Sign_janesville,1,GREEN,Pullman green,Forest Green,6.27,1
+Bambu P1S,Sign,Sign_janesville_P1S_part01.3mf,Sign_janesville,1,Sign_janesville_letters,2,CREAM,Cream / buff,Cream,1.28,1
+Bambu P1S,Sign,Sign_oval_P1S_part01.3mf,Sign_oval,1,Sign_oval,1,GREEN,Pullman green,Forest Green,7.62,1
+Bambu P1S,Sign,Sign_oval_P1S_part01.3mf,Sign_oval,1,Sign_oval_letters,2,CREAM,Cream / buff,Cream,1.62,1
+Bambu P1S,Splices,Splices_Baggage_east_P1S_part01.3mf,Splices_Baggage_east,1,Splices_Baggage_east,1,GRAY,Light gray,Gray,1.97,1
+Bambu P1S,Splices,Splices_Baggage_town_P1S_part01.3mf,Splices_Baggage_town,1,Splices_Baggage_town,1,GRAY,Light gray,Gray,1.97,1
+Bambu P1S,Splices,Splices_Baggage_track_P1S_part01.3mf,Splices_Baggage_track,1,Splices_Baggage_track,1,GRAY,Light gray,Gray,1.97,1
+Bambu P1S,Splices,Splices_Baggage_west_P1S_part01.3mf,Splices_Baggage_west,1,Splices_Baggage_west,1,GRAY,Light gray,Gray,1.97,1
+Bambu P1S,Splices,Splices_Int_B1_baggage_express_P1S_part01.3mf,Splices_Int_B1_baggage_express,1,Splices_Int_B1_baggage_express,1,GRAY,Light gray,Gray,0.64,1
+Bambu P1S,Splices,Splices_Int_S1_smoking_east_P1S_part01.3mf,Splices_Int_S1_smoking_east,1,Splices_Int_S1_smoking_east,1,GRAY,Light gray,Gray,0.64,1
+Bambu P1S,Splices,Splices_Int_W1_waiting_pavilion_P1S_part01.3mf,Splices_Int_W1_waiting_pavilion,1,Splices_Int_W1_waiting_pavilion,1,GRAY,Light gray,Gray,0.64,1
+Bambu P1S,Splices,Splices_Int_W2_pavilion_smoking_P1S_part01.3mf,Splices_Int_W2_pavilion_smoking,1,Splices_Int_W2_pavilion_smoking,1,GRAY,Light gray,Gray,0.64,1
+Bambu P1S,Splices,Splices_Lunch_east_P1S_part01.3mf,Splices_Lunch_east,1,Splices_Lunch_east,1,GRAY,Light gray,Gray,1.86,1
+Bambu P1S,Splices,Splices_Lunch_town_P1S_part01.3mf,Splices_Lunch_town,1,Splices_Lunch_town,1,GRAY,Light gray,Gray,1.86,1
+Bambu P1S,Splices,Splices_Lunch_track_P1S_part01.3mf,Splices_Lunch_track,1,Splices_Lunch_track,1,GRAY,Light gray,Gray,1.86,1
+Bambu P1S,Splices,Splices_Main_east_P1S_part01.3mf,Splices_Main_east,1,Splices_Main_east,1,GRAY,Light gray,Gray,3.82,1
+Bambu P1S,Splices,Splices_Main_town_P1S_part01.3mf,Splices_Main_town,1,Splices_Main_town,1,GRAY,Light gray,Gray,15.29,1
+Bambu P1S,Splices,Splices_Main_track_P1S_part01.3mf,Splices_Main_track,1,Splices_Main_track,1,GRAY,Light gray,Gray,15.29,1
+Bambu P1S,Splices,Splices_Main_west_P1S_part01.3mf,Splices_Main_west,1,Splices_Main_west,1,GRAY,Light gray,Gray,3.82,1
+Bambu P1S,Track,Track_P1S_part01.3mf,Track,1,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part01.3mf,Track,1,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part01.3mf,Track,1,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part02.3mf,Track,2,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part02.3mf,Track,2,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part02.3mf,Track,2,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part03.3mf,Track,3,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part03.3mf,Track,3,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part03.3mf,Track,3,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part04.3mf,Track,4,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part04.3mf,Track,4,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part04.3mf,Track,4,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part05.3mf,Track,5,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part05.3mf,Track,5,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part05.3mf,Track,5,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part06.3mf,Track,6,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part06.3mf,Track,6,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part06.3mf,Track,6,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part07.3mf,Track,7,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part07.3mf,Track,7,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part07.3mf,Track,7,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part08.3mf,Track,8,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part08.3mf,Track,8,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part08.3mf,Track,8,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part09.3mf,Track,9,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part09.3mf,Track,9,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part09.3mf,Track,9,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part10.3mf,Track,10,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part10.3mf,Track,10,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part10.3mf,Track,10,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part11.3mf,Track,11,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part11.3mf,Track,11,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part11.3mf,Track,11,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part12.3mf,Track,12,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part12.3mf,Track,12,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part12.3mf,Track,12,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part13.3mf,Track,13,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part13.3mf,Track,13,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part13.3mf,Track,13,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part14.3mf,Track,14,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part14.3mf,Track,14,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part14.3mf,Track,14,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part15.3mf,Track,15,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part15.3mf,Track,15,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part15.3mf,Track,15,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Track,Track_P1S_part16.3mf,Track,16,Track_ballast,1,GRAY,Light gray,Gray,36.08,1
+Bambu P1S,Track,Track_P1S_part16.3mf,Track,16,Track_rails,2,SLATE,Slate gray,Dark Gray,4.3,1
+Bambu P1S,Track,Track_P1S_part16.3mf,Track,16,Track_ties,3,BROWN,Wood brown,Peanut Brown,10.99,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east,1,BRICK,Brick red,Red,65.26,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east_mortar,2,WHITE,White,White,0.74,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part02.3mf,Wall_Baggage_east,2,Wall_Baggage_east,1,BRICK,Brick red,Red,65.26,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part02.3mf,Wall_Baggage_east,2,Wall_Baggage_east_mortar,2,WHITE,White,White,0.74,1
+Bambu P1S,Wall,Wall_Baggage_east_P1S_part02.3mf,Wall_Baggage_east,2,Wall_Baggage_east_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town,1,BRICK,Brick red,Red,106.92,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town_mortar,2,WHITE,White,White,1.22,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town_stone,3,CREAM,Cream / buff,Cream,0.58,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part02.3mf,Wall_Baggage_town,2,Wall_Baggage_town,1,BRICK,Brick red,Red,96.42,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part02.3mf,Wall_Baggage_town,2,Wall_Baggage_town_mortar,2,WHITE,White,White,1.09,1
+Bambu P1S,Wall,Wall_Baggage_town_P1S_part02.3mf,Wall_Baggage_town,2,Wall_Baggage_town_stone,3,CREAM,Cream / buff,Cream,0.58,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track,1,BRICK,Brick red,Red,96.43,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track_mortar,2,WHITE,White,White,1.09,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track_stone,3,CREAM,Cream / buff,Cream,0.58,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part02.3mf,Wall_Baggage_track,2,Wall_Baggage_track,1,BRICK,Brick red,Red,106.92,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part02.3mf,Wall_Baggage_track,2,Wall_Baggage_track_mortar,2,WHITE,White,White,1.22,1
+Bambu P1S,Wall,Wall_Baggage_track_P1S_part02.3mf,Wall_Baggage_track,2,Wall_Baggage_track_stone,3,CREAM,Cream / buff,Cream,0.58,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west,1,BRICK,Brick red,Red,65.26,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west_mortar,2,WHITE,White,White,0.74,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part02.3mf,Wall_Baggage_west,2,Wall_Baggage_west,1,BRICK,Brick red,Red,65.26,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part02.3mf,Wall_Baggage_west,2,Wall_Baggage_west_mortar,2,WHITE,White,White,0.74,1
+Bambu P1S,Wall,Wall_Baggage_west_P1S_part02.3mf,Wall_Baggage_west,2,Wall_Baggage_west_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Bay_front_P1S_part01.3mf,Wall_Bay_front,1,Wall_Bay_front,1,BRICK,Brick red,Red,39.83,1
+Bambu P1S,Wall,Wall_Bay_front_P1S_part01.3mf,Wall_Bay_front,1,Wall_Bay_front_mortar,2,WHITE,White,White,0.47,1
+Bambu P1S,Wall,Wall_Bay_front_P1S_part01.3mf,Wall_Bay_front,1,Wall_Bay_front_stone,3,CREAM,Cream / buff,Cream,0.31,1
+Bambu P1S,Wall,Wall_Bay_side_E_P1S_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E,1,BRICK,Brick red,Red,20.94,1
+Bambu P1S,Wall,Wall_Bay_side_E_P1S_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E_mortar,2,WHITE,White,White,0.26,1
+Bambu P1S,Wall,Wall_Bay_side_E_P1S_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E_stone,3,CREAM,Cream / buff,Cream,0.14,1
+Bambu P1S,Wall,Wall_Bay_side_W_P1S_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W,1,BRICK,Brick red,Red,20.94,1
+Bambu P1S,Wall,Wall_Bay_side_W_P1S_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W_mortar,2,WHITE,White,White,0.26,1
+Bambu P1S,Wall,Wall_Bay_side_W_P1S_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W_stone,3,CREAM,Cream / buff,Cream,0.14,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east,1,BRICK,Brick red,Red,46.63,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east_mortar,2,WHITE,White,White,0.53,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part02.3mf,Wall_Lunch_east,2,Wall_Lunch_east,1,BRICK,Brick red,Red,46.63,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part02.3mf,Wall_Lunch_east,2,Wall_Lunch_east_mortar,2,WHITE,White,White,0.54,1
+Bambu P1S,Wall,Wall_Lunch_east_P1S_part02.3mf,Wall_Lunch_east,2,Wall_Lunch_east_stone,3,CREAM,Cream / buff,Cream,0.4,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town,1,BRICK,Brick red,Red,54.28,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town_mortar,2,WHITE,White,White,0.61,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town_stone,3,CREAM,Cream / buff,Cream,0.5,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part02.3mf,Wall_Lunch_town,2,Wall_Lunch_town,1,BRICK,Brick red,Red,54.17,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part02.3mf,Wall_Lunch_town,2,Wall_Lunch_town_mortar,2,WHITE,White,White,0.61,1
+Bambu P1S,Wall,Wall_Lunch_town_P1S_part02.3mf,Wall_Lunch_town,2,Wall_Lunch_town_stone,3,CREAM,Cream / buff,Cream,0.41,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track,1,BRICK,Brick red,Red,116.59,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track_mortar,2,WHITE,White,White,1.35,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track_stone,3,CREAM,Cream / buff,Cream,0.41,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part02.3mf,Wall_Lunch_track,2,Wall_Lunch_track,1,BRICK,Brick red,Red,116.56,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part02.3mf,Wall_Lunch_track,2,Wall_Lunch_track_mortar,2,WHITE,White,White,1.35,1
+Bambu P1S,Wall,Wall_Lunch_track_P1S_part02.3mf,Wall_Lunch_track,2,Wall_Lunch_track_stone,3,CREAM,Cream / buff,Cream,0.41,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part01.3mf,Wall_Main_east,1,Wall_Main_east,1,BRICK,Brick red,Red,107.42,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part01.3mf,Wall_Main_east,1,Wall_Main_east_mortar,2,WHITE,White,White,1.05,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part01.3mf,Wall_Main_east,1,Wall_Main_east_stone,3,CREAM,Cream / buff,Cream,0.58,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part02.3mf,Wall_Main_east,2,Wall_Main_east,1,BRICK,Brick red,Red,185.65,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part02.3mf,Wall_Main_east,2,Wall_Main_east_mortar,2,WHITE,White,White,1.79,1
+Bambu P1S,Wall,Wall_Main_east_P1S_part02.3mf,Wall_Main_east,2,Wall_Main_east_stone,3,CREAM,Cream / buff,Cream,1.37,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part01.3mf,Wall_Main_town,1,Wall_Main_town,1,BRICK,Brick red,Red,200.5,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part01.3mf,Wall_Main_town,1,Wall_Main_town_mortar,2,WHITE,White,White,1.84,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part01.3mf,Wall_Main_town,1,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,1.7,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part02.3mf,Wall_Main_town,2,Wall_Main_town,1,BRICK,Brick red,Red,183.46,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part02.3mf,Wall_Main_town,2,Wall_Main_town_mortar,2,WHITE,White,White,1.63,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part02.3mf,Wall_Main_town,2,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,1.46,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part03.3mf,Wall_Main_town,3,Wall_Main_town,1,BRICK,Brick red,Red,157.21,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part03.3mf,Wall_Main_town,3,Wall_Main_town_mortar,2,WHITE,White,White,1.53,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part03.3mf,Wall_Main_town,3,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,0.75,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part04.3mf,Wall_Main_town,4,Wall_Main_town,1,BRICK,Brick red,Red,158.67,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part04.3mf,Wall_Main_town,4,Wall_Main_town_mortar,2,WHITE,White,White,1.34,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part04.3mf,Wall_Main_town,4,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,1.52,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part05.3mf,Wall_Main_town,5,Wall_Main_town,1,BRICK,Brick red,Red,168.06,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part05.3mf,Wall_Main_town,5,Wall_Main_town_mortar,2,WHITE,White,White,1.45,1
+Bambu P1S,Wall,Wall_Main_town_P1S_part05.3mf,Wall_Main_town,5,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,1.45,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part01.3mf,Wall_Main_track,1,Wall_Main_track,1,BRICK,Brick red,Red,169.78,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part01.3mf,Wall_Main_track,1,Wall_Main_track_mortar,2,WHITE,White,White,1.48,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part01.3mf,Wall_Main_track,1,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,1.36,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part02.3mf,Wall_Main_track,2,Wall_Main_track,1,BRICK,Brick red,Red,158.73,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part02.3mf,Wall_Main_track,2,Wall_Main_track_mortar,2,WHITE,White,White,1.37,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part02.3mf,Wall_Main_track,2,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,1.36,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part03.3mf,Wall_Main_track,3,Wall_Main_track,1,BRICK,Brick red,Red,117.05,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part03.3mf,Wall_Main_track,3,Wall_Main_track_mortar,2,WHITE,White,White,1.13,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part03.3mf,Wall_Main_track,3,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,0.37,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part04.3mf,Wall_Main_track,4,Wall_Main_track,1,BRICK,Brick red,Red,183.65,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part04.3mf,Wall_Main_track,4,Wall_Main_track_mortar,2,WHITE,White,White,1.65,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part04.3mf,Wall_Main_track,4,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,1.29,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part05.3mf,Wall_Main_track,5,Wall_Main_track,1,BRICK,Brick red,Red,200.49,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part05.3mf,Wall_Main_track,5,Wall_Main_track_mortar,2,WHITE,White,White,1.85,1
+Bambu P1S,Wall,Wall_Main_track_P1S_part05.3mf,Wall_Main_track,5,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,1.7,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part01.3mf,Wall_Main_west,1,Wall_Main_west,1,BRICK,Brick red,Red,162.04,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part01.3mf,Wall_Main_west,1,Wall_Main_west_mortar,2,WHITE,White,White,1.5,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part01.3mf,Wall_Main_west,1,Wall_Main_west_stone,3,CREAM,Cream / buff,Cream,1.28,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part02.3mf,Wall_Main_west,2,Wall_Main_west,1,BRICK,Brick red,Red,162.04,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part02.3mf,Wall_Main_west,2,Wall_Main_west_mortar,2,WHITE,White,White,1.5,1
+Bambu P1S,Wall,Wall_Main_west_P1S_part02.3mf,Wall_Main_west,2,Wall_Main_west_stone,3,CREAM,Cream / buff,Cream,1.28,1
+Bambu P1S,Wall,Wall_Porch_block_E_P1S_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E,1,BRICK,Brick red,Red,30.49,1
+Bambu P1S,Wall,Wall_Porch_block_E_P1S_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E_mortar,2,WHITE,White,White,0.36,1
+Bambu P1S,Wall,Wall_Porch_block_E_P1S_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E_stone,3,CREAM,Cream / buff,Cream,0.22,1
+Bambu P1S,Wall,Wall_Porch_block_W_P1S_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W,1,BRICK,Brick red,Red,22.35,1
+Bambu P1S,Wall,Wall_Porch_block_W_P1S_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W_mortar,2,WHITE,White,White,0.26,1
+Bambu P1S,Wall,Wall_Porch_block_W_P1S_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W_stone,3,CREAM,Cream / buff,Cream,0.22,1
+Bambu P1S,Wall,Wall_Porch_east_P1S_part01.3mf,Wall_Porch_east,1,Wall_Porch_east,1,BRICK,Brick red,Red,10.39,1
+Bambu P1S,Wall,Wall_Porch_east_P1S_part01.3mf,Wall_Porch_east,1,Wall_Porch_east_mortar,2,WHITE,White,White,0.13,1
+Bambu P1S,Wall,Wall_Porch_east_P1S_part01.3mf,Wall_Porch_east,1,Wall_Porch_east_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Bambu P1S,Wall,Wall_Porch_recess_E_P1S_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E,1,BRICK,Brick red,Red,10.39,1
+Bambu P1S,Wall,Wall_Porch_recess_E_P1S_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E_mortar,2,WHITE,White,White,0.13,1
+Bambu P1S,Wall,Wall_Porch_recess_E_P1S_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Bambu P1S,Wall,Wall_Porch_recess_W_P1S_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W,1,BRICK,Brick red,Red,10.39,1
+Bambu P1S,Wall,Wall_Porch_recess_W_P1S_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W_mortar,2,WHITE,White,White,0.13,1
+Bambu P1S,Wall,Wall_Porch_recess_W_P1S_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Bambu P1S,Wall,Wall_Porch_west_P1S_part01.3mf,Wall_Porch_west,1,Wall_Porch_west,1,BRICK,Brick red,Red,10.39,1
+Bambu P1S,Wall,Wall_Porch_west_P1S_part01.3mf,Wall_Porch_west,1,Wall_Porch_west_mortar,2,WHITE,White,White,0.13,1
+Bambu P1S,Wall,Wall_Porch_west_P1S_part01.3mf,Wall_Porch_west,1,Wall_Porch_west_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Bambu P1S,Window,Window_Baggage_east_0_P1S_part01.3mf,Window_Baggage_east_0,1,Window_Baggage_east_0,1,GREEN,Pullman green,Forest Green,2.82,1
+Bambu P1S,Window,Window_Baggage_town_0_P1S_part01.3mf,Window_Baggage_town_0,1,Window_Baggage_town_0,1,GREEN,Pullman green,Forest Green,15.68,1
+Bambu P1S,Window,Window_Baggage_town_1_P1S_part01.3mf,Window_Baggage_town_1,1,Window_Baggage_town_1,1,GREEN,Pullman green,Forest Green,3.03,1
+Bambu P1S,Window,Window_Baggage_town_2_P1S_part01.3mf,Window_Baggage_town_2,1,Window_Baggage_town_2,1,GREEN,Pullman green,Forest Green,15.68,1
+Bambu P1S,Window,Window_Baggage_track_0_P1S_part01.3mf,Window_Baggage_track_0,1,Window_Baggage_track_0,1,GREEN,Pullman green,Forest Green,15.68,1
+Bambu P1S,Window,Window_Baggage_track_1_P1S_part01.3mf,Window_Baggage_track_1,1,Window_Baggage_track_1,1,GREEN,Pullman green,Forest Green,3.03,1
+Bambu P1S,Window,Window_Baggage_track_2_P1S_part01.3mf,Window_Baggage_track_2,1,Window_Baggage_track_2,1,GREEN,Pullman green,Forest Green,15.68,1
+Bambu P1S,Window,Window_Baggage_west_0_P1S_part01.3mf,Window_Baggage_west_0,1,Window_Baggage_west_0,1,GREEN,Pullman green,Forest Green,2.82,1
+Bambu P1S,Window,Window_Bay_front_0_P1S_part01.3mf,Window_Bay_front_0,1,Window_Bay_front_0,1,GREEN,Pullman green,Forest Green,5.16,1
+Bambu P1S,Window,Window_Bay_side_E_0_P1S_part01.3mf,Window_Bay_side_E_0,1,Window_Bay_side_E_0,1,GREEN,Pullman green,Forest Green,2.78,1
+Bambu P1S,Window,Window_Bay_side_W_0_P1S_part01.3mf,Window_Bay_side_W_0,1,Window_Bay_side_W_0,1,GREEN,Pullman green,Forest Green,2.78,1
+Bambu P1S,Window,Window_Lunch_east_0_P1S_part01.3mf,Window_Lunch_east_0,1,Window_Lunch_east_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Lunch_east_1_P1S_part01.3mf,Window_Lunch_east_1,1,Window_Lunch_east_1,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Lunch_town_0_P1S_part01.3mf,Window_Lunch_town_0,1,Window_Lunch_town_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Lunch_town_1_P1S_part01.3mf,Window_Lunch_town_1,1,Window_Lunch_town_1,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Lunch_town_2_P1S_part01.3mf,Window_Lunch_town_2,1,Window_Lunch_town_2,1,GREEN,Pullman green,Forest Green,2.61,1
+Bambu P1S,Window,Window_Lunch_town_3_P1S_part01.3mf,Window_Lunch_town_3,1,Window_Lunch_town_3,1,GREEN,Pullman green,Forest Green,5.05,1
+Bambu P1S,Window,Window_Lunch_track_0_P1S_part01.3mf,Window_Lunch_track_0,1,Window_Lunch_track_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Lunch_track_1_P1S_part01.3mf,Window_Lunch_track_1,1,Window_Lunch_track_1,1,GREEN,Pullman green,Forest Green,9.15,1
+Bambu P1S,Window,Window_Lunch_track_2_P1S_part01.3mf,Window_Lunch_track_2,1,Window_Lunch_track_2,1,GREEN,Pullman green,Forest Green,4.61,1
+Bambu P1S,Window,Window_Main_town_0_P1S_part01.3mf,Window_Main_town_0,1,Window_Main_town_0,1,GREEN,Pullman green,Forest Green,3.83,1
+Bambu P1S,Window,Window_Main_town_1_P1S_part01.3mf,Window_Main_town_1,1,Window_Main_town_1,1,GREEN,Pullman green,Forest Green,9.06,1
+Bambu P1S,Window,Window_Main_town_2_P1S_part01.3mf,Window_Main_town_2,1,Window_Main_town_2,1,GREEN,Pullman green,Forest Green,9.06,1
+Bambu P1S,Window,Window_Main_town_4_P1S_part01.3mf,Window_Main_town_4,1,Window_Main_town_4,1,GREEN,Pullman green,Forest Green,12.77,1
+Bambu P1S,Window,Window_Main_town_6_P1S_part01.3mf,Window_Main_town_6,1,Window_Main_town_6,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Main_town_7_P1S_part01.3mf,Window_Main_town_7,1,Window_Main_town_7,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Main_town_8_P1S_part01.3mf,Window_Main_town_8,1,Window_Main_town_8,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Main_track_0_P1S_part01.3mf,Window_Main_track_0,1,Window_Main_track_0,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Main_track_1_P1S_part01.3mf,Window_Main_track_1,1,Window_Main_track_1,1,GREEN,Pullman green,Forest Green,17.26,1
+Bambu P1S,Window,Window_Main_track_2_P1S_part01.3mf,Window_Main_track_2,1,Window_Main_track_2,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Main_track_4_P1S_part01.3mf,Window_Main_track_4,1,Window_Main_track_4,1,GREEN,Pullman green,Forest Green,9.56,1
+Bambu P1S,Window,Window_Main_track_5_P1S_part01.3mf,Window_Main_track_5,1,Window_Main_track_5,1,GREEN,Pullman green,Forest Green,15.68,1
+Bambu P1S,Window,Window_Main_track_6_P1S_part01.3mf,Window_Main_track_6,1,Window_Main_track_6,1,GREEN,Pullman green,Forest Green,9.06,1
+Bambu P1S,Window,Window_Main_track_7_P1S_part01.3mf,Window_Main_track_7,1,Window_Main_track_7,1,GREEN,Pullman green,Forest Green,3.83,1
+Bambu P1S,Window,Window_Main_west_0_P1S_part01.3mf,Window_Main_west_0,1,Window_Main_west_0,1,GREEN,Pullman green,Forest Green,10.64,1
+Bambu P1S,Window,Window_Porch_block_W_0_P1S_part01.3mf,Window_Porch_block_W_0,1,Window_Porch_block_W_0,1,GREEN,Pullman green,Forest Green,2.61,1
+Large Format,Canopy,Canopy_beams_baggage_GIGA_part01.3mf,Canopy_beams_baggage,1,Canopy_beams_baggage,1,GREEN,Pullman green,Forest Green,25.89,1
+Large Format,Canopy,Canopy_beams_east_n_GIGA_part01.3mf,Canopy_beams_east_n,1,Canopy_beams_east_n,1,GREEN,Pullman green,Forest Green,12.77,1
+Large Format,Canopy,Canopy_beams_east_s_GIGA_part01.3mf,Canopy_beams_east_s,1,Canopy_beams_east_s,1,GREEN,Pullman green,Forest Green,12.77,1
+Large Format,Canopy,Canopy_beams_shed_n_GIGA_part01.3mf,Canopy_beams_shed_n,1,Canopy_beams_shed_n,1,GREEN,Pullman green,Forest Green,33.13,1
+Large Format,Canopy,Canopy_beams_south_GIGA_part01.3mf,Canopy_beams_south,1,Canopy_beams_south,1,GREEN,Pullman green,Forest Green,161.32,1
+Large Format,Canopy,Canopy_beams_west_n_GIGA_part01.3mf,Canopy_beams_west_n,1,Canopy_beams_west_n,1,GREEN,Pullman green,Forest Green,12.58,1
+Large Format,Canopy,Canopy_braces_GIGA_part01.3mf,Canopy_braces,1,Canopy_braces,1,GREEN,Pullman green,Forest Green,12.3,1
+Large Format,Canopy,Canopy_fascia_west_corner_GIGA_part01.3mf,Canopy_fascia_west_corner,1,Canopy_fascia_west_corner,1,GREEN,Pullman green,Forest Green,0.66,1
+Large Format,Canopy,Canopy_footings_baggage_GIGA_part01.3mf,Canopy_footings_baggage,1,Canopy_footings_baggage,1,GRAY,Light gray,Gray,5.58,1
+Large Format,Canopy,Canopy_footings_east_n_GIGA_part01.3mf,Canopy_footings_east_n,1,Canopy_footings_east_n,1,GRAY,Light gray,Gray,3.72,1
+Large Format,Canopy,Canopy_footings_east_s_GIGA_part01.3mf,Canopy_footings_east_s,1,Canopy_footings_east_s,1,GRAY,Light gray,Gray,3.72,1
+Large Format,Canopy,Canopy_footings_shed_n_GIGA_part01.3mf,Canopy_footings_shed_n,1,Canopy_footings_shed_n,1,GRAY,Light gray,Gray,3.72,1
+Large Format,Canopy,Canopy_footings_south_GIGA_part01.3mf,Canopy_footings_south,1,Canopy_footings_south,1,GRAY,Light gray,Gray,18.61,1
+Large Format,Canopy,Canopy_footings_west_n_GIGA_part01.3mf,Canopy_footings_west_n,1,Canopy_footings_west_n,1,GRAY,Light gray,Gray,3.72,1
+Large Format,Canopy,Canopy_post_caps_GIGA_part01.3mf,Canopy_post_caps,1,Canopy_post_caps,1,GREEN,Pullman green,Forest Green,9.05,1
+Large Format,Canopy,Canopy_rafters_baggage_GIGA_part01.3mf,Canopy_rafters_baggage,1,Canopy_rafters_baggage,1,GREEN,Pullman green,Forest Green,17.97,1
+Large Format,Canopy,Canopy_rafters_lunch_GIGA_part01.3mf,Canopy_rafters_lunch,1,Canopy_rafters_lunch,1,GREEN,Pullman green,Forest Green,6.53,1
+Large Format,Canopy,Canopy_rafters_main_GIGA_part01.3mf,Canopy_rafters_main,1,Canopy_rafters_main,1,GREEN,Pullman green,Forest Green,14.79,1
+Large Format,Canopy,Canopy_roof_baggage_GIGA_part01.3mf,Canopy_roof_baggage,1,Canopy_roof_baggage,1,SLATE,Slate gray,Dark Gray,313.95,1
+Large Format,Canopy,Canopy_roof_east_hip_GIGA_part01.3mf,Canopy_roof_east_hip,1,Canopy_roof_east_hip,1,SLATE,Slate gray,Dark Gray,106.85,1
+Large Format,Canopy,Canopy_roof_east_north_GIGA_part01.3mf,Canopy_roof_east_north,1,Canopy_roof_east_north,1,SLATE,Slate gray,Dark Gray,160.29,1
+Large Format,Canopy,Canopy_roof_east_south_GIGA_part01.3mf,Canopy_roof_east_south,1,Canopy_roof_east_south,1,SLATE,Slate gray,Dark Gray,160.28,1
+Large Format,Canopy,Canopy_roof_shed_north_GIGA_part01.3mf,Canopy_roof_shed_north,1,Canopy_roof_shed_north,1,SLATE,Slate gray,Dark Gray,224.39,1
+Large Format,Canopy,Canopy_roof_south_GIGA_part01.3mf,Canopy_roof_south,1,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,235.72,1
+Large Format,Canopy,Canopy_roof_south_GIGA_part02.3mf,Canopy_roof_south,2,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,298.77,1
+Large Format,Canopy,Canopy_roof_south_GIGA_part03.3mf,Canopy_roof_south,3,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,322.92,1
+Large Format,Canopy,Canopy_roof_south_GIGA_part04.3mf,Canopy_roof_south,4,Canopy_roof_south,1,SLATE,Slate gray,Dark Gray,112.17,1
+Large Format,Canopy,Canopy_roof_west_hip_GIGA_part01.3mf,Canopy_roof_west_hip,1,Canopy_roof_west_hip,1,SLATE,Slate gray,Dark Gray,49.41,1
+Large Format,Canopy,Canopy_roof_west_north_GIGA_part01.3mf,Canopy_roof_west_north,1,Canopy_roof_west_north,1,SLATE,Slate gray,Dark Gray,133.31,1
+Large Format,Canopy,Canopy_truss_east_GIGA_part01.3mf,Canopy_truss_east,1,Canopy_truss_east,1,GREEN,Pullman green,Forest Green,23.39,1
+Large Format,Canopy,Canopy_truss_shed_GIGA_part01.3mf,Canopy_truss_shed,1,Canopy_truss_shed,1,GREEN,Pullman green,Forest Green,35.08,1
+Large Format,Canopy,Canopy_truss_west_GIGA_part01.3mf,Canopy_truss_west,1,Canopy_truss_west,1,GREEN,Pullman green,Forest Green,7.43,1
+Large Format,Ceiling,Ceiling_east_GIGA_part01.3mf,Ceiling_east,1,Ceiling_east,1,CREAM,Cream / buff,Cream,34.67,1
+Large Format,Ceiling,Ceiling_pavilion_GIGA_part01.3mf,Ceiling_pavilion,1,Ceiling_pavilion,1,CREAM,Cream / buff,Cream,78.42,1
+Large Format,Chimney,Chimney_base_GIGA_part01.3mf,Chimney_base,1,Chimney_base,1,BRICK,Brick red,Red,139.88,1
+Large Format,Chimney,Chimney_body_GIGA_part01.3mf,Chimney_body,1,Chimney_body,1,BRICK,Brick red,Red,118.31,1
+Large Format,Chimney,Chimney_cap_GIGA_part01.3mf,Chimney_cap,1,Chimney_cap,1,BRICK,Brick red,Red,9.85,1
+Large Format,Cornice,Cornice_baggage_GIGA_part01.3mf,Cornice_baggage,1,Cornice_baggage,1,GREEN,Pullman green,Forest Green,315.78,1
+Large Format,Cornice,Cornice_lunch_GIGA_part01.3mf,Cornice_lunch,1,Cornice_lunch,1,GREEN,Pullman green,Forest Green,81.08,1
+Large Format,Cornice,Cornice_main_GIGA_part01.3mf,Cornice_main,1,Cornice_main,1,GREEN,Pullman green,Forest Green,329.34,1
+Large Format,Cornice,Cornice_main_GIGA_part02.3mf,Cornice_main,2,Cornice_main,1,GREEN,Pullman green,Forest Green,267.09,1
+Large Format,Dormer,Dormer_bargeboards_GIGA_part01.3mf,Dormer_bargeboards,1,Dormer_bargeboards,1,GREEN,Pullman green,Forest Green,7.04,1
+Large Format,Dormer,Dormer_cheek_town_E_GIGA_part01.3mf,Dormer_cheek_town_E,1,Dormer_cheek_town_E,1,BRICK,Brick red,Red,2.5,1
+Large Format,Dormer,Dormer_cheek_town_E_GIGA_part01.3mf,Dormer_cheek_town_E,1,Dormer_cheek_town_E_mortar,2,WHITE,White,White,0.05,1
+Large Format,Dormer,Dormer_cheek_town_W_GIGA_part01.3mf,Dormer_cheek_town_W,1,Dormer_cheek_town_W,1,BRICK,Brick red,Red,2.5,1
+Large Format,Dormer,Dormer_cheek_town_W_GIGA_part01.3mf,Dormer_cheek_town_W,1,Dormer_cheek_town_W_mortar,2,WHITE,White,White,0.05,1
+Large Format,Dormer,Dormer_cheek_track_E_GIGA_part01.3mf,Dormer_cheek_track_E,1,Dormer_cheek_track_E,1,BRICK,Brick red,Red,2.5,1
+Large Format,Dormer,Dormer_cheek_track_E_GIGA_part01.3mf,Dormer_cheek_track_E,1,Dormer_cheek_track_E_mortar,2,WHITE,White,White,0.05,1
+Large Format,Dormer,Dormer_cheek_track_W_GIGA_part01.3mf,Dormer_cheek_track_W,1,Dormer_cheek_track_W,1,BRICK,Brick red,Red,2.5,1
+Large Format,Dormer,Dormer_cheek_track_W_GIGA_part01.3mf,Dormer_cheek_track_W,1,Dormer_cheek_track_W_mortar,2,WHITE,White,White,0.05,1
+Large Format,Dormer,Dormer_face_town_GIGA_part01.3mf,Dormer_face_town,1,Dormer_face_town,1,BRICK,Brick red,Red,99.04,1
+Large Format,Dormer,Dormer_face_town_GIGA_part01.3mf,Dormer_face_town,1,Dormer_face_town_mortar,2,WHITE,White,White,1.07,1
+Large Format,Dormer,Dormer_face_track_GIGA_part01.3mf,Dormer_face_track,1,Dormer_face_track,1,BRICK,Brick red,Red,99.04,1
+Large Format,Dormer,Dormer_face_track_GIGA_part01.3mf,Dormer_face_track,1,Dormer_face_track_mortar,2,WHITE,White,White,1.07,1
+Large Format,Dormer,Dormer_windows_GIGA_part01.3mf,Dormer_windows,1,Dormer_windows,1,GREEN,Pullman green,Forest Green,11.82,1
+Large Format,Electronics,Electronics_cover_GIGA_part01.3mf,Electronics_cover,1,Electronics_cover,1,BLACK,Black,Black,45.22,1
+Large Format,Electronics,Electronics_tray_GIGA_part01.3mf,Electronics_tray,1,Electronics_tray,1,BLACK,Black,Black,12.82,1
+Large Format,Floor,Floor_annex_GIGA_part01.3mf,Floor_annex,1,Floor_annex,1,WHITE,White,White,13.47,1
+Large Format,Floor,Floor_annex_GIGA_part01.3mf,Floor_annex,1,Floor_annex_dark,2,BLACK,Black,Black,3.21,1
+Large Format,Floor,Floor_baggage_GIGA_part01.3mf,Floor_baggage,1,Floor_baggage,1,BROWN,Wood brown,Peanut Brown,76.24,1
+Large Format,Floor,Floor_express_GIGA_part01.3mf,Floor_express,1,Floor_express,1,BROWN,Wood brown,Peanut Brown,40.46,1
+Large Format,Floor,Floor_kitchen_GIGA_part01.3mf,Floor_kitchen,1,Floor_kitchen,1,WHITE,White,White,13.2,1
+Large Format,Floor,Floor_kitchen_GIGA_part01.3mf,Floor_kitchen,1,Floor_kitchen_dark,2,BLACK,Black,Black,3.29,1
+Large Format,Floor,Floor_lunch_GIGA_part01.3mf,Floor_lunch,1,Floor_lunch,1,WHITE,White,White,50.35,1
+Large Format,Floor,Floor_lunch_GIGA_part01.3mf,Floor_lunch,1,Floor_lunch_dark,2,BLACK,Black,Black,12.57,1
+Large Format,Floor,Floor_mens_GIGA_part01.3mf,Floor_mens,1,Floor_mens,1,WHITE,White,White,13.3,1
+Large Format,Floor,Floor_mens_GIGA_part01.3mf,Floor_mens,1,Floor_mens_dark,2,BLACK,Black,Black,3.33,1
+Large Format,Floor,Floor_passage_GIGA_part01.3mf,Floor_passage,1,Floor_passage,1,BRICK,Brick red,Red,18.55,1
+Large Format,Floor,Floor_passage_GIGA_part01.3mf,Floor_passage,1,Floor_passage_dark,2,SLATE,Slate gray,Dark Gray,1.19,1
+Large Format,Floor,Floor_smoking_GIGA_part01.3mf,Floor_smoking,1,Floor_smoking,1,BRICK,Brick red,Red,85.47,1
+Large Format,Floor,Floor_smoking_GIGA_part01.3mf,Floor_smoking,1,Floor_smoking_dark,2,SLATE,Slate gray,Dark Gray,5.19,1
+Large Format,Floor,Floor_ticket_GIGA_part01.3mf,Floor_ticket,1,Floor_ticket,1,BROWN,Wood brown,Peanut Brown,19.7,1
+Large Format,Floor,Floor_trainorder_GIGA_part01.3mf,Floor_trainorder,1,Floor_trainorder,1,BROWN,Wood brown,Peanut Brown,5.6,1
+Large Format,Floor,Floor_vestibule_GIGA_part01.3mf,Floor_vestibule,1,Floor_vestibule,1,BRICK,Brick red,Red,10.76,1
+Large Format,Floor,Floor_vestibule_GIGA_part01.3mf,Floor_vestibule,1,Floor_vestibule_dark,2,SLATE,Slate gray,Dark Gray,0.66,1
+Large Format,Floor,Floor_waiting_GIGA_part01.3mf,Floor_waiting,1,Floor_waiting,1,BRICK,Brick red,Red,126.5,1
+Large Format,Floor,Floor_waiting_GIGA_part01.3mf,Floor_waiting,1,Floor_waiting_dark,2,SLATE,Slate gray,Dark Gray,7.61,1
+Large Format,Floor,Floor_womens_GIGA_part01.3mf,Floor_womens,1,Floor_womens,1,WHITE,White,White,7.76,1
+Large Format,Floor,Floor_womens_GIGA_part01.3mf,Floor_womens,1,Floor_womens_dark,2,BLACK,Black,Black,1.95,1
+Large Format,Foundation,Foundation_baggage_GIGA_part01.3mf,Foundation_baggage,1,Foundation_baggage,1,GRAY,Light gray,Gray,548.45,1
+Large Format,Foundation,Foundation_main_GIGA_part01.3mf,Foundation_main,1,Foundation_main,1,GRAY,Light gray,Gray,977.32,1
+Large Format,Foundation,Foundation_main_GIGA_part02.3mf,Foundation_main,2,Foundation_main,1,GRAY,Light gray,Gray,860.76,1
+Large Format,Furniture,Furniture_backbar_GIGA_part01.3mf,Furniture_backbar,1,Furniture_backbar,1,BROWN,Wood brown,Peanut Brown,20.85,1
+Large Format,Furniture,Furniture_baggage_truck_GIGA_part01.3mf,Furniture_baggage_truck,1,Furniture_baggage_truck,1,BROWN,Wood brown,Peanut Brown,14.42,2
+Large Format,Furniture,Furniture_bench_double_GIGA_part01.3mf,Furniture_bench_double,1,Furniture_bench_double,1,BROWN,Wood brown,Peanut Brown,33.14,6
+Large Format,Furniture,Furniture_bench_single_GIGA_part01.3mf,Furniture_bench_single,1,Furniture_bench_single,1,BROWN,Wood brown,Peanut Brown,13.46,2
+Large Format,Furniture,Furniture_bulletin_GIGA_part01.3mf,Furniture_bulletin,1,Furniture_bulletin,1,BLACK,Black,Black,7.3,1
+Large Format,Furniture,Furniture_bulletin_GIGA_part01.3mf,Furniture_bulletin,1,Furniture_bulletin_white,2,WHITE,White,White,0.65,1
+Large Format,Furniture,Furniture_chair_GIGA_part01.3mf,Furniture_chair,1,Furniture_chair,1,BROWN,Wood brown,Peanut Brown,1.91,8
+Large Format,Furniture,Furniture_desk_GIGA_part01.3mf,Furniture_desk,1,Furniture_desk,1,BROWN,Wood brown,Peanut Brown,8.24,1
+Large Format,Furniture,Furniture_kitchen_sink_GIGA_part01.3mf,Furniture_kitchen_sink,1,Furniture_kitchen_sink,1,WHITE,White,White,3.5,1
+Large Format,Furniture,Furniture_lunch_counter_GIGA_part01.3mf,Furniture_lunch_counter,1,Furniture_lunch_counter,1,BROWN,Wood brown,Peanut Brown,23.2,1
+Large Format,Furniture,Furniture_mirror_GIGA_part01.3mf,Furniture_mirror,1,Furniture_mirror,1,GRAY,Light gray,Gray,0.24,2
+Large Format,Furniture,Furniture_radiator_GIGA_part01.3mf,Furniture_radiator,1,Furniture_radiator,1,SLATE,Slate gray,Dark Gray,5.42,6
+Large Format,Furniture,Furniture_range_GIGA_part01.3mf,Furniture_range,1,Furniture_range,1,BLACK,Black,Black,33.75,1
+Large Format,Furniture,Furniture_safe_GIGA_part01.3mf,Furniture_safe,1,Furniture_safe,1,BLACK,Black,Black,29.5,1
+Large Format,Furniture,Furniture_scale_GIGA_part01.3mf,Furniture_scale,1,Furniture_scale,1,BLACK,Black,Black,4.63,1
+Large Format,Furniture,Furniture_sink_GIGA_part01.3mf,Furniture_sink,1,Furniture_sink,1,WHITE,White,White,1.91,2
+Large Format,Furniture,Furniture_stools_GIGA_part01.3mf,Furniture_stools,1,Furniture_stools,1,BROWN,Wood brown,Peanut Brown,2.13,1
+Large Format,Furniture,Furniture_table_GIGA_part01.3mf,Furniture_table,1,Furniture_table,1,BROWN,Wood brown,Peanut Brown,1.7,2
+Large Format,Furniture,Furniture_ticket_case_GIGA_part01.3mf,Furniture_ticket_case,1,Furniture_ticket_case,1,BROWN,Wood brown,Peanut Brown,13.23,1
+Large Format,Furniture,Furniture_ticket_clock_GIGA_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock,1,BROWN,Wood brown,Peanut Brown,0.87,2
+Large Format,Furniture,Furniture_ticket_clock_GIGA_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_black,2,BLACK,Black,Black,0.04,2
+Large Format,Furniture,Furniture_ticket_clock_GIGA_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_brass,3,BRASS,Brass,Yellow,0.01,2
+Large Format,Furniture,Furniture_ticket_clock_GIGA_part01.3mf,Furniture_ticket_clock,1,Furniture_ticket_clock_face,4,CREAM,Cream / buff,Cream,0.06,2
+Large Format,Furniture,Furniture_ticket_grilles_GIGA_part01.3mf,Furniture_ticket_grilles,1,Furniture_ticket_grilles,1,BRASS,Brass,Yellow,2.1,1
+Large Format,Furniture,Furniture_toilet_GIGA_part01.3mf,Furniture_toilet,1,Furniture_toilet,1,WHITE,White,White,4.3,2
+Large Format,Gable,Gable_baggage_east_GIGA_part01.3mf,Gable_baggage_east,1,Gable_baggage_east,1,BRICK,Brick red,Red,78.59,1
+Large Format,Gable,Gable_baggage_east_GIGA_part01.3mf,Gable_baggage_east,1,Gable_baggage_east_mortar,2,WHITE,White,White,0.9,1
+Large Format,Gable,Gable_baggage_west_GIGA_part01.3mf,Gable_baggage_west,1,Gable_baggage_west,1,BRICK,Brick red,Red,78.59,1
+Large Format,Gable,Gable_baggage_west_GIGA_part01.3mf,Gable_baggage_west,1,Gable_baggage_west_mortar,2,WHITE,White,White,0.9,1
+Large Format,Gable,Gable_lunch_east_GIGA_part01.3mf,Gable_lunch_east,1,Gable_lunch_east,1,BRICK,Brick red,Red,99.15,1
+Large Format,Gable,Gable_lunch_east_GIGA_part01.3mf,Gable_lunch_east,1,Gable_lunch_east_mortar,2,WHITE,White,White,1.13,1
+Large Format,Interior,Interior_B1_baggage_express_GIGA_part01.3mf,Interior_B1_baggage_express,1,Interior_B1_baggage_express,1,CREAM,Cream / buff,Cream,102.91,1
+Large Format,Interior,Interior_K1_kitchen_GIGA_part01.3mf,Interior_K1_kitchen,1,Interior_K1_kitchen,1,CREAM,Cream / buff,Cream,33.45,1
+Large Format,Interior,Interior_P1_ticket_passage_GIGA_part01.3mf,Interior_P1_ticket_passage,1,Interior_P1_ticket_passage,1,CREAM,Cream / buff,Cream,53.98,1
+Large Format,Interior,Interior_P2_ticket_trainorder_GIGA_part01.3mf,Interior_P2_ticket_trainorder,1,Interior_P2_ticket_trainorder,1,CREAM,Cream / buff,Cream,30.25,1
+Large Format,Interior,Interior_P3_passage_town_GIGA_part01.3mf,Interior_P3_passage_town,1,Interior_P3_passage_town,1,CREAM,Cream / buff,Cream,36.16,1
+Large Format,Interior,Interior_P4_toilet_vestibule_GIGA_part01.3mf,Interior_P4_toilet_vestibule,1,Interior_P4_toilet_vestibule,1,CREAM,Cream / buff,Cream,33.14,1
+Large Format,Interior,Interior_S1_smoking_east_GIGA_part01.3mf,Interior_S1_smoking_east,1,Interior_S1_smoking_east,1,CREAM,Cream / buff,Cream,224.31,1
+Large Format,Interior,Interior_S2_menstoilet_GIGA_part01.3mf,Interior_S2_menstoilet,1,Interior_S2_menstoilet,1,CREAM,Cream / buff,Cream,3.92,1
+Large Format,Interior,Interior_W1_waiting_pavilion_GIGA_part01.3mf,Interior_W1_waiting_pavilion,1,Interior_W1_waiting_pavilion,1,CREAM,Cream / buff,Cream,211.99,1
+Large Format,Interior,Interior_W2_pavilion_smoking_GIGA_part01.3mf,Interior_W2_pavilion_smoking,1,Interior_W2_pavilion_smoking,1,CREAM,Cream / buff,Cream,216.61,1
+Large Format,Light,Light_bar_main_GIGA_part01.3mf,Light_bar_main,1,Light_bar_main,1,WHITE,White,White,5.22,1
+Large Format,Light,Light_bar_short_GIGA_part01.3mf,Light_bar_short,1,Light_bar_short,1,WHITE,White,White,4.1,1
+Large Format,Light,Light_clips_GIGA_part01.3mf,Light_clips,1,Light_clips,1,WHITE,White,White,3.03,1
+Large Format,Light,Light_splices_GIGA_part01.3mf,Light_splices,1,Light_splices,1,WHITE,White,White,1.22,1
+Large Format,Liner,Liner_B1_baggage_GIGA_part01.3mf,Liner_B1_baggage,1,Liner_B1_baggage,1,CREAM,Cream / buff,Cream,9.42,1
+Large Format,Liner,Liner_B1_baggage_GIGA_part01.3mf,Liner_B1_baggage,1,Liner_B1_baggage_pine,2,BROWN,Wood brown,Peanut Brown,11.34,1
+Large Format,Liner,Liner_B1_express_GIGA_part01.3mf,Liner_B1_express,1,Liner_B1_express,1,CREAM,Cream / buff,Cream,9.42,1
+Large Format,Liner,Liner_B1_express_GIGA_part01.3mf,Liner_B1_express,1,Liner_B1_express_pine,2,BROWN,Wood brown,Peanut Brown,11.34,1
+Large Format,Liner,Liner_BE_express_GIGA_part01.3mf,Liner_BE_express,1,Liner_BE_express,1,CREAM,Cream / buff,Cream,9.12,1
+Large Format,Liner,Liner_BE_express_GIGA_part01.3mf,Liner_BE_express,1,Liner_BE_express_pine,2,BROWN,Wood brown,Peanut Brown,12.12,1
+Large Format,Liner,Liner_BN_baggage_GIGA_part01.3mf,Liner_BN_baggage,1,Liner_BN_baggage,1,CREAM,Cream / buff,Cream,8.92,1
+Large Format,Liner,Liner_BN_baggage_GIGA_part01.3mf,Liner_BN_baggage,1,Liner_BN_baggage_pine,2,BROWN,Wood brown,Peanut Brown,12.76,1
+Large Format,Liner,Liner_BN_express_GIGA_part01.3mf,Liner_BN_express,1,Liner_BN_express,1,CREAM,Cream / buff,Cream,4.3,1
+Large Format,Liner,Liner_BN_express_GIGA_part01.3mf,Liner_BN_express,1,Liner_BN_express_pine,2,BROWN,Wood brown,Peanut Brown,5.92,1
+Large Format,Liner,Liner_BT_baggage_GIGA_part01.3mf,Liner_BT_baggage,1,Liner_BT_baggage,1,CREAM,Cream / buff,Cream,8.92,1
+Large Format,Liner,Liner_BT_baggage_GIGA_part01.3mf,Liner_BT_baggage,1,Liner_BT_baggage_pine,2,BROWN,Wood brown,Peanut Brown,12.77,1
+Large Format,Liner,Liner_BT_express_GIGA_part01.3mf,Liner_BT_express,1,Liner_BT_express,1,CREAM,Cream / buff,Cream,4.3,1
+Large Format,Liner,Liner_BT_express_GIGA_part01.3mf,Liner_BT_express,1,Liner_BT_express_pine,2,BROWN,Wood brown,Peanut Brown,5.93,1
+Large Format,Liner,Liner_BW_baggage_GIGA_part01.3mf,Liner_BW_baggage,1,Liner_BW_baggage,1,CREAM,Cream / buff,Cream,9.12,1
+Large Format,Liner,Liner_BW_baggage_GIGA_part01.3mf,Liner_BW_baggage,1,Liner_BW_baggage_pine,2,BROWN,Wood brown,Peanut Brown,12.12,1
+Large Format,Liner,Liner_K1_kitchen_GIGA_part01.3mf,Liner_K1_kitchen,1,Liner_K1_kitchen,1,CREAM,Cream / buff,Cream,3.49,1
+Large Format,Liner,Liner_K1_kitchen_GIGA_part01.3mf,Liner_K1_kitchen,1,Liner_K1_kitchen_pine,2,BROWN,Wood brown,Peanut Brown,5.65,1
+Large Format,Liner,Liner_K1_lunch_GIGA_part01.3mf,Liner_K1_lunch,1,Liner_K1_lunch,1,CREAM,Cream / buff,Cream,3.49,1
+Large Format,Liner,Liner_K1_lunch_GIGA_part01.3mf,Liner_K1_lunch,1,Liner_K1_lunch_pine,2,BROWN,Wood brown,Peanut Brown,5.65,1
+Large Format,Liner,Liner_LE_lunch_GIGA_part01.3mf,Liner_LE_lunch,1,Liner_LE_lunch,1,CREAM,Cream / buff,Cream,4.96,1
+Large Format,Liner,Liner_LE_lunch_GIGA_part01.3mf,Liner_LE_lunch,1,Liner_LE_lunch_pine,2,BROWN,Wood brown,Peanut Brown,10.97,1
+Large Format,Liner,Liner_LN_kitchen_GIGA_part01.3mf,Liner_LN_kitchen,1,Liner_LN_kitchen,1,CREAM,Cream / buff,Cream,2.23,1
+Large Format,Liner,Liner_LN_kitchen_GIGA_part01.3mf,Liner_LN_kitchen,1,Liner_LN_kitchen_pine,2,BROWN,Wood brown,Peanut Brown,5.46,1
+Large Format,Liner,Liner_LN_lunch_GIGA_part01.3mf,Liner_LN_lunch,1,Liner_LN_lunch,1,CREAM,Cream / buff,Cream,2.86,1
+Large Format,Liner,Liner_LN_lunch_GIGA_part01.3mf,Liner_LN_lunch,1,Liner_LN_lunch_pine,2,BROWN,Wood brown,Peanut Brown,7.38,1
+Large Format,Liner,Liner_LT_lunch_GIGA_part01.3mf,Liner_LT_lunch,1,Liner_LT_lunch,1,CREAM,Cream / buff,Cream,6.86,1
+Large Format,Liner,Liner_LT_lunch_GIGA_part01.3mf,Liner_LT_lunch,1,Liner_LT_lunch_pine,2,BROWN,Wood brown,Peanut Brown,11.66,1
+Large Format,Liner,Liner_ME_annex_GIGA_part01.3mf,Liner_ME_annex,1,Liner_ME_annex,1,CREAM,Cream / buff,Cream,1.22,1
+Large Format,Liner,Liner_ME_annex_GIGA_part01.3mf,Liner_ME_annex,1,Liner_ME_annex_pine,2,BROWN,Wood brown,Peanut Brown,2.12,1
+Large Format,Liner,Liner_ME_lunch_GIGA_part01.3mf,Liner_ME_lunch,1,Liner_ME_lunch,1,CREAM,Cream / buff,Cream,5.1,1
+Large Format,Liner,Liner_ME_lunch_GIGA_part01.3mf,Liner_ME_lunch,1,Liner_ME_lunch_pine,2,BROWN,Wood brown,Peanut Brown,6.52,1
+Large Format,Liner,Liner_ME_mens_GIGA_part01.3mf,Liner_ME_mens,1,Liner_ME_mens,1,CREAM,Cream / buff,Cream,6.41,1
+Large Format,Liner,Liner_ME_mens_GIGA_part01.3mf,Liner_ME_mens,1,Liner_ME_mens_pine,2,BROWN,Wood brown,Peanut Brown,7.68,1
+Large Format,Liner,Liner_MN_mens_GIGA_part01.3mf,Liner_MN_mens,1,Liner_MN_mens,1,CREAM,Cream / buff,Cream,2.54,1
+Large Format,Liner,Liner_MN_mens_GIGA_part01.3mf,Liner_MN_mens,1,Liner_MN_mens_pine,2,BROWN,Wood brown,Peanut Brown,5.34,1
+Large Format,Liner,Liner_MN_smoking_GIGA_part01.3mf,Liner_MN_smoking,1,Liner_MN_smoking,1,CREAM,Cream / buff,Cream,21.52,1
+Large Format,Liner,Liner_MN_smoking_GIGA_part01.3mf,Liner_MN_smoking,1,Liner_MN_smoking_pine,2,BROWN,Wood brown,Peanut Brown,13.08,1
+Large Format,Liner,Liner_MN_vestibule_GIGA_part01.3mf,Liner_MN_vestibule,1,Liner_MN_vestibule,1,CREAM,Cream / buff,Cream,1.68,1
+Large Format,Liner,Liner_MN_vestibule_GIGA_part01.3mf,Liner_MN_vestibule,1,Liner_MN_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,2.15,1
+Large Format,Liner,Liner_MN_waiting_GIGA_part01.3mf,Liner_MN_waiting,1,Liner_MN_waiting,1,CREAM,Cream / buff,Cream,26.74,1
+Large Format,Liner,Liner_MN_waiting_GIGA_part01.3mf,Liner_MN_waiting,1,Liner_MN_waiting_pine,2,BROWN,Wood brown,Peanut Brown,18.38,1
+Large Format,Liner,Liner_MN_womens_GIGA_part01.3mf,Liner_MN_womens,1,Liner_MN_womens,1,CREAM,Cream / buff,Cream,1.5,1
+Large Format,Liner,Liner_MN_womens_GIGA_part01.3mf,Liner_MN_womens,1,Liner_MN_womens_pine,2,BROWN,Wood brown,Peanut Brown,2.04,1
+Large Format,Liner,Liner_MT_annex_GIGA_part01.3mf,Liner_MT_annex,1,Liner_MT_annex,1,CREAM,Cream / buff,Cream,2.54,1
+Large Format,Liner,Liner_MT_annex_GIGA_part01.3mf,Liner_MT_annex,1,Liner_MT_annex_pine,2,BROWN,Wood brown,Peanut Brown,5.34,1
+Large Format,Liner,Liner_MT_smoking_GIGA_part01.3mf,Liner_MT_smoking,1,Liner_MT_smoking,1,CREAM,Cream / buff,Cream,22.04,1
+Large Format,Liner,Liner_MT_smoking_GIGA_part01.3mf,Liner_MT_smoking,1,Liner_MT_smoking_pine,2,BROWN,Wood brown,Peanut Brown,11.55,1
+Large Format,Liner,Liner_MT_trainorder_GIGA_part01.3mf,Liner_MT_trainorder,1,Liner_MT_trainorder,1,CREAM,Cream / buff,Cream,0.64,1
+Large Format,Liner,Liner_MT_trainorder_GIGA_part01.3mf,Liner_MT_trainorder,1,Liner_MT_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,1.43,1
+Large Format,Liner,Liner_MT_waiting_GIGA_part01.3mf,Liner_MT_waiting,1,Liner_MT_waiting,1,CREAM,Cream / buff,Cream,28.43,1
+Large Format,Liner,Liner_MT_waiting_GIGA_part01.3mf,Liner_MT_waiting,1,Liner_MT_waiting_pine,2,BROWN,Wood brown,Peanut Brown,17.01,1
+Large Format,Liner,Liner_MW_waiting_GIGA_part01.3mf,Liner_MW_waiting,1,Liner_MW_waiting,1,CREAM,Cream / buff,Cream,28.94,1
+Large Format,Liner,Liner_MW_waiting_GIGA_part01.3mf,Liner_MW_waiting,1,Liner_MW_waiting_pine,2,BROWN,Wood brown,Peanut Brown,15.03,1
+Large Format,Liner,Liner_P1_passage_GIGA_part01.3mf,Liner_P1_passage,1,Liner_P1_passage,1,CREAM,Cream / buff,Cream,5.99,1
+Large Format,Liner,Liner_P1_passage_GIGA_part01.3mf,Liner_P1_passage,1,Liner_P1_passage_pine,2,BROWN,Wood brown,Peanut Brown,8.86,1
+Large Format,Liner,Liner_P1_ticket_GIGA_part01.3mf,Liner_P1_ticket,1,Liner_P1_ticket,1,CREAM,Cream / buff,Cream,4.73,1
+Large Format,Liner,Liner_P1_ticket_GIGA_part01.3mf,Liner_P1_ticket,1,Liner_P1_ticket_pine,2,BROWN,Wood brown,Peanut Brown,6.97,1
+Large Format,Liner,Liner_P1_trainorder_GIGA_part01.3mf,Liner_P1_trainorder,1,Liner_P1_trainorder,1,CREAM,Cream / buff,Cream,1.19,1
+Large Format,Liner,Liner_P1_trainorder_GIGA_part01.3mf,Liner_P1_trainorder,1,Liner_P1_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,1.6,1
+Large Format,Liner,Liner_P2_ticket_GIGA_part01.3mf,Liner_P2_ticket,1,Liner_P2_ticket,1,CREAM,Cream / buff,Cream,3.44,1
+Large Format,Liner,Liner_P2_ticket_GIGA_part01.3mf,Liner_P2_ticket,1,Liner_P2_ticket_pine,2,BROWN,Wood brown,Peanut Brown,4.84,1
+Large Format,Liner,Liner_P2_trainorder_GIGA_part01.3mf,Liner_P2_trainorder,1,Liner_P2_trainorder,1,CREAM,Cream / buff,Cream,3.44,1
+Large Format,Liner,Liner_P2_trainorder_GIGA_part01.3mf,Liner_P2_trainorder,1,Liner_P2_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,4.84,1
+Large Format,Liner,Liner_P3_passage_GIGA_part01.3mf,Liner_P3_passage,1,Liner_P3_passage,1,CREAM,Cream / buff,Cream,3.91,1
+Large Format,Liner,Liner_P3_passage_GIGA_part01.3mf,Liner_P3_passage,1,Liner_P3_passage_pine,2,BROWN,Wood brown,Peanut Brown,6.2,1
+Large Format,Liner,Liner_P3_vestibule_GIGA_part01.3mf,Liner_P3_vestibule,1,Liner_P3_vestibule,1,CREAM,Cream / buff,Cream,1.17,1
+Large Format,Liner,Liner_P3_vestibule_GIGA_part01.3mf,Liner_P3_vestibule,1,Liner_P3_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,2.21,1
+Large Format,Liner,Liner_P3_womens_GIGA_part01.3mf,Liner_P3_womens,1,Liner_P3_womens,1,CREAM,Cream / buff,Cream,2.64,1
+Large Format,Liner,Liner_P3_womens_GIGA_part01.3mf,Liner_P3_womens,1,Liner_P3_womens_pine,2,BROWN,Wood brown,Peanut Brown,3.78,1
+Large Format,Liner,Liner_P4_vestibule_GIGA_part01.3mf,Liner_P4_vestibule,1,Liner_P4_vestibule,1,CREAM,Cream / buff,Cream,3.77,1
+Large Format,Liner,Liner_P4_vestibule_GIGA_part01.3mf,Liner_P4_vestibule,1,Liner_P4_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Large Format,Liner,Liner_P4_womens_GIGA_part01.3mf,Liner_P4_womens,1,Liner_P4_womens,1,CREAM,Cream / buff,Cream,3.77,1
+Large Format,Liner,Liner_P4_womens_GIGA_part01.3mf,Liner_P4_womens,1,Liner_P4_womens_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Large Format,Liner,Liner_S1_annex_GIGA_part01.3mf,Liner_S1_annex,1,Liner_S1_annex,1,CREAM,Cream / buff,Cream,4.96,1
+Large Format,Liner,Liner_S1_annex_GIGA_part01.3mf,Liner_S1_annex,1,Liner_S1_annex_pine,2,BROWN,Wood brown,Peanut Brown,5.64,1
+Large Format,Liner,Liner_S1_mens_GIGA_part01.3mf,Liner_S1_mens,1,Liner_S1_mens,1,CREAM,Cream / buff,Cream,5.67,1
+Large Format,Liner,Liner_S1_mens_GIGA_part01.3mf,Liner_S1_mens,1,Liner_S1_mens_pine,2,BROWN,Wood brown,Peanut Brown,6.91,1
+Large Format,Liner,Liner_S1_smoking_GIGA_part01.3mf,Liner_S1_smoking,1,Liner_S1_smoking,1,CREAM,Cream / buff,Cream,32.58,1
+Large Format,Liner,Liner_S1_smoking_GIGA_part01.3mf,Liner_S1_smoking,1,Liner_S1_smoking_pine,2,BROWN,Wood brown,Peanut Brown,12.69,1
+Large Format,Liner,Liner_S2_annex_GIGA_part01.3mf,Liner_S2_annex,1,Liner_S2_annex,1,CREAM,Cream / buff,Cream,0.44,1
+Large Format,Liner,Liner_S2_annex_GIGA_part01.3mf,Liner_S2_annex,1,Liner_S2_annex_pine,2,BROWN,Wood brown,Peanut Brown,0.59,1
+Large Format,Liner,Liner_S2_mens_GIGA_part01.3mf,Liner_S2_mens,1,Liner_S2_mens,1,CREAM,Cream / buff,Cream,0.44,1
+Large Format,Liner,Liner_S2_mens_GIGA_part01.3mf,Liner_S2_mens,1,Liner_S2_mens_pine,2,BROWN,Wood brown,Peanut Brown,0.59,1
+Large Format,Liner,Liner_W1_passage_GIGA_part01.3mf,Liner_W1_passage,1,Liner_W1_passage,1,CREAM,Cream / buff,Cream,0.34,1
+Large Format,Liner,Liner_W1_passage_GIGA_part01.3mf,Liner_W1_passage,1,Liner_W1_passage_pine,2,BROWN,Wood brown,Peanut Brown,1.08,1
+Large Format,Liner,Liner_W1_ticket_GIGA_part01.3mf,Liner_W1_ticket,1,Liner_W1_ticket,1,CREAM,Cream / buff,Cream,4.11,1
+Large Format,Liner,Liner_W1_ticket_GIGA_part01.3mf,Liner_W1_ticket,1,Liner_W1_ticket_pine,2,BROWN,Wood brown,Peanut Brown,5.37,1
+Large Format,Liner,Liner_W1_waiting_GIGA_part01.3mf,Liner_W1_waiting,1,Liner_W1_waiting,1,CREAM,Cream / buff,Cream,30.38,1
+Large Format,Liner,Liner_W1_waiting_GIGA_part01.3mf,Liner_W1_waiting,1,Liner_W1_waiting_pine,2,BROWN,Wood brown,Peanut Brown,12.49,1
+Large Format,Liner,Liner_W1_womens_GIGA_part01.3mf,Liner_W1_womens,1,Liner_W1_womens,1,CREAM,Cream / buff,Cream,4.21,1
+Large Format,Liner,Liner_W1_womens_GIGA_part01.3mf,Liner_W1_womens,1,Liner_W1_womens_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Large Format,Liner,Liner_W2_passage_GIGA_part01.3mf,Liner_W2_passage,1,Liner_W2_passage,1,CREAM,Cream / buff,Cream,0.34,1
+Large Format,Liner,Liner_W2_passage_GIGA_part01.3mf,Liner_W2_passage,1,Liner_W2_passage_pine,2,BROWN,Wood brown,Peanut Brown,1.08,1
+Large Format,Liner,Liner_W2_smoking_GIGA_part01.3mf,Liner_W2_smoking,1,Liner_W2_smoking,1,CREAM,Cream / buff,Cream,30.9,1
+Large Format,Liner,Liner_W2_smoking_GIGA_part01.3mf,Liner_W2_smoking,1,Liner_W2_smoking_pine,2,BROWN,Wood brown,Peanut Brown,12.66,1
+Large Format,Liner,Liner_W2_trainorder_GIGA_part01.3mf,Liner_W2_trainorder,1,Liner_W2_trainorder,1,CREAM,Cream / buff,Cream,4.63,1
+Large Format,Liner,Liner_W2_trainorder_GIGA_part01.3mf,Liner_W2_trainorder,1,Liner_W2_trainorder_pine,2,BROWN,Wood brown,Peanut Brown,5.54,1
+Large Format,Liner,Liner_W2_vestibule_GIGA_part01.3mf,Liner_W2_vestibule,1,Liner_W2_vestibule,1,CREAM,Cream / buff,Cream,4.21,1
+Large Format,Liner,Liner_W2_vestibule_GIGA_part01.3mf,Liner_W2_vestibule,1,Liner_W2_vestibule_pine,2,BROWN,Wood brown,Peanut Brown,5.04,1
+Large Format,Platform,Platform_GIGA_part01.3mf,Platform,1,Platform,1,BRICK,Brick red,Red,1668.92,1
+Large Format,Platform,Platform_GIGA_part01.3mf,Platform,1,Platform_mortar,2,WHITE,White,White,11.41,1
+Large Format,Platform,Platform_GIGA_part02.3mf,Platform,2,Platform,1,BRICK,Brick red,Red,1618.3,1
+Large Format,Platform,Platform_GIGA_part02.3mf,Platform,2,Platform_mortar,2,WHITE,White,White,11.03,1
+Large Format,Platform,Platform_GIGA_part03.3mf,Platform,3,Platform,1,BRICK,Brick red,Red,1607.71,1
+Large Format,Platform,Platform_GIGA_part03.3mf,Platform,3,Platform_mortar,2,WHITE,White,White,10.97,1
+Large Format,Platform,Platform_GIGA_part04.3mf,Platform,4,Platform,1,BRICK,Brick red,Red,1670.04,1
+Large Format,Platform,Platform_GIGA_part04.3mf,Platform,4,Platform_mortar,2,WHITE,White,White,11.42,1
+Large Format,Platform,Platform_GIGA_part05.3mf,Platform,5,Platform,1,BRICK,Brick red,Red,1663.99,1
+Large Format,Platform,Platform_GIGA_part05.3mf,Platform,5,Platform_mortar,2,WHITE,White,White,11.38,1
+Large Format,Platform,Platform_GIGA_part06.3mf,Platform,6,Platform,1,BRICK,Brick red,Red,1668.08,1
+Large Format,Platform,Platform_GIGA_part06.3mf,Platform,6,Platform_mortar,2,WHITE,White,White,11.42,1
+Large Format,Platform,Platform_GIGA_part07.3mf,Platform,7,Platform,1,BRICK,Brick red,Red,647.84,1
+Large Format,Platform,Platform_GIGA_part07.3mf,Platform,7,Platform_mortar,2,WHITE,White,White,4.43,1
+Large Format,Platform,Platform_GIGA_part08.3mf,Platform,8,Platform,1,BRICK,Brick red,Red,1365.6,1
+Large Format,Platform,Platform_GIGA_part08.3mf,Platform,8,Platform_mortar,2,WHITE,White,White,9.35,1
+Large Format,Platform,Platform_GIGA_part09.3mf,Platform,9,Platform,1,BRICK,Brick red,Red,1309.45,1
+Large Format,Platform,Platform_GIGA_part09.3mf,Platform,9,Platform_mortar,2,WHITE,White,White,8.96,1
+Large Format,Porch,Porch_cheek_E_GIGA_part01.3mf,Porch_cheek_E,1,Porch_cheek_E,1,BRICK,Brick red,Red,10.69,1
+Large Format,Porch,Porch_cheek_E_GIGA_part01.3mf,Porch_cheek_E,1,Porch_cheek_E_mortar,2,WHITE,White,White,0.12,1
+Large Format,Porch,Porch_cheek_W_GIGA_part01.3mf,Porch_cheek_W,1,Porch_cheek_W,1,BRICK,Brick red,Red,10.69,1
+Large Format,Porch,Porch_cheek_W_GIGA_part01.3mf,Porch_cheek_W,1,Porch_cheek_W_mortar,2,WHITE,White,White,0.12,1
+Large Format,Roof,Roof_baggage_town_GIGA_part01.3mf,Roof_baggage_town,1,Roof_baggage_town,1,SLATE,Slate gray,Dark Gray,218.72,1
+Large Format,Roof,Roof_baggage_track_GIGA_part01.3mf,Roof_baggage_track,1,Roof_baggage_track,1,SLATE,Slate gray,Dark Gray,218.72,1
+Large Format,Roof,Roof_dormer_town_E_GIGA_part01.3mf,Roof_dormer_town_E,1,Roof_dormer_town_E,1,SLATE,Slate gray,Dark Gray,37.06,1
+Large Format,Roof,Roof_dormer_town_W_GIGA_part01.3mf,Roof_dormer_town_W,1,Roof_dormer_town_W,1,SLATE,Slate gray,Dark Gray,37.07,1
+Large Format,Roof,Roof_dormer_track_E_GIGA_part01.3mf,Roof_dormer_track_E,1,Roof_dormer_track_E,1,SLATE,Slate gray,Dark Gray,37.07,1
+Large Format,Roof,Roof_dormer_track_W_GIGA_part01.3mf,Roof_dormer_track_W,1,Roof_dormer_track_W,1,SLATE,Slate gray,Dark Gray,37.06,1
+Large Format,Roof,Roof_lunch_town_GIGA_part01.3mf,Roof_lunch_town,1,Roof_lunch_town,1,SLATE,Slate gray,Dark Gray,146.21,1
+Large Format,Roof,Roof_lunch_track_GIGA_part01.3mf,Roof_lunch_track,1,Roof_lunch_track,1,SLATE,Slate gray,Dark Gray,91.13,1
+Large Format,Roof,Roof_main_east_GIGA_part01.3mf,Roof_main_east,1,Roof_main_east,1,SLATE,Slate gray,Dark Gray,93.83,1
+Large Format,Roof,Roof_main_town_GIGA_part01.3mf,Roof_main_town,1,Roof_main_town,1,SLATE,Slate gray,Dark Gray,178.73,1
+Large Format,Roof,Roof_main_town_GIGA_part02.3mf,Roof_main_town,2,Roof_main_town,1,SLATE,Slate gray,Dark Gray,251.52,1
+Large Format,Roof,Roof_main_track_GIGA_part01.3mf,Roof_main_track,1,Roof_main_track,1,SLATE,Slate gray,Dark Gray,251.5,1
+Large Format,Roof,Roof_main_track_GIGA_part02.3mf,Roof_main_track,2,Roof_main_track,1,SLATE,Slate gray,Dark Gray,178.74,1
+Large Format,Roof,Roof_main_west_GIGA_part01.3mf,Roof_main_west,1,Roof_main_west,1,SLATE,Slate gray,Dark Gray,106.81,1
+Large Format,Roof,Roof_porch_pent_GIGA_part01.3mf,Roof_porch_pent,1,Roof_porch_pent,1,SLATE,Slate gray,Dark Gray,62.82,1
+Large Format,RoofFrame,RoofFrame_baggage_1_GIGA_part01.3mf,RoofFrame_baggage_1,1,RoofFrame_baggage_1,1,GRAY,Light gray,Gray,14.64,1
+Large Format,RoofFrame,RoofFrame_baggage_2_GIGA_part01.3mf,RoofFrame_baggage_2,1,RoofFrame_baggage_2,1,GRAY,Light gray,Gray,14.64,1
+Large Format,RoofFrame,RoofFrame_lunch_1_GIGA_part01.3mf,RoofFrame_lunch_1,1,RoofFrame_lunch_1,1,GRAY,Light gray,Gray,9.51,1
+Large Format,RoofFrame,RoofFrame_main_20_GIGA_part01.3mf,RoofFrame_main_20,1,RoofFrame_main_20,1,GRAY,Light gray,Gray,20.18,1
+Large Format,RoofFrame,RoofFrame_main_38_GIGA_part01.3mf,RoofFrame_main_38,1,RoofFrame_main_38,1,GRAY,Light gray,Gray,20.18,1
+Large Format,RoofFrame,RoofFrame_main_62_GIGA_part01.3mf,RoofFrame_main_62,1,RoofFrame_main_62,1,GRAY,Light gray,Gray,20.18,1
+Large Format,RoofFrame,RoofFrame_main_80_GIGA_part01.3mf,RoofFrame_main_80,1,RoofFrame_main_80,1,GRAY,Light gray,Gray,20.18,1
+Large Format,RoofTrim,RoofTrim_cap_baggage_ridge_GIGA_part01.3mf,RoofTrim_cap_baggage_ridge,1,RoofTrim_cap_baggage_ridge,1,SLATE,Slate gray,Dark Gray,3.31,1
+Large Format,RoofTrim,RoofTrim_cap_dormer_town_ridge_GIGA_part01.3mf,RoofTrim_cap_dormer_town_ridge,1,RoofTrim_cap_dormer_town_ridge,1,SLATE,Slate gray,Dark Gray,0.99,1
+Large Format,RoofTrim,RoofTrim_cap_dormer_track_ridge_GIGA_part01.3mf,RoofTrim_cap_dormer_track_ridge,1,RoofTrim_cap_dormer_track_ridge,1,SLATE,Slate gray,Dark Gray,0.99,1
+Large Format,RoofTrim,RoofTrim_cap_lunch_ridge_GIGA_part01.3mf,RoofTrim_cap_lunch_ridge,1,RoofTrim_cap_lunch_ridge,1,SLATE,Slate gray,Dark Gray,2.15,1
+Large Format,RoofTrim,RoofTrim_cap_main_hip_NE_GIGA_part01.3mf,RoofTrim_cap_main_hip_NE,1,RoofTrim_cap_main_hip_NE,1,SLATE,Slate gray,Dark Gray,2.01,1
+Large Format,RoofTrim,RoofTrim_cap_main_hip_NW_GIGA_part01.3mf,RoofTrim_cap_main_hip_NW,1,RoofTrim_cap_main_hip_NW,1,SLATE,Slate gray,Dark Gray,2.01,1
+Large Format,RoofTrim,RoofTrim_cap_main_hip_SE_GIGA_part01.3mf,RoofTrim_cap_main_hip_SE,1,RoofTrim_cap_main_hip_SE,1,SLATE,Slate gray,Dark Gray,2.01,1
+Large Format,RoofTrim,RoofTrim_cap_main_hip_SW_GIGA_part01.3mf,RoofTrim_cap_main_hip_SW,1,RoofTrim_cap_main_hip_SW,1,SLATE,Slate gray,Dark Gray,2.01,1
+Large Format,RoofTrim,RoofTrim_cap_main_ridge_GIGA_part01.3mf,RoofTrim_cap_main_ridge,1,RoofTrim_cap_main_ridge,1,SLATE,Slate gray,Dark Gray,4.5,1
+Large Format,RoofTrim,RoofTrim_cresting_GIGA_part01.3mf,RoofTrim_cresting,1,RoofTrim_cresting,1,SLATE,Slate gray,Dark Gray,2.3,1
+Large Format,Sign,Sign_janesville_GIGA_part01.3mf,Sign_janesville,1,Sign_janesville,1,GREEN,Pullman green,Forest Green,6.27,1
+Large Format,Sign,Sign_janesville_GIGA_part01.3mf,Sign_janesville,1,Sign_janesville_letters,2,CREAM,Cream / buff,Cream,1.28,1
+Large Format,Sign,Sign_oval_GIGA_part01.3mf,Sign_oval,1,Sign_oval,1,GREEN,Pullman green,Forest Green,7.62,1
+Large Format,Sign,Sign_oval_GIGA_part01.3mf,Sign_oval,1,Sign_oval_letters,2,CREAM,Cream / buff,Cream,1.62,1
+Large Format,Splices,Splices_Main_town_GIGA_part01.3mf,Splices_Main_town,1,Splices_Main_town,1,GRAY,Light gray,Gray,3.82,1
+Large Format,Splices,Splices_Main_track_GIGA_part01.3mf,Splices_Main_track,1,Splices_Main_track,1,GRAY,Light gray,Gray,3.82,1
+Large Format,Track,Track_GIGA_part01.3mf,Track,1,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part01.3mf,Track,1,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part01.3mf,Track,1,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Track,Track_GIGA_part02.3mf,Track,2,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part02.3mf,Track,2,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part02.3mf,Track,2,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Track,Track_GIGA_part03.3mf,Track,3,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part03.3mf,Track,3,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part03.3mf,Track,3,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Track,Track_GIGA_part04.3mf,Track,4,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part04.3mf,Track,4,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part04.3mf,Track,4,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Track,Track_GIGA_part05.3mf,Track,5,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part05.3mf,Track,5,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part05.3mf,Track,5,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Track,Track_GIGA_part06.3mf,Track,6,Track_ballast,1,GRAY,Light gray,Gray,96.02,1
+Large Format,Track,Track_GIGA_part06.3mf,Track,6,Track_rails,2,SLATE,Slate gray,Dark Gray,11.46,1
+Large Format,Track,Track_GIGA_part06.3mf,Track,6,Track_ties,3,BROWN,Wood brown,Peanut Brown,29.58,1
+Large Format,Wall,Wall_Baggage_east_GIGA_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east,1,BRICK,Brick red,Red,131.43,1
+Large Format,Wall,Wall_Baggage_east_GIGA_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east_mortar,2,WHITE,White,White,1.48,1
+Large Format,Wall,Wall_Baggage_east_GIGA_part01.3mf,Wall_Baggage_east,1,Wall_Baggage_east_stone,3,CREAM,Cream / buff,Cream,0.81,1
+Large Format,Wall,Wall_Baggage_town_GIGA_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town,1,BRICK,Brick red,Red,205.17,1
+Large Format,Wall,Wall_Baggage_town_GIGA_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town_mortar,2,WHITE,White,White,2.31,1
+Large Format,Wall,Wall_Baggage_town_GIGA_part01.3mf,Wall_Baggage_town,1,Wall_Baggage_town_stone,3,CREAM,Cream / buff,Cream,1.17,1
+Large Format,Wall,Wall_Baggage_track_GIGA_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track,1,BRICK,Brick red,Red,205.17,1
+Large Format,Wall,Wall_Baggage_track_GIGA_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track_mortar,2,WHITE,White,White,2.31,1
+Large Format,Wall,Wall_Baggage_track_GIGA_part01.3mf,Wall_Baggage_track,1,Wall_Baggage_track_stone,3,CREAM,Cream / buff,Cream,1.17,1
+Large Format,Wall,Wall_Baggage_west_GIGA_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west,1,BRICK,Brick red,Red,131.43,1
+Large Format,Wall,Wall_Baggage_west_GIGA_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west_mortar,2,WHITE,White,White,1.48,1
+Large Format,Wall,Wall_Baggage_west_GIGA_part01.3mf,Wall_Baggage_west,1,Wall_Baggage_west_stone,3,CREAM,Cream / buff,Cream,0.81,1
+Large Format,Wall,Wall_Bay_front_GIGA_part01.3mf,Wall_Bay_front,1,Wall_Bay_front,1,BRICK,Brick red,Red,39.83,1
+Large Format,Wall,Wall_Bay_front_GIGA_part01.3mf,Wall_Bay_front,1,Wall_Bay_front_mortar,2,WHITE,White,White,0.47,1
+Large Format,Wall,Wall_Bay_front_GIGA_part01.3mf,Wall_Bay_front,1,Wall_Bay_front_stone,3,CREAM,Cream / buff,Cream,0.31,1
+Large Format,Wall,Wall_Bay_side_E_GIGA_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E,1,BRICK,Brick red,Red,20.94,1
+Large Format,Wall,Wall_Bay_side_E_GIGA_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E_mortar,2,WHITE,White,White,0.26,1
+Large Format,Wall,Wall_Bay_side_E_GIGA_part01.3mf,Wall_Bay_side_E,1,Wall_Bay_side_E_stone,3,CREAM,Cream / buff,Cream,0.14,1
+Large Format,Wall,Wall_Bay_side_W_GIGA_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W,1,BRICK,Brick red,Red,20.94,1
+Large Format,Wall,Wall_Bay_side_W_GIGA_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W_mortar,2,WHITE,White,White,0.26,1
+Large Format,Wall,Wall_Bay_side_W_GIGA_part01.3mf,Wall_Bay_side_W,1,Wall_Bay_side_W_stone,3,CREAM,Cream / buff,Cream,0.14,1
+Large Format,Wall,Wall_Lunch_east_GIGA_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east,1,BRICK,Brick red,Red,95.32,1
+Large Format,Wall,Wall_Lunch_east_GIGA_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east_mortar,2,WHITE,White,White,1.07,1
+Large Format,Wall,Wall_Lunch_east_GIGA_part01.3mf,Wall_Lunch_east,1,Wall_Lunch_east_stone,3,CREAM,Cream / buff,Cream,0.81,1
+Large Format,Wall,Wall_Lunch_town_GIGA_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town,1,BRICK,Brick red,Red,108.97,1
+Large Format,Wall,Wall_Lunch_town_GIGA_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town_mortar,2,WHITE,White,White,1.22,1
+Large Format,Wall,Wall_Lunch_town_GIGA_part01.3mf,Wall_Lunch_town,1,Wall_Lunch_town_stone,3,CREAM,Cream / buff,Cream,0.91,1
+Large Format,Wall,Wall_Lunch_track_GIGA_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track,1,BRICK,Brick red,Red,235.59,1
+Large Format,Wall,Wall_Lunch_track_GIGA_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track_mortar,2,WHITE,White,White,2.7,1
+Large Format,Wall,Wall_Lunch_track_GIGA_part01.3mf,Wall_Lunch_track,1,Wall_Lunch_track_stone,3,CREAM,Cream / buff,Cream,0.82,1
+Large Format,Wall,Wall_Main_east_GIGA_part01.3mf,Wall_Main_east,1,Wall_Main_east,1,BRICK,Brick red,Red,297.3,1
+Large Format,Wall,Wall_Main_east_GIGA_part01.3mf,Wall_Main_east,1,Wall_Main_east_mortar,2,WHITE,White,White,2.84,1
+Large Format,Wall,Wall_Main_east_GIGA_part01.3mf,Wall_Main_east,1,Wall_Main_east_stone,3,CREAM,Cream / buff,Cream,1.95,1
+Large Format,Wall,Wall_Main_town_GIGA_part01.3mf,Wall_Main_town,1,Wall_Main_town,1,BRICK,Brick red,Red,465.01,1
+Large Format,Wall,Wall_Main_town_GIGA_part01.3mf,Wall_Main_town,1,Wall_Main_town_mortar,2,WHITE,White,White,4.23,1
+Large Format,Wall,Wall_Main_town_GIGA_part01.3mf,Wall_Main_town,1,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,3.53,1
+Large Format,Wall,Wall_Main_town_GIGA_part02.3mf,Wall_Main_town,2,Wall_Main_town,1,BRICK,Brick red,Red,409.34,1
+Large Format,Wall,Wall_Main_town_GIGA_part02.3mf,Wall_Main_town,2,Wall_Main_town_mortar,2,WHITE,White,White,3.56,1
+Large Format,Wall,Wall_Main_town_GIGA_part02.3mf,Wall_Main_town,2,Wall_Main_town_stone,3,CREAM,Cream / buff,Cream,3.35,1
+Large Format,Wall,Wall_Main_track_GIGA_part01.3mf,Wall_Main_track,1,Wall_Main_track,1,BRICK,Brick red,Red,389.88,1
+Large Format,Wall,Wall_Main_track_GIGA_part01.3mf,Wall_Main_track,1,Wall_Main_track_mortar,2,WHITE,White,White,3.42,1
+Large Format,Wall,Wall_Main_track_GIGA_part01.3mf,Wall_Main_track,1,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,2.84,1
+Large Format,Wall,Wall_Main_track_GIGA_part02.3mf,Wall_Main_track,2,Wall_Main_track,1,BRICK,Brick red,Red,447.53,1
+Large Format,Wall,Wall_Main_track_GIGA_part02.3mf,Wall_Main_track,2,Wall_Main_track_mortar,2,WHITE,White,White,4.05,1
+Large Format,Wall,Wall_Main_track_GIGA_part02.3mf,Wall_Main_track,2,Wall_Main_track_stone,3,CREAM,Cream / buff,Cream,3.25,1
+Large Format,Wall,Wall_Main_west_GIGA_part01.3mf,Wall_Main_west,1,Wall_Main_west,1,BRICK,Brick red,Red,325.45,1
+Large Format,Wall,Wall_Main_west_GIGA_part01.3mf,Wall_Main_west,1,Wall_Main_west_mortar,2,WHITE,White,White,3.0,1
+Large Format,Wall,Wall_Main_west_GIGA_part01.3mf,Wall_Main_west,1,Wall_Main_west_stone,3,CREAM,Cream / buff,Cream,2.57,1
+Large Format,Wall,Wall_Porch_block_E_GIGA_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E,1,BRICK,Brick red,Red,30.49,1
+Large Format,Wall,Wall_Porch_block_E_GIGA_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E_mortar,2,WHITE,White,White,0.36,1
+Large Format,Wall,Wall_Porch_block_E_GIGA_part01.3mf,Wall_Porch_block_E,1,Wall_Porch_block_E_stone,3,CREAM,Cream / buff,Cream,0.22,1
+Large Format,Wall,Wall_Porch_block_W_GIGA_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W,1,BRICK,Brick red,Red,22.35,1
+Large Format,Wall,Wall_Porch_block_W_GIGA_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W_mortar,2,WHITE,White,White,0.26,1
+Large Format,Wall,Wall_Porch_block_W_GIGA_part01.3mf,Wall_Porch_block_W,1,Wall_Porch_block_W_stone,3,CREAM,Cream / buff,Cream,0.22,1
+Large Format,Wall,Wall_Porch_east_GIGA_part01.3mf,Wall_Porch_east,1,Wall_Porch_east,1,BRICK,Brick red,Red,10.39,1
+Large Format,Wall,Wall_Porch_east_GIGA_part01.3mf,Wall_Porch_east,1,Wall_Porch_east_mortar,2,WHITE,White,White,0.13,1
+Large Format,Wall,Wall_Porch_east_GIGA_part01.3mf,Wall_Porch_east,1,Wall_Porch_east_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Large Format,Wall,Wall_Porch_recess_E_GIGA_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E,1,BRICK,Brick red,Red,10.39,1
+Large Format,Wall,Wall_Porch_recess_E_GIGA_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E_mortar,2,WHITE,White,White,0.13,1
+Large Format,Wall,Wall_Porch_recess_E_GIGA_part01.3mf,Wall_Porch_recess_E,1,Wall_Porch_recess_E_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Large Format,Wall,Wall_Porch_recess_W_GIGA_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W,1,BRICK,Brick red,Red,10.39,1
+Large Format,Wall,Wall_Porch_recess_W_GIGA_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W_mortar,2,WHITE,White,White,0.13,1
+Large Format,Wall,Wall_Porch_recess_W_GIGA_part01.3mf,Wall_Porch_recess_W,1,Wall_Porch_recess_W_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Large Format,Wall,Wall_Porch_west_GIGA_part01.3mf,Wall_Porch_west,1,Wall_Porch_west,1,BRICK,Brick red,Red,10.39,1
+Large Format,Wall,Wall_Porch_west_GIGA_part01.3mf,Wall_Porch_west,1,Wall_Porch_west_mortar,2,WHITE,White,White,0.13,1
+Large Format,Wall,Wall_Porch_west_GIGA_part01.3mf,Wall_Porch_west,1,Wall_Porch_west_stone,3,CREAM,Cream / buff,Cream,0.08,1
+Large Format,Window,Window_Baggage_east_0_GIGA_part01.3mf,Window_Baggage_east_0,1,Window_Baggage_east_0,1,GREEN,Pullman green,Forest Green,2.82,1
+Large Format,Window,Window_Baggage_town_0_GIGA_part01.3mf,Window_Baggage_town_0,1,Window_Baggage_town_0,1,GREEN,Pullman green,Forest Green,15.68,1
+Large Format,Window,Window_Baggage_town_1_GIGA_part01.3mf,Window_Baggage_town_1,1,Window_Baggage_town_1,1,GREEN,Pullman green,Forest Green,3.03,1
+Large Format,Window,Window_Baggage_town_2_GIGA_part01.3mf,Window_Baggage_town_2,1,Window_Baggage_town_2,1,GREEN,Pullman green,Forest Green,15.68,1
+Large Format,Window,Window_Baggage_track_0_GIGA_part01.3mf,Window_Baggage_track_0,1,Window_Baggage_track_0,1,GREEN,Pullman green,Forest Green,15.68,1
+Large Format,Window,Window_Baggage_track_1_GIGA_part01.3mf,Window_Baggage_track_1,1,Window_Baggage_track_1,1,GREEN,Pullman green,Forest Green,3.03,1
+Large Format,Window,Window_Baggage_track_2_GIGA_part01.3mf,Window_Baggage_track_2,1,Window_Baggage_track_2,1,GREEN,Pullman green,Forest Green,15.68,1
+Large Format,Window,Window_Baggage_west_0_GIGA_part01.3mf,Window_Baggage_west_0,1,Window_Baggage_west_0,1,GREEN,Pullman green,Forest Green,2.82,1
+Large Format,Window,Window_Bay_front_0_GIGA_part01.3mf,Window_Bay_front_0,1,Window_Bay_front_0,1,GREEN,Pullman green,Forest Green,5.16,1
+Large Format,Window,Window_Bay_side_E_0_GIGA_part01.3mf,Window_Bay_side_E_0,1,Window_Bay_side_E_0,1,GREEN,Pullman green,Forest Green,2.78,1
+Large Format,Window,Window_Bay_side_W_0_GIGA_part01.3mf,Window_Bay_side_W_0,1,Window_Bay_side_W_0,1,GREEN,Pullman green,Forest Green,2.78,1
+Large Format,Window,Window_Lunch_east_0_GIGA_part01.3mf,Window_Lunch_east_0,1,Window_Lunch_east_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Lunch_east_1_GIGA_part01.3mf,Window_Lunch_east_1,1,Window_Lunch_east_1,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Lunch_town_0_GIGA_part01.3mf,Window_Lunch_town_0,1,Window_Lunch_town_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Lunch_town_1_GIGA_part01.3mf,Window_Lunch_town_1,1,Window_Lunch_town_1,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Lunch_town_2_GIGA_part01.3mf,Window_Lunch_town_2,1,Window_Lunch_town_2,1,GREEN,Pullman green,Forest Green,2.61,1
+Large Format,Window,Window_Lunch_town_3_GIGA_part01.3mf,Window_Lunch_town_3,1,Window_Lunch_town_3,1,GREEN,Pullman green,Forest Green,5.05,1
+Large Format,Window,Window_Lunch_track_0_GIGA_part01.3mf,Window_Lunch_track_0,1,Window_Lunch_track_0,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Lunch_track_1_GIGA_part01.3mf,Window_Lunch_track_1,1,Window_Lunch_track_1,1,GREEN,Pullman green,Forest Green,9.15,1
+Large Format,Window,Window_Lunch_track_2_GIGA_part01.3mf,Window_Lunch_track_2,1,Window_Lunch_track_2,1,GREEN,Pullman green,Forest Green,4.61,1
+Large Format,Window,Window_Main_town_0_GIGA_part01.3mf,Window_Main_town_0,1,Window_Main_town_0,1,GREEN,Pullman green,Forest Green,3.83,1
+Large Format,Window,Window_Main_town_1_GIGA_part01.3mf,Window_Main_town_1,1,Window_Main_town_1,1,GREEN,Pullman green,Forest Green,9.06,1
+Large Format,Window,Window_Main_town_2_GIGA_part01.3mf,Window_Main_town_2,1,Window_Main_town_2,1,GREEN,Pullman green,Forest Green,9.06,1
+Large Format,Window,Window_Main_town_4_GIGA_part01.3mf,Window_Main_town_4,1,Window_Main_town_4,1,GREEN,Pullman green,Forest Green,12.77,1
+Large Format,Window,Window_Main_town_6_GIGA_part01.3mf,Window_Main_town_6,1,Window_Main_town_6,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Main_town_7_GIGA_part01.3mf,Window_Main_town_7,1,Window_Main_town_7,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Main_town_8_GIGA_part01.3mf,Window_Main_town_8,1,Window_Main_town_8,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Main_track_0_GIGA_part01.3mf,Window_Main_track_0,1,Window_Main_track_0,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Main_track_1_GIGA_part01.3mf,Window_Main_track_1,1,Window_Main_track_1,1,GREEN,Pullman green,Forest Green,17.26,1
+Large Format,Window,Window_Main_track_2_GIGA_part01.3mf,Window_Main_track_2,1,Window_Main_track_2,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Main_track_4_GIGA_part01.3mf,Window_Main_track_4,1,Window_Main_track_4,1,GREEN,Pullman green,Forest Green,9.56,1
+Large Format,Window,Window_Main_track_5_GIGA_part01.3mf,Window_Main_track_5,1,Window_Main_track_5,1,GREEN,Pullman green,Forest Green,15.68,1
+Large Format,Window,Window_Main_track_6_GIGA_part01.3mf,Window_Main_track_6,1,Window_Main_track_6,1,GREEN,Pullman green,Forest Green,9.06,1
+Large Format,Window,Window_Main_track_7_GIGA_part01.3mf,Window_Main_track_7,1,Window_Main_track_7,1,GREEN,Pullman green,Forest Green,3.83,1
+Large Format,Window,Window_Main_west_0_GIGA_part01.3mf,Window_Main_west_0,1,Window_Main_west_0,1,GREEN,Pullman green,Forest Green,10.64,1
+Large Format,Window,Window_Porch_block_W_0_GIGA_part01.3mf,Window_Porch_block_W_0,1,Window_Porch_block_W_0,1,GREEN,Pullman green,Forest Green,2.61,1

@@ -1,0 +1,8 @@
+[
+ {"name":"1_sideframe","parts":[["sideframe.stl","black",[0,0,0]],["bearings.stl","red",[0,0,0]]],"views":[["outside",-70,15],["inside",110,20],["end",-10,10]],"dist":1.6},
+ {"name":"2_bolster","parts":[["bolster.stl","black",[0,0,0]]],"views":[["top",-40,35],["side",-90,5],["end",0,10]],"dist":1.7},
+ {"name":"3_wheelsets","parts":[["wheels.stl","steel",[0,0,0]],["axles.stl","brass",[0,0,0]],["bearings.stl","red",[0,0,0]]],"views":[["34",-40,25],["end",0,8]],"dist":1.6},
+ {"name":"4_truck","parts":[["sideframe.stl","black",[0,0,0]],["sideframe2.stl","black",[0,0,0]],["bolster.stl","black",[0,0,0]],["wheels.stl","steel",[0,0,0]],["axles.stl","brass",[0,0,0]],["bearings.stl","red",[0,0,0]],["bolt.stl","zinc",[0,0,0]],["nut.stl","zinc",[0,0,0]]],"views":[["34",-40,25],["top",-20,70],["side",-90,4]],"dist":1.6},
+ {"name":"5_truck_exploded","parts":[["sideframe.stl","black",[0,40,0]],["sideframe2.stl","black",[0,-40,0]],["bolster.stl","black",[0,0,40]],["wheels.stl","steel",[0,0,0]],["axles.stl","brass",[0,0,0]],["bearings.stl","red",[0,20,0]],["bolt.stl","zinc",[0,0,95]],["nut.stl","zinc",[0,0,10]],["framepad.stl","frame",[0,0,65]]],"views":[["34",-40,22]],"dist":1.4},
+ {"name":"6_pivot_exploded","parts":[["framepad.stl","frame",[0,0,30]],["bolt.stl","zinc",[0,0,55]],["bolster.stl","black",[0,0,0]],["nut.stl","zinc",[0,0,-18]]],"views":[["34",-35,15]],"dist":1.5}
+]

@@ -1,0 +1,17 @@
+{
+  "title": "Milwaukee Road class ES-2 electric switcher (E80-E83, later years)",
+  "slug": "MILW_ES2_Switcher",
+  "review": {"verified": false, "code": "TDQ-293", "note": "v8 18 Oct 2026: end-sill pole pockets, 3 x 2 mm rod joint, screw bosses for hoods and cab, separate steps (TDQ-349). v7 17 Oct 2026: trolley base, pole hook mast, slider, sand pipes, air hoses, uncoupling levers (TDQ-342). v6 17 Oct 2026: G-scale detail - channel frame, pole pockets, diamond-plate walkways (on the frame plates), hinged doors, louvres, hatches, railings (1 mm wire through printed posts), ladders, rivets, visors, lenses, spoked wheels; pantograph not printed (TDQ-341). v5 17 Oct 2026: checked against the MPL drawing set (hoods, trucks, roof, bell). v4 13 Oct 2026: E83 (LOCO_SEL in the scad picks E80-E83), sides from Tom's HO E83, printed unpowered trucks (35 mm wheels, brass axles, F683 bearings), printed coupler, bought pantograph. Not printed yet."},
+  "picture": "notes/E83_render_34.png",
+  "docs": ["notes/MILW_ES2_Notes.pdf"],
+  "scales": {
+    "G": {
+      "scad": "scad/MILW_ES2_Main.scad",
+      "mode": "parts",
+      "var": "part",
+      "printers": [["P1S", "Eight prints, each fits the P1S bed"]],
+      "parts": [["frame_A", 1], ["frame_B", 1], ["hood_1", 1], ["hood_2", 1], ["cab", 1],
+                ["truck_A", 1], ["truck_B", 1], ["underside", 1]]
+    }
+  }
+}

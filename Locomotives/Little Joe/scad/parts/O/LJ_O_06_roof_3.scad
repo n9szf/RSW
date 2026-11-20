@@ -1,0 +1,7 @@
+// Milwaukee Road Little Joe, O scale 1-48 - print 6 of 17: roof_3 - roof, section 3 (print upright)
+// Render (F6), export STL, print. Settings: ../../library/lj_params.scad
+// Whole loco preview and notes: ../../MILW_LittleJoe_Main.scad
+SCALE_SEL = "O";
+LOCO_SEL = "E70";   // [E20, E21, E70, E71, E72, E73, E74, E75, E76, E77, E78, E79] the body and roof change for E20 / E21
+include <../../library/lj_all.scad>
+lj_plate("roof_3");
