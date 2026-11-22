@@ -9,6 +9,9 @@
 //   model of 01731 (same series; BLT 8-57, LT WT 45700); details from Kehoe
 //   "Milwaukee Road's Steel Cabooses" ch.3 and a ctcpix close-up of the end and steps.
 //   Not yet checked against a drawing.
+// v4 (11/21/2026): Tom - no raised lettering; THE MILWAUKEE ROAD, the road numbers and the
+//   sill stencils will be decals. LETTERING = "decal" (default) leaves them off the model and
+//   the print parts; "raised" puts the old raised letters back.
 //   Verify against Kehoe "Milwaukee Road's Steel Cabooses" (MRHA) and the
 //   5/2/1967 drawing "Terminal Caboose 01731-01740", or measure 01738.
 //
@@ -24,7 +27,8 @@ PART  = "assembled"; // [assembled, deck, cab, roof, railings, truck, brake_whee
 ETRM_TODAY   = true;   // true = as at East Troy now: no roof walk or roof handles
 WINDOWS_PLATED = false; // true = later FRA-era plated-over side windows
 SHOW_TRUCKS  = true;    // stand-in trucks in the assembled view
-ROAD_NO      = "01738";  // road number on the cab sides
+ROAD_NO      = "01738";  // road number on the cab sides (decal; drawn only when LETTERING = "raised")
+LETTERING    = "decal";  // [decal:Decals - plain sides, raised:Raised printed letters]
 
 /* [Print] */
 MIN_WALL = 0.8;     // mm, smallest printable feature
@@ -335,9 +339,9 @@ module assembled() {
         color("Black") deck();
         color("Silver") corner_treads();
         translate([mm(CAB_X),0,0]) color("DarkOrange") cab_shell();
-        color("DarkRed") lettering();
+        if (LETTERING == "raised") color("DarkRed") lettering();
         color("Black") translate([mm(CAB_X),0,mm(CAB_WALL_H)]) roof();
-        color("WhiteSmoke") { railings(); stencils(); }
+        color("WhiteSmoke") { railings(); if (LETTERING == "raised") stencils(); }
         color("Black") brake_gear();
     }
     if (SHOW_TRUCKS) color("DimGray") for (e=[-1,1]) translate([e*mm(TRUCK_CTR)/2,0,0]) truck();
@@ -350,15 +354,15 @@ else if (PART=="roof")        roof();
 else if (PART=="railings")    railings();
 else if (PART=="brake_gear")  brake_gear();
 else if (PART=="truck")       truck();
-else if (PART=="lettering")   lettering();
+else if (PART=="lettering")   { if (LETTERING == "raised") lettering(); else echo("LETTERING is decal: no lettering part"); }
 else if (PART=="brake_wheel") brake_wheel();
 // render groups (assembled position, one colour each) - used by the Blender job
 else if (PART=="r_orange")    translate([mm(CAB_X),0,mm(DECK_TOP)]) cab_shell();
 else if (PART=="r_black")     translate([0,0,mm(DECK_TOP)]) { deck(); translate([mm(CAB_X),0,mm(CAB_WALL_H)]) roof(); brake_gear(); }
 else if (PART=="r_tread")     translate([0,0,mm(DECK_TOP)]) corner_treads();
-else if (PART=="r_rail")      translate([0,0,mm(DECK_TOP)]) { railings(); stencils(); }
+else if (PART=="r_rail")      translate([0,0,mm(DECK_TOP)]) { railings(); if (LETTERING == "raised") stencils(); }
 else if (PART=="r_trucks")    for (e=[-1,1]) translate([e*mm(TRUCK_CTR)/2,0,0]) truck();
-else if (PART=="r_white")     translate([0,0,mm(DECK_TOP)]) lettering();
+else if (PART=="r_white")     { if (LETTERING == "raised") translate([0,0,mm(DECK_TOP)]) lettering(); }
 
 // road number on both cab sides, below the windows
 module lettering() {   // 01731 (Walthers) / 01738 (ETRM): THE / MILWAUKEE / ROAD stepped across the top,
