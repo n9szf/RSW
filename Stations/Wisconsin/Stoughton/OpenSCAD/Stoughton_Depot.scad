@@ -10,6 +10,12 @@
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
+// COLOURS measured from photos 24 Nov 2026: Wikipedia (CMStP&P Depot, Stoughton) and the Historical Society photo. Cream stucco, maroon-brown fascia and trim, brown brick piers with cream blocks.
+COL_STUC = "#D6CBB4";
+COL_TRIM = "#7C5558";
+COL_BRICK = "#6E4A3A";
+COL_ROOF = "#6A5A5A";
+COL_FOUND = "#8A7766";
 
 depot(blocks = [[27.4, 102, 0, 27.5, 12, 0.55, 1, 3, 1], [64.4, 19, 0, 27.5, 13, 0.6, 2, 3, 1]],
       pavs   = [[0, 27.4, 0, 27.5, 10, 0.15, 4, 2, 2, 2]],

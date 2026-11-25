@@ -21,3 +21,9 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 - Great American Stations: https://www.greatamericanstations.com/stations/CBS
 - 2021 photos: https://cahancock.rrpicturearchives.net/archiveThumbs.aspx?id=142215
 - The 1871 depot (later freight depot) still stands nearby: https://wisconsinhistory.org/Records/Property/HI3468
+
+
+## Colours (photos, 24 Nov 2026)
+rrpicturearchives 4399189 (T. P. Bruss, 2015) and WHS survey. Buff rusticated concrete, grey asphalt roof, light trim. Original tile roof is gone.
+Set in the .scad: stuc #C9B796, roof #6E6D66, trim #E0DCCC, found #A89878.
+Photos: RSW/reference/Station photos web/Columbus/ (index.csv there lists the source of each).

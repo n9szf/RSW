@@ -20,3 +20,8 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 - Saved by Historic Monroe, moved in 1993 to 21st St and WI 69; now the National Historic Cheesemaking Center. Photo before the move (1989): https://www.railpictures.net/photo/609867
 - Photo and history: https://pbase.com/trailryder/image/48261732
 - Monroe Times article with a historic view: https://themonroetimes.com/local-news/national-historic-cheesemaking-center-monroe-train-depot
+
+
+## Colours (photos, 24 Nov 2026)
+railpictures.net (Greg Mross) colour photo before the 1993 move: pale yellow body #D2BC82, maroon-brown trim and wainscot #6E4040, green shingles #4F5C4C, red brick chimney. This was a later repaint; the Milwaukee Road standard was light gray with dark gray trim (the builder default).
+Photos: RSW/reference/Station photos web/Monroe/ (index.csv there lists the source of each).

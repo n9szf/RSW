@@ -24,3 +24,15 @@ Smooth red ("vermilion") pressed brick over a rock-faced stone foundation, rough
 - Whitewater Historical Society: https://whitewaterhistoricalsociety.org/post/the-whitewater-depot
 - SAH Archipedia: https://sah-archipedia.org/node/21874
 Best next step: ask the Whitewater Historical Society for scans of their historic photos and the c.1900 postcard.
+
+
+## Colours (photos, 24 Nov 2026)
+Measured from WHS 222350 (sunlit dormer), WHS 222348 (track side), HMdb 636760 (street side) and the 2013 Wikipedia photo. These are the colours after the 2012 restoration.
+- Brick: smooth red pressed brick #7E3C2E
+- Stone: rock-faced buff sandstone #9C866A (base to sill height, quoins and pilasters, dormer gables and bands). Sources call it "buff", "tan" or "grey limestone"; the photos show buff.
+- Brackets, posts, fascia, cresting: buff paint #B8A07A
+- Roof: brown asphalt shingles #6A5350 (2012 re-roof)
+- Window sash: dark brown #2E1F1A
+- Doors: street side dark brown #4B3A33; the track-side door is buff (one door colour in the model for now)
+Model changes from the photos: dormers are brick with stone bands and gables (they were all stone); stone base raised to 3.6 ft; stone pilasters added; window sills raised onto the stone base.
+Photos: RSW/reference/Station photos web/Whitewater/ (index.csv lists the source of each).

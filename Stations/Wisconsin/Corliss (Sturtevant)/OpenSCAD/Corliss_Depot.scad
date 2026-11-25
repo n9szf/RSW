@@ -10,6 +10,12 @@
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
+// COLOURS measured from photos 24 Nov 2026: railpictures.net (Greg Mross) colour photo at Sturtevant, Milwaukee Road era, evening light corrected using the cream door as white. Tan-brown siding, cream window and door trim, dark grey shingles. (Painted white later, mustard yellow at Caledonia since 2010.)
+COL_BODY = "#B08866";
+COL_TRIM = "#5E4535";
+COL_SASH = "#E6DFCC";
+COL_DOOR = "#E6DFCC";
+COL_ROOF = "#3E3A3C";
 
 depot(blocks = [[0, 40, 0, 20, 13, 0.6, 0, 4, 0], [0, 20, 20, 48, 13, 0.6, 0, 4, 0], [64, 16, 0, 20, 13, 0.6, 0, 4, 0]],
       pavs   = [[40, 24, 0, 20, 13, 0.6, 0, 4, 2, 2]],

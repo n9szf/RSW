@@ -18,15 +18,24 @@
 //    dormer with corner pinnacles centred on each long side; tall
 //    chimneys; groups of three tall windows each side of the centre doors;
 //    canted bay at the east end of the north wall.
-//  ESTIMATE: brick colour (red pressed brick - the plan lists 'red brick'
-//    and 'pressed brick'), stone colour, roof colour, dormer detail.
+//  COLOURS: measured from photos 24 Nov 2026 (see below).
+//  ESTIMATE: dormer detail.
 //
 //  x along the track from the west end; y = 0 north (street) wall,
 //  y = 22.2 south (track) wall; z = 0 platform level.
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
-COL_BRICK = "#8E3B2C";
+// COLOURS MEASURED 24 Nov 2026 from photos (reference / Station photos web /
+// Whitewater: WHS 222350 sunlit dormer, WHS 222348 track side, HMdb 636760
+// street side, Wikipedia 2013). These are the post-2012 restoration colours.
+COL_BRICK = "#7E3C2E";   // smooth red ("vermillion") pressed brick, sunlit median
+COL_STONE = "#9C866A";   // rock-faced buff sandstone base, quoins, dormer gables
+COL_FOUND = "#9C866A";
+COL_TRIM  = "#B8A07A";   // brackets, posts, fascia, cresting - buff paint
+COL_ROOF  = "#6A5350";   // brown asphalt shingles (2012 re-roof)
+COL_SASH  = "#2E1F1A";   // dark brown window sash
+COL_DOOR  = "#4B3A33";   // street doors dark brown (track-side door is buff - TDQ)
 
 L = 60.2; W = 22.2; EAVE = 11.25;
 ovN = 5; ovS = 12; ovE = 12;                    // overhangs
@@ -36,8 +45,8 @@ ry = (ey0 + ey1) / 2; slope = RISE / ((ey1 - ey0) / 2);
 rx0 = ex0 + (ey1 - ey0) / 2; rx1 = ex1 - (ey1 - ey0) / 2;   // ridge (flat top) ends
 DX = 29.5;                                       // dormer centre
 
-wins = [for (x = [8.1, 12.2, 16.3, 42.5, 46.6, 50.7], s = [0, 1]) [x, s, 2.8, 8.5, 2.2],
-        [7, 2, 2.8, 8.5, 2.2], [15, 2, 2.8, 8.5, 2.2], [7, 3, 2.8, 8.5, 2.2], [15, 3, 2.8, 8.5, 2.2]];
+wins = [for (x = [8.1, 12.2, 16.3, 42.5, 46.6, 50.7], s = [0, 1]) [x, s, 2.8, 6.9, 3.8],   // sills on the stone base (photos)
+        [7, 2, 2.8, 6.9, 3.8], [15, 2, 2.8, 6.9, 3.8], [7, 3, 2.8, 6.9, 3.8], [15, 3, 2.8, 6.9, 3.8]];
 doors = [[DX, 0, 5, 8.5, 1], [DX, 1, 5, 8.5, 1], [11, 2, 3.2, 8, 0], [11, 3, 3.2, 8, 0]];
 
 module steep_roof() {
@@ -58,14 +67,15 @@ module dormer(side) {                            // stone gabled dormer with cor
     dw = 15; zb = EAVE + (side ? 6 : 4); zw = EAVE + 11; zt = EAVE + 18.7;
     yf = side ? 27 : 0; d = 12; s = side ? -1 : 1;           // face line, depth back into the roof
     y0 = side ? yf - d : yf;
-    paint("stone") fbox(DX - dw / 2, y0, zb, dw, d, zw - zb);                                   // dormer walls
+    paint("brick") fbox(DX - dw / 2, y0, zb, dw, d, zw - zb);                                   // dormer walls (brick)
+    paint("stone") for (z = [zb, zw - 1.2]) fbox(DX - dw / 2 - 0.15, y0 - (side ? 0 : 0.15), z, dw + 0.3, d + 0.15, 1.2);   // stone sill and lintel bands
     paint("stone") translate([ft(DX - dw / 2), ft(y0 + d), ft(zw)]) rotate([90, 0, 0]) linear_extrude(ft(d))
         polygon([[0, 0], [ft(dw), 0], [ft(dw / 2), ft(zt - zw)]]);                               // gable
     paint("roof") for (k = [0, 1]) hull() { fbox(k ? DX + dw / 2 - 0.1 : DX - dw / 2 - 0.4, y0 - (side ? 0 : 0.6), zw - 0.3, 0.5, d + 0.6, 0.4);
                                          fbox(DX - 0.25, y0 - (side ? 0 : 0.6), zt - 0.2, 0.5, d + 0.6, 0.5); }
-    for (x = [DX - dw / 2 - 0.4, DX + dw / 2 - 1.2]) paint("stone") {                         // corner pinnacles
-        fbox(x, side ? yf - 1.6 : yf - 0.4, zb, 1.6, 1.6, zw - zb + 1);
-        translate([ft(x + 0.8), ft(side ? yf - 0.8 : yf + 0.4), ft(zw + 1)]) cylinder(h = ft(3), r1 = ft(1), r2 = 0, $fn = 4); }
+    for (x = [DX - dw / 2 - 0.4, DX + dw / 2 - 1.2]) {                                       // corner turrets: brick, stone cap
+        paint("brick") fbox(x, side ? yf - 1.6 : yf - 0.4, zb, 1.6, 1.6, zw - zb + 1);
+        paint("stone") translate([ft(x + 0.8), ft(side ? yf - 0.8 : yf + 0.4), ft(zw + 1)]) cylinder(h = ft(3), r1 = ft(1), r2 = 0, $fn = 4); }
     paint("glass") for (k = [-1, 0, 1]) fbox(DX + k * 3 - 1.1, side ? yf + 0.02 : yf - 0.08, zb + 1.5, 2.2, 0.06, 5);
     paint("glass") translate([ft(DX), side ? ft(yf) + 0.05 : ft(yf) - 0.05, ft(zw + 3)]) rotate([90, 0, 0]) cylinder(h = 0.3, r = ft(1.6), center = true, $fn = 24);   // trefoil / round light
 }
@@ -73,6 +83,11 @@ module chimneys() { paint("chimney") for (y = [4, 18]) { fbox(43, y - 1, 6, 2.2,
 
 depot(blocks = [[0, L, 0, W, EAVE, 0, 5, 0, 2]], wins = wins, doors = doors,
       bays = [[55, 0, 9, 3]], plat = [-15, 90, 14, 0.4]);
-paint("stone") fbox(-0.3, -0.3, 0, L + 0.6, W + 0.6, 2.2);          // stone base course
+paint("stone") fbox(-0.3, -0.3, 0, L + 0.6, W + 0.6, 3.6);          // rock-faced stone base to sill height (photos)
+// rock-faced stone quoins / pilasters at the corners, window groups and doors (photos)
+QX = [0, 5.2, 18.6, 25.4, 32.2, 39.6, L - 1.4];
+paint("stone") for (x = QX, y = [-0.25, W - 0.05]) fbox(x, y, 3.6, 1.4, 0.3, EAVE - 3.6 - 0.8);
+paint("stone") fbox(52.9, W - 0.05, 3.6, 1.4, 0.3, EAVE - 3.6 - 0.8);
+paint("stone") for (y = [0, W - 1.4], x = [-0.25, L - 0.05]) fbox(x, y, 3.6, 0.3, 1.4, EAVE - 3.6 - 0.8);
 paint("platform") fbox(-15, -8, 0, 90, 8, 0.3);                      // street-side walk
 steep_roof(); dormer(0); dormer(1); chimneys();

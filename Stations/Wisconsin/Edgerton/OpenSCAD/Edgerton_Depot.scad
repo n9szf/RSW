@@ -10,6 +10,14 @@
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
+// COLOURS measured from photos 24 Nov 2026: Wikipedia 2008 track side (Edgerton Depot, Edgerton, WI). Dark 'dull red vitrified brick' (NRHP), cast-stone trim, light grey asphalt roof, dark sash.
+COL_BRICK = "#5B3A2E";
+COL_STONE = "#B5AA98";
+COL_FOUND = "#B5AA98";
+COL_TRIM = "#B5AA98";
+COL_ROOF = "#8F9196";
+COL_SASH = "#2A2F2C";
+COL_DOOR = "#2A2F2C";
 
 depot(blocks = [[0, 98, 0, 24, 12.5, 0.5, 0, 5, 2], [38, 34, 0, 24, 14, 0.55, 0, 4, 2]],
       pavs   = [[98, 30, 0, 24, 12.5, 0.5, 0, 5, 2, 2]],

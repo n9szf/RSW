@@ -19,3 +19,9 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 ## Photo leads
 - Still standing (built 1913; city-owned since 1988; Stoughton Historical Society annex and Chamber of Commerce). WHS postcard: https://www.wisconsinhistory.org/Records/Image/IM149667
 - 2007 photo with the depot: https://kalphiter.rrpicturearchives.net/showPicture.aspx?id=848113
+
+
+## Colours (photos, 24 Nov 2026)
+Wikipedia (CMStP&P Depot, Stoughton) and the Historical Society photo. Cream stucco, maroon-brown fascia and trim, brown brick piers with cream blocks.
+Set in the .scad: stuc #D6CBB4, trim #7C5558, brick #6E4A3A, roof #6A5A5A, found #8A7766.
+Photos: RSW/reference/Station photos web/Stoughton/ (index.csv there lists the source of each).

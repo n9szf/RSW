@@ -10,6 +10,10 @@
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
+// COLOURS measured from photos 24 Nov 2026: railpictures.net (Greg Mross) colour photo before the 1993 move. Pale yellow body, maroon-brown trim and wainscot, green shingles, red brick chimney (a later repaint - the standard was light gray with dark gray trim).
+COL_BODY = "#D2BC82";
+COL_TRIM = "#6E4040";
+COL_ROOF = "#4F5C4C";
 
 depot(blocks = [[0, 62.5, 0, 20, 13, 1.0, 3, 4.5, 0]],
       pavs   = [],

@@ -19,3 +19,9 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 ## Photo leads
 - Still standing, 20 S. Main St.; built 1906-07; National Register 1998. NRHP form (six photos): https://npgallery.nps.gov/AssetDetail/NRIS/98000283
 - Depot in the background of a 2005 steam photo: https://www.railpictures.net/photo/113436
+
+
+## Colours (photos, 24 Nov 2026)
+Wikipedia 2008 track side (Edgerton Depot, Edgerton, WI). Dark 'dull red vitrified brick' (NRHP), cast-stone trim, light grey asphalt roof, dark sash.
+Set in the .scad: brick #5B3A2E, stone #B5AA98, found #B5AA98, trim #B5AA98, roof #8F9196, sash #2A2F2C, door #2A2F2C.
+Photos: RSW/reference/Station photos web/Edgerton/ (index.csv there lists the source of each).

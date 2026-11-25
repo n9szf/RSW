@@ -27,9 +27,11 @@
 // =====================================================================
 
 PAINT = "";
-COL_BODY  = "#B9A36F";   // Milwaukee Road depot body (ESTIMATE - to confirm with MRHA, TDQ)
-COL_TRIM  = "#5A3B22";   // trim, brackets, corner boards
-COL_ROOF  = "#4E4A46";   // shingles
+// Default depot colours (Tom 24 Nov 2026): Milwaukee Road standard light gray
+// body with dark gray trim. Depots with colour photos set their own colours.
+COL_BODY  = "#BDBDB6";   // light gray siding
+COL_TRIM  = "#55585A";   // dark gray trim, brackets, corner boards, water table
+COL_ROOF  = "#4E4A46";   // dark shingles
 COL_STUC  = "#D8CDB2";   // stucco / cement plaster
 COL_BRICK = "#8E4A36";
 COL_STONE = "#9A8F7E";
@@ -37,8 +39,9 @@ COL_GLASS = "#3F5866";
 COL_DOOR  = "#4A2E1C";
 COL_FOUND = "#A8A398";
 COL_PLAT  = "#8E8A84";
+COL_SASH  = COL_TRIM;    // window sash and frames (set per depot when photos show a different colour)
 PAINTS = [["walls", COL_BODY], ["stucco", COL_STUC], ["brick", COL_BRICK], ["stone", COL_STONE], ["trim", COL_TRIM],
-          ["roof", COL_ROOF], ["glass", COL_GLASS], ["doors", COL_DOOR], ["foundation", COL_FOUND], ["platform", COL_PLAT], ["chimney", COL_BRICK]];
+          ["roof", COL_ROOF], ["glass", COL_GLASS], ["doors", COL_DOOR], ["foundation", COL_FOUND], ["platform", COL_PLAT], ["chimney", COL_BRICK], ["sash", COL_SASH]];
 module paint(n) { if (PAINT == "" || PAINT == n) color([for (p = PAINTS) if (p[0] == n) p[1]][0]) children(); }
 
 function ft(v) = v * 304.8 / SCALE;
@@ -125,7 +128,7 @@ module on_face(B, x, side) {
 module window(w, h, sill) {
     translate([-ft(w) / 2, ft(sill), 0]) {
         paint("glass") cube([ft(w), ft(h), ft(0.08)]);
-        paint("trim") {
+        paint("sash") {
             translate([-ft(0.35), -ft(0.35), 0]) cube([ft(w + 0.7), ft(0.35), ft(0.35)]);
             translate([-ft(0.35), ft(h), 0]) cube([ft(w + 0.7), ft(0.5), ft(0.3)]);
             for (x = [-ft(0.3), ft(w)]) translate([x, 0, 0]) cube([ft(0.3), ft(h), ft(0.25)]);

@@ -19,3 +19,9 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 ## Photo leads
 - The depot (named Corliss, later Sturtevant) was moved about 10 miles to a historical site in Caledonia in 2010. Photo: https://www.railpictures.net/photo/587271
 - WHS record (the only remaining Milwaukee Road station with a corner turret): https://www.wisconsinhistory.org/Records/Property/HI10699
+
+
+## Colours (photos, 24 Nov 2026)
+railpictures.net (Greg Mross) colour photo at Sturtevant, Milwaukee Road era, evening light corrected using the cream door as white. Tan-brown siding, cream window and door trim, dark grey shingles. (Painted white later, mustard yellow at Caledonia since 2010.)
+Set in the .scad: body #B08866, trim #5E4535, sash #E6DFCC, door #E6DFCC, roof #3E3A3C.
+Photos: RSW/reference/Station photos web/Corliss/ (index.csv there lists the source of each).

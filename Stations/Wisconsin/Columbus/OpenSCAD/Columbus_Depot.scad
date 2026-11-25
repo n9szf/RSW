@@ -10,6 +10,11 @@
 // =====================================================================
 SCALE = 29;
 include <../../../_common/rsw_depot.scad>
+// COLOURS measured from photos 24 Nov 2026: rrpicturearchives 4399189 (T. P. Bruss, 2015) and WHS survey. Buff rusticated concrete, grey asphalt roof, light trim. Original tile roof is gone.
+COL_STUC = "#C9B796";
+COL_ROOF = "#6E6D66";
+COL_TRIM = "#E0DCCC";
+COL_FOUND = "#A89878";
 
 depot(blocks = [[0, 96, 0, 23, 13.5, 0.5, 0, 4, 1], [25.5, 45, -2, 27, 14.5, 0.5, 2, 3, 1]],
       pavs   = [],
