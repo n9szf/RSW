@@ -1,0 +1,11 @@
+{
+  "title": "Milwaukee Road depot, West Madison (West Washington Ave), Wisconsin - 1940",
+  "slug": "Madison_West_Station",
+  "review": {"verified": false, "code": "TDQ-204", "note": "Print sections made 25 Nov 2026 - not test-printed yet. Roof lifts off to show the 1941 waiting room."},
+  "docs": [],
+  "scales": {
+    "G":  {"scad": "OpenSCAD/Madison_West_Station_G.scad",  "mode": "list", "printers": [["GIGA", "Large format (OrangeStorm Giga) - fewer, bigger sections"], ["P1S", "Bambu P1S (256 mm bed) - many sections"]]},
+    "O":  {"scad": "OpenSCAD/Madison_West_Station_O.scad",  "mode": "list", "printers": [["P1S", "Bambu P1S (256 mm bed) - large parts in sections"], ["GIGA", "Large format (OrangeStorm Giga) - fewer, bigger sections"]]},
+    "HO": {"scad": "OpenSCAD/Madison_West_Station_HO.scad", "mode": "list", "printers": [["P1S", "Bambu P1S (256 mm bed)"], ["GIGA", "Large format (OrangeStorm Giga)"]]}
+  }
+}

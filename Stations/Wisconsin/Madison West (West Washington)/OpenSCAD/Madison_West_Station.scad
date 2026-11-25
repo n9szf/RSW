@@ -47,8 +47,16 @@
 //  SCALES: SCALE = 87.1 HO, 48 O, 29 G - or open Madison_West_Station_HO /
 //  _O / _G.scad, which set it for you.
 //
-//  THIS IS THE SHAPE MODEL for review. It is not yet cut into printable
-//  sections.
+//  PRINT PARTS (25 Nov, TDQ-204): full length (Tom, TDQ-312). Set PRINTER
+//    ("P1S" 256 mm bed or "GIGA") and SHOW to a part name below, and TILE
+//    to the section number (0, 1, 2 ...). LIST = true echoes every part
+//    as PART|name|sections - MR Print Files uses that (print_parts.json).
+//    Parts: the depot walls (open at the top, interior fitted), the depot
+//    roof with the ceiling plug (lifts off to show the waiting room), the
+//    coffered ceiling (printed face up, glued under the plug), 6 benches,
+//    6 hanging lights, the baggage building body and roof, the canopy and
+//    shed, the gate, and platform tiles. Anything bigger than the bed is
+//    cut into equal sections (glue at the cuts). Not test-printed yet.
 //
 //  Layout: x = feet from the Washington Ave end of the depot, running
 //  toward the baggage building. y = 0 is the town (street) side wall,
@@ -59,7 +67,10 @@ SCALE   = 87.1;     // 87.1 = HO (Tom 10/14: print in HO)   48 = O   29 = G   (T
 ERA     = 1940;     // 1903 = as drawn    1940 = marquee, long canopy, raised baggage roof
 DORMERS = ERA < 1940;   // the small round roof vents; removed at an unknown date - ESTIMATE: gone by 1940
 PAINT   = "";       // "" = full colour; a colour name (e.g. "brick") = only the parts in that colour, for STL export to Blender / multi-colour printing
-SHOW    = "all";    // all, depot, baggage, canopy, gate, platform, signs, interior
+SHOW    = "all";    // all, depot, baggage, canopy, gate, platform, signs, interior - or a print part (see PIECES)
+PRINTER = "P1S";    // P1S (256 mm bed) or GIGA (OrangeStorm Giga, 800 x 800 x 1000)
+TILE    = 0;        // which section of a print part (0, 1, 2 ...)
+LIST    = false;    // true: echo the print parts and their section counts, draw nothing
 INTERIOR = true;    // waiting room hollowed out and fitted as in Feb 1941 (TDQ-548)
 MIN_MM  = 0.4;      // thinnest printable part in mm (rods, slats, sign letters): small parts never go below this
 // Station signs, from sheet 14 "Proposed Station Signs for Madison, Wis.": No. 26 galvanised iron letters
@@ -82,7 +93,7 @@ base_h = 4;                      // stone base (water table)                    
 eave_h = 27;   ridge_h = 41;     // main block                                      MEASURED
 weave_h = 22;  wridge_h = 33;    // wing                                            MEASURED
 ov     = 3.5;                    // eave overhang                                   MEASURED
-arch_w = 11.5; arch_top = 24;    // big arches                                      MEASURED
+arch_w = 10.4; arch_top = 21.2;  // big arches: from Tom's photos 11/25 (drawings had 11.5 / 24)   PHOTO
 gap    = 37 + 10/12;             // depot to baggage building                       KNOWN
 bag_l  = 63;   bag_w = 25;       // baggage + express building                      KNOWN / MEASURED
 bag_eave = ERA >= 1940 ? 22 : 14.5;   bag_rise = 8.5;   // 1928: roof raised for a meeting room   1940 height ESTIMATE
@@ -101,11 +112,13 @@ ceil_z  = 25.5;                  // ceiling, above the tops of the arches (24 ft
 wain_h  = 5;                     // dark wood wainscot                              ESTIMATE from the photos
 
 plaster = "#D8CDB0"; wood = "#4E3220"; oak = "#8A6238"; floorc = "#B5AC9A"; lampw = "#F2EFE6"; board = "#1C1C1C";
-brick = "#C4682E"; band = "#B55E28"; stone = "#D8D2C0"; slate = "#4A4E52"; trim = "#2F4A3A"; glass = "#1E2A33"; pave = "#8E5A45"; metal = "#5E6B5E";
+brick = "#C8873F"; band = "#C27E3A"; stone = "#C4BDAB"; frame = "#B5532E";   // brick, stone and window frames from Tom's photos (10/9)
+BAND_P = 1.6;   // the brick is laid in banded rustication: a sunk joint every 1.6 ft (photos)
+slate = "#4A4E52"; trim = "#2F4A3A"; glass = "#1E2A33"; pave = "#8E5A45"; metal = "#5E6B5E";
 T = main_w;   // y of the track-side wall
 
 // ---------------- helpers ----------------
-PAINTS = [["brick", brick], ["band", band], ["stone", stone], ["slate", slate], ["trim", trim], ["glass", glass], ["pave", pave], ["metal", metal], ["signred", "#7A2A2A"], ["signcream", "#E8E0C8"], ["plaster", plaster], ["wood", wood], ["oak", oak], ["floor", floorc], ["lamp", lampw], ["board", board]];
+PAINTS = [["brick", brick], ["band", band], ["stone", stone], ["slate", slate], ["trim", trim], ["glass", glass], ["frame", frame], ["pave", pave], ["metal", metal], ["signred", "#7A2A2A"], ["signcream", "#E8E0C8"], ["plaster", plaster], ["wood", wood], ["oak", oak], ["floor", floorc], ["lamp", lampw], ["board", board]];
 module paint(c) {
     if (PAINT == "") color(c) children();
     else if ([for (p = PAINTS) if (p[0] == PAINT) p[1]][0] == c) children();
@@ -117,9 +130,10 @@ module on_wall(x, y, side) { translate([f(x), f(y), 0]) rotate([90, 0, side ? 18
 module window(x, y, side, w, h, sill, panes = [2, 3], stone_sill = true) {
     on_wall(x, y, side) translate([0, f(sill), -f(0.5)]) {
         paint(glass) translate([-f(w) / 2, 0, 0]) cube([f(w), f(h), f(0.1)]);
+        paint(frame) linear_extrude(f(0.35)) difference() { translate([-f(w) / 2, 0]) square([f(w), f(h)]); translate([-f(w) / 2 + f(0.35), f(0.35)]) square([f(w) - f(0.7), f(h) - f(0.7)]); }
         paint(trim) translate([0, 0, 0]) {
-            for (k = [0 : panes[0]]) translate([-f(w) / 2 + k * f(w) / panes[0] - f(0.12), 0, 0]) cube([f(0.24), f(h), f(0.3)]);
-            for (k = [0 : panes[1]]) translate([-f(w) / 2, k * f(h) / panes[1] - f(0.12), 0]) cube([f(w), f(0.24), f(0.3)]);
+            for (k = [1 : panes[0] - 1]) translate([-f(w) / 2 + k * f(w) / panes[0] - f(0.1), 0, 0]) cube([t(0.2), f(h), f(0.3)]);
+            for (k = [1 : panes[1] - 1]) translate([-f(w) / 2, k * f(h) / panes[1] - f(0.1), 0]) cube([f(w), t(0.2), f(0.3)]);
         }
         if (stone_sill) paint(stone) translate([-f(w) / 2 - f(0.4), -f(0.6), f(0.3)]) cube([f(w) + f(0.8), f(0.6), f(0.6)]);
     }
@@ -136,26 +150,82 @@ module arch_cut(x, y, side) {
     d = INTERIOR ? WALL + 1 : 0.8;
     on_wall(x, y, side) translate([0, f(base_h) - f(1.2), -f(d - 0.1)]) linear_extrude(f(d)) arch2d(f(arch_w), f(arch_top - base_h + 1.2));
 }
-module room_hole() { box(wr_x0 + WALL / 2, WALL, floor_z, wr_x1 - wr_x0 - WALL, main_w - 2 * WALL, ceil_z - floor_z); }
+module room_hole() { box(wr_x0 + WALL / 2, WALL, floor_z, wr_x1 - wr_x0 - WALL, main_w - 2 * WALL, eave_h + 0.01 - floor_z); }   // open to the top: the roof's ceiling plug fills it
+// The big arched windows and doors, as they are today (Tom's photos 10/9; the 1941 interior photos agree):
+// an orange frame in three lights (centre half the width) that carries on up through the fan, three
+// double-hung sashes with dark green bars, a dark panel at the spring line, and a fan barred in a grid.
+// The window arches have a brick panel and a stone sill below; the door arches have a pair of doors
+// with a transom and narrow side lights. Round them a deep ring of gauged brick whose top steps into
+// the banded courses - no keystone.
 module arch_fill(x, y, side, doors) {
-    h = arch_top - base_h + 1.2;  sp = h - arch_w / 2;       // spring line above the opening sill
-    on_wall(x, y, side) translate([0, f(base_h) - f(1.2), -f(0.7)]) {
-        paint(glass) linear_extrude(f(0.1)) arch2d(f(arch_w), f(h));
-        paint(trim) {
-            linear_extrude(f(0.35)) difference() { arch2d(f(arch_w), f(h)); offset(-f(0.35)) arch2d(f(arch_w), f(h)); }
-            translate([-f(arch_w) / 2, f(sp) - f(0.3), 0]) cube([f(arch_w), f(0.6), f(0.4)]);                 // transom bar
-            translate([-f(arch_w) / 2, f(sp) - f(5), 0]) cube([f(arch_w), f(0.4), f(0.4)]);
-            for (dx = [-arch_w / 6, arch_w / 6]) translate([f(dx) - f(0.2), 0, 0]) cube([f(0.4), f(sp) + f(arch_w) / 2 * 0.93, f(0.4)]);
-            for (a = [45, 135]) translate([0, f(sp), 0]) rotate([0, 0, a]) translate([0, -f(0.12), 0]) cube([f(arch_w) / 2, f(0.24), f(0.3)]);   // fan light bars
-            linear_extrude(f(0.3)) translate([0, f(sp)]) difference() { circle(d = f(arch_w) * 0.55, $fn = 48); circle(d = f(arch_w) * 0.55 - f(0.5), $fn = 48); translate([-f(arch_w), -f(arch_w) * 2]) square(f(arch_w) * 2); }
-            if (doors) translate([-f(arch_w) / 6 + f(0.2), 0, 0]) cube([f(arch_w) / 3 - f(0.4), f(8), f(0.25)]);   // pair of doors in the centre light
-            else translate([-f(arch_w) / 2, 0, 0]) cube([f(arch_w), f(3.2), f(0.25)]);                               // panel below the windows
+    w = arch_w;  o = base_h - 1.2;  h = arch_top - o;  sp = h - w / 2;   // local: 0 = opening sill, sp = spring line
+    sl = doors ? 0 : base_h + 1.8 - o;                                   // window sill above the opening bottom
+    b0 = sp - 1.2;                                                       // dark panel at the spring line
+    mx = [-w / 4, w / 4];
+    module clip() { intersection() { children(); translate([0, 0, -f(1)]) linear_extrude(f(3)) arch2d(f(w), f(h)); } }
+    on_wall(x, y, side) translate([0, f(o), 0]) {
+        if (!doors) {
+            paint(brick) translate([-f(w) / 2, 0, -f(WALL)]) cube([f(w), f(sl), f(WALL - 0.02)]);                         // brick below the window
+            paint(stone) translate([-f(w) / 2 - f(0.4), f(sl) - f(0.45), -f(0.6)]) cube([f(w) + f(0.8), f(0.45), f(1.0)]);  // stone sill
+        }
+        translate([0, 0, -f(0.55)]) {
+            paint(glass) intersection() { linear_extrude(f(0.1)) arch2d(f(w), f(h)); translate([-f(w), f(sl), -1]) cube([f(2 * w), f(h), f(1) + 2]); }
+            paint(trim) translate([-f(w) / 2, f(b0), 0]) cube([f(w), f(sp - b0), f(0.3)]);                                // dark panel
+            paint(frame) clip() {
+                linear_extrude(f(0.4)) difference() { arch2d(f(w), f(h)); offset(-f(0.4)) arch2d(f(w), f(h)); }       // outer frame
+                for (dx = mx) translate([f(dx) - f(0.25), f(sl), 0]) cube([f(0.5), f(h), f(0.42)]);                   // mullions, up through the fan
+                for (z = [b0 - 0.15, sp]) translate([-f(w) / 2, f(z), 0]) cube([f(w), f(0.3), f(0.42)]);               // rails above and below the panel
+                translate([-f(w) / 2, f(sl), 0]) cube([f(w), f(0.35), f(0.42)]);
+            }
+            paint(trim) clip() {
+                // fan: a grid of bars
+                for (dx = [-w / 12, w / 12, -3 * w / 8, 3 * w / 8]) translate([f(dx) - f(0.08), f(sp), 0]) cube([t(0.16), f(w / 2), f(0.3)]);
+                for (dz = [1.7, 3.4, 5.0]) translate([-f(w) / 2, f(sp + dz), 0]) cube([f(w), t(0.16), f(0.3)]);
+                if (doors) {
+                    paint(trim) for (dx = [-w / 4 + 0.25, 0]) translate([f(dx), 0, 0]) cube([f(w / 4 - 0.25), f(8), f(0.32)]);   // the pair of doors
+                    paint(glass) for (dx = [-w / 4 + 0.7, 0.45]) translate([f(dx), f(3.4), f(0.33)]) cube([f(w / 4 - 1.15), f(4), f(0.05)]);
+                    translate([-f(w) / 4, f(8), 0]) cube([f(w / 2), f(0.4), f(0.42)]);                                       // head of the doors
+                    for (dx = [-w / 8, 0, w / 8]) translate([f(dx) - f(0.08), f(8.4), 0]) cube([t(0.16), f(b0 - 8.55), f(0.3)]);   // transom bars
+                    for (s2 = [-1, 1]) translate([s2 * f(3 * w / 8) - f(1.1), 0, 0]) cube([f(2.2), f(2.6), f(0.32)]);      // panels under the side lights
+                } else {
+                    m = sl + (b0 - sl) * 0.55;                                                                              // meeting rail of the sashes
+                    translate([-f(w) / 2, f(m) - f(0.15), 0]) cube([f(w), f(0.3), f(0.35)]);
+                    for (dx = [-w / 12, w / 12, -3 * w / 8, 3 * w / 8]) translate([f(dx) - f(0.08), f(m), 0]) cube([t(0.16), f(b0 - m), f(0.3)]);   // upper sashes
+                    translate([-f(w) / 2, f((m + b0) / 2), 0]) cube([f(w), t(0.16), f(0.3)]);
+                    translate([-f(0.08), f(sl), 0]) cube([t(0.16), f(m - sl), f(0.3)]);                                    // lower centre sash
+                }
+            }
         }
     }
-    // brick arch ring and stone keystone, proud of the wall
-    on_wall(x, y, side) translate([0, f(base_h) - f(1.2), 0]) {
-        paint(band) linear_extrude(f(0.25)) difference() { arch2d(f(arch_w) + f(3), f(h) + f(1.5)); arch2d(f(arch_w), f(h)); translate([-f(arch_w), -1]) square([f(arch_w) * 2, f(sp) + 1]); }
-        paint(stone) translate([-f(0.8), f(h) - f(0.2), 0]) linear_extrude(f(0.5)) polygon([[0, 0], [f(1.6), 0], [f(2), f(2.4)], [-f(0.4), f(2.4)]]);
+    // gauged brick ring, its top stepped into the banded courses, proud of the wall
+    R = w / 2 + 2.65;
+    on_wall(x, y, side) translate([0, f(o), 0]) paint(band) linear_extrude(f(0.22)) difference() {
+        intersection() {
+            union() for (zb = [for (k = [0 : 20]) base_h + 2 + k * BAND_P - o]) if (zb < sp + R && zb + BAND_P > sp)
+                translate([-f(sqrt(max(0, R * R - pow(max(zb, sp) - sp, 2)))), f(max(zb, sp))]) square([2 * f(sqrt(max(0, R * R - pow(max(zb, sp) - sp, 2)))), f(zb + BAND_P - max(zb, sp))]);
+            translate([0, f(sp)]) circle(r = f(R + 1.2), $fn = 96);
+        }
+        arch2d(f(w), f(h));
+        for (a = [7.5 : 11.25 : 175]) translate([0, f(sp)]) rotate(a) translate([f(w / 2 + 0.2), -f(0.05)]) square([f(4), f(0.1)]);   // joints between the voussoir groups
+    }
+}
+// segmental brick arch over a window (end pavilions): chord c over the window top z
+module seg_arch(x, y, side, c, z, rise = 1.0, d = 2.0) {
+    R = (c * c / 4 + rise * rise) / (2 * rise);
+    on_wall(x, y, side) paint(band) linear_extrude(f(0.22)) intersection() {
+        translate([0, f(z + rise - R)]) difference() { circle(r = f(R + d), $fn = 120); circle(r = f(R), $fn = 120); }
+        translate([-f(c / 2 + 1.2), f(z - 0.2)]) square([f(c + 2.4), f(rise + d + 0.4)]);
+    }
+}
+// pilasters between the arches, banded like the wall, with a corbelled brick cap under the frieze
+module pilasters() {
+    for (x = [20, 40, 60, 80], sd = [0, 1]) on_wall(x, sd ? T : 0, sd) paint(brick) difference() {
+        union() {
+            translate([-f(1.6), f(base_h), 0]) cube([f(3.2), f(24.3 - base_h), f(0.3)]);
+            translate([-f(1.9), f(24.3), 0]) cube([f(3.8), f(0.5), f(0.45)]);
+            translate([-f(2.2), f(24.8), 0]) cube([f(4.4), f(0.45), f(0.6)]);
+        }
+        for (z = [base_h + 2 : BAND_P : 23.5]) translate([-f(2), f(z), f(0.2)]) cube([f(4), f(0.22), f(1)]);
     }
 }
 module hip(x0, y0, l, w, z, rise, o) {        // hipped roof over a block; eave line at z
@@ -173,22 +243,19 @@ module cornice(x0, y0, l, w, z, o) {          // metal cornice with brackets und
         for (k = [0 : m], s = [0, 1]) box(s ? x0 + l : x0 - o + 0.5, y0 + k * w / m - 0.4, z - 1.5, o - 0.5, 0.8, 1.0);
     }
 }
-module bands(x0, y0, l, w, z0, z1) {          // the brickwork is laid in raised bands: grooves every 2 ft
-    for (z = [z0 : 2 : z1]) box(x0 - 0.01, y0 - 0.01, z, l + 0.02, w + 0.02, 0.25);
+module bands(x0, y0, l, w, z0, z1) {          // banded rustication: shallow sunk joints every BAND_P, on the faces only
+    for (z = [z0 : BAND_P : z1]) difference() { box(x0 - 0.01, y0 - 0.01, z, l + 0.02, w + 0.02, 0.22); box(x0 + 0.12, y0 + 0.12, z - 0.1, l - 0.24, w - 0.24, 0.42); }
 }
 
 // ---------------- main block + wing ----------------
 arches = [30, 50, 70];
-module depot() {
+module depot_lower() {                                        // walls, windows, doors, cornices, marquee, end sign, fitted interior
     // stone base
     paint(stone) difference() { union() { box(-0.4, -0.4, 0, main_l + 0.4, main_w + 0.8, base_h); box(main_l, 2 - 0.4, 0, wing_l + 0.4, wing_w + 0.4, base_h); } if (INTERIOR) room_hole(); }
     // brick walls with the openings cut in
     paint(brick) difference() {
         union() { box(0, 0, base_h, main_l, main_w, eave_h - base_h); box(main_l, 2, base_h, wing_l, wing_w, weave_h - base_h); }
-        difference() {                        // band grooves on the main block, kept clear of the pavilion corners (quoins)
-            bands(0, 0, main_l, main_w, base_h + 2, eave_h - 5);
-            for (x = arches, y = [0, T]) translate([f(x - arch_w / 2 - 1.5), f(y - 1), 0]) cube([f(arch_w + 3), f(2), f(eave_h)]);
-        }
+        bands(0, 0, main_l, main_w, base_h + 2, 23.5);       // banded courses (the arch rings sit over them)
         for (x = arches) { arch_cut(x, 0, 0); arch_cut(x, T, 1); }
         if (INTERIOR) room_hole();
         for (x = [10, 90], s = [0, 1]) opening(x, s ? T : 0, s, 9, 3.6, 19.2);           // blind panels high in the end pavilions
@@ -207,6 +274,9 @@ module depot() {
     paint(glass) for (y = [12, 28]) translate([f(0.3), f(y - 2.25), f(base_h + 3)]) cube([f(0.1), f(4.5), f(8)]);
     paint(band) translate([f(0.2), f(8), f(18.5)]) cube([f(0.1), f(24), f(4)]);
     window(89, 0, 0, 7, 8, base_h + 3.5, [3, 3]);
+    seg_arch(89, 0, 0, 7.6, base_h + 3.5 + 8);  seg_arch(10, T, 1, 8.6, base_h + 3 + 7);
+    if (ERA >= 1940) seg_arch(10, 0, 0, 7.6, base_h + 3.5 + 8);
+    pilasters();
     window(10, T, 1, 8, 7, base_h + 3, [4, 3]);
     if (ERA < 1940) { door(10, 0, 0, 5.5, 8); porch(); }
     else window(10, 0, 0, 7, 8, base_h + 3.5, [3, 3]);
@@ -220,11 +290,17 @@ module depot() {
         paint(trim) translate([0, 0, f(base_h)]) linear_extrude(f(8.5)) polygon([[-f(7), 0], [f(7), 0], [f(4), f(5)], [-f(4), f(5)]]);
         paint(glass) translate([0, 0, f(base_h + 1)]) linear_extrude(f(6)) polygon([[-f(6.6), f(0.5)], [f(6.6), f(0.5)], [f(3.8), f(5.15)], [-f(3.8), f(5.15)]]);
     }
-    // roofs
+    difference() { cornice(0, 0, main_l, main_w, eave_h, ov); if (INTERIOR) room_hole(); }   // open over the waiting room
+    cornice(main_l + 3.2, 2, wing_l - 3.2, wing_w, weave_h, 3);
+    if (ERA >= 1940) marquee();
+    sign(SIGN_ROAD, 0.2, main_w / 2, 20.5, 1.7);                         // on the panel, Washington Ave end
+    if (INTERIOR) interior_fixed();
+}
+module depot() { depot_lower(); depot_upper(); if (INTERIOR) { ceiling(); for (b = benches) bench(b[0], b[1], 17); for (l = lamps) lamp(l[0], l[1]); } }
+module depot_upper() {                                         // roofs, chimney - and the ceiling plug that closes the waiting room
+    if (INTERIOR) paint(plaster) box(ix0 + 0.03, iy0 + 0.03, ceil_z, ix1 - ix0 - 0.06, iy1 - iy0 - 0.06, eave_h - ceil_z + 0.02);
     paint(slate) { hip(0, 0, main_l, main_w, eave_h, ridge_h - eave_h, ov); hull() { box(main_l, 2 - 3, weave_h, wing_l + 3, wing_w + 6, 0.35); box(main_l, 2 + wing_w / 2 - 0.3, wridge_h - 0.05, wing_l - wing_w / 2, 0.6, 0.05); } }
     paint(metal) box(main_w / 2 - 1, main_w / 2 - 0.5, ridge_h - 0.2, main_l - main_w + 2, 1, 1);          // metal ventilated ridge
-    cornice(0, 0, main_l, main_w, eave_h, ov);
-    cornice(main_l + 3.2, 2, wing_l - 3.2, wing_w, weave_h, 3);
     if (DORMERS) for (x = arches, s = [0, 1])                // round "eyebrow" roof vents, three a side
         translate([f(x), f(s ? T - 6.5 : 6.5), f(eave_h + 5.2)]) rotate([90, 0, s ? 180 : 0]) {
             paint(metal) translate([0, 0, 0]) linear_extrude(f(5)) difference() { circle(d = f(5), $fn = 40); translate([-f(3), -f(6)]) square(f(6)); }
@@ -232,7 +308,6 @@ module depot() {
         }
     // chimney where the wing meets the main block
     paint(brick) box(main_l + 6, 16, weave_h, 4, 4, 22);  paint(stone) box(main_l + 5.6, 15.6, weave_h + 22, 4.8, 4.8, 1);
-    if (ERA >= 1940) marquee();
 }
 module marquee() {                                            // 1940: flat marquee over the doors in the third arch, hung on rods
     x0 = arches[2] - mq_w / 2;
@@ -259,7 +334,10 @@ module arch_holes() { for (x = arches) for (s = [0, 1]) on_wall(x, s ? T : 0, s)
 module itext(txt, h, wall) {     // letters on an end wall, read from inside the room. wall 0 = ticket end (faces +x), 1 = restaurant end (faces -x)
     rotate([90, 0, wall ? -90 : 90]) linear_extrude(t(0.08)) text(txt, size = f(h), font = SIGN_FONT, halign = "center", valign = "center", spacing = 1.25);
 }
-module interior() {
+benches = [for (cy = [11, 20, 29]) for (cx = [37, 62]) [cx, cy]];
+lamps   = [for (x = [30, 50, 70]) for (y = [13.5, 26.5]) [x, y]];
+module interior() { interior_fixed(); ceiling(); for (b = benches) bench(b[0], b[1], 17); for (l = lamps) lamp(l[0], l[1]); }
+module interior_fixed() {
     L = ix1 - ix0;  W = iy1 - iy0;
     paint(floorc) box(ix0, iy0, floor_z + 0.04, L, W, 0.05);
     // plaster walls and the wood wainscot, cut round the arches
@@ -275,9 +353,7 @@ module interior() {
         translate([f(ix1 - 1), f(main_w / 2 - 8), f(floor_z - 0.1)]) cube([f(2), f(16), f(9.1)]);         // restaurant doorway
         for (y = [5, main_w - 5]) translate([f(ix1 - 1), f(y - 1.75), f(floor_z - 0.1)]) cube([f(2), f(3.5), f(7.6)]);   // WOMEN / MEN doors
     }
-    ceiling(); ticket_wall(); restaurant_wall();
-    for (cy = [11, 20, 29]) for (cx = [37, 62]) bench(cx, cy, 17);
-    for (x = [30, 50, 70]) for (y = [13.5, 26.5]) lamp(x, y);
+    ticket_wall(); restaurant_wall();
     // radiators under the window panels, and the standing schedule frame by the ticket wall
     paint(metal) for (x = [40, 60], y = [iy0 + 0.3, iy1 - 1.1]) box(x - 2.5, y, floor_z, 5, 0.8, 2.6);
     paint(wood) { box(24, iy1 - 4, floor_z, 0.25, 0.25, 6); box(24, iy1 - 1.5, floor_z, 0.25, 0.25, 6); box(23.9, iy1 - 4, floor_z + 2.5, 0.3, 2.8, 3.5); }
@@ -286,7 +362,7 @@ module interior() {
 module ceiling() {
     L = ix1 - ix0;  W = iy1 - iy0;
     paint(plaster) {
-        box(ix0, iy0, ceil_z - 0.2, L, W, 0.12);
+        box(ix0, iy0, ceil_z - 0.2, L, W, 0.2);
         // cornice round the room, with a dentil row below it
         difference() { box(ix0, iy0, ceil_z - 1.1, L, W, 1.0); box(ix0 + 0.8, iy0 + 0.8, ceil_z - 1.2, L - 1.6, W - 1.6, 1.2); }
         for (x = [ix0 + 1 : 0.9 : ix1 - 1]) for (y = [iy0 + 0.75, iy1 - 0.95]) box(x, y, ceil_z - 1.5, 0.45, 0.2, 0.4);
@@ -356,7 +432,8 @@ module lamp(x, y) {                            // white open-slat hanging light,
 bx = main_l + wing_l + gap;
 // 1940 upper floor windows: a pair, two singles, a pair (spacing from Tom's photo of the street side)
 bag_up = concat([for (c = [0.18, 0.84]) for (d = [-2, 2]) bx + c * bag_l + d], [bx + 0.42 * bag_l, bx + 0.54 * bag_l]);
-module baggage() {
+module baggage() { baggage_body(); baggage_roof(); }
+module baggage_body() {
     by = T - bag_w;                                           // track side wall in line with the depot (plat)
     paint(stone) box(bx - 0.2, by - 0.2, 0, bag_l + 0.4, bag_w + 0.4, 1.5);
     paint(brick) difference() {
@@ -371,6 +448,9 @@ module baggage() {
     for (x = [bx + 10, bx + 33, bx + 52], s = [0, 1]) door(x, s ? T : by, s, 8, 7.5, 1.5);
     for (x = [bx + 21, bx + 43], s = [0, 1]) window(x, s ? T : by, s, 3.6, 6, 5);
     if (ERA >= 1940) for (x = bag_up, s = [0, 1]) window(x, s ? T : by, s, 3.4, 6, 14, [1, 2]);
+}
+module baggage_roof() {
+    by = T - bag_w;
     paint(slate) translate([f(bx - 2), f(by), f(bag_eave)]) rotate([90, 0, 90]) linear_extrude(f(bag_l + 4))
         polygon([[-f(2.5), -f(0.9)], [f(bag_w) / 2, f(bag_rise) + f(0.2)], [f(bag_w) + f(2.5), -f(0.9)], [f(bag_w) + f(2.5), -f(0.4)], [f(bag_w) / 2, f(bag_rise) + f(0.8)], [-f(2.5), -f(0.4)]]);
 }
@@ -402,13 +482,15 @@ module umbrella(x0, x1) {                                     // 1940 shed: one 
     paint(slate) translate([f(x0 - 1), f(ext_y), f(h + 0.7)]) rotate([90, 0, 90]) linear_extrude(f(x1 - x0 + 2))
         polygon([[-f(ext_w / 2), 0], [0, f(1.6)], [f(ext_w / 2), 0], [f(ext_w / 2), f(0.4)], [0, f(2)], [-f(ext_w / 2), f(0.4)]]);
 }
-module canopy() {
+module canopy() { canopy_runs(); shed(); }
+module canopy_runs() {
     lean_run(0, bx + bag_l, can_out);
     if (ERA >= 1940) umbrella(bx + bag_l, bx + bag_l + can_ext);                     // 1940: 155 ft more, narrower
+}
+module shed() {
     // gabled shed from the depot end to the gate at Washington Ave: brick piers with stone bands, three bays
     y0 = T + can_out - shed_w;
     for (k = [1, 2], y = [y0, T + can_out]) pier(-k * shed_l / 3, y, can_h);
-    post(0, T + can_out, can_h);
     paint(trim) for (y = [y0, T + can_out]) box(-shed_l, y - 0.3, can_h, shed_l, 0.6, 0.9);
     paint(slate) translate([f(-shed_l), f(y0), f(can_h + 0.9)]) rotate([90, 0, 90]) linear_extrude(f(shed_l))
         polygon([[-f(4), -f(0.3)], [f(shed_w) / 2, f(4.2)], [f(shed_w) + f(4), -f(0.3)], [f(shed_w) + f(4), f(0.1)], [f(shed_w) / 2, f(4.7)], [-f(4), f(0.1)]]);
@@ -448,15 +530,58 @@ module sign(txt, x, y, z, h) {
         text(txt, size = f(h), font = SIGN_FONT, halign = "center", valign = "center", spacing = 1.12);
 }
 module signs() {
-    sign(SIGN_ROAD, 0.2, main_w / 2, 20.5, 1.7);                         // on the panel, Washington Ave end
     sign(SIGN_TOWN, -shed_l - 2.5, T + can_out - shed_w / 2, 13.05, 1.7);   // on the gate wall
 }
 
-if (SHOW == "all") { depot(); baggage(); canopy(); gate(); platform(); signs(); if (INTERIOR) interior(); }
+if (LIST) for (p = PIECES) echo(str("PART|", p[0], "|", sections(p)));
+else if (SHOW == "all") { depot(); baggage(); canopy(); gate(); platform(); signs(); }
 else if (SHOW == "interior") interior();
+else if (len([for (p = PIECES) if (p[0] == SHOW) 1]) > 0) print_piece(SHOW, TILE);
 else if (SHOW == "signs") signs();
 else if (SHOW == "depot") depot();
 else if (SHOW == "baggage") baggage();
 else if (SHOW == "canopy") canopy();
 else if (SHOW == "gate") gate();
 else if (SHOW == "platform") platform();
+
+// ---------------- print parts (TDQ-204) ----------------
+BED = PRINTER == "GIGA" ? [780, 780, 980] : [240, 240, 240];       // usable bed in mm, with a margin
+// name, box in feet [x0, y0, z0], [x1, y1, z1] (the part is cut into sections that fit the bed), count for repeated items
+PIECES = [
+    ["depot_walls",    [-1.5, -7.2, 0],  [141, 45.5, 27.1],  0],
+    ["depot_roof",     [-4, -4, 19.7],   [144, 44.5, 46],    0],
+    ["depot_ceiling",  [21, 1.4, 23.6],  [79, 38.6, 25.6],   0],
+    ["depot_bench",    [0, 0, 0],        [0, 0, 0],          len(benches)],
+    ["depot_lamp",     [0, 0, 0],        [0, 0, 0],          len(lamps)],
+    ["baggage_body",   [bx - 0.6, T - bag_w - 0.8, 0], [bx + bag_l + 0.6, T + 0.8, bag_eave + bag_rise + 0.1], 0],
+    ["baggage_roof",   [bx - 2.1, T - bag_w - 2.6, bag_eave - 1], [bx + bag_l + 2.1, T + 2.6, bag_eave + bag_rise + 1], 0],
+    ["canopy_main",    [-3.7, T - 0.1, 0], [bx + bag_l + (ERA >= 1940 ? can_ext : 0) + 2.1, T + can_out + 4.1, can_h + 5], 0],
+    ["canopy_shed",    [-shed_l - 0.1, T + can_out - shed_w - 4.1, 0], [0.1, T + can_out + 4.1, can_h + 5.5], 0],
+    ["gate_all",       [-shed_l - 4, T + can_out - shed_w - 2.1, 0], [-shed_l + 0.1, T + can_out + 2.1, gate_h + 3.1], 0],
+    ["platform_tiles", [-shed_l - 6, T + can_out - shed_w - 4, -0.5], [bx + bag_l + (ERA >= 1940 ? can_ext : 0) + 4, T + can_out + 8, 0], 0]
+];
+function piece(n) = [for (p = PIECES) if (p[0] == n) p][0];
+function ncut(p) = [for (d = [0 : 2]) max(1, ceil(f(p[2][d] - p[1][d]) / BED[d]))];
+function sections(p) = p[3] > 0 ? p[3] : ncut(p)[0] * ncut(p)[1] * ncut(p)[2];
+module piece_geom(n) {
+    if (n == "depot_walls") depot_lower();
+    else if (n == "depot_roof") depot_upper();
+    else if (n == "depot_ceiling") translate([0, 0, f(23.6 + 25.6)]) mirror([0, 0, 1]) ceiling();     // face up on the bed
+    else if (n == "baggage_body") baggage_body();
+    else if (n == "baggage_roof") baggage_roof();
+    else if (n == "canopy_main") canopy_runs();
+    else if (n == "canopy_shed") shed();
+    else if (n == "gate_all") { gate(); sign(SIGN_TOWN, -shed_l - 2.5, T + can_out - shed_w / 2, 13.05, 1.7); }
+    else if (n == "platform_tiles") platform();
+}
+module print_piece(n, k) {
+    p = piece(n);
+    if (n == "depot_bench") translate([f(8.5), f(2.1), -f(floor_z)]) bench(0, 0, 17);                 // all the same: TILE picks which one
+    else if (n == "depot_lamp") translate([f(1.1), f(1.1), -f(15)]) lamp(0, 0);                          // upright, rod up
+    else {
+        c = ncut(p);  i = k % c[0];  j = floor(k / c[0]) % c[1];  l = floor(k / (c[0] * c[1]));
+        L = [for (d = [0 : 2]) (p[2][d] - p[1][d]) / c[d]];
+        lo = [p[1][0] + i * L[0], p[1][1] + j * L[1], p[1][2] + l * L[2]];
+        translate([-f(lo[0]), -f(lo[1]), -f(lo[2])]) intersection() { piece_geom(n); box(lo[0], lo[1], lo[2], L[0], L[1], L[2]); }
+    }
+}

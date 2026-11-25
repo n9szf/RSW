@@ -24,6 +24,16 @@ Wall and ridge heights where not written on the sheet, window count and spacing,
 
 
 ## Colours (photos, 24 Nov 2026)
-rrpicturearchives 4399189 (T. P. Bruss, 2015) and WHS survey. Buff rusticated concrete, grey asphalt roof, light trim. Original tile roof is gone.
-Set in the .scad: stuc #C9B796, roof #6E6D66, trim #E0DCCC, found #A89878.
-Photos: RSW/reference/Station photos web/Columbus/ (index.csv there lists the source of each).
+From Tom's own photos: Research Library / RSW / Stations / Wisconsin / Columbus / Photos (private), IMG_2917 to IMG_2941 (all four sides, sunny day).
+- Walls: warm gray-taupe rusticated concrete #A59C8E; smoother base course #A09B8F
+- Soffits, brackets, fascia, window frames: white #E8E6DF
+- Roof: dark gray asphalt shingles #5A5B5F (the original tile roof is gone)
+- Doors: red #A8322C
+- Brick inside the entrance arches #6A4A3E
+
+## Rev 2 (25 Nov 2026) - rebuilt to the sheet
+- West part 29 ft deep (general waiting room), east part 22 ft deep (smoking room, baggage); step on the town side.
+- Centre section 45 ft, projects 6'10" to the track: pediment gable with half-round window and cornice, two open arched porches, office bay with three windows, COLUMBUS sign, banded (rusticated) concrete on a smooth base.
+- Toilet annex on the town side; wide (6 ft) eaves with white knee braces; concrete base to sill height.
+- From Tom's photos (town side not on the sheet): centre roof hipped toward the town side; fieldstone chimney on the town side.
+- The file is now hand-built (no longer written by the generator).
