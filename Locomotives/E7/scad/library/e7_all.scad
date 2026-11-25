@@ -2,6 +2,7 @@
 //  e7_all.scad - include this one file. Preview, print plates and the report.
 // ==========================================================================
 include <e7_params.scad>
+include <e7_nose.scad>
 include <e7_body.scad>
 
 // whole painted loco
@@ -22,10 +23,7 @@ module e7_preview() {
 module e7_glass() {
   intersection() { e7_loft(DET * 0.6); union() { e7_windshield_cut(); e7_side_cuts_windows_only(); } }
 }
-module e7_side_cuts_windows_only() {
-  for (s = [-1, 1], w = CAB_WIN)
-    translate([XF - p(w[1]), s * HW - (s > 0 ? DET : 3 - DET), p(w[2])]) cube([p(w[1] - w[0]), 3, p(w[3] - w[2])]);
-}
+module e7_side_cuts_windows_only() { e7_side_pocket(DET) e7_side_windows2d(); }
 
 // one print, laid out for the printer
 module e7_plate(part) {
@@ -40,7 +38,7 @@ module e7_plate(part) {
     xs = concat([FRAME_X0], FRAME_SPLITS, [FRAME_X1]);
     translate([-(xs[j - 1] + xs[j]) / 2, 0, -Z_FRAME_BOT]) e7_frame_piece(j);
   } else if (part == "pilot") {
-    translate([-XF, 0, 0]) rotate([0, 0, 0]) translate([0, 0, -p(5)]) e7_pilot();
+    translate([-XF, 0, 0]) translate([0, 0, -p(PILOT_PLOW[len(PILOT_PLOW) - 1][0])]) e7_pilot();
   } else if (part == "pilot_rear") {
     translate([-XR, 0, 0]) translate([0, 0, -(CPL_Z - CPL_H / 2 - WALL)]) e7_pilot_rear();
   } else if (part == "truck") {

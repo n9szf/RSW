@@ -23,11 +23,15 @@
 //
 //  v1 (30 Oct 2026): first model from published figures, NO DRAWINGS YET - the nose shape,
 //      windows, grilles and paint bands are ESTIMATES, see e7_params.scad and the TDQs.
+//  v2 (23 Nov 2026): new nose and cab front (library/e7_nose.scad) from the clean F-unit nose
+//      (EMD FP7 folder), stretched to the E7 and carried down to the skirt; default paint UP
+//      yellow (Tom). Still ESTIMATE until an E7/E8 drawing or E9 photos are checked (TDQ-610).
+//      All 7 body prints (G 4, O 2, HO 1) export as single clean solids.
 // ==========================================================================
 
 SCALE_SEL = "G";            // [G, O, HO]
 LOCO_SEL  = "16A";          // [16A, 16B, 17A, 17B, 18A, 18B, 19A, 19B, 20A, 20B]
-PAINT_SEL = "1950";         // [1946, 1950, 1956] preview / Blender only
+PAINT_SEL = "1956";         // [1946, 1950, 1956] preview / Blender only
 part = "preview";           // [preview, body_1, body_2, body_3, body_4, frame_1, frame_2, frame_3, frame_4, frame_5, pilot, pilot_rear, truck] (O: body_1-2, frame_1-3; HO: body_1, frame_1-2)
 
 include <library/e7_all.scad>

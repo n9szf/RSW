@@ -58,7 +58,7 @@ assert(!is_undef(LOCO_ROW), str("LOCO_SEL must be 16A-20B - got ", LOCO));
 ROAD_NO = LOCO; CLASS = "20-EP";
 
 // ---------------- paint (preview and Blender only) - ALL ESTIMATE until photos are checked (TDQ) ----------------
-PAINT = is_undef(PAINT_SEL) ? "1950" : PAINT_SEL;
+PAINT = is_undef(PAINT_SEL) ? "1956" : PAINT_SEL;   // default UP yellow (Tom 11/23)
 //  "1946"  as delivered: orange and gray (1947 photo caption) - band layout ESTIMATE
 //  "1950"  Hiawatha orange / maroon with black roof (about 1950-1955)
 //  "1956"  Union Pacific Armour yellow, gray roof, red stripes (after 1955)
@@ -68,49 +68,58 @@ C_FRAME = "#202020"; C_TRUCK = "#1E1E1E"; C_GLASS = "#9FB4BF"; C_WHEEL = "#55555
 // colour bands bottom-up: [top of band (inches above rail), colour]; the last band runs to the roof
 PAINT_BANDS =
   PAINT == "1946" ? [[62, C_GRAY],   [126, C_ORANGE], [999, C_GRAY]] :
-  PAINT == "1956" ? [[58, C_MIST],   [60, C_RED], [144, C_YELLOW], [146, C_RED], [999, C_MIST]] :
+  PAINT == "1956" ? [[58, C_MIST],   [60, C_RED], [155, C_YELLOW], [156.5, C_RED], [999, C_MIST]] :   // v3: upper stripe above the side screens
                     [[118, C_ORANGE], [150, C_MAROON], [999, C_BLACK]];
 assert(PAINT == "1946" || PAINT == "1950" || PAINT == "1956", "PAINT_SEL must be 1946, 1950 or 1956");
 
 // ---------------- prototype dimensions (inches) ----------------
-BODY_L_IN   = 800;        // ESTIMATE carbody, nose tip to rear face (70 ft 0 in over the pilot and rear end, less couplers)
+BODY_L_IN   = 816;        // SRC Southern Ry E7 diagram (Tom 11/23): nose face to rear face; 71 ft 1 1/2 in over pulling faces
 TRUCK_CTR_IN = 43 * 12;   // SRC (E8 / EA sheets) truck centres 43 ft 0 in
-FRONT_TO_TRUCK_IN = 142;  // ESTIMATE nose tip to front truck centre (pilot 6 ft 1 1/2 in ahead of the lead axle)
+FRONT_TO_TRUCK_IN = 154;  // SRC diagram: 13 ft 0 in pilot face to front truck centre (rear 147); trucks are kept symmetric, so the model has 151 front / 151 rear
 BODY_W_IN   = 123;        // SRC-ish: E8 cab width 10 ft 7 1/2 in over grabs; carbody 10 ft 3 in
 ROOF_IN     = 13 * 12 + 11;  // SRC 13 ft 11 in to top of the carbody (engine room) roof
 CAB_ROOF_IN = 14 * 12 + 7;   // E8 SRC, E7 ESTIMATE: cab roof 14 ft 7 in
-ROOF_R_IN   = 24;         // ESTIMATE roof corner radius
+ROOF_R_IN   = 6;          // diagram: flat side runs up to about 157 in, then a crowned roof (ROOF_EDGE_IN to ROOF_IN)
 SKIRT_IN    = 40;         // ESTIMATE bottom of the side skirt above rail
 DECK_IN     = 52;         // ESTIMATE top of the underframe (model frame plate) above rail
 
-// Nose ("bulldog"): stations measured back from the nose tip:
-//   [d back, half width, top height, top corner radius]  - ALL ESTIMATE, to be checked against a drawing (TDQ)
-NOSE = [
-  [0,   34,  80, 18],
-  [5,   44,  98, 22],
-  [16,  52, 110, 26],
-  [34,  57, 119, 26],
-  [58,  60.5, 125, 24],
-  [84,  61.5, 129, 22],     // windshield bottom
-  [112, 61.5, 175, 28],     // windshield top / cab roof front
-  [150, 61.5, 175, 28],     // cab roof back
-  [166, 61.5, ROOF_IN, ROOF_R_IN]
-];
+// Cab roof back to the engine room roof (v3, 23 Nov 2026, from the Southern Ry E7 diagram):
+// the crowned cab roof of the nose piece runs back to CAB_BACK_IN[1], then a straight fairing
+// slopes down to the engine room roof at CAB_BACK_IN[2].  The nose piece itself ends at d = 152.
+CAB_BACK_IN  = [150, 160, 183];   // [loft starts (inside the nose piece), cab roof ends, engine roof starts]
+ROOF_EDGE_IN = 160;               // engine room roof: height of the side top edge (crowned to ROOF_IN on the centre line)
 REAR_ROUND_IN = 8;          // ESTIMATE rear-end corner rounding in plan
 
 // windshield: two panes on the sloped face
 WS_Y_IN = [6, 34];          // ESTIMATE inner and outer edge, from the centre line
-WS_D_IN = [86, 110];        // along the slope (d back from the tip)
-// cab side window and door
-CAB_WIN = [[118, 146, 136, 160]];   // ESTIMATE [d from, d to, z from, z to]
-CAB_DOOR = [152, 176, 64, 150];     // ESTIMATE crew door behind the cab
-// portholes along each side: d back from the nose tip, centre height, diameter - ESTIMATE
-PORTHOLES = [[214, 120, 22], [560, 120, 22]];
-// louvre / filter grille band along the upper body - ESTIMATE
-GRILLE_D_IN = [250, 720]; GRILLE_Z_IN = [132, 156]; GRILLE_N = 9;
+WS_D_IN = [4, 25];          // v2 ESTIMATE: pane from / to, inches back from the windshield base line (e7_nose.scad)
+// ---- side layout: SRC Southern Ry E7 diagram (southern.railfan.net, Tom 11/23), checked against
+//      Tom's KIRI scan (same window positions both sides).  All [v from, v to, z from, z to] in inches:
+//      v back from the nose face, z above rail.  Same layout on both sides (scan agrees).
+CAB_WIN   = [[83, 120, 133, 153]];          // cab side window (front corners rounded to follow the windshield)
+CAB_WIN_R = [9, 3];                         // corner radius front, back
+CAB_DOOR  = [123, 155, 91, 154];            // crew door behind the cab (outline groove)
+DOOR_WIN  = [130, 150, 132, 152];           // window in the crew door
+STEP_WELL = [126, 152, 91];                 // steps under the crew door: v from, v to, top (down to the skirt)
+SIDE_WIN  = [[336, 361, 98, 124], [363, 386, 98, 124],     // engine room windows, squared with round corners
+             [581, 605, 98, 124], [606, 629, 98, 124],
+             [714, 738, 95, 122]];                         // steam generator room window
+WIN_R     = 3.5;                            // window corner radius
+ENG_DOOR  = [482, 513, 66, 123];            // engine room side door (outline groove)
+// screened air intakes high on the sides (diamond mesh in a pocket)
+SCREENS   = [[158, 181, 113, 153],          // tall intake just behind the crew door
+             [192, 256, 129, 153], [437, 492, 126, 153], [672, 726, 124, 151]];
+SCREEN_PITCH = 4;                           // mesh pitch (inches, prototype - coarser than real so it prints)
 // headlight in the nose
-HEADLIGHT = [96, 14, 4];    // ESTIMATE [height, diameter, stands out]
+HEADLIGHT = [118, 14, 4];   // v2 ESTIMATE [height, diameter, stands out] - on the face below the roll-over
 NOSE_DOOR = [24, 52, 54];   // ESTIMATE [width, height, sill] door in the nose front (outline only)
+
+// passenger pilot (v3, Southern Ry E7 diagram): levels [height, front (in ahead of the nose face, at the
+// centre line), half width, setback of the outer corner behind the front]; anticlimber band on top
+PILOT_LEVELS = [[45, 5.0, 57, 9], [34, 9.0, 54, 8], [18, 14.7, 50, 7], [15, 15.8, 49, 6.6]];
+PILOT_PLOW   = [[15, 15.8, 35, 3], [5.5, 19, 28, 2]];   // centre plow below the outer ledge
+PILOT_BACK   = 25;              // back edge of the pilot below the skirt (in behind the nose face)
+ANTICLIMBER  = [46, 55, 4.7, 21];   // [bottom, top, stands out from the nose, wraps back to]
 
 // running gear
 WHEEL_IN = 36;              // SRC
