@@ -103,6 +103,7 @@ shed_l  = 65;  shed_w = 30;      // gabled shed from the depot to the gate, cent
 gate_h  = 16.3;                  // gate piers to the top of the stone cap          MEASURED
 can_ext = 155;                   // 1940 canopy extension, narrower                 KNOWN length
 ext_w  = 16;   ext_y = main_w + 9;    // its width and the line of its centre posts      ESTIMATE from the photos
+belt_z = 24.3;                   // brick belt course under the frieze, level with the pilaster caps (photos)
 mq_w = 18;  mq_out = 6.5;  mq_z = 13.5;   // 1940 marquee over the third arch, town side   ESTIMATE from the photos
 // waiting room (1941 photos)
 WALL   = 1.5;                    // brick wall thickness                            ESTIMATE
@@ -113,12 +114,13 @@ wain_h  = 5;                     // dark wood wainscot                          
 
 plaster = "#D8CDB0"; wood = "#4E3220"; oak = "#8A6238"; floorc = "#B5AC9A"; lampw = "#F2EFE6"; board = "#1C1C1C";
 brick = "#C8873F"; band = "#C27E3A"; stone = "#C4BDAB"; frame = "#B5532E";   // brick, stone and window frames from Tom's photos (10/9)
+MORTAR = "#2A6FDB";   // mortar joints BLUE for now so they stand out (Tom 11/25); the real mortar is a red-brown - set "#8A4A32" for that
 BAND_P = 1.6;   // the brick is laid in banded rustication: a sunk joint every 1.6 ft (photos)
 slate = "#4A4E52"; trim = "#2F4A3A"; glass = "#1E2A33"; pave = "#8E5A45"; metal = "#5E6B5E";
 T = main_w;   // y of the track-side wall
 
 // ---------------- helpers ----------------
-PAINTS = [["brick", brick], ["band", band], ["stone", stone], ["slate", slate], ["trim", trim], ["glass", glass], ["frame", frame], ["pave", pave], ["metal", metal], ["signred", "#7A2A2A"], ["signcream", "#E8E0C8"], ["plaster", plaster], ["wood", wood], ["oak", oak], ["floor", floorc], ["lamp", lampw], ["board", board]];
+PAINTS = [["brick", brick], ["band", band], ["stone", stone], ["slate", slate], ["trim", trim], ["glass", glass], ["frame", frame], ["mortar", MORTAR], ["pave", pave], ["metal", metal], ["signred", "#7A2A2A"], ["signcream", "#E8E0C8"], ["plaster", plaster], ["wood", wood], ["oak", oak], ["floor", floorc], ["lamp", lampw], ["board", board]];
 module paint(c) {
     if (PAINT == "") color(c) children();
     else if ([for (p = PAINTS) if (p[0] == PAINT) p[1]][0] == c) children();
@@ -197,16 +199,26 @@ module arch_fill(x, y, side, doors) {
             }
         }
     }
-    // gauged brick ring, its top stepped into the banded courses, proud of the wall
-    R = w / 2 + 2.65;
-    on_wall(x, y, side) translate([0, f(o), 0]) paint(band) linear_extrude(f(0.22)) difference() {
-        intersection() {
-            union() for (zb = [for (k = [0 : 20]) base_h + 2 + k * BAND_P - o]) if (zb < sp + R && zb + BAND_P > sp)
-                translate([-f(sqrt(max(0, R * R - pow(max(zb, sp) - sp, 2)))), f(max(zb, sp))]) square([2 * f(sqrt(max(0, R * R - pow(max(zb, sp) - sp, 2)))), f(zb + BAND_P - max(zb, sp))]);
-            translate([0, f(sp)]) circle(r = f(R + 1.2), $fn = 96);
-        }
+    // gauged brick ring (Tom's photos): nine wedge-shaped blocks of brick laid on end, each with a flat outer
+    // face; the crown block is the keystone - a tall wedge that runs up to the belt course under the frieze
+    R = w / 2 + 2.65;  kt = belt_z - o;                     // ring depth; keystone top (local)
+    on_wall(x, y, side) translate([0, f(o), 0]) paint(MORTAR) linear_extrude(f(0.12)) difference() {      // mortar behind the blocks
+        union() for (k = [0 : 8]) let(a0 = 180 - k * 20, a1 = a0 - 20, ro = R / cos(10)) polygon(concat(
+            [for (a = [a0 : -2.5 : a1]) [f((w / 2) * cos(a)), f(sp + (w / 2) * sin(a))]],
+            k == 4 ? [[f((kt - sp) / tan(a1)), f(kt)], [f((kt - sp) / tan(a0)), f(kt)]] : [[f(ro * cos(a1)), f(sp + ro * sin(a1))], [f(ro * cos(a0)), f(sp + ro * sin(a0))]]));
         arch2d(f(w), f(h));
-        for (a = [7.5 : 11.25 : 175]) translate([0, f(sp)]) rotate(a) translate([f(w / 2 + 0.2), -f(0.05)]) square([f(4), f(0.1)]);   // joints between the voussoir groups
+    }
+    on_wall(x, y, side) translate([0, f(o), 0]) for (k = [0 : 8]) {
+        a0 = 180 - k * 20;  a1 = a0 - 20;  ro = R / cos(10);  ri = w / 2;
+        key = k == 4;
+        paint(band) linear_extrude(f(key ? 0.4 : 0.22)) difference() {
+            offset(delta = -f(0.11)) polygon(concat(
+                [for (a = [a0 : -2.5 : a1]) [f(ri * cos(a)), f(sp + ri * sin(a))]],
+                key ? [[f((kt - sp) / tan(a1)), f(kt)], [f((kt - sp) / tan(a0)), f(kt)]]
+                    : [[f(ro * cos(a1)), f(sp + ro * sin(a1))], [f(ro * cos(a0)), f(sp + ro * sin(a0))]]));
+            if (key) for (dx = [-0.6, 0, 0.6]) translate([f(dx) - f(0.02), f(sp)]) square([f(0.04), f(R + 3)]);              // keystone: bricks on end, upright
+            else for (a = [a0 - 5 : -5 : a1 + 4]) translate([0, f(sp)]) rotate(a) translate([f(ri), -f(0.02)]) square([f(R + 3), f(0.04)]);   // the bricks laid on end
+        }
     }
 }
 // segmental brick arch over a window (end pavilions): chord c over the window top z
@@ -227,6 +239,8 @@ module pilasters() {
         }
         for (z = [base_h + 2 : BAND_P : 23.5]) translate([-f(2), f(z), f(0.2)]) cube([f(4), f(0.22), f(1)]);
     }
+    for (x = [20, 40, 60, 80], sd = [0, 1]) on_wall(x, sd ? T : 0, sd) paint(MORTAR)
+        for (z = [base_h + 2 : BAND_P : 23.5]) translate([-f(1.6), f(z + 0.03), 0]) cube([f(3.2), f(0.16), f(0.26)]);
 }
 module hip(x0, y0, l, w, z, rise, o) {        // hipped roof over a block; eave line at z
     hull() {
@@ -243,19 +257,13 @@ module cornice(x0, y0, l, w, z, o) {          // metal cornice with brackets und
         for (k = [0 : m], s = [0, 1]) box(s ? x0 + l : x0 - o + 0.5, y0 + k * w / m - 0.4, z - 1.5, o - 0.5, 0.8, 1.0);
     }
 }
-module bands(x0, y0, l, w, z0, z1) {          // banded rustication: shallow sunk joints every BAND_P, on the faces only
-    for (z = [z0 : BAND_P : z1]) difference() { box(x0 - 0.01, y0 - 0.01, z, l + 0.02, w + 0.02, 0.22); box(x0 + 0.12, y0 + 0.12, z - 0.1, l - 0.24, w - 0.24, 0.42); }
+module bands(x0, y0, l, w, z0, z1, hh = 0.22) {   // banded rustication: shallow sunk joints every BAND_P, on the faces only
+    for (z = [z0 : BAND_P : z1]) difference() { box(x0 - 0.01, y0 - 0.01, z, l + 0.02, w + 0.02, hh); box(x0 + 0.12, y0 + 0.12, z - 0.1, l - 0.24, w - 0.24, hh + 0.2); }
 }
 
 // ---------------- main block + wing ----------------
 arches = [30, 50, 70];
-module depot_lower() {                                        // walls, windows, doors, cornices, marquee, end sign, fitted interior
-    // stone base
-    paint(stone) difference() { union() { box(-0.4, -0.4, 0, main_l + 0.4, main_w + 0.8, base_h); box(main_l, 2 - 0.4, 0, wing_l + 0.4, wing_w + 0.4, base_h); } if (INTERIOR) room_hole(); }
-    // brick walls with the openings cut in
-    paint(brick) difference() {
-        union() { box(0, 0, base_h, main_l, main_w, eave_h - base_h); box(main_l, 2, base_h, wing_l, wing_w, weave_h - base_h); }
-        bands(0, 0, main_l, main_w, base_h + 2, 23.5);       // banded courses (the arch rings sit over them)
+module wall_openings() {
         for (x = arches) { arch_cut(x, 0, 0); arch_cut(x, T, 1); }
         if (INTERIOR) room_hole();
         for (x = [10, 90], s = [0, 1]) opening(x, s ? T : 0, s, 9, 3.6, 19.2);           // blind panels high in the end pavilions
@@ -267,7 +275,17 @@ module depot_lower() {                                        // walls, windows,
         translate([-f(0.1), f(8), f(18.5)]) cube([f(0.35), f(24), f(4)]);                                    // and the name panel above
         for (x = [104, 119.5, 123, 128.6]) opening(x, 2, 0, 3.6, 7, base_h + 3);
         for (x = [106, 112, 124, 130, 136]) opening(x, T, 1, 3.6, 7, base_h + 3);
-    }
+}
+module walls_solid() { difference() {
+        union() { box(0, 0, base_h, main_l, main_w, eave_h - base_h); box(main_l, 2, base_h, wing_l, wing_w, weave_h - base_h); }
+        wall_openings();
+    } }
+module depot_lower() {                                        // walls, windows, doors, cornices, marquee, end sign, fitted interior
+    // stone base
+    paint(stone) difference() { union() { box(-0.4, -0.4, 0, main_l + 0.4, main_w + 0.8, base_h); box(main_l, 2 - 0.4, 0, wing_l + 0.4, wing_w + 0.4, base_h); } if (INTERIOR) room_hole(); }
+    // brick walls with the openings cut in; the banded joints show as mortar (MORTAR colour)
+    paint(brick) difference() { walls_solid(); bands(0, 0, main_l, main_w, base_h + 2, 23.5); }
+    paint(MORTAR) difference() { bands(0.04, 0.04, main_l - 0.08, main_w - 0.08, base_h + 2.03, 23.5, 0.16); wall_openings(); }
     for (x = arches) { arch_fill(x, 0, 0, ERA >= 1940 && x != 50); arch_fill(x, T, 1, true); }
     for (x = [10, 90], s = [0, 1]) paint(band) on_wall(x, s ? T : 0, s) translate([-f(4.5), f(19.2), -f(0.5)]) cube([f(9), f(3.6), f(0.15)]);
     paint(stone) for (y = [12, 28]) translate([-f(0.5), f(y - 2.6), f(base_h + 2.5)]) cube([f(0.5), f(5.2), f(0.5)]);
@@ -277,6 +295,7 @@ module depot_lower() {                                        // walls, windows,
     seg_arch(89, 0, 0, 7.6, base_h + 3.5 + 8);  seg_arch(10, T, 1, 8.6, base_h + 3 + 7);
     if (ERA >= 1940) seg_arch(10, 0, 0, 7.6, base_h + 3.5 + 8);
     pilasters();
+    for (sd = [0, 1]) paint(band) box(0, sd ? T - 0.01 : -0.3, belt_z, main_l, 0.31, 0.5);   // belt course
     window(10, T, 1, 8, 7, base_h + 3, [4, 3]);
     if (ERA < 1940) { door(10, 0, 0, 5.5, 8); porch(); }
     else window(10, 0, 0, 7, 8, base_h + 3.5, [3, 3]);
@@ -397,7 +416,7 @@ module ticket_wall() {                         // Washington Ave end of the room
 }
 module restaurant_wall() {                     // wing end: NEWS - RESTAURANT doorway, WOMEN and MEN doors
     x = ix1 - 0.06;  cy = main_w / 2;
-    paint(board) box(ix1 + 0.2, cy - 8, floor_z, 0.1, 16, 9);                    // dark beyond the doorway
+    paint(board) box(ix1 - 0.05, cy - 8, floor_z, 0.05, 16, 9);                  // dark beyond the doorway (on the face of the end wall)
     paint(wood) { box(ix1 - 0.3, cy - 1, floor_z, 0.8, 7, 3.4); box(ix1 - 0.3, cy - 7, floor_z, 0.8, 4, 4.5); }   // news stand counter and cases
     paint(wood) for (y = [5, main_w - 5]) box(ix1 - 0.15, y - 1.6, floor_z, 0.2, 3.2, 7.4);    // the two doors
     paint(plaster) box(x - 0.35, iy0 + 0.5, floor_z + 9.2, 0.35, iy1 - iy0 - 1, 1.5);         // sign band across the wall

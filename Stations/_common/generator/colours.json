@@ -1,0 +1,54 @@
+{
+ "Edgerton": {
+  "note": "Wikipedia 2008 track side (Edgerton Depot, Edgerton, WI). Dark 'dull red vitrified brick' (NRHP), cast-stone trim, light grey asphalt roof, dark sash.",
+  "set": {
+   "COL_BRICK": "#5B3A2E",
+   "COL_STONE": "#B5AA98",
+   "COL_FOUND": "#B5AA98",
+   "COL_TRIM": "#B5AA98",
+   "COL_ROOF": "#8F9196",
+   "COL_SASH": "#2A2F2C",
+   "COL_DOOR": "#2A2F2C"
+  }
+ },
+ "Stoughton": {
+  "note": "Wikipedia (CMStP&P Depot, Stoughton) and the Historical Society photo. Cream stucco, maroon-brown fascia and trim, brown brick piers with cream blocks.",
+  "set": {
+   "COL_STUC": "#D6CBB4",
+   "COL_TRIM": "#7C5558",
+   "COL_BRICK": "#6E4A3A",
+   "COL_ROOF": "#6A5A5A",
+   "COL_FOUND": "#8A7766"
+  }
+ },
+ "Columbus": {
+  "note": "Tom's own photos (Research Library / RSW / Stations / Wisconsin / Columbus / Photos (private), IMG_2917-2941, sunny day). Warm gray-taupe rusticated concrete, smoother base course, white soffits, brackets and window frames, dark gray asphalt roof, red doors, brick inside the entrance arches.",
+  "set": {
+   "COL_STUC": "#A59C8E",
+   "COL_FOUND": "#A09B8F",
+   "COL_TRIM": "#E8E6DF",
+   "COL_SASH": "#E8E6DF",
+   "COL_ROOF": "#5A5B5F",
+   "COL_DOOR": "#A8322C",
+   "COL_BRICK": "#6A4A3E"
+  }
+ },
+ "Monroe": {
+  "note": "railpictures.net (Greg Mross) colour photo before the 1993 move. Pale yellow body, maroon-brown trim and wainscot, green shingles, red brick chimney (a later repaint - the standard was light gray with dark gray trim).",
+  "set": {
+   "COL_BODY": "#D2BC82",
+   "COL_TRIM": "#6E4040",
+   "COL_ROOF": "#4F5C4C"
+  }
+ },
+ "Corliss": {
+  "note": "railpictures.net (Greg Mross) colour photo at Sturtevant, Milwaukee Road era, evening light corrected using the cream door as white. Tan-brown siding, cream window and door trim, dark grey shingles. (Painted white later, mustard yellow at Caledonia since 2010.)",
+  "set": {
+   "COL_BODY": "#B08866",
+   "COL_TRIM": "#5E4535",
+   "COL_SASH": "#E6DFCC",
+   "COL_DOOR": "#E6DFCC",
+   "COL_ROOF": "#3E3A3C"
+  }
+ }
+}
