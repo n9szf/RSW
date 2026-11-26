@@ -37,3 +37,18 @@ From Tom's own photos: Research Library / RSW / Stations / Wisconsin / Columbus 
 - Toilet annex on the town side; wide (6 ft) eaves with white knee braces; concrete base to sill height.
 - From Tom's photos (town side not on the sheet): centre roof hipped toward the town side; fieldstone chimney on the town side.
 - The file is now hand-built (no longer written by the generator).
+
+## Rev 4 (26 Nov 2026) - eaves and windows from Tom's photos
+Photos: IMG_9949-9951 (Research Library) and IMG_0849-0852 (sent in chat 26 Nov).
+- Wing eave fixed: the 13.4 ft on the sheet is the eave line, so the wing plate is now 16.4 ft (the eave had been 3 ft low and hid the window heads).
+- Wing roofs drawn in the station file: the white beadboard soffit slopes with the roof and rests on long flat white lookouts (about 4x7 in, every 3 ft) running from the wall nearly to the fascia. The knee braces are gone.
+- Town-side upper sashes have the big diamond (lozenge) muntin pattern, two diamonds across (DIA_SIDES = [0]; add other walls when photos show them).
+- Still to do: the town-side triplet with white fluted mullions (plain replacement sashes today); exact window spacing is an ESTIMATE.
+- The file is HAND-BUILT - do not regenerate.
+
+## Rev 4b / 4c (26 Nov 2026)
+- Town side rebuilt from IMG_2918-2923 and 2938 (window spacing ESTIMATE): short diamond lights, red door with diamond transom and sidelight, annex with two diamond windows, dark office door, diamond window, diamond triplet with fluted mullions, one more diamond window. Overhead door at the east end left out (later change).
+- East end: two small plain windows high in the wall. Chimney rises out of the roof.
+- East porch entrance (IMG_2926): white frame, red door, diamond sidelights and transom. West porch lined with brick (IMG_2925, 2929).
+- Leaf ornaments along the pediment's raking cornice and small blocks in the frieze (IMG_2930).
+- TILE_ROOF = true at the top of the file gives the 1906 red tile roof.

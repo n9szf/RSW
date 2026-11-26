@@ -77,3 +77,20 @@ Sheet 10 (Chicago, 20 Aug 1890, drawn full size, note "Change to wood, and inclu
 ## Rev 7, 25 Nov 2026 - end walls (sheet 01 west, sheet 02 east elevations)
 - West end: one door 3'-2 1/4" wide with a transom, 10.3 ft from the street face; no windows (the window beside it on the drawing is the side of the bay).
 - East end: no door; four small high windows - a pair at 5.0 and 7.2 ft from the street face, singles at 12.4 and 18.4 ft; sills 6.1 ft, 4 ft tall.
+
+## Rev 8, 25 Nov 2026 - dormer windows (sheet 11) and one roof over both dormers
+- Sheet 11 (Chicago, 14 Nov 1890) sash: main lights 2'-8 1/2" tall - 3'-9 1/4" in the track tower and the street lower-stage centre, 30 1/4" either side; the street tower has a 22 1/2" x 14 3/4". The other 14 3/4" sash and the 12 3/8" do not fit the dormer bodies as modelled - not placed (ESTIMATE).
+- Tom: the dormer roof lines connect. The two towers now share one cross-gable roof (ridge 28.1 ft above the platform) running from gable to gable; the steep stone gables are parapets 1 ft thick on the faces, rising above that roof (west elevation, sheet 01).
+
+## Rev 9, 25 Nov 2026 - render fix
+Dormer piers now stand 1 in proud of the stone bands. Where a brick face and a stone face shared the same plane, Blender rendered them black (seen in the first Whitewater renders).
+Renders: RSW\Blender\Renders\Stations\Whitewater\ - "v2" (25 Nov evening, six views, contact sheet); "v3" after this fix. Script RSW\Blender\render_whitewater.py, run with Render Whitewater v2.bat (uses the GLB paint pieces - run Make station GLBs.bat first).
+
+## Rev 10, 25 Nov 2026 - the 1890 interior (best guess) and the movie
+Tom: build the 1890 interior, best guess, and make a movie.
+- Walls now a hollow brick shell 1.1 ft thick with real window and door openings (the shared builder's solid block is no longer used for Whitewater); stone base is a ring; the bay opens into the office. Street doors stand open (for the fly-in); track and west doors closed.
+- Rooms from sheet 06 (ceiling plan of the waiting rooms, 3/4 in = 1 ft) and sheet 03: general waiting room about 44 ft long (east part); partition at 14.6 ft from the west end with the chimney beside it; at the west end the ladies' waiting room (street side) and the agent's office (track side, 6 ft + the bay).
+- Finish (ESTIMATE): pine board floor; panelled board ceiling with coffers as sheet 06 (two in the big room, one in the ladies' room); dark beadboard wainscot 4 ft with cap rail and base; plaster above.
+- Furnishing (ESTIMATE, typical 1890): oak benches with iron ends (back-to-back in the big room, along the walls), two pot-belly stoves piped to the chimney, six brass kerosene lamps (paint "lamp" glows), wall clock and schedule board on the partition, ticket windows into both waiting rooms with shelf and brass grille, agent's desk with telegraph in the bay, chair, cabinet.
+- New paints: floor, ceiling, plaster, wainscot, woodwork, oak, iron, brass, lamp, clock, board.
+- Movie: RSW\Blender\render_whitewater_movie.py (76 s, 24 fps, 1920x1080, EEVEE). Title fade-in, 360 fly-around, in through the street doors, look round the waiting room, out and back to the start, end card. "Whitewater movie TEST.bat" renders 8 check frames; "Whitewater movie.bat" does the full run and joins the .mp4 (Movies\Whitewater 1890\). Run Processed\Make station GLBs.bat first.

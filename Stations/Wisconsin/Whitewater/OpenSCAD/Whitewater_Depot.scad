@@ -57,6 +57,13 @@
 //    (3'-2 1/4", 10.3 ft from the street face, transom), no windows; east
 //    end no door, four small high windows (pair at y 5.0 and 7.2, singles at
 //    12.4 and 18.4; sill 6.1 ft, 4 ft tall).
+//  REV 8, 25 Nov 2026 - dormer sash from sheet 11 (14 Nov 1890): main lights
+//    2'-8 1/2" tall: 3'-9 1/4" in the track tower and the street lower-stage
+//    centre, 30 1/4" either side; the street tower has a 22 1/2" x 14 3/4".
+//    The other 14 3/4" sash (3'-9 1/4", 30 1/4"), a 22 1/2" and the 12 3/8"
+//    do not fit the dormer bodies as modelled - not placed (ESTIMATE).
+//  REV 9, 25 Nov 2026 - dormer piers set 1 in proud of the stone bands: the
+//    shared faces rendered black in Blender.
 //  REV 6, 25 Nov 2026 - cresting and finials from sheet 10 (wood, Aug 1890):
 //    scrolled-leaf crest 1.34 ft tall, repeat 1.53 ft, balls on the top rail;
 //    turned finial. Tom: small - sheet 10 at true full size, 15 in base,
@@ -85,7 +92,10 @@ COL_DOOR  = "#4B3A33";   // street doors dark brown (photos 2013 on)
 // Builder paint list plus the track-side door.
 PAINTS = [["walls", COL_BODY], ["stucco", COL_STUC], ["brick", COL_BRICK], ["stone", COL_STONE], ["trim", COL_TRIM],
           ["roof", COL_ROOF], ["glass", COL_GLASS], ["doors", COL_DOOR], ["door_track", COL_DOOR_TK], ["foundation", COL_FOUND],
-          ["platform", COL_PLAT], ["chimney", COL_BRICK], ["sash", COL_SASH]];
+          ["platform", COL_PLAT], ["chimney", COL_BRICK], ["sash", COL_SASH],
+          // 1890 interior (best guess, REV 10): varnished pine and oak, plaster, cast iron, brass, lamp glass
+          ["floor", "#B08A5A"], ["ceiling", "#A87C4C"], ["plaster", "#D9CBA6"], ["wainscot", "#6B4426"], ["woodwork", "#4A2E1A"],
+          ["oak", "#9A6B3A"], ["iron", "#242424"], ["brass", "#B8923A"], ["lamp", "#FFE6B0"], ["clock", "#F2EDE0"], ["board", "#1C1C1C"]];
 
 L = 60.2; W = 22.2; EAVE = 11.25;
 ovN = 5; ovS = 12; ovE = 12;                    // overhangs
@@ -181,18 +191,23 @@ module pier(x, y, z0, z1, s = 1.8) {
     paint("stone") { fbox(x - s / 2 - 0.15, y - s / 2 - 0.15, z1, s + 0.3, s + 0.3, 0.5);
                      translate([ft(x), ft(y), ft(z1 + 0.5)]) rotate([0, 0, 45]) cylinder(h = ft(2.2), r1 = ft(s * 0.72), r2 = 0, $fn = 4); }
 }
-// tower: front face on yf, s = +1 (street, back is +y) or -1 (track, back is -y)
-module dormer_tower(yf, s, zb) {
+// dormer sash (sheet 11, Chicago 14 Nov 1890): main light 2'-8 1/2" with a 14 3/4" transom above
+DW_H = 2.71; DW_T = 1.23;
+module dwin(x, yf, s, z, w, h = DW_H) {         // s = +1 street face (looks -y), -1 track face (looks +y)
+    translate([ft(x), ft(yf) - s * 0.06, 0]) rotate([90, 0, s > 0 ? 0 : 180]) window(w, h, z);
+}
+// tower: front face on yf, s = +1 (street, back is +y) or -1 (track, back is -y); ww = main window width
+module dormer_tower(yf, s, zb, ww = 3.77, wh = DW_H, wz = 0.75) {
     tw = 10.4; zt = EAVE + 12.2; zap = EAVE + 19.5; d = 9; gw = 7.6;
     y0 = s > 0 ? yf : yf - d;
     paint("brick") fbox(DX - tw / 2, y0, zb, tw, d, zt - zb);
-    paint("stone") for (z = [zb, zt - 1.2]) fbox(DX - tw / 2 - 0.1, y0 - (s > 0 ? 0.1 : 0), z, tw + 0.2, d + 0.1, 0.7);
-    paint("stone") translate([ft(DX - gw / 2), ft(y0 + d), ft(zt)]) rotate([90, 0, 0]) linear_extrude(ft(d))
-        polygon([[0, 0], [ft(gw), 0], [ft(gw / 2), ft(zap - zt)]]);                               // steep stone gable
-    paint("roof") for (k = [-1, 1]) hull() { fbox(DX + k * gw / 2 - 0.25, y0, zt - 0.1, 0.5, d, 0.4);
-                                           fbox(DX - 0.25, y0, zap - 0.2, 0.5, d, 0.4); }
-    for (x = [DX - tw / 2 + 0.9, DX + tw / 2 - 0.9]) pier(x, yf - s * 0.1 + s * 0.9, zb, zt);
-    paint("glass") for (k = [-1, 1]) fbox(DX + k * 0.85 - 0.7, yf - s * 0.08, zb + 1.2, 1.4, 0.06, 3.6);     // centre pair
+    paint("stone") for (z = [zb, zt - 0.7]) fbox(DX - tw / 2 - 0.1, y0 - (s > 0 ? 0.05 : 0), z, tw + 0.2, d + 0.05, 0.7);   // band face 0.05 behind the piers (no shared faces - they render black)
+    // steep stone gable: a parapet 1 ft thick on the face, standing above the shared cross roof (dormer_link)
+    gy = s > 0 ? yf : yf - 1.0;
+    paint("stone") translate([ft(DX - gw / 2), ft(gy + 1.0), ft(zt)]) rotate([90, 0, 0]) linear_extrude(ft(1.0))
+        polygon([[0, 0], [ft(gw), 0], [ft(gw / 2), ft(zap - zt)]]);
+    for (x = [DX - tw / 2 + 0.9, DX + tw / 2 - 0.9]) pier(x, yf - s * 0.1 + s * 0.9, zb, zt);   // pier face at yf - 0.1
+    dwin(DX, yf, s, zb + wz, ww, wh);                                                // sheet 11 sash
     paint("glass") translate([ft(DX), ft(yf - s * 0.08), ft(zt + 2.2)]) rotate([90, 0, 0]) cylinder(h = 0.3, r = ft(1.1), center = true, $fn = 24);   // trefoil light
 }
 module dormer_street() {                         // lower stage 17 ft wide, then the tower
@@ -200,16 +215,16 @@ module dormer_street() {                         // lower stage 17 ft wide, then
     paint("brick") fbox(DX - lw / 2, yf, zb, lw, d, zl - zb);
     paint("stone") { fbox(DX - lw / 2 - 0.1, yf - 0.1, zb, lw + 0.2, d + 0.1, 0.7);
                      fbox(DX - lw / 2 - 0.15, yf - 0.15, zl - 0.6, lw + 0.3, d + 0.15, 0.6); }
-    paint("roof") hull() { fbox(DX - lw / 2, yf - 0.3, zl, lw, d, 0.3); fbox(DX - 5.2, yf + 1.2, zl + 1.6, 10.4, d - 1.2, 0.2); }
-    for (x = [DX - lw / 2 + 0.9, DX + lw / 2 - 0.9]) pier(x, yf + 0.8, zb, zl);
-    paint("glass") { for (k = [-1, 1]) fbox(DX + k * 0.85 - 0.7, yf - 0.08, zb + 1.0, 1.4, 0.06, 3.4);
-                     for (k = [-1, 1]) fbox(DX + k * 5.6 - 0.6, yf - 0.08, zb + 1.0, 1.2, 0.06, 3.0); }
-    dormer_tower(yf + 1.2, 1, zl);
+    paint("roof") hull() { fbox(DX - lw / 2, yf - 0.3, zl, lw, d, 0.3); fbox(DX - 5.2, yf + 1.2, zl + 0.6, 10.4, d - 1.2, 0.2); }
+    for (x = [DX - lw / 2 + 0.9, DX + lw / 2 - 0.9]) pier(x, yf + 0.7, zb, zl);                  // pier face 0.05 in front of the bands
+    dwin(DX, yf, 1, zb + 0.9, 3.77);                                                 // centre 3'-9 1/4" (sheet 11)
+    for (k = [-1, 1]) dwin(DX + k * 5.2, yf, 1, zb + 0.9, 2.52);                     // sides 30 1/4"
+    dormer_tower(yf + 1.2, 1, zl, 1.88, DW_T, 0.75);                                  // tower 22 1/2" x 14 3/4"
 }
 module dormer_track() dormer_tower(23.1, -1, EAVE + 8);      // tower only, higher on the roof (west elev.)
 // the cross-gable roof joining the two towers (west elevation: ridge 28.1 ft above the platform)
-XR = 28.1; module dormer_link() {
-    y0 = 0.2; y1 = 23.1; tw = 10.4; zt = EAVE + 12.2;
+XR = 28.1; module dormer_link() {             // Tom: the dormer roofs connect - one cross roof over both towers
+    y0 = 0.2 + 0.9; y1 = 23.1 - 0.9; tw = 10.4; zt = EAVE + 12.2;   // one roof from parapet to parapet
     paint("brick") fbox(DX - tw / 2 + 0.2, y0, EAVE + 8, tw - 0.4, y1 - y0, zt - EAVE - 8);
     paint("roof") hull() { fbox(DX - tw / 2 - 0.4, y0, zt - 0.1, tw + 0.8, y1 - y0, 0.3);
                            fbox(DX - 0.25, y0, XR - 0.4, 0.5, y1 - y0, 0.4); }
@@ -218,7 +233,7 @@ XR = 28.1; module dormer_link() {
 // ---- the one chimney (sheets 01, 02, 03) -----------------------------------
 CHX = L - 16.4; CHY = 12; CHS = 2.5; CHTOP = EAVE + RISE + 0.6 + 4.7;
 module chimneys() {
-    paint("chimney") { fbox(CHX - CHS / 2, CHY - CHS / 2, 6, CHS, CHS, CHTOP - 6 - 1.7);
+    paint("chimney") { fbox(CHX - CHS / 2, CHY - CHS / 2, FLOOR, CHS, CHS, CHTOP - FLOOR - 1.7);   // from the floor (stoves pipe into it)
                        fbox(CHX - CHS / 2 - 0.25, CHY - CHS / 2 - 0.25, CHTOP - 3.0, CHS + 0.5, CHS + 0.5, 0.5); }   // corbel
     paint("stone") { fbox(CHX - CHS / 2 - 0.1, CHY - CHS / 2 - 0.1, CHTOP - 1.7, CHS + 0.2, CHS + 0.2, 1.2);      // stone cap
                      fbox(CHX - CHS / 2 - 0.3, CHY - CHS / 2 - 0.3, CHTOP - 0.5, CHS + 0.6, CHS + 0.6, 0.5); }
@@ -262,15 +277,189 @@ module brackets() {
     bracket(0, 0, -135, BR_C[0], BR_C[1], BR_C[2]); bracket(L, 0, -45, BR_C[0], BR_C[1], BR_C[2]);
 }
 
-depot(blocks = [[0, L, 0, W, EAVE, 0, 5, 0, 2]], wins = wins, doors = doors, plat = [-15, 90, 14, 0.4]);
-bay_track();
-paint("stone") fbox(-0.3, -0.3, 0, L + 0.6, W + 0.6, 3.6);          // rock-faced stone base to sill height (photos)
-// rock-faced stone quoins / pilasters (street side as photos; track side from sheet 02)
+// ======================================================================
+//  REV 10, 25 Nov 2026 - the 1890 INTERIOR (Tom: best guess, go over the top)
+//  Room layout from sheet 06 (Plan of Ceiling showing paneling of the
+//  waiting rooms, 3/4 in = 1 ft) and sheet 03 (foundation plan): general
+//  waiting room 44 ft long (east part), then the chimney in the partition;
+//  at the west end the ladies' waiting room on the street side and the
+//  agent's office on the track side with the bay. Ceilings panelled boards
+//  with coffers (sheet 06). Furnishing ESTIMATE (typical C.M.&St.P. 1890):
+//  beadboard wainscot, plaster above, oak benches with iron ends, two
+//  pot-belly stoves, brass kerosene lamps, clock, schedule board, ticket
+//  windows, agent's desk and telegraph in the bay. Street doors open.
+// ======================================================================
+T = 1.1;                                          // brick wall thickness (13 in + plaster)
+FLZ = FLOOR;                                      // floor top = door sill (1.5 ft above the platform)
+CEIL = EAVE - 0.3;                                // ceiling underside
+PX = L - 14.6;                                    // partition: general waiting room | west rooms (sheet 06)
+OY = W - T - 6.0;                                 // partition: ladies' room | office (office 6 ft + bay)
+WAIN = 4.0;                                       // wainscot height above the floor
+module cutbox(x0, y0, z0, l, w, h) fbox(x0, y0, z0, l, w, h);
+// openings through the outer walls for every window and door
+module openings() {
+    for (o = wins) let (x = o[0], s = o[1], w = o[2], h = o[3], z = o[4]) {
+        if (s == 0) cutbox(x - w / 2, -1, z, w, T + 2, h);
+        if (s == 1) cutbox(x - w / 2, W - T - 1, z, w, T + 2, h);
+        if (s == 2) cutbox(-1, x - w / 2, z, T + 2, w, h);
+        if (s == 3) cutbox(L - T - 1, x - w / 2, z, T + 2, w, h);
+    }
+    cutbox(DX - 2.5, -1, FLZ, 5, T + 2, 8.5 + 1.5);                  // street doors + transom
+    cutbox(DX - 2.5, W - T - 1, FLZ, 5, T + 2, 8.5 + 1.5);           // track door + transom
+    cutbox(L - T - 1, 10.3 - 1.6, FLZ, T + 2, 3.2, 8 + 1.5);         // west end door
+    cutbox(BX + 0.7, W - T - 1, FLZ, L - T - BX - 0.7, T + 2, EAVE - 1.6 - FLZ);   // into the bay
+}
+module bay_inner() offset(delta = -ft(0.9)) polygon([for (p = BAY_PTS) [ft(p[0]), ft(p[1])]]);
+module bay_cuts() {                               // the three bay windows, through the wall
+    faces = [[BAY_PTS[0], BAY_PTS[3]], [BAY_PTS[3], BAY_PTS[2]], [BAY_PTS[2], BAY_PTS[1]]];
+    for (f = faces) let (a = f[0], b = f[1], m = (a + b) / 2, ang = atan2(b[1] - a[1], b[0] - a[0]),
+                         len = norm(b - a), ww = min(2.6, len - 1.6))
+        translate([ft(m[0]), ft(m[1]), ft(3.8)]) rotate([0, 0, ang]) translate([-ft(ww / 2), -ft(2), 0]) cube([ft(ww), ft(4), ft(6.9)]);
+}
+module shell() {
+    paint("brick") difference() {
+        union() {
+            fbox(0, 0, 0.5, L, W, EAVE - 0.5);
+            translate([0, 0, ft(0.5)]) linear_extrude(ft(EAVE - 1.3)) polygon([for (p = BAY_PTS) [ft(p[0]), ft(p[1])]]);
+        }
+        fbox(T, T, 0.4, L - 2 * T, W - 2 * T, EAVE);
+        translate([0, 0, ft(0.4)]) linear_extrude(ft(EAVE)) bay_inner();
+        openings(); bay_cuts();
+    }
+    paint("foundation") fbox(0, 0, 0, L, W, 0.5);
+    paint("stone") difference() {                                     // rock-faced base, now a ring
+        union() { fbox(-0.3, -0.3, 0, L + 0.6, W + 0.6, 3.6);
+                  linear_extrude(ft(3.6)) offset(delta = ft(0.25)) polygon([for (p = BAY_PTS) [ft(p[0]), ft(p[1])]]); }
+        fbox(T, T, -0.1, L - 2 * T, W - 2 * T, 4);
+        translate([0, 0, -ft(0.1)]) linear_extrude(ft(4)) bay_inner();
+        openings(); bay_cuts();
+    }
+    // glass and sash on the outside faces (the builder's window), bay windows as before
+    for (o = wins) on_face(BLK, o[0], o[1]) window(o[2], o[3], o[4]);
+    faces = [[BAY_PTS[0], BAY_PTS[3]], [BAY_PTS[3], BAY_PTS[2]], [BAY_PTS[2], BAY_PTS[1]]];
+    for (f = faces) let (a = f[0], b = f[1], m = (a + b) / 2, ang = atan2(b[1] - a[1], b[0] - a[0]),
+                         len = norm(b - a), ww = min(2.6, len - 1.6))
+        translate([ft(m[0]), ft(m[1]), 0]) rotate([0, 0, ang]) translate([0, 0.05, 0]) rotate([90, 0, 180]) window(ww, 6.9, 3.8);
+    on_face(BLK, 10.3, 3) door(3.2, 8, 0);                          // west door, closed
+    on_face(BLK, DX, 1) door_track(5, 8.5);                         // track door, closed
+    on_face(BLK, DX, 0) translate([-ft(2.5), ft(FLZ), 0]) {         // street doors: frame and transom only - leaves open
+        paint("trim") { for (x = [-ft(0.35), ft(5)]) translate([x, 0, 0]) cube([ft(0.35), ft(9.9), ft(0.25)]);
+                        translate([-ft(0.35), ft(9.8), 0]) cube([ft(5.7), ft(0.35), ft(0.3)]); }
+        paint("glass") translate([0, ft(8.7), 0]) cube([ft(5), ft(1), ft(0.08)]);
+    }
+    paint("doors") { fbox(DX - 2.5, T, FLZ, 0.17, 2.45, 8.5); fbox(DX + 2.33, T, FLZ, 0.17, 2.45, 8.5); }   // leaves swung in
+}
+// ---- interior ------------------------------------------------------------------
+module room_ring(z0, z1, d = 0.06) difference() {        // a lining on the ROOM side of the outer walls (d thick)
+    union() { fbox(T, T, z0, L - 2 * T, W - 2 * T, z1 - z0);
+              translate([0, 0, ft(z0)]) linear_extrude(ft(z1 - z0)) bay_inner(); }
+    fbox(T + d, T + d, z0 - 1, L - 2 * T - 2 * d, W - 2 * T - 2 * d, z1 - z0 + 2);
+    translate([0, 0, ft(z0 - 1)]) linear_extrude(ft(z1 - z0 + 2)) offset(delta = -ft(d)) bay_inner();
+    openings(); bay_cuts();
+    fbox(BX + 0.7, W - T - 0.2, z0 - 1, L - T - BX - 0.7, 0.4, z1 - z0 + 2);     // no lining across the bay mouth
+}
+// partitions with their openings: [x0, y0, l, w] and cuts
+module partitions_raw(th) {
+    difference() {
+        union() { fbox(PX - th / 2, T, FLZ, th, W - 2 * T, CEIL - FLZ);          // big room | west rooms
+                  fbox(PX, OY - th / 2, FLZ, L - T - PX, th, CEIL - FLZ); }      // ladies' room | office
+        fbox(PX - 1, 3.0, FLZ, 2, 3.2, 7.6);                                       // door, waiting room -> ladies' room
+        fbox(PX - 1, 18.3, FLZ, 2, 2.7, 7.6);                                      // door, waiting room -> office
+        fbox(PX - 1, 15.9, FLZ + 3.3, 2, 2.0, 2.2);                                // ticket window into the waiting room
+        fbox(51.0, OY - 1, FLZ + 3.3, 2.0, 2, 2.2);                                // ticket window into the ladies' room
+        fbox(CHX - CHS / 2 - 0.05, CHY - CHS / 2 - 0.05, 0, CHS + 0.1, CHS + 0.1, 40);   // chimney passes
+    }
+}
+module interior() {
+    // floors and ceilings
+    paint("floor") { fbox(T, T, FLZ - 0.15, L - 2 * T, W - 2 * T, 0.15);
+                     translate([0, 0, ft(FLZ - 0.15)]) linear_extrude(ft(0.15)) bay_inner();
+                     fbox(BX + 0.7, W - T - 0.1, FLZ - 0.15, L - T - BX - 0.7, T + 0.2, 0.15); }
+    paint("ceiling") { fbox(T, T, CEIL, L - 2 * T, W - 2 * T, 0.25);
+                       translate([0, 0, ft(CEIL)]) linear_extrude(ft(0.25)) bay_inner(); }
+    // ceiling panelling: border beams and coffer frames (sheet 06)
+    paint("woodwork") {
+        for (c = [[6.6, 21.6], [25.4, 40.7]]) difference() {                      // the two big coffers
+            fbox(c[0] - 0.6, 5.0, CEIL - 0.45, c[1] - c[0] + 1.2, 12.2, 0.45);
+            fbox(c[0], 5.6, CEIL - 1, c[1] - c[0], 11.0, 2); }
+        difference() { fbox(PX + 2.6, 2.4, CEIL - 0.45, 8.6, 9.2, 0.45); fbox(PX + 3.2, 3.0, CEIL - 1, 7.4, 8.0, 2); }   // ladies' room coffer
+        for (x = [T, PX - 0.25]) fbox(x, T, CEIL - 0.35, 0.3, W - 2 * T, 0.35);  // cornice beams
+        fbox(T, T, CEIL - 0.35, L - 2 * T, 0.3, 0.35); fbox(T, W - T - 0.3, CEIL - 0.35, L - 2 * T, 0.3, 0.35);
+        fbox(PX, OY - 0.35, CEIL - 0.35, L - T - PX, 0.7, 0.35);
+    }
+    // wall finish: dark beadboard wainscot with a cap rail, plaster above
+    paint("wainscot") room_ring(FLZ, FLZ + WAIN, 0.08);
+    paint("plaster") room_ring(FLZ + WAIN, CEIL, 0.06);
+    paint("woodwork") { room_ring(FLZ + WAIN, FLZ + WAIN + 0.25, 0.14); room_ring(FLZ, FLZ + 0.5, 0.12); }   // cap rail, base board
+    paint("plaster") partitions_raw(0.4);
+    paint("wainscot") intersection() { partitions_raw(0.52); fbox(0, 0, FLZ, L, W, WAIN); }
+    paint("woodwork") intersection() { partitions_raw(0.6); fbox(0, 0, FLZ + WAIN, L, W, 0.25); }
+    // ticket windows: shelf on a bracket (sheet 08) and a brass grille
+    for (tw = [[PX, 16.9, 0], [52.0, OY, 1]]) {
+        if (tw[2] == 0) { paint("oak") fbox(PX - 1.2, 15.8, FLZ + 3.25, 2.4, 2.2, 0.12);
+                          paint("brass") for (k = [0 : 6]) fbox(PX - 0.05, 16.0 + k * 0.3, FLZ + 3.4, 0.06, 0.04, 2.0); }
+        else { paint("oak") fbox(50.9, OY - 1.2, FLZ + 3.25, 2.2, 2.4, 0.12);
+               paint("brass") for (k = [0 : 6]) fbox(51.1 + k * 0.3, OY - 0.05, FLZ + 3.4, 0.04, 0.06, 2.0); }
+    }
+    // furniture
+    for (b = [[4, 9.6, 21, 0], [4, 12.6, 21, 1], [33.5, 9.6, 9, 0], [33.5, 12.6, 9, 1]]) bench(b[0], b[1], b[2], b[3]);  // centre, back to back
+    bench(T + 0.1, 4.5, 13, 3);                        // along the east wall
+    for (x = [21.5, 36.5]) bench(x, T + 0.1, 5.5, 1);  // street wall between the window groups
+    bench(L - T - 0.1, 2.0, 6.5, 2); bench(PX + 1.2, T + 0.1, 3.4, 1);   // ladies' room
+    stove(CHX - 3.2, CHY, true); stove(PX + 3.0, 9.0, false);
+    paint("iron") { fbox(CHX - 3.2 - 0.15, CHY - 0.15, FLZ + 4.4, 0.3, 0.3, 3.2);
+                    fbox(CHX - 3.2 - 0.15, CHY - 0.15, FLZ + 7.4, 2.0, 0.3, 0.3); }   // stove pipe into the chimney
+    for (lp = LAMPS) lamp(lp[0], lp[1]);
+    // clock and schedule board on the partition, waiting-room side
+    paint("woodwork") translate([ft(PX - 0.25), ft(8.5), ft(FLZ + 6.8)]) rotate([0, 90, 0]) cylinder(h = ft(0.15), r = ft(1.05), $fn = 32);
+    paint("clock") translate([ft(PX - 0.32), ft(8.5), ft(FLZ + 6.8)]) rotate([0, 90, 0]) cylinder(h = ft(0.08), r = ft(0.9), $fn = 32);
+    paint("board") fbox(PX - 0.3, 11.2 - 2.4, FLZ + 4.6, 0.1, 1.6, 1.8);
+    paint("woodwork") fbox(PX - 0.27, 11.2 - 2.6, FLZ + 4.4, 0.06, 2.0, 2.2);
+    // agent's office: desk in the bay with the telegraph, chair, cabinet
+    paint("oak") { fbox(L - 9.0, W + 0.6, FLZ, 5.0, 1.8, 2.5); fbox(L - 9.0, W + 0.6, FLZ + 2.5, 5.0, 1.9, 0.12); }
+    paint("brass") { fbox(L - 7.2, W + 0.9, FLZ + 2.62, 0.5, 0.3, 0.25); fbox(L - 6.3, W + 1.0, FLZ + 2.62, 0.35, 0.2, 0.12); }
+    paint("oak") { fbox(L - 7.0, W - 1.4, FLZ, 1.5, 1.5, 1.5); fbox(L - 7.0, W - 1.5, FLZ + 1.5, 1.5, 0.15, 1.6); }
+    paint("oak") fbox(L - T - 2.0, OY + 0.3, FLZ, 1.8, 3.0, 6.5);                // cabinet / ticket case
+}
+module bench(x, y, len, dir) {    // dir 0: along x, back on +y side; 1: along x, back on -y; 2: along y, back +x; 3: along y, back -x
+    rot = dir == 0 ? 0 : dir == 1 ? 180 : dir == 2 ? 90 : -90;
+    x0 = dir == 1 ? x + len : dir == 3 ? x : x; y0 = dir == 1 ? y : dir == 2 ? y : dir == 3 ? y + len : y;
+    translate([ft(dir == 1 ? x + len : x), ft(dir == 3 ? y + len : y), ft(FLZ)]) rotate([0, 0, rot]) {
+        paint("oak") { translate([0, -ft(1.55), ft(1.45)]) cube([ft(len), ft(1.5), ft(0.12)]);          // seat
+                       translate([0, -ft(0.12), ft(1.7)]) rotate([-12, 0, 0]) cube([ft(len), ft(0.1), ft(1.3)]); }   // back
+        paint("iron") for (k = [0 : max(1, floor(len / 5))]) let (u = min(k * 5, len - 0.15))
+            translate([ft(u), -ft(1.6), 0]) cube([ft(0.15), ft(1.6), ft(1.45)]);                       // cast ends / legs
+        paint("iron") for (k = [0 : max(1, floor(len / 5))]) let (u = min(k * 5, len - 0.15))
+            translate([ft(u), -ft(1.6), ft(2.0)]) cube([ft(0.15), ft(1.5), ft(0.12)]);                  // arm rests
+    }
+}
+module stove(x, y, big) {
+    r = big ? 1.1 : 0.85; h = big ? 3.4 : 2.9;
+    paint("iron") translate([ft(x), ft(y), ft(FLZ)]) {
+        for (a = [45 : 90 : 315]) rotate([0, 0, a]) translate([ft(r * 0.7), 0, 0]) cylinder(h = ft(0.6), r = ft(0.1), $fn = 8);   // legs
+        translate([0, 0, ft(0.6)]) cylinder(h = ft(0.3), r = ft(r * 0.9), $fn = 32);
+        translate([0, 0, ft(0.9)]) cylinder(h = ft(h * 0.55), r1 = ft(r * 0.85), r2 = ft(r), $fn = 32);   // pot belly
+        translate([0, 0, ft(0.9 + h * 0.55)]) cylinder(h = ft(h * 0.3), r1 = ft(r), r2 = ft(r * 0.7), $fn = 32);
+        translate([0, 0, ft(0.9 + h * 0.85)]) cylinder(h = ft(0.25), r = ft(r * 0.8), $fn = 32);        // top
+        translate([0, 0, ft(0.9 + h * 0.85)]) cylinder(h = ft(big ? 0.1 : CEIL - FLZ - 1.2 - h * 0.85), r = ft(0.25), $fn = 16);   // pipe
+    }
+    paint("iron") translate([ft(x - 1.8), ft(y - 1.8), ft(FLZ)]) cube([ft(3.6), ft(3.6), ft(0.03)]);       // stove board
+}
+// hanging brass kerosene lamps: [x, y] (lights in Blender at the same places)
+LAMPS = [[9, 11.1], [20, 11.1], [31, 11.1], [40, 11.1], [PX + 6.9, 7.0], [L - 6.5, 19.0]];
+module lamp(x, y) {
+    translate([ft(x), ft(y), 0]) {
+        paint("brass") { translate([0, 0, ft(CEIL - 3.2)]) cylinder(h = ft(3.2), r = ft(0.04), $fn = 8);          // rod
+                         translate([0, 0, ft(CEIL - 3.9)]) cylinder(h = ft(0.6), r1 = ft(0.15), r2 = ft(0.45), $fn = 24);   // font
+                         translate([0, 0, ft(CEIL - 3.25)]) cylinder(h = ft(0.08), r = ft(0.9), $fn = 32); }      // smoke bell rim
+        paint("lamp") translate([0, 0, ft(CEIL - 3.3)]) cylinder(h = ft(0.6), r1 = ft(0.35), r2 = ft(0.25), $fn = 24);   // lit chimney / shade
+    }
+}
+shell(); interior();
 QX = [0, 5.2, 18.6, 25.4, 32.2, 39.6, L - 1.4];   // symmetric
 QXT = [for (x = [15.4, 22.4, 24.9, 33.6, 39.4, 46.0, 52.4, 58.8]) L - x - 1.4];   // from the west end
 paint("stone") for (x = QX) fbox(x, -0.25, 3.6, 1.4, 0.3, EAVE - 3.6 - 0.8);
 paint("stone") for (x = QXT) fbox(x, W - 0.05, 3.6, 1.4, 0.3, EAVE - 3.6 - 0.8);
 paint("stone") for (y = [0, W - 1.4], x = [-0.25, L - 0.05]) fbox(x, y, 3.6, 0.3, 1.4, EAVE - 3.6 - 0.8);
-paint("platform") fbox(-15, -8, 0, 90, 8, 0.3);                      // street-side walk
-on_face(BLK, DX, 1) door_track(5, 8.5);
+paint("platform") { fbox(-15, -8, 0, 90, 8, 0.3); fbox(-15, W, 0, 90, 14, 0.4); }   // street-side walk, track platform
 steep_roof(); dormer_street(); dormer_track(); dormer_link(); chimneys(); brackets();
