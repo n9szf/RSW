@@ -64,6 +64,11 @@
 //    do not fit the dormer bodies as modelled - not placed (ESTIMATE).
 //  REV 9, 25 Nov 2026 - dormer piers set 1 in proud of the stone bands: the
 //    shared faces rendered black in Blender.
+//  REV 11, 26 Nov 2026 - waiting-room FIREPLACE replaces the pot-belly stove: the
+//    Whitewater Historical Society says the fireplace is in Jennings' plans and the
+//    walls and ceiling had wide boxcar siding. Brick breast on the chimney's east
+//    face, oak mantel, stone hearth, fire. Centre benches shortened to clear it.
+//    Ladies' room stove kept (ESTIMATE). Details of the fireplace are a guess.
 //  REV 6, 25 Nov 2026 - cresting and finials from sheet 10 (wood, Aug 1890):
 //    scrolled-leaf crest 1.34 ft tall, repeat 1.53 ft, balls on the top rail;
 //    turned finial. Tom: small - sheet 10 at true full size, 15 in base,
@@ -94,7 +99,7 @@ PAINTS = [["walls", COL_BODY], ["stucco", COL_STUC], ["brick", COL_BRICK], ["sto
           ["roof", COL_ROOF], ["glass", COL_GLASS], ["doors", COL_DOOR], ["door_track", COL_DOOR_TK], ["foundation", COL_FOUND],
           ["platform", COL_PLAT], ["chimney", COL_BRICK], ["sash", COL_SASH],
           // 1890 interior (best guess, REV 10): varnished pine and oak, plaster, cast iron, brass, lamp glass
-          ["floor", "#B08A5A"], ["ceiling", "#A87C4C"], ["plaster", "#D9CBA6"], ["wainscot", "#6B4426"], ["woodwork", "#4A2E1A"],
+          ["embers", "#E0501A"], ["floor", "#B08A5A"], ["ceiling", "#A87C4C"], ["plaster", "#D9CBA6"], ["wainscot", "#6B4426"], ["woodwork", "#4A2E1A"],
           ["oak", "#9A6B3A"], ["iron", "#242424"], ["brass", "#B8923A"], ["lamp", "#FFE6B0"], ["clock", "#F2EDE0"], ["board", "#1C1C1C"]];
 
 L = 60.2; W = 22.2; EAVE = 11.25;
@@ -233,7 +238,7 @@ XR = 28.1; module dormer_link() {             // Tom: the dormer roofs connect -
 // ---- the one chimney (sheets 01, 02, 03) -----------------------------------
 CHX = L - 16.4; CHY = 12; CHS = 2.5; CHTOP = EAVE + RISE + 0.6 + 4.7;
 module chimneys() {
-    paint("chimney") { fbox(CHX - CHS / 2, CHY - CHS / 2, FLOOR, CHS, CHS, CHTOP - FLOOR - 1.7);   // from the floor (stoves pipe into it)
+    paint("chimney") { fbox(CHX - CHS / 2, CHY - CHS / 2, FLOOR, CHS, CHS, CHTOP - FLOOR - 1.7);   // from the floor (fireplace on its east face)
                        fbox(CHX - CHS / 2 - 0.25, CHY - CHS / 2 - 0.25, CHTOP - 3.0, CHS + 0.5, CHS + 0.5, 0.5); }   // corbel
     paint("stone") { fbox(CHX - CHS / 2 - 0.1, CHY - CHS / 2 - 0.1, CHTOP - 1.7, CHS + 0.2, CHS + 0.2, 1.2);      // stone cap
                      fbox(CHX - CHS / 2 - 0.3, CHY - CHS / 2 - 0.3, CHTOP - 0.5, CHS + 0.6, CHS + 0.6, 0.5); }
@@ -402,13 +407,12 @@ module interior() {
                paint("brass") for (k = [0 : 6]) fbox(51.1 + k * 0.3, OY - 0.05, FLZ + 3.4, 0.04, 0.06, 2.0); }
     }
     // furniture
-    for (b = [[4, 9.6, 21, 0], [4, 12.6, 21, 1], [33.5, 9.6, 9, 0], [33.5, 12.6, 9, 1]]) bench(b[0], b[1], b[2], b[3]);  // centre, back to back
+    for (b = [[4, 9.6, 21, 0], [4, 12.6, 21, 1], [31.5, 9.6, 6, 0], [31.5, 12.6, 6, 1]]) bench(b[0], b[1], b[2], b[3]);  // centre, back to back (REV 11: clear of the hearth)
     bench(T + 0.1, 4.5, 13, 3);                        // along the east wall
     for (x = [21.5, 36.5]) bench(x, T + 0.1, 5.5, 1);  // street wall between the window groups
     bench(L - T - 0.1, 2.0, 6.5, 2); bench(PX + 1.2, T + 0.1, 3.4, 1);   // ladies' room
-    stove(CHX - 3.2, CHY, true); stove(PX + 3.0, 9.0, false);
-    paint("iron") { fbox(CHX - 3.2 - 0.15, CHY - 0.15, FLZ + 4.4, 0.3, 0.3, 3.2);
-                    fbox(CHX - 3.2 - 0.15, CHY - 0.15, FLZ + 7.4, 2.0, 0.3, 0.3); }   // stove pipe into the chimney
+    fireplace();                                       // REV 11: waiting-room fireplace (Jennings' plans)
+    stove(PX + 3.0, 9.0, false);                       // ladies' room (ESTIMATE)
     for (lp = LAMPS) lamp(lp[0], lp[1]);
     // clock and schedule board on the partition, waiting-room side
     paint("woodwork") translate([ft(PX - 0.25), ft(8.5), ft(FLZ + 6.8)]) rotate([0, 90, 0]) cylinder(h = ft(0.15), r = ft(1.05), $fn = 32);
@@ -432,6 +436,23 @@ module bench(x, y, len, dir) {    // dir 0: along x, back on +y side; 1: along x
         paint("iron") for (k = [0 : max(1, floor(len / 5))]) let (u = min(k * 5, len - 0.15))
             translate([ft(u), -ft(1.6), ft(2.0)]) cube([ft(0.15), ft(1.5), ft(0.12)]);                  // arm rests
     }
+}
+module fireplace() {             // on the east face of the chimney, facing the general waiting room
+    x0 = CHX - CHS / 2;                                                   // chimney east face
+    paint("chimney") difference() {
+        fbox(x0 - 1.25, CHY - 2.5, FLZ, 1.3, 5.0, 5.0);                  // brick breast 5 ft wide
+        fbox(x0 - 1.4, CHY - 1.3, FLZ - 0.1, 1.2, 2.6, 2.8);             // fire opening 2'-7" x 2'-8"
+    }
+    paint("iron") { fbox(x0 - 0.25, CHY - 1.3, FLZ, 0.1, 2.6, 2.7);       // fire back
+                    fbox(x0 - 1.3, CHY - 1.4, FLZ + 2.65, 0.08, 2.8, 0.2);   // iron lintel
+                    for (y = [CHY - 0.9, CHY + 0.9]) fbox(x0 - 0.9, y - 0.05, FLZ, 0.5, 0.1, 0.4); }   // andirons
+    paint("oak") { fbox(x0 - 1.55, CHY - 2.8, FLZ + 5.0, 1.6, 5.6, 0.22);                    // mantel shelf
+                   fbox(x0 - 1.45, CHY - 2.6, FLZ + 4.45, 0.2, 5.2, 0.55);                   // frieze
+                   for (y = [CHY - 2.6, CHY + 2.15]) fbox(x0 - 1.45, y, FLZ, 0.2, 0.45, 4.45);   // pilasters
+                   fbox(x0 - 1.4, CHY - 2.3, FLZ + 5.22, 0.15, 4.6, 2.2); }                  // overmantel board
+    paint("stone") fbox(x0 - 3.0, CHY - 2.8, FLZ, 1.75, 5.6, 0.08);       // hearth
+    paint("woodwork") for (y = [CHY - 0.6, CHY + 0.1]) translate([ft(x0 - 0.75), ft(y), ft(FLZ + 0.55)]) rotate([-90, 0, 0]) cylinder(h = ft(0.6), r = ft(0.18), $fn = 10);   // logs
+    paint("embers") fbox(x0 - 0.85, CHY - 0.8, FLZ + 0.42, 0.5, 1.6, 0.16);  // glowing embers under the logs (the movie adds flames)
 }
 module stove(x, y, big) {
     r = big ? 1.1 : 0.85; h = big ? 3.4 : 2.9;

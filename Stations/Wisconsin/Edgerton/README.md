@@ -3,7 +3,7 @@
 Milwaukee Road (C.M.&St.P.) depot, 1906-07. Stands at 20 S. Main St. (NRHP 98000283); now the Edgerton Depot - Chamber of Commerce information center and history museum.
 
 ## HAND-BUILT - do not regenerate
-OpenSCAD\Edgerton_Depot.scad is hand-built (rev 4, 26 Nov 2026). Do not overwrite it with the album generator.
+OpenSCAD\Edgerton_Depot.scad is hand-built (rev 5, 26 Nov 2026: rev 4 outside + best-guess 1907 interior). Do not overwrite it with the album generator.
 
 ## Sources
 - Album sheet 58, drawing A-7532, Chicago June 19 1906, J. A. Lindstrand architect: track side elevation, pavilion end elevation, floor plan, half sections. Private reference (in copyright): Research Library / RSW / Stations / Standard depots / Album of Depot Plans 1919 (also in Research Library / RSW / Stations / Wisconsin / Edgerton / MPL drawings).
@@ -20,6 +20,13 @@ OpenSCAD\Edgerton_Depot.scad is hand-built (rev 4, 26 Nov 2026). Do not overwrit
 - PRESENT = false gives 1907 as built (default, with the roof semaphore - NRHP, shape ESTIMATE); PRESENT = true gives the building after the 1939 remodel and the museum entrance.
 - Colours (Tom's photos): brick #5B3A2E, concrete #B8AB94, gray paint (soffits, brackets, caps) #9A968C, columns #7E6247, sash and doors slate #4C5664, roof dark gray #5A5C5E.
 - ESTIMATE: lavatory bay windows, sash detail, semaphore, 1907 colours.
+
+## Interior (rev 5, best guess for 1907)
+- INTERIOR = true (default) cuts the rooms out of the shell and opens every window and door through the walls; CUTAWAY = true leaves off the roofs and ceilings to look in.
+- Room plan from sheet 58: baggage room (coal room and boiler in the NE corner, platform scale), smoking room, office with the track bay, passage behind the office open to both waiting rooms, men's and women's toilets in the town-side bay, general waiting room. Ceilings 12'6" (13'10" in the baggage room) from the half section.
+- Fittings ESTIMATE (Milwaukee Road practice of the time): varnished beadboard wainscot 4 ft high and wood casings at every opening, plaster walls, beadboard ceilings, maple floors, oak benches (back-to-back in the middle, singles on the walls), steam radiators (the sheet shows a boiler), brass pendant lamps, wall clocks, train board, ticket windows with brass grilles (to the waiting room and the passage), agent's telegraph table in the bay, roll-top desk, safe, ticket case; baggage scale, two baggage trucks, trunks; toilets with closets, urinal and basins.
+- Interior paints: plaster, wainscot, floor, ceiling, oak, iron, brass, tile, board.
+- Notes / Edgerton_Interior_review.png - cutaway and four room views (cloud test renders).
 
 ## Files
 - OpenSCAD / Edgerton_Depot.scad - the model (shared builder Stations / _common / rsw_depot.scad). SCALE 29 G, 48 O, 87 HO. Not cut into print sections yet.

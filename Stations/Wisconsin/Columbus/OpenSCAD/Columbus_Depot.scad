@@ -104,7 +104,7 @@ WINS = [
     for (x = TRIP) [x, 0, 3.2, 6.7, 4.3, 1],                                        // diamond triplet with fluted mullions (IMG_2922)
     [91.5, 0, 3, 6.7, 4.3, 1],
     // ends
-    [9, 2, 3, 6.7, 4.3, 0], [18, 2, 3, 6.7, 4.3, 0], [14.8, 3, 3.4, 2.7, 7.1, 1], [22.9, 3, 3.4, 2.7, 7.1, 1]];   // east end: two small plain lights (IMG_2932-2936, ESTIMATE size)
+    [9, 2, 3, 6.7, 4.3, 0], [18, 2, 3, 6.7, 4.3, 0]];   // east end windows drawn below (single lights, no meeting rail)
 
 difference() {
     depot(blocks = BLOCKS,
@@ -253,3 +253,14 @@ paint("stucco") {
 }
 // office door: dark-stained (IMG_9947) - a thin dark panel over the red door
 paint("brick") fbox(64 - 1.5, -0.2, FLOOR, 3, 0.05, 7.5);
+
+// ---- east end: two small single-light windows, no meeting rail (IMG_2932-2936; size ESTIMATE) ----
+EAST_LIGHTS = [14.8, 22.9];     // y centres on the east end wall
+module single_light(w, h, sill) translate([-ft(w) / 2, ft(sill), 0]) {
+    paint("glass") cube([ft(w), ft(h), ft(0.08)]);
+    paint("sash") difference() {
+        translate([-ft(0.35), -ft(0.35), 0]) cube([ft(w + 0.7), ft(h + 0.7), ft(0.3)]);
+        translate([ft(0.05), ft(0.05), -1]) cube([ft(w - 0.1), ft(h - 0.1), ft(1) + 2]);
+    }
+}
+for (y = EAST_LIGHTS) on_face(BLOCKS[1], y, 3) single_light(3.4, 2.7, 7.1);
