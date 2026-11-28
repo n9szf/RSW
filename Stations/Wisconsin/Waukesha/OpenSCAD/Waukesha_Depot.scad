@@ -6,7 +6,10 @@
 //  Photos (web, see reference / Station photos web / Waukesha / index.csv):
 //   01 WHS survey c.1979 (west end + town side), 02 WHS IM123287 24 May 1952 (east end,
 //   pavilion), 03 O'Brien 1922 (pavilion at the edge of the freight-house view).
-//  Rib Side Works, 26 Nov 2026.  HAND-BUILT rev 2 (rev 1 outside + best-guess 1906 interior).
+//   05 Facebook "Wisconsin Railroad Depots" (Galman Freelancer Img, posted Nov 2026; about
+//   1970): COLOUR, west end and TRACK side - wall paint, red brick arches, dark brown trim,
+//   long eave struts, train-order signal, brick platform.
+//  Rib Side Works, 26-27 Nov 2026.  HAND-BUILT rev 3 (rev 2 + colours and details from photo 05).
 //  Not cut into print sections.
 //
 //  KNOWN (sheet): plan about 86 x 26 ft (scaled off the sheet against its written
@@ -35,18 +38,20 @@ include <../../../_common/rsw_depot.scad>
 INTERIOR = true;        // best-guess 1906 rooms and fittings
 CUTAWAY = false;        // true: leave off the roof and ceilings to look inside
 
-// COLOURS - ESTIMATE (black-and-white photos only).  Light brick in all three photos:
-// taken as Waukesha cream brick (the C&NW depot and Hartland depot nearby are cream brick).
-COL_BRICK = "#D3C49E";   // cream brick, slightly weathered
-COL_FOUND = "#A8A398";   // limestone base
-COL_TRIM  = "#55585A";   // dark gray: brackets, fascia, barge boards (Milwaukee Road standard)
-COL_SASH  = "#3B3D3B";   // dark sash (1952 photo)
+// COLOURS from photo 05 (colour, about 1970): red common brick PAINTED a pale gray-green; by
+// then the paint had weathered off most of the lower walls.  Modelled as painted (the 1952
+// photo shows even, light walls).  Arches over the openings: bare red-brown brick.
+// Brackets, fascia, barge boards, frames: dark brown.  Exact shades ESTIMATE from one print.
+COL_BRICK = "#B8B5A0";   // wall paint, pale gray (photo 05)
+COL_FOUND = "#A8A398";   // rough limestone base (photo 05)
+COL_TRIM  = "#4A3628";   // dark brown trim and brackets (photo 05)
+COL_SASH  = "#4E2A22";   // dark red-brown window frames (photo 05)
 COL_DOOR  = "#4A2E1C";
-COL_ROOF  = "#4E4A46";   // dark shingles (1952, 1979)
-COL_PLAT  = "#8A4A3A";   // brick platform (sheet)
+COL_ROOF  = "#5A3E34";   // weathered brown shingles (photo 05, roof edge); ESTIMATE
+COL_PLAT  = "#5B4246";   // dark purple-red brick pavers (photo 05)
 PAINTS = [["walls", COL_BODY], ["stucco", COL_STUC], ["brick", COL_BRICK], ["stone", COL_STONE], ["trim", COL_TRIM],
           ["roof", COL_ROOF], ["glass", COL_GLASS], ["doors", COL_DOOR], ["foundation", COL_FOUND], ["platform", COL_PLAT],
-          ["chimney", COL_BRICK], ["sash", COL_SASH], ["arches", "#C2B28C"],
+          ["chimney", "#8A6A58"], ["sash", COL_SASH], ["arches", "#8A4B38"], ["signal", "#B0302A"], ["signal_white", "#E8E6DE"],
           ["sign_board", "#ECEAE2"], ["sign_letters", "#1E1E1E"],
           // interior (best guess, 1906)
           ["wainscot", "#8A5A32"], ["floor", "#A88456"], ["ceiling", "#9C7446"], ["oak", "#7E5230"],
@@ -66,7 +71,7 @@ MAIN = [0, L, 0, W, PLATE, RISE, 5, OV, 2];          // roof drawn below (kind 5
 // windows [x, side, w, h, sill]  side 0 town, 1 track, 2 west end, 3 east end
 WINS = [[21, 1, WW, WH, WS], [28, 1, WW, WH, WS], [43, 1, WW, WH, WS], [81, 1, WW, WH, WS],
         [21.8, 0, WW, WH, WS], [31.7, 0, WW, WH, WS], [58, 0, WW, WH, WS], [79.3, 0, WW, WH, WS],
-        [13.2, 2, 3.5, 7.5, 2.6],                                  // west end: one tall opening
+        [13.2, 2, 3.3, 6.0, 3.0],                                  // west end: one window under the name board (photo 05)
         [7.2, 3, WW, WH, WS], [20, 3, WW, WH, WS]];                // east (office) end: two
 // doors [x, side, w, h, type]
 DOORS = [[7.8, 1, 6, DH, 1], [34, 1, 3.5, DH, 0], [67.8, 1, 3.5, DH, 0],
@@ -87,6 +92,8 @@ module shell() {
     for (o = DOORS) on_face(MAIN, o[0], o[1]) arch_head(o[2], FLOOR + o[3] + (o[4] == 2 ? 0 : 1.4));
     bay_walls();
     name_board();
+    order_board();
+    gable_lamp();
     pavilion(PAV);
     pavilion_braces();
 }
@@ -123,14 +130,15 @@ module main_roof() {
         }
     }
 }
-// diagonal brackets under the long eaves (photos: about one per bay)
+// long slender diagonal struts under the eaves (photo 05: from about door-head height up to
+// the eave edge), on a short wall plate; spacing ESTIMATE
 module eave_brackets(s) {
-    yb = s ? W : 0;
+    yb = s ? W : 0;  d = s ? 1 : -1;  out = OV * 0.85;  zlo = PLATE - 4.8;  zhi = PLATE - out * RISE - 0.1;
     paint("trim") for (x = [3 : 6 : L - 2])
-        if (!(s == 1 && abs(x - BAY[0]) < BAY[2] / 2 + 0.5))
-            translate([ft(x), ft(yb), ft(PLATE - 3)]) rotate([0, 0, s ? 0 : 180]) rotate([90, 0, 90])
-                linear_extrude(ft(0.35)) polygon([[0, 0], [0, ft(3)], [ft(OV * 0.8), ft(3 - OV * 0.8 * RISE)],
-                                                   [ft(OV * 0.8 - 0.35), ft(3 - OV * 0.8 * RISE)], [0, ft(0.45)]]);
+        if (!(s == 1 && abs(x - BAY[0]) < BAY[2] / 2 + 0.5)) {
+            hull() { fbox(x - 0.17, yb - 0.02 * d, zlo, 0.34, 0.3 * d, 0.3); fbox(x - 0.17, yb + out * d - 0.15, zhi - 0.3, 0.34, 0.3, 0.3); }
+            fbox(x - 0.2, s ? yb : yb - 0.18, zlo - 0.3, 0.4, 0.18, PLATE - zlo + 0.3);            // wall plate under the strut
+        }
 }
 // brackets under the rakes on both gable ends (1979 photo: four per end)
 module rake_brackets(e) {
@@ -141,15 +149,15 @@ module rake_brackets(e) {
             linear_extrude(ft(0.35)) polygon([[0, 0], [0, ft(2.6)], [ft(RK * 0.8), ft(2.6)], [0, ft(0.45)]]);
     }
 }
-// round louvered vent high in each gable
+// round window high in each gable: dark brown frame and radial bars (photo 05)
 module oculus(e) {
     zc = PLATE + 3.3;  r = 1.3;
     translate([e ? ft(L) + 0.01 : -0.01, ft(W / 2), ft(zc)]) rotate([0, 90, 0]) mirror([0, 0, e ? 0 : 1]) {
-        paint("arches") difference() { cylinder(r = ft(r + 0.45), h = ft(0.15), $fn = 48); translate([0, 0, -1]) cylinder(r = ft(r), h = 4, $fn = 48); }
-        paint("trim") difference() { cylinder(r = ft(r), h = ft(0.08), $fn = 48); translate([0, 0, -1]) cylinder(r = ft(r - 0.2), h = 4, $fn = 48); }
-        paint("trim") intersection() { cylinder(r = ft(r), h = ft(0.1), $fn = 48);
-            for (k = [-4 : 4]) translate([ft(k * 0.3) - ft(0.06), -ft(r), 0]) cube([ft(0.12), ft(2 * r), ft(0.1)]); }   // louvres (vertical in this frame = horizontal on the wall)
-        paint("glass") cylinder(r = ft(r - 0.1), h = ft(0.02), $fn = 48);
+        paint("sash") difference() { cylinder(r = ft(r + 0.35), h = ft(0.16), $fn = 48); translate([0, 0, -1]) cylinder(r = ft(r - 0.05), h = 4, $fn = 48); }
+        paint("sash") intersection() { cylinder(r = ft(r), h = ft(0.1), $fn = 48);
+            for (a = [0 : 30 : 150]) rotate([0, 0, a]) translate([-ft(r), -ft(0.04), 0]) cube([ft(2 * r), ft(0.08), ft(0.1)]); }
+        paint("sash") cylinder(r = ft(0.18), h = ft(0.14), $fn = 16);
+        paint("glass") cylinder(r = ft(r - 0.02), h = ft(0.02), $fn = 48);
     }
 }
 // segmental brick arch over an opening whose square head is at z = top (feet), drawn on a wall face
@@ -157,7 +165,7 @@ module arch_head(w, top) {
     c = w + 0.7;  R = (c * c / 4 + AR * AR) / (2 * AR);
     translate([0, ft(top), 0]) {
         paint("arches") linear_extrude(ft(0.14)) difference() {
-            intersection() { translate([0, -ft(R - AR) - ft(0)]) circle(r = ft(R + 0.9), $fn = 120); translate([-ft(c), 0]) square([ft(2 * c), ft(AR + 1.4)]); }
+            intersection() { translate([0, -ft(R - AR) - ft(0)]) circle(r = ft(R + 0.7), $fn = 120); translate([-ft(c), 0]) square([ft(2 * c), ft(AR + 1.4)]); }
             intersection() { translate([0, -ft(R - AR)]) circle(r = ft(R), $fn = 120); translate([-ft(c), -1]) square([ft(2 * c), ft(AR + 1)]); }
         }
         paint("glass") linear_extrude(ft(0.06)) intersection() {            // fan light / glass to the arch
@@ -166,16 +174,36 @@ module arch_head(w, top) {
 }
 // small hip roof over the bay (the bay runs out past the eave line) - ESTIMATE
 module bay_roof() roof(BX - BW / 2, BW, W, BD, BTOP, 0.5, 0, 0.6);
-// WAUKESHA name board on the east end, above the windows (1952 photo); style ESTIMATE
-module name_board() {
+// WAUKESHA name boards on both ends, above the windows (1952 east end, photo 05 west end): white, black letters
+module name_board() for (e = [0, 1]) {
     bw = 9;  bh = 1.3;  z0 = WS + WH + AR + 0.9;
-    translate([ft(L) + 0.02, ft(W / 2), ft(z0)]) rotate([90, 0, 90]) {
+    translate([e ? ft(L) + 0.02 : -0.02, ft(W / 2), ft(z0)]) rotate([0, 0, e ? 0 : 180]) rotate([90, 0, 90]) {
         paint("sign_board") translate([-ft(bw / 2), 0, 0]) cube([ft(bw), ft(bh), ft(0.15)]);
         paint("trim") difference() { translate([-ft(bw / 2 + 0.1), -ft(0.1), 0]) cube([ft(bw + 0.2), ft(bh + 0.2), ft(0.12)]);
                                      translate([-ft(bw / 2 - 0.05), ft(0.05), -1]) cube([ft(bw - 0.1), ft(bh - 0.1), 4]); }
         paint("sign_letters") translate([0, ft(bh / 2), ft(0.15)]) linear_extrude(ft(0.04))
             text("WAUKESHA", size = ft(0.8), font = "Liberation Sans:style=Bold", halign = "center", valign = "center");
     }
+}
+// two-arm train-order signal at the east end of the track side, by the office and its
+// telegraph table (photo 05: mast standing above the roof at that end, arms raised).
+// Position, height and arms ESTIMATE.
+module order_board() {
+    x = L - 1.5;  y = W + 2.6;  h = 26;
+    paint("iron") { fbox(x - 0.25, y - 0.25, 0, 0.5, 0.5, h); fbox(x - 0.6, y - 0.6, 0, 1.2, 1.2, 0.6);
+                    for (z = [1 : 1.2 : h - 2]) fbox(x + 0.25, y - 0.4, z, 0.08, 0.8, 0.08);           // ladder rungs
+                    fbox(x - 1.2, y - 0.2, h - 1.2, 2.4, 0.4, 0.5); }                                  // arm bracket
+    for (sx = [-1, 1]) {
+        paint("signal") fbox(x + sx * 1.0 - 0.25, y - 0.05, h - 0.7, 0.5, 0.1, 4.2);                // blade, raised
+        paint("signal_white") fbox(x + sx * 1.0 - 0.26, y - 0.07, h + 2.6, 0.52, 0.14, 0.4);        // stripe
+        paint("iron") translate([ft(x + sx * 1.0), ft(y), ft(h - 0.9)]) rotate([90, 0, 0]) cylinder(r = ft(0.45), h = ft(0.4), center = true, $fn = 16);
+    }
+}
+// reflector lamp at the track-side corner of the west gable (photo 05)
+module gable_lamp() paint("iron") {
+    translate([-ft(0.02), ft(W - 3.5), ft(PLATE + 0.6)]) rotate([0, -90, 0]) cylinder(r = ft(0.06), h = ft(1.2), $fn = 8);
+    translate([-ft(1.3), ft(W - 3.5), ft(PLATE - 0.2)]) cylinder(r1 = ft(0.75), r2 = ft(0.12), h = ft(0.5), $fn = 20);
+    fbox(-1.32, W - 3.54, PLATE + 0.3, 0.08, 0.08, 0.35);
 }
 // knee braces on the pavilion posts (1922 photo: curved; drawn straight here)
 module pavilion_braces() {

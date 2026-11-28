@@ -79,7 +79,11 @@ module roof(x0, l, y0, w, plate, rise, kind, ov) {
         else if (kind == 2) roof_solid(x0 - ov, l + 2 * ov, y0 - 1, w + 2, eave, rise, 2);
         else roof_solid(x0 - ov, l + 2 * ov, y0 - ov, w + 2 * ov, eave, rise, kind);
     }
-    if (kind != 4) paint("trim") fbox(x0 - ov, y0 - ov, eave - 0.6, l + 2 * ov, w + 2 * ov, 0.6);   // fascia / gutter
+    // boxed eave (fascia and soffit) along the eave sides only; on a gable roof the gable ends
+    // stay open to the rake (27 Nov 2026 - it used to run round the gable ends as a shelf)
+    if (kind == 1) paint("trim") for (s = [0, 1]) fbox(x0 - 1, s ? y0 + w - 0.3 : y0 - ov, eave - 0.6, l + 2, ov + 0.3, 0.6);
+    else if (kind == 2) paint("trim") for (s = [0, 1]) fbox(s ? x0 + l - 0.3 : x0 - ov, y0 - 1, eave - 0.6, ov + 0.3, w + 2, 0.6);
+    else if (kind != 4) paint("trim") fbox(x0 - ov, y0 - ov, eave - 0.6, l + 2 * ov, w + 2 * ov, 0.6);   // hip roofs: all round
   }
 }
 // gable infill walls for gable roofs
@@ -91,6 +95,10 @@ module gable_ends(x0, l, y0, w, plate, rise, kind, sid) {
 }
 module wall_paint(s) { paint(s == 1 ? "stucco" : s == 2 ? "brick" : s == 3 ? "stone" : "walls") children(); }
 
+// eave bracket drawn outward along +y from the wall line, hanging from the soffit
+module bracket(d, h) rotate([90, 0, 90])
+    linear_extrude(ft(0.3), center = true) polygon([[0, 0], [0, ft(h + 0.05)], [ft(d), ft(h + 0.05)], [ft(d), ft(h - 0.3)], [ft(0.35), ft(0.2)]]);
+
 // ---- the building blocks -------------------------------------------------
 module block(b) {
     x0 = b[0]; l = b[1]; y0 = b[2]; w = b[3]; plate = b[4]; rise = b[5]; kind = b[6]; ov = b[7]; sid = b[8];
@@ -100,10 +108,16 @@ module block(b) {
         fbox(x0 - 0.15, y0 - 0.15, 0.5, l + 0.3, w + 0.3, 0.4);
         for (x = [x0 - 0.25, x0 + l - 0.15], y = [y0 - 0.25, y0 + w - 0.15]) fbox(x, y, 0.5, 0.4, 0.4, plate - 0.5);
     }
-    if (sid == 0 && ov >= 2) paint("trim")                           // knee braces under wide eaves
-        for (x = [x0 + 2 : 6 : x0 + l - 1], s = [0, 1])
-            translate([ft(x), s ? ft(y0 + w) : ft(y0), ft(plate - 2.4)]) rotate([0, 0, s ? 0 : 180]) rotate([90, 0, 90])
-                linear_extrude(ft(0.3)) polygon([[0, 0], [0, ft(2.4)], [ft(ov * 0.75), ft(2.4)], [ft(0.4), ft(0.3)]]);
+    // brackets under wide eaves, hung from the underside of the boxed eave (soffit). Until 27 Nov 2026
+    // they were drawn up to the wall plate, which on a steep roof came up through the shingles (Sparta).
+    if (sid == 0 && ov >= 2 && kind != 5) paint("trim") {
+        soffit = plate - (kind == 4 ? 0 : ov * rise) - 0.6;
+        d = ov * 0.8;  h = 1.6;                                      // reach and drop
+        if (kind != 2) for (x = [x0 + 2 : 6 : x0 + l - 1], s = [0, 1])          // eaves along the track
+            translate([ft(x), s ? ft(y0 + w) : ft(y0), ft(soffit - h)]) rotate([0, 0, s ? 0 : 180]) bracket(d, h);
+        if (kind != 1) for (y = [y0 + 2 : 6 : y0 + w - 1], s = [0, 1])          // eaves on the ends (hip, cross gable, flat)
+            translate([s ? ft(x0 + l) : ft(x0), ft(y), ft(soffit - h)]) rotate([0, 0, s ? -90 : 90]) bracket(d, h);
+    }
     paint("foundation") fbox(x0, y0, 0, l, w, 0.5);
     roof(x0, l, y0, w, plate, rise, kind, ov);
     gable_ends(x0, l, y0, w, plate, rise, kind, sid);
