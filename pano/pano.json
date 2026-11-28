@@ -1,0 +1,24 @@
+{
+ "panos": [
+  {
+   "name": "Janesville 1909 - waiting room",
+   "file": "pano/Janesville waiting 360 stereo TB.jpg",
+   "stereo": true
+  },
+  {
+   "name": "Janesville 1909 - lunch room",
+   "file": "pano/Janesville lunch 360 stereo TB.jpg",
+   "stereo": true
+  },
+  {
+   "name": "Janesville 1909 - ticket office",
+   "file": "pano/Janesville ticket 360 stereo TB.jpg",
+   "stereo": true
+  },
+  {
+   "name": "Janesville 1909 - platform",
+   "file": "pano/Janesville platform 360 stereo TB.jpg",
+   "stereo": true
+  }
+ ]
+}

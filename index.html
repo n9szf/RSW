@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RSW 3D viewer</title>
+<style>
+ html,body{margin:0;height:100%;background:#1b2128;color:#e8e4d8;font:15px system-ui,sans-serif;overflow:hidden}
+ #bar{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:10px;align-items:center;padding:8px 12px;background:#0f2238f2;border:1px solid #2f4f75;border-radius:12px;box-shadow:0 4px 14px #0006;z-index:2;flex-wrap:wrap}
+ select,button{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #3d6188;background:#1b3352;color:inherit} select:hover,button:hover{background:#244368}
+ #bar b{color:#ffc46b}
+ #msg{position:absolute;bottom:8px;left:12px;z-index:2;font-size:14px;background:#0f2238e6;border:1px solid #2f4f75;color:#e8e4d8;padding:5px 12px;border-radius:14px;max-width:calc(100vw - 380px)}
+ #parts{position:absolute;top:var(--bt,56px);right:10px;z-index:2;background:#0f2238f2;border:1px solid #2f4f75;border-radius:8px;padding:8px 12px;max-height:70vh;overflow:auto;min-width:150px}
+ #parts label{display:block;padding:2px 0}
+ #parts h4{margin:0 0 4px;font-size:13px;opacity:.7}
+ #vr,#VRButton,#ARButton,#vrslot>a{position:static!important;width:auto!important;margin:0!important;left:auto!important;bottom:auto!important;padding:6px 10px!important}
+ canvas{display:block}
+ body.embed #bar b,body.embed #pick,body.embed #cat,body.embed #grp,body.embed #get,body.embed #vrslot{display:none}
+ #paint{max-width:22vw} #cat{max-width:30vw} #grp,#pick{max-width:34vw} #get{max-width:24vw;background:#3a4a2c}
+ body.embed #bar{padding:5px 8px;font-size:13px;top:0;left:0;right:0;border-radius:0}
+ #parts{display:none} body.showparts #parts{display:block} body.embed #parts{top:40px;font-size:13px}
+ #welcome{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;background:#0b0f14cc}
+ #welcome .card{max-width:520px;margin:16px;padding:22px 26px;border-radius:12px;background:#222b33;border:1px solid #556;box-shadow:0 8px 30px #0008;line-height:1.5}
+ #welcome h1{margin:0 0 10px;font-size:24px;color:#f0b35a} #welcome p{margin:8px 0} #welcome a{color:#f0b35a}
+ #welcome .small{font-size:13px;opacity:.8} #welcome button{margin-top:12px;padding:8px 18px;background:#b8641f;border-color:#d98a3f;font-weight:600}
+ #more{max-width:8em} #find{width:9em;font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #3d6188;background:#132a45;color:inherit}
+ #found{position:absolute;z-index:6;background:#132a45;border:1px solid #556;border-radius:8px;max-height:60vh;overflow:auto;display:none;min-width:260px}
+ #found div{padding:6px 10px;cursor:pointer} #found div:hover,#found div.on{background:#244368} #found small{opacity:.6}
+ .panel{position:absolute;top:var(--bt,56px);left:10px;z-index:3;background:#0f2238f2;border:1px solid #2f4f75;border-radius:10px;padding:12px 14px;max-height:calc(100vh - var(--bt,56px) - 56px);overflow:auto;width:340px;max-width:calc(100vw - 40px);line-height:1.45;display:none}
+ .panel h3{margin:0 0 6px;color:#f0b35a;font-size:17px} .panel h4{margin:10px 0 4px} .panel p{margin:6px 0;font-size:14px}
+ .panel .x{float:right;padding:2px 8px} .panel a{color:#f0b35a} .panel img{width:100%;border-radius:6px;margin:6px 0}
+ .panel .small{font-size:12px;opacity:.75} .panel button{margin:3px 4px 3px 0}
+ #trainlist div{display:flex;align-items:center;gap:6px;padding:3px 0;border-bottom:1px solid #fff2} #trainlist span{flex:1;font-size:14px}
+ #trainlist button{padding:2px 7px}
+ #browse{position:absolute;inset:0;z-index:4;background:#11161bf2;overflow:auto;display:none;padding:14px 16px}
+ #browse .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px} #browse h2{margin:0;color:#f0b35a;font-size:20px}
+ #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+ .tile{background:#222b33;border:1px solid #445;border-radius:8px;overflow:hidden;cursor:pointer} .tile:hover{border-color:#f0b35a}
+ .tile img,.tile .ph{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#2b343d}
+ .tile .ph{display:flex;align-items:center;justify-content:center;font-size:13px;opacity:.6}
+ .tile div.t{padding:6px 8px;font-size:13px} .tile small{opacity:.6;display:block}
+ #mlabel{position:absolute;z-index:3;background:#000d;color:#fff;padding:5px 8px;border-radius:6px;font-size:13px;pointer-events:none;display:none;white-space:nowrap;transform:translate(-50%,-130%)}
+ #mchip{position:absolute;top:calc(var(--bt,56px) + 4px);left:50%;transform:translateX(-50%);z-index:3;background:#b8641f;padding:6px 12px;border-radius:16px;display:none}
+ #mchip button{margin-left:8px;padding:2px 8px}
+ #foot{position:absolute;right:12px;bottom:8px;z-index:2;font-size:14px;background:#0f2238e6;border:1px solid #2f4f75;color:#cfd6dd;padding:5px 12px;border-radius:14px} #foot a{color:#ffc46b;text-decoration:none;cursor:pointer;font-weight:600} #foot a:hover{text-decoration:underline}
+ @media (max-width:700px){ #find{width:7em} .panel{width:auto;right:10px} #foot{bottom:8px;left:12px;right:auto} #msg{bottom:46px;right:auto;max-width:calc(100vw - 48px)} }
+ body.embed #find,body.embed #pics,body.embed #infob,body.embed #more,body.embed #foot{display:none}
+ #cform input:not([type=checkbox]),#cform textarea{width:100%;box-sizing:border-box;font:inherit;padding:6px 8px;border-radius:6px;border:1px solid #3d6188;background:#132a45;color:inherit;margin:2px 0 8px}
+ #cform .hp{display:none} #csend{background:#b8641f;border-color:#d98a3f;font-weight:600}
+ body.embed #welcome{display:none} body.embed #paint{display:none} body.embed #smb{display:none!important}
+</style></head><body>
+<div id="bar">
+ <b>Rib Side Works</b>
+ <select id="cat" title="What to look at"></select>
+ <select id="grp" title="Train" style="display:none"></select>
+ <select id="pick" title="Model"></select>
+ <select id="get" title="Get this model: OpenSCAD files, build book, 3D download" style="display:none"></select>
+ <input id="find" type="search" placeholder="Find a model" title="Type a name or number, e.g. 832 or Skytop" autocomplete="off">
+ <button id="pics" title="Pictures of all the models">Pictures</button>
+ <button id="infob" title="The story of this model, its size and links">Info</button>
+ <select id="more" title="More"><option value="">More ...</option><option value="train">Build a train</option><option value="measure">Measure</option><option value="share">Copy a link to this view</option><option value="comment">Send a comment</option><option value="news">What's new</option><option value="about">About and feedback</option></select>
+ <select id="paint" title="Paint: as built, Milwaukee Road, Union Pacific, brass, or plain gray as printed"><option value="">Paint: as built</option><option value="milw">Milwaukee Road</option><option value="brass">Brass</option><option value="gray">Gray (as printed)</option></select>
+ <label><input type="checkbox" id="full"> Full size</label>
+ <label title="Full size: fly round and through the model"><input type="checkbox" id="fly"> Fly</label>
+ <button id="reset" title="Back to the start view (in the headset: click the left stick)">Reset view</button>
+ <button id="smb" style="display:none" title="Use a 3Dconnexion SpaceMouse (Chrome or Edge)">SpaceMouse</button>
+ <label id="ptog" title="Show the list of parts; untick a part to hide it"><input type="checkbox" id="pt"> Parts</label>
+ <label><input type="checkbox" id="gt"> Ground and track</label>
+ <span id="vrslot"></span>
+</div>
+<div id="parts"></div>
+<div id="found"></div>
+<div id="info" class="panel"></div>
+<div id="trainp" class="panel"><button class="x" id="trainx">x</button><h3>Build a train</h3>
+ <p class="small">Pick a car or locomotive in the menus, then "Add this model". Cars are coupled in the order shown (up to 12).</p>
+ <div id="trainlist"></div>
+ <button id="tadd">Add this model</button><button id="tshow">Show the train</button><button id="tclear">Clear</button></div>
+<div id="browse"><div class="top"><h2 id="btitle">Pictures</h2><select id="bcat"></select><button id="bx">Close</button></div><div id="grid"></div></div>
+<div id="commentp" class="panel"><button class="x" id="commentx">x</button><h3>Send a comment</h3>
+ <p class="small">Goes to Rib Side Works (ribsideworks@gmail.com). <span id="cabout"></span></p>
+ <form id="cform">
+  <input type="hidden" name="access_key" value="b7108500-d17d-4d4a-8a20-b794cd0c3b60">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+  <label class="small">Your name (optional)<br><input name="name" maxlength="80"></label>
+  <label class="small">Your email (optional - only if you would like a reply)<br><input name="email" type="email" maxlength="120"></label>
+  <label class="small">Comment<br><textarea name="message" required maxlength="4000" rows="6"></textarea></label>
+  <button type="submit" id="csend">Send</button> <span id="cstat" class="small"></span>
+ </form></div>
+<div id="mlabel"></div>
+<div id="mchip">Measure: click two points on the model <button id="mdone">Done</button></div>
+<div id="foot"><a id="fabout">About</a> &middot; <a id="fcomment">Comment</a> &middot; <a href="mailto:ribsideworks@gmail.com">Email</a> &middot; <a id="fnews">What's new</a></div>
+<div id="welcome" style="display:none"><div class="card">
+ <h1>Welcome to Rib Side Works</h1>
+ <p>This site was built to help model the Milwaukee Road. We design the models in OpenSCAD.</p>
+ <p>The models are presented as is, with no warranty.</p>
+ <p>We welcome feedback at <a href="mailto:ribsideworks@gmail.com">ribsideworks@gmail.com</a>.</p>
+ <p class="small">Pick a model from the menus at the top. "Get this model" has the OpenSCAD files, the build book and the 3D download.</p>
+ <label class="small"><input type="checkbox" id="wskip"> Don't show this again</label><br>
+ <button id="wgo">Start</button>
+</div></div>
+<div id="msg">Loading ...</div>
+<script type="importmap">{"imports":{"three":"./lib/three.module.min.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from './lib/jsm/loaders/GLTFLoader.js';
+import {DRACOLoader} from './lib/jsm/loaders/DRACOLoader.js';
+import {OrbitControls} from './lib/jsm/controls/OrbitControls.js';
+import {VRButton} from './lib/jsm/webxr/VRButton.js';
+import {ARButton} from './lib/jsm/webxr/ARButton.js';
+
+const $ = id => document.getElementById(id), msg = $('msg');
+// ---- welcome panel (Tom 22 Nov 2026); "don't show again" is remembered in this browser only
+{ let skip = false; try { skip = localStorage.getItem('rswWelcomeSkip') === '1'; } catch (e) {}
+  if (!skip) $('welcome').style.display = '';
+  $('wgo').onclick = () => { $('welcome').style.display = 'none';
+    try { if ($('wskip').checked) localStorage.setItem('rswWelcomeSkip', '1'); } catch (e) {} }; }
+if (new URLSearchParams(location.search).get('embed')) document.body.classList.add('embed');   // inside MR Print Files
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});      // alpha: the real room shows through in AR
+renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight);
+renderer.xr.enabled = true; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x9fb4c4);
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.01, 200); camera.position.set(1.3,0.8,1.5);
+const rig = new THREE.Group(); rig.add(camera);      // fly mode moves this "rig" (you), the headset moves the camera inside it
+const controls = new OrbitControls(camera, renderer.domElement); controls.target.set(0,0.1,0); controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xffffff,0x556070,1.1));
+const sun = new THREE.DirectionalLight(0xfff2dd,2.2); sun.position.set(2,3,1.5); scene.add(sun);
+const floor = new THREE.Mesh(new THREE.CircleGeometry(6,64).rotateX(-Math.PI/2), new THREE.MeshStandardMaterial({color:0x6b6f66,roughness:1}));
+floor.position.y = -0.002; scene.add(floor);
+const stage = new THREE.Group(); scene.add(stage);    // (the rig stays out of the scene so the VR "table" shift does not move you too)     // the model sits on this; in VR it floats on a "table"
+const KEYHINT = matchMedia('(pointer:fine)').matches ? '.  Keys: arrows turn, Shift+arrows pan, + - zoom, R reset' : '';
+const loader = new GLTFLoader();
+loader.setDRACOLoader(new DRACOLoader().setDecoderPath('./lib/draco/'));   // web copies are Draco-compressed (about 20x smaller)
+let current = null, models = [], lastR = 1, vrScale = 1;
+// ---- 360 pictures (Oct 2026): equirectangular JPGs in pano/ listed in pano/pano.json (render_janesville.py writes both).
+// "stereo TB" pictures = left eye on top: each eye sees its own half (three.js puts the left eye on layer 1, the right on 2).
+let mode = 'model', pano = null, panos = [], panoIdx = 0;
+const BG = new THREE.Color(0x9fb4c4), texLoader = new THREE.TextureLoader();
+function clearPano(){
+  if (!pano) return; scene.remove(pano);
+  pano.traverse(o => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } });
+  if (pano.userData.tex) pano.userData.tex.dispose(); pano = null;
+}
+function eyeSphere(tex, v0){                       // inside-out sphere showing one band of the picture (v0 = bottom of the band)
+  const g = new THREE.SphereGeometry(50, 96, 64); g.scale(-1, 1, 1);
+  if (v0 !== null) { const uv = g.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setY(i, v0 + uv.getY(i) * 0.5); }
+  return new THREE.Mesh(g, new THREE.MeshBasicMaterial({map: tex}));
+}
+function setMode(m){
+  mode = m; const isP = m === 'pano';
+  stage.visible = !isP; floor.visible = !isP && $('gt').checked && !inAR; scene.background = (isP || inAR) ? null : BG;
+  $('parts').style.visibility = isP ? 'hidden' : '';
+  if (isP && flying) stopFly(false);
+  $('paint').style.display = isP ? 'none' : ''; for (const id of ['full','pt','gt','fly']) { const l = $(id).closest('label'); if (l) l.style.display = isP ? 'none' : ''; }
+  controls.enableZoom = controls.enablePan = !isP; controls.rotateSpeed = isP ? -0.35 : 1;
+  if (isP) { camera.position.set(0, 0, 0.01); controls.target.set(0, 0, 0); camera.near = 0.005; camera.far = 200; camera.fov = 70; camera.updateProjectionMatrix(); }
+  else { camera.fov = 45; camera.updateProjectionMatrix(); }
+  if (isP && !renderer.xr.isPresenting) camera.layers.enable(1); else camera.layers.disable(1);   // on the screen: show the left eye
+  if (renderer.xr.isPresenting) scene.position.set(0, isP ? 0 : 0.9, isP ? 0 : -1.0);
+}
+function showPano(i){
+  panoIdx = (i + panos.length) % panos.length; const p = panos[panoIdx];
+  msg.textContent = 'Loading ' + p.name + ' ...';
+  texLoader.load(encodeURI(p.file), tex => {
+    clearPano(); if (current) { stage.remove(current); current = null; }
+    tex.colorSpace = THREE.SRGBColorSpace; tex.generateMipmaps = false; tex.minFilter = THREE.LinearFilter;
+    pano = new THREE.Group(); pano.userData.tex = tex;
+    if (p.stereo) { const L = eyeSphere(tex, 0.5), R = eyeSphere(tex, 0.0); L.layers.set(1); R.layers.set(2); pano.add(L, R); }
+    else pano.add(eyeSphere(tex, null));
+    pano.rotation.y = -Math.PI / 2;               // centre of the picture straight ahead
+    scene.add(pano); setMode('pano'); select('p' + panoIdx);
+    msg.textContent = p.name + '  -  drag to look round.  In the headset: A / X next picture, B / Y back';
+  }, undefined, () => msg.textContent = 'Could not open ' + p.file);
+}
+const realScale = name => /full_size/i.test(name) ? 1 : /_HO$/.test(name) ? 87 : /_O$/.test(name) ? 48 : 29;      // model scale -> full size (G is 1:29, HO 1:87; full-size models are 1:1)
+
+function show(m){
+  msg.textContent = 'Loading ' + m.name + ' ...';
+  loader.load(m.file, g => {
+    if (current) stage.remove(current);
+    clearPano(); setMode('model');
+    current = g.scene; stage.add(current); buildParts(); paintModel(); shownEntry = m; trainOn = false;
+    current.userData.scale = realScale(m.name); fit(); msg.textContent = titleOf(m) + '  -  drag to turn, scroll to zoom, right-drag to pan' + KEYHINT;
+    if (/_lit/.test(m.name) && !document.body.classList.contains('embed')) $('fly').checked = true;   // the baked 'lit' models open in Fly mode
+    if ($('fly').checked) startFly();
+    afterShow();
+  }, e => { if (e.total) msg.textContent = 'Loading ' + m.name + ' ' + Math.round(100*e.loaded/e.total) + '%'; },
+     err => msg.textContent = 'Could not open ' + m.file);
+}
+const GT = /^(rails?|track|tracks|ties|cube|ballast|ground)/i;         // the plain and the track
+const FIRST = /^(roofs?|canopy)/i;                                    // roofs first in the list so 'roof off' is the top tick box
+let parts = [], hidden = new Set();
+const base = n => n.replace(/[._]\d+$/, '');
+function applyParts(){
+  floor.visible = $('gt').checked && mode === 'model' && !inAR;
+  if (!current) return;
+  current.traverse(o => { if (!o.isMesh) return; const n = base(o.name || (o.parent && o.parent.name) || '');
+    o.visible = !hidden.has(n) && ($('gt').checked || !GT.test(n)); });
+  for (const c of document.querySelectorAll('#parts input')) c.checked = !hidden.has(c.dataset.n);
+}
+function buildParts(){
+  hidden = new Set(); const names = new Set();
+  current.traverse(o => { if (o.isMesh) names.add(base(o.name || (o.parent && o.parent.name) || 'part')); });
+  parts = [...names].filter(n => !GT.test(n)).sort((a,b) => (FIRST.test(b)-FIRST.test(a)) || a.localeCompare(b));
+  const box = $('parts'); box.innerHTML = '<h4>Parts (untick to hide)</h4>';
+  for (const n of parts) { const l = document.createElement('label'), c = document.createElement('input');
+    c.type = 'checkbox'; c.checked = true; c.dataset.n = n; c.onchange = () => { c.checked ? hidden.delete(n) : hidden.add(n); applyParts(); };
+    l.append(c, ' ' + n.replace(/_/g,' ')); box.appendChild(l); }
+  const b = document.createElement('button'); b.textContent = 'Show all'; b.style.marginTop = '6px'; b.onclick = () => { hidden.clear(); applyParts(); }; box.appendChild(b);
+  applyParts();
+}
+$('gt').onchange = applyParts;
+// ---- paint (Tom 11/22): recolour by part name.  Colours from export/Passenger cars/common (scad_common.py) and the brass renders.
+//  Milwaukee / Union Pacific only change passenger-car paint parts; Brass and Gray do every part except glass and the track.
+const PAINTS = {
+  milw: {orange: '#FF870F', ends: '#FF870F', maroon: '#741C1F', upper: '#741C1F', roof: '#6E6E6E', letter: ['#E8C06A', 0.6, 0.35], trucks: '#1C1C1C'},
+  // Union Pacific: off the Paint menu until the colours are right (Tom 11/22, TDQ-601)
+  up:   {orange: '#FFCE24', ends: '#777777', maroon: '#777777', upper: '#777777', roof: '#777777', letter: ['#C0282D', 0, 0.45], trucks: '#C8CACC'},
+};
+const KEEP = /^(glass|frost|rails?|ties|track|ballast|ground|cube)/i;     // never repainted
+function paintModel(){
+  if (!current) return; const want = $('paint').value, seen = new Set(), names = new Set();
+  current.traverse(o => { if (o.isMesh) names.add(base(o.name || (o.parent && o.parent.name) || '')); });
+  const carPaint = names.has('orange') || names.has('maroon');
+  for (const v of ['milw']) $('paint').querySelector(`option[value="${v}"]`).disabled = !carPaint;
+  current.traverse(o => { if (!o.isMesh) return; const n = base(o.name || (o.parent && o.parent.name) || '');
+    for (const m of [].concat(o.material)) {
+      if (!m || !m.color) continue;
+      if (!m.userData.orig) m.userData.orig = {c: m.color.clone(), met: m.metalness, rough: m.roughness};
+      if (seen.has(m)) continue; seen.add(m);
+      const O = m.userData.orig; m.color.copy(O.c); m.metalness = O.met; m.roughness = O.rough;      // back to as built first
+      if (!want || KEEP.test(n)) continue;
+      if (want === 'brass') { m.color.set('#D9B060'); m.metalness = 0.4; m.roughness = 0.3; }
+      else if (want === 'gray') { m.color.set('#D2D4D6'); m.metalness = 0; m.roughness = 0.8; }
+      else if (carPaint) { const c = PAINTS[want][n]; if (!c) continue;
+        if (Array.isArray(c)) { m.color.set(c[0]); m.metalness = c[1]; m.roughness = c[2]; } else m.color.set(c); }
+    } });
+}
+$('paint').onchange = () => { $('paint').blur(); paintModel(); };
+$('pt').onchange = () => document.body.classList.toggle('showparts', $('pt').checked);
+function fit(){
+  if (!current) return;
+  current.position.set(0,0,0); stage.position.set(0,0,0);   // measure from the start place, or Reset view drifts (fix 21 Nov 2026)
+  stage.scale.setScalar($('full').checked ? current.userData.scale : 1);
+  stage.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(stage), c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  stage.position.set(-c.x, -box.min.y, -c.z);               // centred, on the floor
+  const r = Math.max(s.x,s.y,s.z); lastR = r;
+  controls.target.set(0, s.y/2, 0);
+  if (!renderer.xr.isPresenting) camera.position.set(r*0.55, s.y/2 + r*0.25, r*0.7);
+  camera.near = r/200; camera.far = r*80; camera.updateProjectionMatrix();
+  floor.scale.setScalar(Math.max(1, r/1.2));
+}
+$('full').onchange = fit;
+// ---- menus (TDQ-599, 22 Nov 2026): What -> Train (passenger cars) -> Model, and Get this model.
+// index.json from publish_github.py carries title / group / order / folder / book / dl, plus "extra" = models too big for the site.
+// The index on Shops (make_glb.py) has none of that: then there is no Train menu and no Get menu.
+const KINDS = [['cars','Passenger cars'],['locos','Locomotives'],['freight','Freight cars'],['stations','Stations'],['trucks','Trucks']];
+let extra = [], repo = '', tag = '3d-models';
+function opt(sel, v, t){ const o = document.createElement('option'); o.value = v; o.textContent = t; sel.appendChild(o); return o; }
+const titleOf = m => m.title || m.name.replace(/_G$/,'').replace(/_/g,' ');
+const entry = v => v[0] === 'x' ? extra[+v.slice(1)] : (v[0] === 'p' ? null : models[+v]);
+function inCat(c){ return [...models.map((m,i) => ({m, v:String(i)})), ...extra.map((m,i) => ({m, v:'x'+i}))].filter(e => e.m.kind === c); }
+function fillCats(){ const s = $('cat'); s.innerHTML = '';
+  for (const [k,t] of KINDS) if (inCat(k).length) opt(s, k, t);
+  if (panos.length) opt(s, 'pano', '360 pictures'); }
+function fillGroups(){ const c = $('cat').value, s = $('grp'); s.innerHTML = '';
+  const groups = c === 'pano' ? [] : [...new Set(inCat(c).map(e => e.m.group).filter(Boolean))];
+  s.style.display = groups.length > 1 ? '' : 'none'; groups.forEach(g => opt(s, g, g)); }
+function fillPick(){ const c = $('cat').value, s = $('pick'); s.innerHTML = '';
+  if (c === 'pano') { panos.forEach((p,k) => opt(s, 'p'+k, p.name)); return; }
+  const g = $('grp').style.display === 'none' ? null : $('grp').value;
+  for (const e of inCat(c)) if (!g || e.m.group === g) opt(s, e.v, titleOf(e.m) + (e.v[0] === 'x' ? '  - download only' : '')); }
+function fillGet(){ const s = $('get'); s.innerHTML = ''; const m = entry($('pick').value || 'p');
+  if (!repo || !m) { s.style.display = 'none'; return; } s.style.display = '';
+  const gh = 'https://github.com/' + repo, enc = p => p.split('/').map(encodeURIComponent).join('/');
+  opt(s, '', 'Get this model ...');
+  if (m.folder) opt(s, gh + '/tree/main/' + enc(m.folder), 'OpenSCAD files (GitHub)');
+  if (m.book) opt(s, gh + '/blob/main/' + enc(m.book), 'How to build (PDF)');
+  if (m.dl) opt(s, gh + '/releases/download/' + tag + '/' + encodeURIComponent(m.dl), 'Download the 3D file (' + Math.max(1, Math.round(m.mb)) + ' MB)');
+  opt(s, gh + '/blob/main/BUILD_INSTRUCTIONS.md', 'How to make the print files'); }
+function select(v){            // set all three menus to show v ('3', 'x2' or 'p1')
+  const m = entry(v); $('cat').value = m ? m.kind : 'pano'; fillGroups();
+  if (m && m.group && $('grp').style.display !== 'none') $('grp').value = m.group;
+  fillPick(); $('pick').value = v; fillGet(); }
+function choose(){ const v = $('pick').value; $('pick').blur(); fillGet(); if (!v) return;
+  if (v[0] === 'p') { showPano(+v.slice(1)); return; }
+  if (v[0] === 'x') { const m = extra[+v.slice(1)];
+    msg.textContent = titleOf(m) + ' is too big for the online viewer (' + Math.round(m.mb) + ' MB) - use "Get this model" to download it.'; return; }
+  show(models[+v]); setURL(); }
+$('cat').onchange = () => { $('cat').blur(); fillGroups(); fillPick(); choose(); };
+$('grp').onchange = () => { $('grp').blur(); fillPick(); choose(); };
+$('pick').onchange = choose;
+$('get').onchange = () => { const u = $('get').value; $('get').value = ''; $('get').blur(); if (u) window.open(u, '_blank'); };
+
+fetch('index.json', {cache: 'no-cache'}).then(r=>r.json()).then(ix => {
+  models = ix.models; extra = ix.extra || []; repo = ix.repo || ''; tag = ix.tag || tag;
+  const q = new URLSearchParams(location.search), want = q.get('model');
+  if (q.get('paint') && $('paint').querySelector(`option[value="${q.get('paint')}"]`)) $('paint').value = q.get('paint'); const i = Math.max(0, models.findIndex(m=>m.name===want));
+  fetch('pano/pano.json').then(r => r.ok ? r.json() : {panos: []}).catch(() => ({panos: []})).then(pj => {
+    panos = pj.panos || []; fillCats();
+    const wp = q.get('pano'), k = panos.findIndex(p => p.name === wp);
+    if (k >= 0) showPano(k);
+    else if (q.get('train')) { const names = q.get('train').split(','); train = names.map(n => models.find(m => m.name === n)).filter(Boolean); if (train.length) { select(String(models.indexOf(train[0]))); showTrain(); } }
+    else if (models.length) { select(String(i)); show(models[i]); }
+    else msg.textContent = 'No models yet - run make_glb.py';
+  });
+}).catch(()=> msg.textContent = 'index.json not found - open this page through the RSW server, not as a plain file');
+
+// ---- fly mode (Oct 2026): the model at full size; you fly round it and through the rooms (no walls stop you)
+//  screen: W A S D (or arrows) move, E / Space up, Q / C down, Shift = fast, drag the mouse to look
+//  headset: left stick = fly where you look (and sideways), right stick left/right = turn 30 deg, up/down = rise / sink,
+//           hold a grip button = 4 x faster.  A / X still takes the roof off (next part), B / Y puts it back.
+window.rsw = {rig, camera, scene, stage};          // for checking from the browser console
+let flying = false, yaw = 0, pitch = 0, dragging = false, lx = 0, ly = 0, snapReady = true;
+const keys = {}, clock = new THREE.Clock(), fwd = new THREE.Vector3(), side = new THREE.Vector3(), UP = new THREE.Vector3(0, 1, 0);
+function applyLook(){ if (!renderer.xr.isPresenting) camera.rotation.set(pitch, yaw, 0, 'YXZ'); }
+function startFly(){
+  if (!current) return; flying = true; $('full').checked = true; $('gt').checked = true; applyParts(); stage.rotation.y = 0; fit();
+  controls.enabled = false; scene.position.set(0, 0, 0); scene.scale.setScalar(1);
+  const box = new THREE.Box3().setFromObject(stage), c = box.getCenter(new THREE.Vector3());
+  rig.position.set(c.x, 0, box.max.z + 12); rig.rotation.set(0, 0, 0);          // standing back from the track side
+  camera.position.set(0, renderer.xr.isPresenting ? 0 : 1.7, 0); yaw = 0; pitch = -0.05; applyLook();
+  camera.near = 0.05; camera.far = 5000; camera.updateProjectionMatrix();
+  msg.textContent = 'Fly: W A S D move, E up, Q down, Shift fast, drag to look.  Headset: left stick fly, right stick turn / up-down, grip = fast';
+}
+function stopFly(refit = true){
+  flying = false; $('fly').checked = false; $('full').checked = false; controls.enabled = true;
+  msg.textContent = 'Drag to turn, scroll to zoom, right-drag to pan' + KEYHINT; rig.position.set(0, 0, 0); rig.rotation.set(0, 0, 0);
+  camera.rotation.set(0, 0, 0); if (refit) fit();
+}
+$('fly').onchange = () => $('fly').checked ? startFly() : stopFly();
+renderer.domElement.addEventListener('pointerdown', e => { if (flying) { dragging = true; lx = e.clientX; ly = e.clientY; } });
+addEventListener('pointerup', () => dragging = false);
+addEventListener('pointermove', e => { if (!flying || !dragging) return;
+  yaw -= (e.clientX - lx) * 0.004; pitch = Math.max(-1.5, Math.min(1.5, pitch - (e.clientY - ly) * 0.004)); lx = e.clientX; ly = e.clientY; applyLook(); });
+addEventListener('keydown', e => { if (typing()) return; keys[e.code] = true; if (flying && /^(Arrow|Space)/.test(e.code)) e.preventDefault(); });
+addEventListener('keyup', e => { keys[e.code] = false; });
+function turnRig(a){                              // turn round your own head, not round the rig's corner
+  const p = new THREE.Vector3().setFromMatrixPosition(renderer.xr.getCamera().matrixWorld);
+  rig.position.sub(p).applyAxisAngle(UP, a).add(p); rig.rotation.y += a;
+}
+function flyStep(dt){
+  if (renderer.xr.isPresenting) {
+    const s = renderer.xr.getSession(); if (!s) return;
+    renderer.xr.getCamera().getWorldDirection(fwd); side.crossVectors(fwd, UP).normalize();
+    for (const src of s.inputSources) { const gp = src.gamepad; if (!gp || gp.axes.length < 4) continue;
+      const x = gp.axes[2], y = gp.axes[3], fast = (gp.buttons[1] && gp.buttons[1].pressed) ? 4 : 1;
+      if (src.handedness === 'left') { const sp = 1.5 * fast * dt;                         // half speed (Tom 10/18)
+        if (Math.abs(y) > 0.15) rig.position.addScaledVector(fwd, -y * sp);
+        if (Math.abs(x) > 0.15) rig.position.addScaledVector(side, x * sp); }
+      else { if (Math.abs(x) > 0.6 && snapReady) { turnRig(-Math.sign(x) * Math.PI / 6); snapReady = false; }
+        if (Math.abs(x) < 0.3) snapReady = true;
+        if (Math.abs(y) > 0.3) rig.position.y -= y * 1.0 * fast * dt; }
+    }
+    rig.position.y = Math.max(0, rig.position.y); return;
+  }
+  const k = c => !!keys[c];
+  const f = (k('KeyW') || k('ArrowUp')) - (k('KeyS') || k('ArrowDown')), r = (k('KeyD') || k('ArrowRight')) - (k('KeyA') || k('ArrowLeft'));
+  const u = (k('KeyE') || k('Space')) - (k('KeyQ') || k('KeyC'));
+  if (!f && !r && !u) return;
+  const sp = (k('ShiftLeft') || k('ShiftRight') ? 12 : 3) * dt;
+  camera.getWorldDirection(fwd); side.crossVectors(fwd, UP).normalize();
+  rig.position.addScaledVector(fwd, f * sp).addScaledVector(side, r * sp); rig.position.y = Math.max(-1.4, rig.position.y + u * sp);
+}
+
+// Meta Quest 2 / Quest 3: the Enter VR button only works when the page is served over https (or localhost)
+if (navigator.xr && !document.body.classList.contains('embed')) {
+  $('vrslot').appendChild(VRButton.createButton(renderer));
+  // AR (passthrough): Quest 3 in colour, Quest 2 in black and white - the model stands in your real room
+  navigator.xr.isSessionSupported('immersive-ar').then(ok => { if (ok) $('vrslot').appendChild(ARButton.createButton(renderer, {optionalFeatures: ['local-floor']})); }).catch(() => {});
+}
+let inAR = false;
+function resetView(){
+  if (mode === 'pano') { if (pano) pano.rotation.y = -Math.PI / 2; setMode('pano'); return; }
+  if (flying) { startFly(); return; }
+  stage.rotation.y = 0; vrScale = 1; scene.scale.setScalar(1);
+  if (renderer.xr.isPresenting) { floor.scale.setScalar(Math.max(0.8, lastR * 0.6) / 6); placeOnTable(); } else fit();
+}
+function placeOnTable(){ scene.position.set(0, inAR ? 0 : 0.9, inAR ? -1.5 : -1.0); }     // AR: on your real floor, 1.5 m ahead
+$('reset').onclick = () => { $('reset').blur(); resetView(); };
+// in the headset the floor of the page is the real floor: lift the model onto an imaginary table, 1 m in front of you
+renderer.xr.addEventListener('sessionstart', () => { camera.layers.disable(1); vrScale = 1;
+  const s = renderer.xr.getSession(); inAR = !!s && s.environmentBlendMode && s.environmentBlendMode !== 'opaque';
+  if (inAR) { scene.background = null; floor.visible = false; }                       // see the real room and floor
+  if (mode === 'pano' || flying) { scene.position.set(0, 0, 0); camera.position.set(0, 0, 0); }
+  else { placeOnTable(); floor.scale.setScalar(Math.max(0.8, lastR * 0.6) / 6); } });
+renderer.xr.addEventListener('sessionend',   () => { scene.position.set(0,0,0); scene.scale.setScalar(1);
+  if (inAR) { inAR = false; scene.background = mode === 'pano' ? null : BG; applyParts(); }
+  if (mode === 'pano') setMode('pano'); else if (flying) { camera.position.set(0, 1.7, 0); applyLook(); } else fit(); });
+let prevA = false, prevB = false, prevG = false, prevS = false;
+function vrButtons(){           // A / X = hide the next part (roof first), B / Y = put the last one back, side grip = everything back
+  const s = renderer.xr.getSession(); if (!s) return; let A = false, B = false, G = false;
+  for (const src of s.inputSources) { const b = src.gamepad && src.gamepad.buttons; if (!b) continue;
+    A = A || !!(b[4] && b[4].pressed); B = B || !!(b[5] && b[5].pressed); G = G || !!(b[1] && b[1].pressed);
+    if (src.handedness === 'left' && b[3]) { const S = b[3].pressed; if (S && !prevS) resetView(); prevS = S; } }
+  if (mode === 'pano') {                                  // 360 pictures: A / X next, B / Y back
+    if (A && !prevA && panos.length) showPano(panoIdx + 1);
+    if (B && !prevB && panos.length) showPano(panoIdx - 1);
+    prevA = A; prevB = B; prevG = G; return;
+  }
+  if (A && !prevA) { const n = parts.find(x => !hidden.has(x)); if (n) { hidden.add(n); applyParts(); } }
+  if (B && !prevB && hidden.size) { hidden.delete([...hidden].pop()); applyParts(); }
+  if (G && !prevG && !flying) { hidden.clear(); applyParts(); }
+  prevA = A; prevB = B; prevG = G;
+}
+function vrSticks(){            // thumbsticks: up/down = bigger / smaller, left/right = turn
+  const s = renderer.xr.getSession(); if (!s || flying) return;
+  if (mode === 'pano') { for (const src of s.inputSources) { const a = src.gamepad && src.gamepad.axes;      // 360: stick left/right turns the picture
+    if (a && a.length >= 4 && Math.abs(a[2]) > 0.15 && pano) pano.rotation.y -= a[2] * 0.01; } return; }
+  for (const src of s.inputSources) { const a = src.gamepad && src.gamepad.axes; if (!a || a.length < 4) continue;
+    if (src.handedness === 'left') {                      // left stick: slide the model across the floor / table
+      if (Math.abs(a[2]) > 0.15) scene.position.x += a[2] * 0.01; if (Math.abs(a[3]) > 0.15) scene.position.z += a[3] * 0.01; continue; }
+    if (Math.abs(a[3]) > 0.15) { vrScale = Math.min(40, Math.max(0.05, vrScale * (1 - a[3] * 0.01))); scene.scale.setScalar(vrScale); }
+    if (Math.abs(a[2]) > 0.15) stage.rotation.y += a[2] * 0.015; }
+}
+
+// ---- keyboard and SpaceMouse (Tom 11/22).  Normal view: arrows turn, Shift + arrows pan, + / - zoom (or Page Up / Down),
+//  R reset, P parts, G ground and track, F fly, Esc leaves fly.  Fly mode keeps W A S D / arrows (above).
+//  SpaceMouse (3Dconnexion, read straight from the device - Chrome / Edge only): push / pull = pan and zoom,
+//  tilt = up / down, twist = turn; in fly mode it flies you.  Left button = Reset view, right button = Parts.
+function orbitNav(dyaw, dpitch, px, py, zoom){            // move the camera round controls.target
+  if (!current && mode !== 'pano') return;
+  const t = controls.target, off = camera.position.clone().sub(t), sph = new THREE.Spherical().setFromVector3(off);
+  sph.theta += dyaw; sph.phi = Math.max(0.05, Math.min(Math.PI - 0.05, sph.phi + (mode === 'pano' ? dpitch : -dpitch)));
+  if (mode !== 'pano') {
+    sph.radius = Math.max(controls.minDistance, Math.min(controls.maxDistance, sph.radius * Math.exp(-zoom)));
+    const right = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 0), up = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 1);
+    t.addScaledVector(right, px * sph.radius).addScaledVector(up, py * sph.radius);
+  }
+  camera.position.copy(t).add(off.setFromSpherical(sph));
+}
+function flyNav(dt, f, r, u, dyaw, dpitch){               // SpaceMouse in fly mode (screen only)
+  if (renderer.xr.isPresenting) return;
+  const sp = 6 * dt; camera.getWorldDirection(fwd); side.crossVectors(fwd, UP).normalize();
+  rig.position.addScaledVector(fwd, f * sp).addScaledVector(side, r * sp); rig.position.y = Math.max(-1.4, rig.position.y + u * sp);
+  yaw += dyaw; pitch = Math.max(-1.5, Math.min(1.5, pitch + dpitch)); applyLook();
+}
+const typing = () => { const a = document.activeElement; return a && (a.tagName === 'SELECT' || a.tagName === 'TEXTAREA' || (a.tagName === 'INPUT' && a.type !== 'checkbox')); };
+addEventListener('keydown', e => {
+  if (e.metaKey || e.ctrlKey || e.altKey || typing() || renderer.xr.isPresenting) return;      // leave Cmd+R etc. alone
+  if (!flying && /^(Arrow|PageUp|PageDown)/.test(e.code)) e.preventDefault();
+  if (e.repeat) return;
+  const click = id => { const el = $(id); if (el && el.offsetParent !== null) el.click(); };
+  if (e.code === 'KeyR') click('reset');
+  else if (e.code === 'KeyP') click('pt');
+  else if (e.code === 'KeyG') click('gt');
+  else if (e.code === 'KeyF' && mode === 'model') click('fly');
+  else if (e.code === 'Escape' && flying) stopFly();
+});
+function keyNav(dt){
+  if (flying || renderer.xr.isPresenting || typing()) return;
+  const k = c => !!keys[c], sh = k('ShiftLeft') || k('ShiftRight');
+  const x = k('ArrowRight') - k('ArrowLeft'), y = k('ArrowUp') - k('ArrowDown');
+  const z = (k('Equal') || k('NumpadAdd') || k('PageUp')) - (k('Minus') || k('NumpadSubtract') || k('PageDown'));
+  if (!x && !y && !z) return;
+  if (sh) orbitNav(0, 0, x * 0.6 * dt, y * 0.6 * dt, z * 1.2 * dt);
+  else orbitNav(-x * 1.5 * dt, y * 1.0 * dt, 0, 0, z * 1.2 * dt);
+}
+const sm = {t: [0, 0, 0], r: [0, 0, 0], at: 0, buttons: 0, dev: null};
+function smReport(e){
+  const d = e.data, id = e.reportId, g = i => d.byteLength >= i + 2 ? d.getInt16(i, true) : 0;
+  if (id === 1) { sm.t = [g(0), g(2), g(4)]; if (d.byteLength >= 12) sm.r = [g(6), g(8), g(10)]; sm.at = performance.now(); }
+  else if (id === 2) { sm.r = [g(0), g(2), g(4)]; sm.at = performance.now(); }
+  else if (id === 3) { const b = d.getUint8(0), down = b & ~sm.buttons; sm.buttons = b;
+    if (down & 1) $('reset').click(); if (down & 2) $('pt').click(); }
+}
+async function smOpen(dev){
+  try { if (!dev.opened) await dev.open(); } catch (err) { msg.textContent = 'SpaceMouse found but it could not be opened - quit 3Dconnexion\'s 3DxWare and try again (' + err.message + ')'; return; }
+  if (sm.dev) sm.dev.removeEventListener('inputreport', smReport);
+  sm.dev = dev; dev.addEventListener('inputreport', smReport);
+  $('smb').textContent = smLabel(); $('smb').title = 'Click to change the SpaceMouse speed';
+  msg.textContent = 'SpaceMouse ready (click the button to change its speed): push / pull to pan and zoom, tilt up / down, twist to turn.  Left button = Reset view, right button = Parts';
+}
+const SM_FILTERS = [{vendorId: 0x256f}, {vendorId: 0x046d, usagePage: 0x01, usage: 0x08}];   // 3Dconnexion (new and old Logitech-made)
+if ('hid' in navigator && !document.body.classList.contains('embed')) {
+  $('smb').style.display = '';
+  $('smb').onclick = async () => { $('smb').blur();
+    if (sm.dev) { smSpeed = (smSpeed + 1) % SM_SPEEDS.length; try { localStorage.setItem('rswSmSpeed', smSpeed); } catch (e) {}
+      $('smb').textContent = smLabel(); msg.textContent = 'SpaceMouse speed: ' + SM_SPEEDS[smSpeed][0] + ' (click the button again to change)'; return; }
+    try { const [dev] = await navigator.hid.requestDevice({filters: SM_FILTERS}); if (dev) smOpen(dev); } catch (err) {} };
+  navigator.hid.getDevices().then(ds => { const d = ds.find(x => SM_FILTERS.some(f => x.vendorId === f.vendorId)); if (d) smOpen(d); });
+  navigator.hid.addEventListener('disconnect', e => { if (e.device === sm.dev) { sm.dev = null; sm.t = [0,0,0]; sm.r = [0,0,0]; $('smb').textContent = 'SpaceMouse'; } });
+}
+// Tom 11/22: "a little touchy" - bigger dead zone, gentle start (squared), smoothing, and a speed setting.
+const SM_SPEEDS = [['Slow', 0.3], ['Medium', 0.55], ['Fast', 1]];
+let smSpeed = 0; try { smSpeed = Math.min(2, Math.max(0, +(localStorage.getItem('rswSmSpeed') || 0))); } catch (e) {}
+const smLabel = () => 'SpaceMouse: ' + SM_SPEEDS[smSpeed][0];
+const smF = [0, 0, 0, 0, 0];
+// the Mac 3DxWare driver can also send scroll-wheel signals to Chrome: ignore them while the puck is moving (Tom 11/22)
+renderer.domElement.addEventListener('wheel', e => { if (sm.dev && (performance.now() - sm.at < 400 || smF.some(v => v))) { e.preventDefault(); e.stopImmediatePropagation(); } }, {capture: true, passive: false});                          // smoothed tx ty tz rx rz
+function smNav(dt){
+  if (!sm.dev || renderer.xr.isPresenting) return;
+  const live = performance.now() - sm.at < 300;      // no news for 0.3 s = puck let go
+  const DZ = 0.12, n = v => { const a = Math.max(-1, Math.min(1, v / 350)), m = Math.abs(a);
+    return m < DZ ? 0 : Math.sign(a) * ((m - DZ) / (1 - DZ)) ** 2; };
+  const raw = live ? [...sm.t.map(n), n(sm.r[0]), n(sm.r[2])] : [0, 0, 0, 0, 0], k = Math.min(1, dt * 8);
+  for (let i = 0; i < 5; i++) { smF[i] += (raw[i] - smF[i]) * k; if (Math.abs(smF[i]) < 0.002) smF[i] = 0; }
+  const sp = SM_SPEEDS[smSpeed][1], [tx, ty, tz, rx, rz] = smF.map(v => v * sp);
+  if (!tx && !ty && !tz && !rx && !rz) return;
+  if (flying) flyNav(dt, -ty, tx, -tz, -rz * 1.5 * dt, -rx * 1.0 * dt);
+  else orbitNav(-rz * 2.0 * dt, -rx * 1.5 * dt, -tx * 0.8 * dt, tz * 0.8 * dt, -ty * 1.5 * dt);
+}
+window.rsw.sm = sm;                                 // for checking from the browser console
+
+addEventListener('resize', () => { camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), 0.1);
+  if (flying) flyStep(dt);
+  measureTick();
+  keyNav(dt); smNav(dt);
+  if (mode === 'pano' && pano && renderer.xr.isPresenting) pano.position.setFromMatrixPosition(renderer.xr.getCamera().matrixWorld);   // picture moves with your head
+  if (renderer.xr.isPresenting) { vrSticks(); vrButtons(); } if (!flying) controls.update(); rig.updateMatrixWorld(true); renderer.render(scene,camera); drawGizmo();
+});
+
+// =====================================================================================================
+// ---- Tom 11/22 evening: Info panel, footer, search, share link, What's new, Pictures, Build a train, Measure.
+//  index.json (publish_github.py) gives each model: updated (date), thumb (picture), story (key in stories.json),
+//  photo + credit (photos Tom has cleared to publish, from Blender/GLB/photos).
+// =====================================================================================================
+function barH(){ document.body.style.setProperty('--bt', ($('bar').getBoundingClientRect().bottom + 8) + 'px'); }
+try { new ResizeObserver(barH).observe($('bar')); } catch (e) { addEventListener('resize', barH); } barH();
+let shownEntry = null, trainOn = false, train = [], stories = null;
+const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const KIND_NAME = Object.fromEntries(KINDS);
+function setURL(){
+  const q = new URLSearchParams();
+  if (trainOn && train.length) q.set('train', train.map(m => m.name).join(','));
+  else if (shownEntry) q.set('model', shownEntry.name);
+  if ($('paint').value) q.set('paint', $('paint').value);
+  try { history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
+}
+function modelSize(){                     // length / width / height of the model without the track, in model metres
+  if (!current) return null;
+  const box = new THREE.Box3(), v = new THREE.Box3();
+  current.updateMatrixWorld(true);
+  current.traverse(o => { if (o.isMesh && !GT.test(base(o.name || (o.parent && o.parent.name) || ''))) { v.setFromObject(o); box.union(v); } });
+  if (box.isEmpty()) return null;
+  const s = box.getSize(new THREE.Vector3()), k = 1 / stage.scale.x;
+  return {len: Math.max(s.x, s.z) * k, wid: Math.min(s.x, s.z) * k, hgt: s.y * k};
+}
+const ftin = m => { const inch = Math.round(m / 0.0254); return Math.floor(inch / 12) + ' ft ' + (inch % 12) + ' in'; };
+function sizeLine(sz, scale){
+  const real = sz.len * scale;
+  return `Length: <b>${ftin(real)}</b> full size (${real.toFixed(1)} m) &middot; G 1:29 ${Math.round(real / 29 * 1000)} mm &middot; ` +
+         `O 1:48 ${Math.round(real / 48 * 1000)} mm &middot; HO 1:87 ${Math.round(real / 87 * 1000)} mm`;
+}
+// ---- Info panel
+async function fillInfo(){
+  const box = $('info'); if (box.style.display === 'none' || !box.style.display) return;
+  if (mode === 'pano') { box.innerHTML = `<button class="x" id="infox">x</button><h3>${esc(panos[panoIdx] ? panos[panoIdx].name : '360 picture')}</h3><p>A 360 picture: drag to look round.</p>`; $('infox').onclick = toggleInfo; return; }
+  const m = trainOn ? null : shownEntry;
+  let h = `<button class="x" id="infox">x</button>`;
+  if (trainOn) {
+    h += `<h3>Your train</h3><p>${train.length} cars, ${esc(train.map(titleOf).join(', '))}.</p>`;
+    const sz = modelSize(); if (sz) h += `<p class="small">${sizeLine(sz, current.userData.scale)}</p>`;
+  } else if (m) {
+    h += `<h3>${esc(titleOf(m))}</h3><p class="small">${esc(KIND_NAME[m.kind] || m.kind)}${m.group ? ' &middot; ' + esc(m.group) : ''}${m.updated ? ' &middot; model updated ' + esc(m.updated) : ''}</p>`;
+    const sz = modelSize(); if (sz && current) h += `<p class="small">${sizeLine(sz, current.userData.scale)}</p>`;
+    if (m.photo) h += `<img src="${esc(m.photo)}" alt="Photo of the real ${esc(titleOf(m))}">${m.credit ? `<p class="small">${esc(m.credit)}</p>` : ''}`;
+    else if (m.thumb) h += `<img src="${esc(m.thumb)}" alt="">`;
+    if (m.story) {
+      if (!stories) { try { stories = await (await fetch('stories.json', {cache: 'no-cache'})).json(); } catch (e) { stories = {}; } }
+      const st = stories[m.story];
+      if (st) h += `<h4>${esc(st.head)}</h4>` + st.text.map(t => `<p>${esc(t)}</p>`).join('');
+    }
+    const gh = repo ? 'https://github.com/' + repo : '', enc = p => p.split('/').map(encodeURIComponent).join('/');
+    if (gh) h += `<p>${m.folder ? `<a target="_blank" href="${gh}/tree/main/${enc(m.folder)}">OpenSCAD files</a> &middot; ` : ''}${m.book ? `<a target="_blank" href="${gh}/blob/main/${enc(m.book)}">How to build (PDF)</a> &middot; ` : ''}${m.dl ? `<a href="${gh}/releases/download/${tag}/${encodeURIComponent(m.dl)}">3D file</a>` : ''}</p>`;
+    if (!m.story) h += `<p class="small">No story written for this model yet.</p>`;
+  }
+  box.innerHTML = h; $('infox').onclick = toggleInfo;
+}
+function toggleInfo(){ const b = $('info'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; $('infob').blur();
+  if (b.style.display === 'block') { $('trainp').style.display = 'none'; $('commentp').style.display = 'none'; fillInfo(); } }
+$('infob').onclick = toggleInfo;
+function afterShow(){ if (mpts.length) clearMeasure(); fillInfo(); setURL(); }
+// ---- footer
+$('fabout').onclick = () => { $('welcome').style.display = ''; };
+$('fnews').onclick = () => openBrowse('news');
+// ---- comment form (Tom 11/22): sent by Web3Forms to ribsideworks@gmail.com; the access key is public by design
+function aboutNow(){ return trainOn && train.length ? 'Train: ' + train.map(titleOf).join(', ') : shownEntry ? titleOf(shownEntry) + ' (' + shownEntry.name + ')' : mode === 'pano' && panos[panoIdx] ? '360 picture: ' + panos[panoIdx].name : ''; }
+function openComment(){ for (const id of ['info', 'trainp']) $(id).style.display = 'none';
+  const a = aboutNow(); $('cabout').textContent = a ? 'About: ' + a : ''; $('cstat').textContent = ''; $('commentp').style.display = 'block'; }
+$('fcomment').onclick = openComment;
+$('commentx').onclick = () => $('commentp').style.display = 'none';
+$('cform').onsubmit = async e => {
+  e.preventDefault(); const f = $('cform'), d = Object.fromEntries(new FormData(f).entries());
+  if (d.botcheck) return;                                    // robots tick the hidden box
+  if (!(d.message || '').trim()) { $('cstat').textContent = 'Please write a comment first.'; return; }
+  const a = aboutNow(); setURL();
+  d.subject = 'RSW viewer comment' + (a ? ' - ' + a : ''); d.from_name = 'RSW 3D viewer';
+  d.model = a || '(none)'; d.page = location.href; delete d.botcheck;
+  if (!d.email) delete d.email; if (!d.name) delete d.name;
+  $('csend').disabled = true; $('cstat').textContent = 'Sending ...';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', Accept: 'application/json'}, body: JSON.stringify(d)});
+    const j = await res.json().catch(() => ({}));
+    if (res.ok && j.success !== false) { $('cstat').textContent = 'Thank you - your comment was sent.'; f.reset(); setTimeout(() => $('commentp').style.display = 'none', 2500); }
+    else $('cstat').textContent = 'Sorry, it did not send (' + (j.message || res.status) + '). You can email ribsideworks@gmail.com instead.';
+  } catch (err) { $('cstat').textContent = 'Sorry, it did not send. You can email ribsideworks@gmail.com instead.'; }
+  $('csend').disabled = false;
+};
+// ---- search
+function searchList(){
+  const terms = $('find').value.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return [];
+  const all = [...models.map((m, i) => ({m, v: String(i)})), ...extra.map((m, i) => ({m, v: 'x' + i}))];
+  return all.filter(e => { const t = (titleOf(e.m) + ' ' + e.m.name + ' ' + (e.m.group || '') + ' ' + (KIND_NAME[e.m.kind] || '')).toLowerCase();
+    return terms.every(w => t.includes(w)); }).slice(0, 15);
+}
+let foundSel = 0;
+function showFound(){
+  const list = searchList(), box = $('found'), r = $('find').getBoundingClientRect();
+  if (!list.length) { box.style.display = $('find').value ? 'block' : 'none'; box.innerHTML = '<div><small>Nothing found</small></div>'; if (!$('find').value) box.style.display = 'none'; }
+  else { box.innerHTML = list.map((e, k) => `<div data-v="${e.v}" class="${k === foundSel ? 'on' : ''}">${esc(titleOf(e.m))} <small>${esc(e.m.group || KIND_NAME[e.m.kind] || '')}</small></div>`).join(''); box.style.display = 'block'; }
+  box.style.left = Math.min(r.left, innerWidth - 280) + 'px'; box.style.top = (r.bottom + 4) + 'px';
+  for (const d of box.querySelectorAll('div[data-v]')) d.onmousedown = ev => { ev.preventDefault(); pickFound(d.dataset.v); };
+}
+function pickFound(v){ $('found').style.display = 'none'; $('find').value = ''; $('find').blur(); openEntry(v); }
+function openEntry(v){ select(v); choose(); }
+$('find').oninput = () => { foundSel = 0; showFound(); };
+$('find').onkeydown = e => { const list = searchList();
+  if (e.key === 'ArrowDown') { foundSel = Math.min(foundSel + 1, list.length - 1); showFound(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { foundSel = Math.max(foundSel - 1, 0); showFound(); e.preventDefault(); }
+  else if (e.key === 'Enter' && list.length) pickFound(list[foundSel].v);
+  else if (e.key === 'Escape') { $('find').value = ''; $('found').style.display = 'none'; $('find').blur(); } };
+$('find').onblur = () => setTimeout(() => $('found').style.display = 'none', 150);
+// ---- More menu
+$('more').onchange = () => { const v = $('more').value; $('more').value = ''; $('more').blur();
+  if (v === 'train') { $('trainp').style.display = 'block'; $('info').style.display = 'none'; drawTrain(); }
+  else if (v === 'measure') startMeasure();
+  else if (v === 'share') shareLink();
+  else if (v === 'news') openBrowse('news');
+  else if (v === 'comment') openComment();
+  else if (v === 'about') $('welcome').style.display = ''; };
+async function shareLink(){
+  setURL(); const u = location.href;
+  try { await navigator.clipboard.writeText(u); msg.textContent = 'Link copied - paste it into an email or message: ' + u; }
+  catch (e) { prompt('Copy this link:', u); }
+}
+$('paint').addEventListener('change', setURL);
+// ---- Pictures and What's new (one full-screen browser)
+function openBrowse(what){
+  const b = $('browse'), sel = $('bcat'); b.dataset.what = what; sel.innerHTML = '';
+  if (what === 'news') { $('btitle').textContent = "What's new"; sel.style.display = 'none'; }
+  else { $('btitle').textContent = 'Pictures'; sel.style.display = '';
+    for (const [k, t] of KINDS) if (inCat(k).length) for (const g of [null, ...new Set(inCat(k).map(e => e.m.group).filter(Boolean))])
+      opt(sel, k + '|' + (g || ''), g ? '\u00a0\u00a0\u00a0' + g : t);
+    const m = entry($('pick').value || 'p'); if (m) sel.value = m.kind + '|' + (m.group || ''); if (!sel.value) sel.selectedIndex = 0; }
+  drawGrid(); b.style.display = 'block'; b.scrollTop = 0;
+}
+function drawGrid(){
+  const what = $('browse').dataset.what; let list;
+  if (what === 'news') list = [...models.map((m, i) => ({m, v: String(i)}))].filter(e => e.m.updated).sort((a, b) => b.m.updated.localeCompare(a.m.updated)).slice(0, 24);
+  else { const [k, g] = $('bcat').value.split('|'); list = inCat(k).filter(e => !g || e.m.group === g); }
+  $('grid').innerHTML = list.map(e => `<div class="tile" data-v="${e.v}">${e.m.thumb ? `<img loading="lazy" src="${esc(e.m.thumb)}" alt="">` : `<div class="ph">${esc(KIND_NAME[e.m.kind] || '')}</div>`}` +
+    `<div class="t">${esc(titleOf(e.m))}<small>${what === 'news' ? 'updated ' + esc(e.m.updated) + ' &middot; ' : ''}${esc(e.m.group || KIND_NAME[e.m.kind] || '')}${e.v[0] === 'x' ? ' &middot; download only' : ''}</small></div></div>`).join('')
+    || '<p>Nothing here yet.</p>';
+  for (const t of $('grid').querySelectorAll('.tile')) t.onclick = () => { $('browse').style.display = 'none'; openEntry(t.dataset.v); };
+}
+$('pics').onclick = () => { $('pics').blur(); openBrowse('pics'); };
+$('bcat').onchange = () => { $('bcat').blur(); drawGrid(); };
+$('bx').onclick = () => $('browse').style.display = 'none';
+// ---- Build a train: cars coupled end to end along the track, in the order listed
+function drawTrain(){
+  $('trainlist').innerHTML = train.map((m, k) => `<div><span>${k + 1}. ${esc(titleOf(m))}</span><button data-u="${k}" title="Move up">&uarr;</button><button data-d="${k}" title="Move down">&darr;</button><button data-r="${k}" title="Take out">x</button></div>`).join('') || '<p class="small">No cars yet.</p>';
+  for (const b of $('trainlist').querySelectorAll('button')) b.onclick = () => {
+    const u = b.dataset.u, d = b.dataset.d, k = +(u ?? d ?? b.dataset.r);
+    if (u !== undefined && k > 0) [train[k - 1], train[k]] = [train[k], train[k - 1]];
+    else if (d !== undefined && k < train.length - 1) [train[k + 1], train[k]] = [train[k], train[k + 1]];
+    else if (b.dataset.r !== undefined) train.splice(k, 1);
+    drawTrain(); };
+}
+$('tadd').onclick = () => { const m = entry($('pick').value || 'p');
+  if (!m || !/^\d+$/.test($('pick').value) || m.kind === 'stations') { msg.textContent = 'Pick a car or locomotive that is in the viewer first'; return; }
+  if (train.length >= 12) { msg.textContent = 'A train can have up to 12 cars here'; return; }
+  train.push(m); drawTrain(); };
+$('tclear').onclick = () => { train = []; drawTrain(); };
+$('trainx').onclick = () => $('trainp').style.display = 'none';
+$('tshow').onclick = showTrain;
+async function showTrain(){
+  if (!train.length) { msg.textContent = 'Add some cars first'; return; }
+  if (flying) stopFly(false);
+  msg.textContent = 'Coupling ' + train.length + ' cars ...';
+  try {
+    const scenes = []; for (const [k, m] of train.entries()) { msg.textContent = `Loading car ${k + 1} of ${train.length} ...`; scenes.push((await loader.loadAsync(m.file)).scene); }
+    const group = new THREE.Group(); let x = 0;
+    for (const sc of scenes) {
+      const box = new THREE.Box3(), v = new THREE.Box3(); sc.updateMatrixWorld(true);
+      sc.traverse(o => { if (o.isMesh && !GT.test(base(o.name || (o.parent && o.parent.name) || ''))) { v.setFromObject(o); box.union(v); } });
+      sc.position.x = x - box.min.x; x += box.max.x - box.min.x + 0.002; group.add(sc);       // couplers just touching
+    }
+    if (current) stage.remove(current); clearPano(); setMode('model');
+    current = group; stage.add(current); current.userData.scale = realScale(train[0].name);
+    if (mpts.length) clearMeasure(); shownEntry = null; trainOn = true; buildParts(); paintModel(); fit();
+    const sz = modelSize(); msg.textContent = `Train of ${train.length} cars, ${ftin(sz.len * current.userData.scale)} long - drag to turn, scroll to zoom`;
+    fillInfo(); setURL();
+  } catch (e) { msg.textContent = 'Could not load the train (' + e.message + ')'; }
+}
+// ---- Measure: click two points; the distance in full size and in G, O and HO
+let measuring = false, mpts = [], mobj = null, downAt = null;
+const ray = new THREE.Raycaster(), mouse = new THREE.Vector2();
+function clearMeasure(){ if (mobj) { scene.remove(mobj); mobj.traverse(o => { if (o.geometry) o.geometry.dispose(); }); } mobj = null; mpts = []; $('mlabel').style.display = 'none'; }
+function startMeasure(){
+  if (!current || mode === 'pano') { msg.textContent = 'Open a model to measure it'; return; }
+  if (flying) stopFly(); measuring = true; clearMeasure(); $('mchip').style.display = 'block';
+}
+function stopMeasure(){ measuring = false; clearMeasure(); $('mchip').style.display = 'none'; }
+$('mdone').onclick = stopMeasure;
+addEventListener('keydown', e => { if (e.code === 'Escape' && measuring) stopMeasure(); });
+renderer.domElement.addEventListener('pointerdown', e => { downAt = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener('pointerup', e => {
+  if (!measuring || !downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 5) return;   // a drag turns the view
+  const rc = renderer.domElement.getBoundingClientRect();
+  mouse.set((e.clientX - rc.left) / rc.width * 2 - 1, -(e.clientY - rc.top) / rc.height * 2 + 1);
+  ray.setFromCamera(mouse, camera);
+  const hit = ray.intersectObject(stage, true).find(h => h.object.visible); if (!hit) return;
+  if (mpts.length === 2) clearMeasure();
+  mpts.push(hit.point.clone());
+  if (!mobj) { mobj = new THREE.Group(); scene.add(mobj); }
+  const dot = new THREE.Mesh(new THREE.SphereGeometry(lastR / 250, 12, 8), new THREE.MeshBasicMaterial({color: 0xff3030, depthTest: false}));
+  dot.renderOrder = 10; dot.position.copy(hit.point); mobj.add(dot);
+  if (mpts.length === 2) {
+    const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(mpts), new THREE.LineBasicMaterial({color: 0xff3030, depthTest: false}));
+    line.renderOrder = 10; mobj.add(line);
+    const model = mpts[0].distanceTo(mpts[1]) / stage.scale.x, real = model * current.userData.scale;
+    $('mlabel').innerHTML = `<b>${ftin(real)}</b> full size (${real.toFixed(2)} m)<br>G 1:29: ${(real / 29 * 1000).toFixed(1)} mm &middot; O 1:48: ${(real / 48 * 1000).toFixed(1)} mm &middot; HO 1:87: ${(real / 87 * 1000).toFixed(1)} mm`;
+    $('mlabel').style.display = 'block';
+  }
+});
+function measureTick(){
+  if (mpts.length !== 2 || $('mlabel').style.display === 'none') return;
+  const mid = mpts[0].clone().add(mpts[1]).multiplyScalar(0.5).project(camera), rc = renderer.domElement.getBoundingClientRect();
+  $('mlabel').style.left = (rc.left + (mid.x + 1) / 2 * rc.width) + 'px'; $('mlabel').style.top = (rc.top + (1 - mid.y) / 2 * rc.height) + 'px';
+}
+
+// ---- orientation marker, lower left (Tom 11/22): X red = along the car, Y green = up, Z blue = across.
+//  Drawn as a small second picture after the main one; it turns with the view (also in Fly mode).
+const gHit = [], GZ = 112, gScene = new THREE.Scene(), gCam = new THREE.OrthographicCamera(-1.5, 1.5, 1.5, -1.5, 0.1, 10), gQ = new THREE.Quaternion();
+function gLabel(t, col){
+  const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d');
+  x.fillStyle = col; x.beginPath(); x.arc(32, 32, 28, 0, 7); x.fill();
+  x.fillStyle = '#fff'; x.font = 'bold 36px system-ui,sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(t, 32, 34);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map: new THREE.CanvasTexture(c), depthTest: false})); sp.scale.setScalar(0.55); return sp;
+}
+{
+  const back = new THREE.Mesh(new THREE.CircleGeometry(1.45, 40), new THREE.MeshBasicMaterial({color: 0x000000, transparent: true, opacity: 0.28, depthTest: false}));
+  back.renderOrder = -1; back.name = 'back'; gScene.add(back);
+  const ring = new THREE.Mesh(new THREE.RingGeometry(1.4, 1.48, 48), new THREE.MeshBasicMaterial({color: 0xdfe4ea, transparent: true, opacity: 0.85, depthTest: false}));
+  ring.renderOrder = -1; back.add(ring);                                    // light rim: shows on dark ground too (Tom 11/22)
+  for (const [dir, col, t] of [[[1,0,0], '#d8362c', 'X'], [[0,1,0], '#3b9b3b', 'Y'], [[0,0,1], '#2f6fd6', 'Z']]) {
+    const v = new THREE.Vector3(...dir);
+    gScene.add(new THREE.ArrowHelper(v, new THREE.Vector3(), 0.95, new THREE.Color(col), 0.3, 0.16));
+    const L = gLabel(t, col); L.position.copy(v).multiplyScalar(1.18); L.userData.view = v.clone(); gHit.push(L); gScene.add(L);
+    const N = new THREE.Mesh(new THREE.SphereGeometry(0.07, 10, 8), new THREE.MeshBasicMaterial({color: new THREE.Color(col).multiplyScalar(0.55)}));
+    N.position.copy(v).multiplyScalar(-0.8); N.scale.setScalar(1.6); N.userData.view = v.clone().negate(); gHit.push(N); gScene.add(N);   // the minus end
+  }
+}
+function drawGizmo(){
+  if (renderer.xr.isPresenting || mode !== 'model' || document.body.classList.contains('embed')) return;
+  camera.getWorldQuaternion(gQ); stage.updateMatrixWorld();
+  gCam.quaternion.copy(gQ); gCam.position.set(0, 0, 4).applyQuaternion(gQ);
+  gScene.getObjectByName('back').quaternion.copy(gQ);
+  const bottom = gBottom = Math.max(34, innerHeight - msg.getBoundingClientRect().top + 6);   // just above the status line, however many lines it has
+  gAnimStep();
+  renderer.autoClear = false; renderer.clearDepth();
+  renderer.setScissorTest(true); renderer.setScissor(8, bottom, GZ, GZ); renderer.setViewport(8, bottom, GZ, GZ);
+  renderer.render(gScene, gCam);
+  renderer.setScissorTest(false); renderer.setViewport(0, 0, innerWidth, innerHeight); renderer.autoClear = true;
+}
+
+// ---- click the marker: Z = side view, X = end view, Y = top view; the small dots = the opposite side (Tom 11/22)
+let gBottom = 34, gAnim = null; const gRay = new THREE.Raycaster(), gV = new THREE.Vector2();
+function gPick(e){
+  if (renderer.xr.isPresenting || mode !== 'model' || flying || document.body.classList.contains('embed')) return null;
+  const rc = renderer.domElement.getBoundingClientRect(), x = e.clientX - rc.left - 8, y = (rc.bottom - e.clientY) - gBottom;
+  if (x < 0 || y < 0 || x > GZ || y > GZ) return null;
+  gV.set(x / GZ * 2 - 1, y / GZ * 2 - 1); gRay.setFromCamera(gV, gCam);
+  const hit = gRay.intersectObjects(gHit, false)[0];
+  return hit ? hit.object.userData.view : 'inside';
+}
+renderer.domElement.addEventListener('pointerdown', e => {
+  const v = gPick(e); if (!v) return;
+  e.stopImmediatePropagation(); e.preventDefault(); downAt = null;     // not a drag, not a measuring click
+  if (v === 'inside') return;
+  const t = controls.target, d = camera.position.distanceTo(t), to = v.clone();
+  if (Math.abs(to.y) > 0.99) to.set(0, Math.sign(to.y), 0.002).normalize();   // car length left to right   // straight down / up: a hair off so the view does not spin
+  gAnim = {from: camera.position.clone().sub(t).normalize(), to, d, t0: performance.now()};
+}, {capture: true});
+renderer.domElement.addEventListener('pointermove', e => { renderer.domElement.style.cursor = gPick(e) && gPick(e) !== 'inside' ? 'pointer' : ''; });
+function gAnimStep(){
+  if (!gAnim) return;
+  const k = Math.min(1, (performance.now() - gAnim.t0) / 450), s = k * k * (3 - 2 * k);
+  const dir = gAnim.from.clone().lerp(gAnim.to, s); if (dir.lengthSq() < 1e-6) dir.copy(gAnim.to); dir.normalize();
+  camera.position.copy(controls.target).addScaledVector(dir, gAnim.d);
+  if (k >= 1) gAnim = null;
+}
+</script></body></html>
